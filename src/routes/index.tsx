@@ -5,6 +5,7 @@ import heroImg from "@/assets/hero-still.jpg";
 import bottlesImg from "@/assets/bottles-desk.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
+import { PressMarquee } from "@/components/PressMarquee";
 
 export const Route = createFileRoute("/")({
   head: () => ({
