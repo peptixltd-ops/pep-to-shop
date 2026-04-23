@@ -104,77 +104,56 @@ function HomePage() {
         </div>
       </section>
 
-      {/* HERO */}
+      {/* HERO — 50/50 split */}
       <section className="bg-mist">
-        <div className="container-x grid lg:grid-cols-2 gap-10 items-center py-16 lg:py-24">
-          <div>
-            <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6"><span className="accent-bar" />Premium Wellness Supplements</p>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-ink leading-[1.05]">
-              <span className="italic text-primary">Unlock</span><br />More.
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-md leading-relaxed">
-              Carefully formulated recovery, performance and daily wellness supplements — designed to support how you live, train and recover.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/shop" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 transition">
-                Shop Now <ArrowRight className="size-4" />
-              </Link>
-              <Link to="/about" className="inline-flex items-center bg-transparent border border-ink/20 text-ink px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-ink hover:text-background transition">
-                Learn More
-              </Link>
+        <div className="grid lg:grid-cols-2 items-stretch">
+          <div className="flex items-center px-6 md:px-12 lg:px-16 py-16 lg:py-24">
+            <div className="max-w-md">
+              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6"><span className="accent-bar" />Premium Wellness Supplements</p>
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-ink leading-[1.05]">
+                <span className="italic text-primary">Unlock</span><br />More.
+              </h1>
+              <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
+                Carefully formulated recovery, performance and daily wellness supplements — designed to support how you live, train and recover.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link to="/shop" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 transition">
+                  Shop Now <ArrowRight className="size-4" />
+                </Link>
+                <Link to="/about" className="inline-flex items-center bg-transparent border border-ink/20 text-ink px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-ink hover:text-background transition">
+                  Learn More
+                </Link>
+              </div>
             </div>
           </div>
-          <div className="relative">
-            <img src={heroImg} alt="Premium PeptiX wellness supplements" width={1280} height={1280} className="w-full aspect-square object-cover" />
+          <div className="relative h-full min-h-[360px]">
+            <img src={heroImg} alt="Premium PeptiX wellness supplements" width={1280} height={1280} className="absolute inset-0 w-full h-full object-cover" />
           </div>
-        </div>
-      </section>
-      {/* PRODUCTS — BEST SELLERS CAROUSEL */}
-      <section className="container-x py-20 md:py-28">
-        <div className="text-center mb-14">
-          <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Our Products</p>
-          <h2 className="font-display text-4xl md:text-5xl text-ink">Best <span className="text-primary italic">Sellers</span></h2>
-          <div className="mx-auto mt-4 h-px w-12 bg-primary" />
-        </div>
-        <Carousel setApi={setProductsApi} opts={{ align: "start", loop: true }} className="px-4 md:px-12">
-          <CarouselContent className="-ml-4">
-            {products.slice(0, 8).map(p => (
-              <CarouselItem key={p.slug} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                <ProductCard product={p} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-2" />
-          <CarouselNext className="hidden md:flex -right-2" />
-        </Carousel>
-        <div className="text-center mt-12">
-          <Link to="/shop" className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-primary border-b border-primary pb-1 hover:gap-3 transition-all">
-            View all products <ArrowRight className="size-4" />
-          </Link>
         </div>
       </section>
 
-      {/* REVIEWS */}
-      <section className="bg-mist py-20 md:py-28">
+      {/* REVIEWS — compact horizontal carousel */}
+      <section className="bg-background py-12 md:py-16 border-b border-border">
         <div className="container-x">
-          <div className="text-center mb-14">
-            <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Customer Reviews</p>
-            <h2 className="font-display text-4xl md:text-5xl text-ink">Trusted By <span className="text-primary italic">Thousands</span></h2>
-            <div className="mx-auto mt-4 h-px w-12 bg-primary" />
+          <div className="text-center mb-8">
+            <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Customer Reviews</p>
+            <h2 className="font-display text-3xl md:text-4xl text-ink">Trusted By <span className="text-primary italic">Thousands</span></h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 transition-opacity duration-500">
+          <div className="grid md:grid-cols-3 gap-4 transition-opacity duration-500">
             {visibleReviews.map(r => (
-              <div key={r.name} className="bg-background p-7 border border-border">
-                <p className="text-sm font-semibold text-ink uppercase tracking-wide">{r.name}</p>
-                <div className="flex gap-0.5 my-2 text-primary">
-                  {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}
+              <div key={r.name} className="bg-mist p-5 border border-border flex flex-col">
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-xs font-semibold text-ink uppercase tracking-wide">{r.name}</p>
+                  <div className="flex gap-0.5 text-primary">
+                    {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3 fill-current" />)}
+                  </div>
                 </div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground border-b border-border pb-3 mb-4">Verified Buyer</p>
-                <p className="text-sm text-foreground/80 leading-relaxed">{r.text}</p>
+                <p className="text-[9px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Verified Buyer</p>
+                <p className="text-sm text-foreground/80 leading-relaxed line-clamp-3">{r.text}</p>
               </div>
             ))}
           </div>
-          <div className="flex justify-center gap-1.5 mt-8">
+          <div className="flex justify-center gap-1.5 mt-6">
             {reviews.map((_, i) => (
               <button
                 key={i}
@@ -184,7 +163,6 @@ function HomePage() {
               />
             ))}
           </div>
-
         </div>
       </section>
 
