@@ -64,6 +64,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { BackToTop } from "@/components/BackToTop";
 
 function RootComponent() {
   return (
@@ -73,6 +74,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <SiteFooter />
+      <BackToTop />
     </>
   );
 }
