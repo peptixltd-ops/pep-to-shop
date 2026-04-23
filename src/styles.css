@@ -81,7 +81,7 @@
     margin-right: 0.75rem;
   }
   .marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee 24s linear infinite;
   }
   @keyframes marquee {
     from { transform: translateX(0); }

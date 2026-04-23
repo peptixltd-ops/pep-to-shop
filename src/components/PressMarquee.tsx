@@ -17,7 +17,7 @@ const logos = [
 export function PressMarquee() {
   return (
     <section className="bg-secondary/40 border-y border-border overflow-hidden py-6">
-      <div className="max-w-[60%] mx-auto overflow-hidden">
+      <div className="w-full overflow-hidden px-3 md:px-6">
         <div className="flex marquee whitespace-nowrap items-center">
           {[...logos, ...logos, ...logos].map((logo, i) => (
             <img
@@ -25,7 +25,7 @@ export function PressMarquee() {
               src={logo.src}
               alt={logo.alt}
               loading="lazy"
-              className="h-7 md:h-9 w-auto mx-8 md:mx-12 object-contain opacity-70 hover:opacity-100 transition"
+              className="h-7 md:h-9 w-auto mx-6 md:mx-8 object-contain opacity-70 hover:opacity-100 transition"
             />
           ))}
         </div>
