@@ -106,10 +106,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* PRESS MARQUEE */}
-      <PressMarquee />
-
       {/* PRODUCTS */}
       <section className="container-x py-20 md:py-28">
         <div className="text-center mb-14">
