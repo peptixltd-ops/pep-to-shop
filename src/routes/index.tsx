@@ -5,6 +5,7 @@ import heroImg from "@/assets/hero-still.jpg";
 import bottlesImg from "@/assets/bottles-desk.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
+import { PressMarquee } from "@/components/PressMarquee";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,7 +19,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const press = ["Daily Mirror", "Sky News", "Daily Record", "The Standard", "Metro", "The Independent"];
+
 
 const reviews = [
   { name: "Dr. Sarah M.", text: "Best UK supplier I've used. Consistent quality across batches and customer support responded within hours." },
@@ -84,13 +85,7 @@ function HomePage() {
       </section>
 
       {/* PRESS MARQUEE */}
-      <section className="bg-secondary/40 border-y border-border overflow-hidden py-8">
-        <div className="flex marquee whitespace-nowrap">
-          {[...press, ...press, ...press].map((p, i) => (
-            <span key={i} className="font-display text-2xl md:text-3xl text-ink/60 mx-10 tracking-tight">{p}</span>
-          ))}
-        </div>
-      </section>
+      <PressMarquee />
 
       {/* PRODUCTS */}
       <section className="container-x py-20 md:py-28">
