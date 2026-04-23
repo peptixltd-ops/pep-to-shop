@@ -132,6 +132,28 @@ function HomePage() {
         </div>
       </section>
 
+      {/* BEST SELLERS — single row carousel */}
+      <section className="container-x py-16 md:py-20">
+        <div className="flex items-end justify-between mb-8">
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Shop</p>
+            <h2 className="font-display text-3xl md:text-4xl text-ink">Best <span className="italic text-primary">Sellers</span></h2>
+          </div>
+          <Link to="/shop" className="hidden md:inline-flex items-center gap-2 text-sm uppercase tracking-wider text-ink hover:text-primary transition">
+            View All <ArrowRight className="size-4" />
+          </Link>
+        </div>
+        <Carousel setApi={setProductsApi} opts={{ align: "start", loop: true }} className="w-full">
+          <CarouselContent className="-ml-4">
+            {products.slice(0, 8).map(p => (
+              <CarouselItem key={p.slug} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                <ProductCard product={p} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
+      </section>
+
       {/* REVIEWS — compact horizontal carousel */}
       <section className="bg-background py-12 md:py-16 border-b border-border">
         <div className="container-x">
