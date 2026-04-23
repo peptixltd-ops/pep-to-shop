@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ShoppingBag, User, Menu } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/peptix-logo-text.png";
 
 const nav = [
   { to: "/shop", label: "Shop All" },
@@ -19,9 +20,8 @@ export function SiteHeader() {
         14,500+ satisfied customers · Free UK shipping over £60
       </div>
       <div className="container-x flex items-center justify-between py-4">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="font-display text-2xl font-semibold text-primary leading-none">peptiX</span>
-          <span className="hidden sm:inline text-[10px] tracking-[0.25em] text-muted-foreground uppercase">Unlock More</span>
+        <Link to="/" aria-label="PeptiX home" className="flex items-center">
+          <img src={logo} alt="PeptiX — Unlock More" className="h-10 md:h-11 w-auto" />
         </Link>
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
           {nav.map(n => (
