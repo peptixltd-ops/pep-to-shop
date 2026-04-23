@@ -58,6 +58,26 @@ function HomePage() {
 
   return (
     <div>
+      {/* WHY CHOOSE — compact strip */}
+      <section className="container-x py-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {[
+            { icon: ShieldCheck, title: "High Purity", desc: "Carefully sourced ingredients meeting strict quality standards." },
+            { icon: CheckCircle2, title: "Verified Consistency", desc: "Batch-to-batch reliability you can depend on." },
+            { icon: Truck, title: "Fast UK Delivery", desc: "Secure, discreet and efficient fulfilment." },
+            { icon: FileText, title: "Transparent Process", desc: "Clear documentation and no compromise on standards." },
+          ].map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="bg-mist border border-border p-4 text-center">
+              <div className="mx-auto size-8 rounded-full bg-accent/40 flex items-center justify-center mb-2">
+                <Icon className="size-3.5 text-primary" />
+              </div>
+              <h3 className="font-display text-sm text-ink mb-1">{title}</h3>
+              <p className="text-[11px] text-muted-foreground leading-snug">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* HERO */}
       <section className="bg-mist">
         <div className="container-x grid lg:grid-cols-2 gap-10 items-center py-16 lg:py-24">
@@ -138,26 +158,6 @@ function HomePage() {
         </div>
       </section>
 
-      {/* WHY CHOOSE */}
-      <section className="container-x pb-20 md:pb-28">
-        <h2 className="font-display text-3xl md:text-4xl text-ink text-center mb-14">Why Choose PeptiX</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {[
-            { icon: ShieldCheck, title: "High Purity", desc: "Carefully sourced ingredients meeting strict quality standards." },
-            { icon: CheckCircle2, title: "Verified Consistency", desc: "Batch-to-batch reliability you can depend on." },
-            { icon: Truck, title: "Fast UK Delivery", desc: "Secure, discreet and efficient fulfilment." },
-            { icon: FileText, title: "Transparent Process", desc: "Clear documentation and no compromise on standards." },
-          ].map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="bg-mist border border-border p-7 text-center">
-              <div className="mx-auto size-12 rounded-full bg-accent/40 flex items-center justify-center mb-4">
-                <Icon className="size-5 text-primary" />
-              </div>
-              <h3 className="font-display text-lg text-ink mb-2">{title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* CONTROLLED VERIFIED RELIABLE */}
       <section className="grid lg:grid-cols-2">
