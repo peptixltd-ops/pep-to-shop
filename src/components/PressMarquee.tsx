@@ -16,18 +16,19 @@ const logos = [
 
 export function PressMarquee() {
   return (
-    <section className="bg-secondary/40 border-y border-border overflow-hidden py-10">
-      <p className="text-center text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-6">As Seen In</p>
-      <div className="flex marquee whitespace-nowrap items-center">
-        {[...logos, ...logos, ...logos].map((logo, i) => (
-          <img
-            key={i}
-            src={logo.src}
-            alt={logo.alt}
-            loading="lazy"
-            className="h-8 md:h-10 w-auto mx-10 md:mx-14 object-contain opacity-70 hover:opacity-100 transition"
-          />
-        ))}
+    <section className="bg-secondary/40 border-y border-border overflow-hidden py-6">
+      <div className="max-w-[60%] mx-auto overflow-hidden">
+        <div className="flex marquee whitespace-nowrap items-center">
+          {[...logos, ...logos, ...logos].map((logo, i) => (
+            <img
+              key={i}
+              src={logo.src}
+              alt={logo.alt}
+              loading="lazy"
+              className="h-7 md:h-9 w-auto mx-8 md:mx-12 object-contain opacity-70 hover:opacity-100 transition"
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

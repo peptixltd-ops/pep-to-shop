@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ShieldCheck, CheckCircle2, Truck, FileText, ArrowRight, Star, Plus } from "lucide-react";
-import { useState } from "react";
+import { CheckCircle2, ArrowRight, Star, Plus, Stethoscope, FlaskConical, Truck, Award } from "lucide-react";
+import { useState, useEffect } from "react";
 import heroImg from "@/assets/hero-still.jpg";
 import bottlesImg from "@/assets/bottles-desk.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { PressMarquee } from "@/components/PressMarquee";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,7 +26,14 @@ const reviews = [
   { name: "Dr. Sarah M.", text: "Best UK supplier I've used. Consistent quality across batches and customer support responded within hours." },
   { name: "Alex P.", text: "Ordered the recovery stack. Arrived next day, beautifully packaged, and the third-party test results matched the product page exactly." },
   { name: "James K.", text: "Excellent quality and fast delivery. Products arrived well-packaged with COA included. Will definitely reorder." },
+  { name: "Emma L.", text: "The magnesium has genuinely improved my sleep within a week. Clean ingredients and clear labelling — exactly what I want." },
+  { name: "Tom R.", text: "Strength is up noticeably on the creatine. Mixes well, no bloating. The packaging feels premium too." },
+  { name: "Priya S.", text: "I love that every batch comes with a COA. Transparent, professional and the delivery is always quick." },
+  { name: "Mark D.", text: "Switched from a US brand and haven't looked back. UK-made, fast shipping, and the protein actually tastes great." },
+  { name: "Hannah W.", text: "Customer service is on another level. Quick replies, honest answers and the products genuinely deliver." },
+  { name: "Liam C.", text: "Recovery has improved massively since starting the stack. Worth every penny." },
 ];
+
 
 const faqTabs = {
   "Orders & Shipping": [
@@ -55,27 +63,42 @@ const faqTabs = {
 function HomePage() {
   const [tab, setTab] = useState<keyof typeof faqTabs>("Orders & Shipping");
   const [openQ, setOpenQ] = useState<number | null>(0);
+  const [reviewIdx, setReviewIdx] = useState(0);
+  const [productsApi, setProductsApi] = useState<CarouselApi>();
+
+  useEffect(() => {
+    const id = setInterval(() => setReviewIdx(i => (i + 1) % reviews.length), 5000);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    if (!productsApi) return;
+    const id = setInterval(() => {
+      if (productsApi.canScrollNext()) productsApi.scrollNext();
+      else productsApi.scrollTo(0);
+    }, 4000);
+    return () => clearInterval(id);
+  }, [productsApi]);
+
+  const visibleReviews = [0, 1, 2].map(o => reviews[(reviewIdx + o) % reviews.length]);
 
   return (
     <div>
       {/* PRESS MARQUEE */}
       <PressMarquee />
 
-      {/* WHY CHOOSE — compact strip */}
-      <section className="container-x py-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+      {/* TRUST STRIP */}
+      <section className="container-x py-3">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2">
           {[
-            { icon: ShieldCheck, title: "High Purity", desc: "Carefully sourced ingredients meeting strict quality standards." },
-            { icon: CheckCircle2, title: "Verified Consistency", desc: "Batch-to-batch reliability you can depend on." },
-            { icon: Truck, title: "Fast UK Delivery", desc: "Secure, discreet and efficient fulfilment." },
-            { icon: FileText, title: "Transparent Process", desc: "Clear documentation and no compromise on standards." },
-          ].map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="bg-mist border border-border p-4 text-center">
-              <div className="mx-auto size-8 rounded-full bg-accent/40 flex items-center justify-center mb-2">
-                <Icon className="size-3.5 text-primary" />
-              </div>
-              <h3 className="font-display text-sm text-ink mb-1">{title}</h3>
-              <p className="text-[11px] text-muted-foreground leading-snug">{desc}</p>
+            { icon: Stethoscope, title: "Medical Grade" },
+            { icon: FlaskConical, title: "3rd Party Tested" },
+            { icon: Truck, title: "Fast & Discreet UK Delivery" },
+            { icon: Award, title: "Trusted Since 2021" },
+          ].map(({ icon: Icon, title }) => (
+            <div key={title} className="bg-mist border border-border px-3 py-2.5 flex items-center justify-center gap-2 text-center">
+              <Icon className="size-4 text-primary shrink-0" />
+              <h3 className="font-display text-xs md:text-sm text-ink leading-tight">{title}</h3>
             </div>
           ))}
         </div>
@@ -106,16 +129,24 @@ function HomePage() {
           </div>
         </div>
       </section>
-      {/* PRODUCTS */}
+      {/* PRODUCTS — BEST SELLERS CAROUSEL */}
       <section className="container-x py-20 md:py-28">
         <div className="text-center mb-14">
           <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Our Products</p>
-          <h2 className="font-display text-4xl md:text-5xl text-ink">Shop <span className="text-primary italic">All</span></h2>
+          <h2 className="font-display text-4xl md:text-5xl text-ink">Best <span className="text-primary italic">Sellers</span></h2>
           <div className="mx-auto mt-4 h-px w-12 bg-primary" />
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {products.slice(0, 4).map(p => <ProductCard key={p.slug} product={p} />)}
-        </div>
+        <Carousel setApi={setProductsApi} opts={{ align: "start", loop: true }} className="px-4 md:px-12">
+          <CarouselContent className="-ml-4">
+            {products.slice(0, 8).map(p => (
+              <CarouselItem key={p.slug} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                <ProductCard product={p} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-2" />
+          <CarouselNext className="hidden md:flex -right-2" />
+        </Carousel>
         <div className="text-center mt-12">
           <Link to="/shop" className="inline-flex items-center gap-2 text-sm uppercase tracking-wider text-primary border-b border-primary pb-1 hover:gap-3 transition-all">
             View all products <ArrowRight className="size-4" />
@@ -131,8 +162,8 @@ function HomePage() {
             <h2 className="font-display text-4xl md:text-5xl text-ink">Trusted By <span className="text-primary italic">Thousands</span></h2>
             <div className="mx-auto mt-4 h-px w-12 bg-primary" />
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {reviews.map(r => (
+          <div className="grid md:grid-cols-3 gap-6 transition-opacity duration-500">
+            {visibleReviews.map(r => (
               <div key={r.name} className="bg-background p-7 border border-border">
                 <p className="text-sm font-semibold text-ink uppercase tracking-wide">{r.name}</p>
                 <div className="flex gap-0.5 my-2 text-primary">
@@ -143,6 +174,17 @@ function HomePage() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center gap-1.5 mt-8">
+            {reviews.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setReviewIdx(i)}
+                aria-label={`Show review ${i + 1}`}
+                className={`h-1.5 rounded-full transition-all ${i === reviewIdx ? "w-6 bg-primary" : "w-1.5 bg-border"}`}
+              />
+            ))}
+          </div>
+
         </div>
       </section>
 
