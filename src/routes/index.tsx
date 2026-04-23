@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const press = ["Daily Mirror", "Sky News", "Daily Record", "The Standard", "Metro", "The Independent"];
+
 
 const reviews = [
   { name: "Dr. Sarah M.", text: "Best UK supplier I've used. Consistent quality across batches and customer support responded within hours." },
