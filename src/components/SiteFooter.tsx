@@ -1,0 +1,46 @@
+import { Link } from "@tanstack/react-router";
+
+export function SiteFooter() {
+  return (
+    <footer className="bg-ink text-background mt-24">
+      <div className="container-x py-16 grid gap-10 md:grid-cols-4">
+        <div>
+          <div className="font-display text-2xl font-semibold mb-3">peptiX</div>
+          <p className="text-sm text-background/70 leading-relaxed">
+            Premium recovery & performance supplements. Made in the UK. Tested for purity.
+          </p>
+        </div>
+        <div>
+          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Shop</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/shop" className="hover:text-accent">All products</Link></li>
+            <li><Link to="/routine" className="hover:text-accent">Routine builder</Link></li>
+            <li><Link to="/reviews" className="hover:text-accent">Reviews</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Company</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/about" className="hover:text-accent">About us</Link></li>
+            <li><Link to="/faqs" className="hover:text-accent">FAQs</Link></li>
+            <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Newsletter</h4>
+          <p className="text-sm text-background/70 mb-3">Routines, restocks and member-only offers.</p>
+          <form className="flex">
+            <input type="email" placeholder="Email address" className="flex-1 bg-background/10 border border-background/20 px-3 py-2 text-sm placeholder:text-background/40 focus:outline-none focus:border-accent" />
+            <button type="submit" className="bg-primary px-4 text-sm uppercase tracking-wide hover:bg-primary/80">Join</button>
+          </form>
+        </div>
+      </div>
+      <div className="border-t border-background/10">
+        <div className="container-x py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-background/50">
+          <p>© {new Date().getFullYear()} PeptiX Ltd. All rights reserved.</p>
+          <p>These statements have not been evaluated by the MHRA. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
+        </div>
+      </div>
+    </footer>
+  );
+}
