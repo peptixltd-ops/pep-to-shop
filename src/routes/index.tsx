@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2, ArrowRight, Star, Plus, Stethoscope, FlaskConical, Truck, Award } from "lucide-react";
 import { useState, useEffect } from "react";
-import heroImg from "@/assets/hero-products.jpg";
+import heroRightImg from "@/assets/hero-right-image.png";
 import bottlesImg from "@/assets/bottles-desk.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
@@ -106,9 +106,9 @@ function HomePage() {
 
       {/* HERO — 50/50 split */}
       <section className="bg-mist">
-        <div className="grid lg:grid-cols-2 items-stretch">
-          <div className="flex items-center px-6 md:px-12 lg:px-16 py-16 lg:py-24">
-            <div className="max-w-md">
+        <div className="grid items-stretch min-[700px]:grid-cols-2">
+          <div className="flex items-center px-6 md:px-10 lg:px-16 py-14 lg:py-24 min-w-0">
+            <div className="w-full max-w-xl">
               <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6"><span className="accent-bar" />Premium Wellness Supplements</p>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-ink leading-[1.05]">
                 <span className="italic text-primary">Unlock</span><br />More.
@@ -126,8 +126,8 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="relative h-full min-h-[360px]">
-            <img src={heroImg} alt="Premium PeptiX wellness supplements" width={1280} height={1280} className="absolute inset-0 w-full h-full object-cover" />
+          <div className="relative min-h-[360px] min-[700px]:min-h-full">
+            <img src={heroRightImg} alt="Premium wellness supplement bottles arranged on a soft green backdrop" width={1492} height={823} className="absolute inset-0 h-full w-full object-cover" />
           </div>
         </div>
       </section>
