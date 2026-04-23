@@ -26,7 +26,14 @@ const reviews = [
   { name: "Dr. Sarah M.", text: "Best UK supplier I've used. Consistent quality across batches and customer support responded within hours." },
   { name: "Alex P.", text: "Ordered the recovery stack. Arrived next day, beautifully packaged, and the third-party test results matched the product page exactly." },
   { name: "James K.", text: "Excellent quality and fast delivery. Products arrived well-packaged with COA included. Will definitely reorder." },
+  { name: "Emma L.", text: "The magnesium has genuinely improved my sleep within a week. Clean ingredients and clear labelling — exactly what I want." },
+  { name: "Tom R.", text: "Strength is up noticeably on the creatine. Mixes well, no bloating. The packaging feels premium too." },
+  { name: "Priya S.", text: "I love that every batch comes with a COA. Transparent, professional and the delivery is always quick." },
+  { name: "Mark D.", text: "Switched from a US brand and haven't looked back. UK-made, fast shipping, and the protein actually tastes great." },
+  { name: "Hannah W.", text: "Customer service is on another level. Quick replies, honest answers and the products genuinely deliver." },
+  { name: "Liam C.", text: "Recovery has improved massively since starting the stack. Worth every penny." },
 ];
+
 
 const faqTabs = {
   "Orders & Shipping": [
