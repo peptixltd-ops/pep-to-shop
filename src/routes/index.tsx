@@ -1,11 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ShieldCheck, CheckCircle2, Truck, FileText, ArrowRight, Star, Plus } from "lucide-react";
-import { useState } from "react";
+import { CheckCircle2, ArrowRight, Star, Plus, Stethoscope, FlaskConical, Truck, Award } from "lucide-react";
+import { useState, useEffect } from "react";
 import heroImg from "@/assets/hero-still.jpg";
 import bottlesImg from "@/assets/bottles-desk.jpg";
 import { products } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { PressMarquee } from "@/components/PressMarquee";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
