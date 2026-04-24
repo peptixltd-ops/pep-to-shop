@@ -3,10 +3,10 @@ import { CheckCircle2, ArrowRight, Star, Plus, Stethoscope, FlaskConical, Truck,
 import { useState, useEffect } from "react";
 import heroRightImg from "@/assets/hero-right-image.png";
 import bottlesImg from "@/assets/bottles-desk.jpg";
-import { products } from "@/data/products";
+import { useShopifyProducts } from "@/hooks/useShopifyProducts";
 import { ProductCard } from "@/components/ProductCard";
 import { PressMarquee } from "@/components/PressMarquee";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -65,6 +65,7 @@ function HomePage() {
   const [openQ, setOpenQ] = useState<number | null>(0);
   const [reviewIdx, setReviewIdx] = useState(0);
   const [productsApi, setProductsApi] = useState<CarouselApi>();
+  const { products: shopifyProducts, loading: productsLoading } = useShopifyProducts(8);
 
   useEffect(() => {
     const id = setInterval(() => setReviewIdx(i => (i + 1) % reviews.length), 5000);
@@ -143,15 +144,21 @@ function HomePage() {
             View All <ArrowRight className="size-4" />
           </Link>
         </div>
-        <Carousel setApi={setProductsApi} opts={{ align: "start", loop: true }} className="w-full">
-          <CarouselContent className="-ml-4">
-            {products.slice(0, 8).map(p => (
-              <CarouselItem key={p.slug} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
-                <ProductCard product={p} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+        {productsLoading ? (
+          <div className="flex justify-center py-16"><span className="text-muted-foreground text-sm">Loading products…</span></div>
+        ) : shopifyProducts.length === 0 ? (
+          <p className="text-center text-muted-foreground py-16">No products yet.</p>
+        ) : (
+          <Carousel setApi={setProductsApi} opts={{ align: "start", loop: true }} className="w-full">
+            <CarouselContent className="-ml-4">
+              {shopifyProducts.slice(0, 8).map(p => (
+                <CarouselItem key={p.node.id} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <ProductCard product={p} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+        )}
       </section>
 
       {/* REVIEWS — compact horizontal carousel */}
