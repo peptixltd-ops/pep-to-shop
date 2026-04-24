@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { ShoppingBag, User, Menu } from "lucide-react";
+import { User, Menu } from "lucide-react";
 import { useState } from "react";
 import logo from "@/assets/peptix-logo-text.png";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const nav = [
   { to: "/shop", label: "Shop All" },
@@ -40,10 +41,7 @@ export function SiteHeader() {
             SHOP NOW
           </Link>
           <button aria-label="Account" className="p-2 text-foreground/70 hover:text-primary"><User className="size-5" /></button>
-          <button aria-label="Cart" className="p-2 text-foreground/70 hover:text-primary relative">
-            <ShoppingBag className="size-5" />
-            <span className="absolute -top-0.5 -right-0.5 bg-primary text-primary-foreground text-[10px] rounded-full size-4 flex items-center justify-center">0</span>
-          </button>
+          <CartDrawer />
           <button aria-label="Menu" onClick={() => setOpen(!open)} className="lg:hidden p-2"><Menu className="size-5" /></button>
         </div>
       </div>
