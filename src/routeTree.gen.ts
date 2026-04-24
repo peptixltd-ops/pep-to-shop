@@ -16,6 +16,7 @@ import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
@@ -52,6 +53,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductHandleRoute = ProductHandleRouteImport.update({
+  id: '/product/$handle',
+  path: '/product/$handle',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/reviews': typeof ReviewsRoute
   '/routine': typeof RoutineRoute
   '/shop': typeof ShopRoute
+  '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/reviews': typeof ReviewsRoute
   '/routine': typeof RoutineRoute
   '/shop': typeof ShopRoute
+  '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/reviews': typeof ReviewsRoute
   '/routine': typeof RoutineRoute
   '/shop': typeof ShopRoute
+  '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,8 +100,17 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/routine'
     | '/shop'
+    | '/product/$handle'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/faqs' | '/reviews' | '/routine' | '/shop'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/faqs'
+    | '/reviews'
+    | '/routine'
+    | '/shop'
+    | '/product/$handle'
   id:
     | '__root__'
     | '/'
@@ -102,6 +120,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/routine'
     | '/shop'
+    | '/product/$handle'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -112,6 +131,7 @@ export interface RootRouteChildren {
   ReviewsRoute: typeof ReviewsRoute
   RoutineRoute: typeof RoutineRoute
   ShopRoute: typeof ShopRoute
+  ProductHandleRoute: typeof ProductHandleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -165,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/product/$handle': {
+      id: '/product/$handle'
+      path: '/product/$handle'
+      fullPath: '/product/$handle'
+      preLoaderRoute: typeof ProductHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -176,7 +203,17 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewsRoute: ReviewsRoute,
   RoutineRoute: RoutineRoute,
   ShopRoute: ShopRoute,
+  ProductHandleRoute: ProductHandleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

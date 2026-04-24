@@ -65,8 +65,11 @@ function RootShell({ children }: { children: React.ReactNode }) {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { BackToTop } from "@/components/BackToTop";
+import { Toaster } from "@/components/ui/sonner";
+import { useCartSync } from "@/hooks/useCartSync";
 
 function RootComponent() {
+  useCartSync();
   return (
     <>
       <SiteHeader />
@@ -75,6 +78,7 @@ function RootComponent() {
       </main>
       <SiteFooter />
       <BackToTop />
+      <Toaster position="top-center" />
     </>
   );
 }
