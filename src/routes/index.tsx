@@ -110,12 +110,11 @@ function HomePage() {
         <div className="grid items-stretch min-[700px]:grid-cols-2">
           <div className="flex items-center px-6 md:px-10 lg:px-16 py-14 lg:py-24 min-w-0">
             <div className="w-full max-w-xl">
-              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-6"><span className="accent-bar" />Premium Wellness Supplements</p>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-ink leading-[1.05]">
-                <span className="italic text-primary">Unlock</span><br />More.
+                <span className="italic text-primary">Medical Grade</span><br />Research Peptides.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                Carefully formulated recovery, performance and daily wellness supplements — designed to support how you live, train and recover.
+                3rd Party Tested — Pure Peptides. Trusted by over 10,000 customers.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/shop" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 transition">
