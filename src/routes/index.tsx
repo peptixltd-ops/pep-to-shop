@@ -211,9 +211,8 @@ function HomePage() {
         <img src={bottlesImg} alt="PeptiX collagen and creatine bottles" loading="lazy" width={1280} height={896} className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto" />
         <div className="bg-mist p-10 lg:p-20 flex flex-col justify-center">
           <h2 className="font-display text-3xl md:text-4xl text-ink mb-5">Controlled. Verified. Reliable.</h2>
-          <p className="text-foreground/80 mb-6">All products supplied by PeptiX are food-grade supplements made under UK GMP standards.</p>
           <ul className="space-y-3">
-            {["Independently batch-tested for purity", "Transparent labelling and ingredient disclosure", "Manufactured to UK regulatory standards"].map(t => (
+            {["Independently batch-tested for purity", "Transparent labelling", "Manufactured to strict standards"].map(t => (
               <li key={t} className="flex items-start gap-3 text-foreground/85">
                 <CheckCircle2 className="size-5 text-primary shrink-0 mt-0.5" />
                 <span>{t}</span>
