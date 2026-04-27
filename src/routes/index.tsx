@@ -198,9 +198,9 @@ function HomePage() {
       <section className="container-x py-20 md:py-28 text-center">
         <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">About PeptiX</p>
         <h2 className="font-display text-4xl md:text-5xl text-ink max-w-3xl mx-auto leading-tight">Committed To Precision. Built On Trust.</h2>
-        <p className="mt-5 text-muted-foreground max-w-xl mx-auto">High-quality supplements supplied with consistency, control and uncompromising standards.</p>
+        <p className="mt-5 text-muted-foreground max-w-xl mx-auto">High quality peptides supplied with consistency, control and uncompromising standards.</p>
         <div className="mt-12 max-w-3xl mx-auto text-left text-foreground/80 space-y-4">
-          <p>At PeptiX, we supply <strong>premium wellness supplements</strong> with a focus on purity, consistency and reliability.</p>
+          <p>At PeptiX, we supply <strong>premium peptides</strong> with a focus on purity, consistency and reliability.</p>
           <p>Every product is handled with <strong>precision</strong> — from sourcing to delivery — ensuring dependable standards at every stage.</p>
         </div>
       </section>
