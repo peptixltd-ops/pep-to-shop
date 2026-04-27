@@ -24,13 +24,13 @@ export const Route = createFileRoute("/")({
 
 const reviews = [
   { name: "Dr. Sarah M.", text: "Best UK supplier I've used. Consistent quality across batches and customer support responded within hours." },
-  { name: "Alex P.", text: "Ordered the recovery stack. Arrived next day, beautifully packaged, and the third-party test results matched the product page exactly." },
+  { name: "Alex P.", text: "Ordered the recovery stack. Arrived next day, beautifully packaged, and the third-party test results matched the peptide page exactly." },
   { name: "James K.", text: "Excellent quality and fast delivery. Products arrived well-packaged with COA included. Will definitely reorder." },
   { name: "Emma L.", text: "Genuinely impressed within a week of starting. Clean ingredients and clear labelling — exactly what I want." },
   { name: "Tom R.", text: "Noticeable results already. Mixes well, no bloating. The packaging feels premium too." },
   { name: "Priya S.", text: "I love that every batch comes with a COA. Transparent, professional and the delivery is always quick." },
   { name: "Mark D.", text: "Switched from a US brand and haven't looked back. UK-made, fast shipping, and the quality is excellent." },
-  { name: "Hannah W.", text: "Customer service is on another level. Quick replies, honest answers and the products genuinely deliver." },
+  { name: "Hannah W.", text: "Customer service is on another level. Quick replies, honest answers and the peptides genuinely deliver." },
   { name: "Liam C.", text: "Recovery has improved massively since starting. Worth every penny." },
 ];
 
@@ -47,12 +47,12 @@ const faqTabs = {
     { q: "Is checkout secure?", a: "All payments are processed via PCI-compliant providers with end-to-end encryption." },
   ],
   "Product & Quality": [
-    { q: "Are products third-party tested?", a: "Yes — every batch is independently tested for purity and potency. Certificates available on request." },
-    { q: "Where are products made?", a: "All formulations are manufactured in MHRA-registered UK facilities under GMP standards." },
+    { q: "Are peptides third-party tested?", a: "Yes — every batch is independently tested for purity and potency. Certificates available on request." },
+    { q: "Where are peptides made?", a: "All formulations are manufactured in MHRA-registered UK facilities under GMP standards." },
   ],
   "Compliance": [
-    { q: "Are your products legal in the UK?", a: "Yes. All products are food-grade supplements compliant with UK and EU regulations." },
-    { q: "Do you make medical claims?", a: "No. Our products are food supplements and are not intended to diagnose, treat, cure or prevent any disease." },
+    { q: "Are your peptides legal in the UK?", a: "Yes. All peptides are research-grade compounds compliant with UK and EU regulations." },
+    { q: "Do you make medical claims?", a: "No. Our peptides are research compounds and are not intended to diagnose, treat, cure or prevent any disease." },
   ],
   "Support": [
     { q: "How do I contact you?", a: "Email hello@peptix.co or use the contact form. We reply within 4 working hours." },
@@ -144,9 +144,9 @@ function HomePage() {
           </Link>
         </div>
         {productsLoading ? (
-          <div className="flex justify-center py-16"><span className="text-muted-foreground text-sm">Loading products…</span></div>
+          <div className="flex justify-center py-16"><span className="text-muted-foreground text-sm">Loading peptides…</span></div>
         ) : shopifyProducts.length === 0 ? (
-          <p className="text-center text-muted-foreground py-16">No products yet.</p>
+          <p className="text-center text-muted-foreground py-16">No peptides yet.</p>
         ) : (
           <Carousel setApi={setProductsApi} opts={{ align: "start", loop: true }} className="w-full">
             <CarouselContent className="-ml-4">
@@ -201,7 +201,7 @@ function HomePage() {
         <p className="mt-5 text-muted-foreground max-w-xl mx-auto">High quality peptides supplied with consistency, control and uncompromising standards.</p>
         <div className="mt-12 max-w-3xl mx-auto text-left text-foreground/80 space-y-4">
           <p>At PeptiX, we supply <strong>premium peptides</strong> with a focus on purity, consistency and reliability.</p>
-          <p>Every product is handled with <strong>precision</strong> — from sourcing to delivery — ensuring dependable standards at every stage.</p>
+          <p>Every peptide is handled with <strong>precision</strong> — from sourcing to delivery — ensuring dependable standards at every stage.</p>
         </div>
       </section>
 

@@ -13,7 +13,7 @@ export function SiteFooter() {
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Shop</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/shop" className="hover:text-accent">All products</Link></li>
+            <li><Link to="/shop" className="hover:text-accent">All peptides</Link></li>
             <li><Link to="/routine" className="hover:text-accent">Routine builder</Link></li>
             <li><Link to="/reviews" className="hover:text-accent">Reviews</Link></li>
           </ul>
