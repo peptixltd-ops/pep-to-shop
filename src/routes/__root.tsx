@@ -29,9 +29,9 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Pondok — Premium Recovery & Performance Supplements" },
+      { title: "Pondok Peptides — Premium Recovery & Performance Supplements" },
       { name: "description", content: "UK-made recovery, performance and daily wellness supplements. Tested for purity. Trusted by 14,500+ customers." },
-      { property: "og:title", content: "Pondok — Unlock More" },
+      { property: "og:title", content: "Pondok Peptides — Unlock More" },
       { property: "og:description", content: "Premium recovery & performance supplements made in the UK." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

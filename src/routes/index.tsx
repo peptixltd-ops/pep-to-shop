@@ -11,9 +11,9 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/com
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pondok — Unlock More | Premium Recovery & Performance Supplements" },
+      { title: "Pondok Peptides — Unlock More | Premium Recovery & Performance Supplements" },
       { name: "description", content: "UK-made recovery, performance and daily wellness supplements. Tested for purity. Trusted by 14,500+ customers." },
-      { property: "og:title", content: "Pondok — Unlock More" },
+      { property: "og:title", content: "Pondok Peptides — Unlock More" },
       { property: "og:description", content: "Premium recovery & performance supplements made in the UK." },
     ],
   }),
@@ -27,7 +27,7 @@ const reviews = [
   { name: "Alex P., Research Tech", text: "Ordered Friday evening, arrived Monday morning, ice pack still cold. Lyophilised cake was intact and the lot number matched the certificate exactly." },
   { name: "James K., PhD candidate", text: "Independent third-party HPLC came back at 99.4% — bang on the label. Quality I can actually cite in my notes." },
   { name: "Emma L.", text: "Discreet packaging, fast delivery and clear labelling. As a personal-use buyer I appreciate how transparent the batch testing is." },
-  { name: "Tom R., Lab Manager", text: "We've standardised on Pondok for our peptide work. Consistent purity batch-to-batch and the cold-chain shipping is genuinely well thought out." },
+  { name: "Tom R., Lab Manager", text: "We've standardised on Pondok Peptides for our peptide work. Consistent purity batch-to-batch and the cold-chain shipping is genuinely well thought out." },
   { name: "Priya S., Researcher", text: "Every vial ships with a COA that actually means something. Customer service answered a technical solubility question within the hour." },
   { name: "Mark D.", text: "Switched from a US supplier — half the lead time, no customs headaches, and the purity reports are more detailed. Won't go back." },
   { name: "Hannah W., Postdoc", text: "Support team is excellent. Asked about storage stability and got a proper, sourced answer — not a copy-paste reply." },
@@ -197,11 +197,11 @@ function HomePage() {
 
       {/* ABOUT */}
       <section className="container-x py-20 md:py-28 text-center">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">About Pondok</p>
+        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">About Pondok Peptides</p>
         <h2 className="font-display text-4xl md:text-5xl text-ink max-w-3xl mx-auto leading-tight">Committed To Precision. Built On Trust.</h2>
         <p className="mt-5 text-muted-foreground max-w-xl mx-auto">High quality peptides supplied with consistency, control and uncompromising standards.</p>
         <div className="mt-12 max-w-3xl mx-auto text-left text-foreground/80 space-y-4">
-          <p>At Pondok, we supply <strong>premium peptides</strong> with a focus on purity, consistency and reliability.</p>
+          <p>At Pondok Peptides, we supply <strong>premium peptides</strong> with a focus on purity, consistency and reliability.</p>
           <p>Every peptide is handled with <strong>precision</strong> — from sourcing to delivery — ensuring dependable standards at every stage.</p>
         </div>
       </section>
@@ -209,7 +209,7 @@ function HomePage() {
 
       {/* CONTROLLED VERIFIED RELIABLE */}
       <section className="grid lg:grid-cols-2">
-        <img src={bottlesImg} alt="Cluster of clear glass Pondok research peptide vials in a sterile pharmaceutical laboratory" loading="lazy" width={1280} height={896} className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto" />
+        <img src={bottlesImg} alt="Cluster of clear glass Pondok Peptides research peptide vials in a sterile pharmaceutical laboratory" loading="lazy" width={1280} height={896} className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto" />
         <div className="bg-mist p-10 lg:p-20 flex flex-col justify-center">
           <h2 className="font-display text-3xl md:text-4xl text-ink mb-5">Controlled. Verified. Reliable.</h2>
           <ul className="space-y-3">
@@ -226,7 +226,7 @@ function HomePage() {
       {/* STATS */}
       <section className="container-x py-20 md:py-28 text-center">
         <h2 className="font-display text-3xl md:text-4xl text-ink">Built For Long-Term Reliability</h2>
-        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Pondok is designed to be a dependable supplier — focused on consistency, professionalism and trust.</p>
+        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Pondok Peptides is designed to be a dependable supplier — focused on consistency, professionalism and trust.</p>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-b border-border py-10 max-w-4xl mx-auto">
           {[["≥99%", "Purity"], ["Quality", "Tested"], ["UK-Based", "Supplier"], ["Next Day", "Delivery"]].map(([k, v]) => (
             <div key={v}>
