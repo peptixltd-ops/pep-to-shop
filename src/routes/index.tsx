@@ -128,7 +128,7 @@ function HomePage() {
             </div>
           </div>
           <div className="relative min-h-[360px] min-[700px]:min-h-full">
-            <img src={heroRightImg} alt="Premium wellness supplement bottles arranged on a soft green backdrop" width={1492} height={823} className="absolute inset-0 h-full w-full object-cover" />
+            <img src={heroRightImg} alt="Clear glass research peptide vials on a stainless steel laboratory bench" width={1280} height={896} className="absolute inset-0 h-full w-full object-cover" />
           </div>
         </div>
       </section>
@@ -209,7 +209,7 @@ function HomePage() {
 
       {/* CONTROLLED VERIFIED RELIABLE */}
       <section className="grid lg:grid-cols-2">
-        <img src={bottlesImg} alt="PeptiX collagen and creatine bottles" loading="lazy" width={1280} height={896} className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto" />
+        <img src={bottlesImg} alt="Cluster of clear glass PeptiX research peptide vials in a sterile pharmaceutical laboratory" loading="lazy" width={1280} height={896} className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto" />
         <div className="bg-mist p-10 lg:p-20 flex flex-col justify-center">
           <h2 className="font-display text-3xl md:text-4xl text-ink mb-5">Controlled. Verified. Reliable.</h2>
           <ul className="space-y-3">
