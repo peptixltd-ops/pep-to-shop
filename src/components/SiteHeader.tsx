@@ -18,7 +18,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
       <div className="bg-primary text-primary-foreground text-center text-xs md:text-sm py-2 tracking-wide">
-        14,500+ satisfied customers · Free UK shipping over £60
+        14,500+ satisfied customers · FREE UK Shipping
       </div>
       <div className="container-x flex items-center justify-between py-4">
         <Link to="/" aria-label="Pendulum Peptides home" className="flex items-center">
