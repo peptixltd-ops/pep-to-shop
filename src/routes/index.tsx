@@ -23,15 +23,15 @@ export const Route = createFileRoute("/")({
 
 
 const reviews = [
-  { name: "Dr. Sarah M.", text: "Best UK supplier I've used. Consistent quality across batches and customer support responded within hours." },
-  { name: "Alex P.", text: "Ordered the recovery stack. Arrived next day, beautifully packaged, and the third-party test results matched the peptide page exactly." },
-  { name: "James K.", text: "Excellent quality and fast delivery. Products arrived well-packaged with COA included. Will definitely reorder." },
-  { name: "Emma L.", text: "Genuinely impressed within a week of starting. Clean ingredients and clear labelling — exactly what I want." },
-  { name: "Tom R.", text: "Noticeable results already. Mixes well, no bloating. The packaging feels premium too." },
-  { name: "Priya S.", text: "I love that every batch comes with a COA. Transparent, professional and the delivery is always quick." },
-  { name: "Mark D.", text: "Switched from a US brand and haven't looked back. UK-made, fast shipping, and the quality is excellent." },
-  { name: "Hannah W.", text: "Customer service is on another level. Quick replies, honest answers and the peptides genuinely deliver." },
-  { name: "Liam C.", text: "Recovery has improved massively since starting. Worth every penny." },
+  { name: "Dr. Sarah M.", text: "Easily the most reliable UK supplier we've used in the lab. Purity matches the COA every time and reconstitution is clean — no cloudiness, no residue." },
+  { name: "Alex P., Research Tech", text: "Ordered Friday evening, arrived Monday morning, ice pack still cold. Lyophilised cake was intact and the lot number matched the certificate exactly." },
+  { name: "James K., PhD candidate", text: "Independent third-party HPLC came back at 99.4% — bang on the label. Quality I can actually cite in my notes." },
+  { name: "Emma L.", text: "Discreet packaging, fast delivery and clear labelling. As a personal-use buyer I appreciate how transparent the batch testing is." },
+  { name: "Tom R., Lab Manager", text: "We've standardised on Pondok for our peptide work. Consistent purity batch-to-batch and the cold-chain shipping is genuinely well thought out." },
+  { name: "Priya S., Researcher", text: "Every vial ships with a COA that actually means something. Customer service answered a technical solubility question within the hour." },
+  { name: "Mark D.", text: "Switched from a US supplier — half the lead time, no customs headaches, and the purity reports are more detailed. Won't go back." },
+  { name: "Hannah W., Postdoc", text: "Support team is excellent. Asked about storage stability and got a proper, sourced answer — not a copy-paste reply." },
+  { name: "Liam C.", text: "Whether it's for the lab bench or personal research interest, the quality and turnaround are unmatched. Reordered four times now." },
 ];
 
 
