@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { User, Menu } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/logo-pendulum-peptides.png";
+
 import { CartDrawer } from "@/components/CartDrawer";
 
 const nav = [
