@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { User, Menu } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/logo-pendulum-peptides.png";
+
 import { CartDrawer } from "@/components/CartDrawer";
 
 const nav = [
@@ -21,8 +21,10 @@ export function SiteHeader() {
         14,500+ satisfied customers · FREE UK Shipping
       </div>
       <div className="container-x flex items-center justify-between py-4">
-        <Link to="/" aria-label="Pendulum Peptides home" className="flex items-center">
-          <img src={logo} alt="Pendulum Peptides" className="h-9 md:h-10 w-auto" />
+        <Link to="/" aria-label="Pondok Peptides home" className="flex items-center">
+          <span className="font-display font-semibold text-ink text-2xl md:text-3xl lg:text-4xl tracking-tight">
+            Pondok Peptides
+          </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
           {nav.map(n => (
