@@ -5,7 +5,7 @@ export function SiteFooter() {
     <footer className="bg-ink text-background mt-24">
       <div className="container-x py-16 grid gap-10 md:grid-cols-4">
         <div>
-          <div className="font-display text-2xl font-semibold mb-3">Pendulum Peptides</div>
+          <div className="font-display text-2xl font-semibold mb-3">Pondok Peptides</div>
           <p className="text-sm text-background/70 leading-relaxed">
             Advanced peptide research compounds. UK-manufactured. Tested to exacting standards.
           </p>
