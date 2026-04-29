@@ -17,8 +17,12 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
-      <div className="bg-primary text-primary-foreground text-center text-xs md:text-sm py-2 tracking-wide">
-        14,500+ satisfied customers · FREE UK Shipping
+      <div className="bg-primary text-primary-foreground text-xs md:text-sm py-2 tracking-wide overflow-hidden">
+        <div className="flex marquee whitespace-nowrap">
+          {Array.from({ length: 8 }).map((_, i) => (
+            <span key={i} className="mx-8 shrink-0">14,500+ satisfied customers · FREE UK Shipping</span>
+          ))}
+        </div>
       </div>
       <div className="container-x flex items-center justify-between py-4">
         <Link to="/" aria-label="Pondok Peptides home" className="flex items-center">
