@@ -20,7 +20,7 @@ export function SiteHeader() {
       <div className="bg-primary text-primary-foreground text-xs md:text-sm py-2 tracking-wide overflow-hidden">
         <div className="flex marquee whitespace-nowrap">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="mx-8 shrink-0">14,500+ satisfied customers · FREE UK Shipping</span>
+            <span key={i} className="mx-8 shrink-0">FOR RESEARCH USE ONLY · NOT FOR HUMAN CONSUMPTION · 14,500+ satisfied customers · FREE UK Shipping</span>
           ))}
         </div>
       </div>

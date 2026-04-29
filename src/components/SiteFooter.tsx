@@ -3,11 +3,16 @@ import { Link } from "@tanstack/react-router";
 export function SiteFooter() {
   return (
     <footer className="bg-ink text-background mt-24">
+      <div className="bg-primary/10 border-y border-background/10">
+        <div className="container-x py-4 text-center text-xs md:text-sm text-background/80 uppercase tracking-[0.2em]">
+          For Research Use Only · Not For Human Consumption
+        </div>
+      </div>
       <div className="container-x py-16 grid gap-10 md:grid-cols-4">
         <div>
           <div className="font-display text-2xl font-semibold mb-3">Pondok Peptides</div>
           <p className="text-sm text-background/70 leading-relaxed">
-            Advanced peptide research compounds. UK-manufactured. Tested to exacting standards.
+            Advanced peptide research compounds for laboratory use only. UK-manufactured. Tested to exacting standards. Not intended for human or veterinary use.
           </p>
         </div>
         <div>
@@ -38,7 +43,7 @@ export function SiteFooter() {
       <div className="border-t border-background/10">
         <div className="container-x py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-background/50">
           <p>© {new Date().getFullYear()} PeptiX Ltd. All rights reserved.</p>
-          <p>These statements have not been evaluated by the MHRA. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
+          <p>All products are sold strictly for in-vitro laboratory research purposes only. Not for human consumption, ingestion, injection, or use in food, drugs, cosmetics, or household products. These statements have not been evaluated by the MHRA. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
         </div>
       </div>
     </footer>
