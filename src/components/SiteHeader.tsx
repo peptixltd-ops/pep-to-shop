@@ -25,9 +25,12 @@ export function SiteHeader() {
         </div>
       </div>
       <div className="container-x flex items-center justify-between py-4">
-        <Link to="/" aria-label="Pondok Peptides home" className="flex items-center">
-          <span className="font-display font-semibold text-primary text-xl md:text-2xl lg:text-[1.75rem] tracking-tight">
-            Pondok Peptides
+        <Link to="/" aria-label="Pondok Peptides home" className="flex items-baseline gap-2">
+          <span className="font-display font-semibold text-primary text-2xl md:text-[1.6rem] lg:text-[1.8rem] tracking-[-0.03em] leading-none">
+            Pondok
+          </span>
+          <span className="hidden sm:inline font-mono text-[0.6rem] uppercase tracking-[0.25em] text-foreground/50">
+            Peptides
           </span>
         </Link>
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
