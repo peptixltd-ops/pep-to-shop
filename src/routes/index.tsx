@@ -11,9 +11,9 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/com
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PeptiX — Unlock More | Premium Recovery & Performance Supplements" },
+      { title: "Pondok — Unlock More | Premium Recovery & Performance Supplements" },
       { name: "description", content: "UK-made recovery, performance and daily wellness supplements. Tested for purity. Trusted by 14,500+ customers." },
-      { property: "og:title", content: "PeptiX — Unlock More" },
+      { property: "og:title", content: "Pondok — Unlock More" },
       { property: "og:description", content: "Premium recovery & performance supplements made in the UK." },
     ],
   }),
@@ -55,7 +55,7 @@ const faqTabs = {
     { q: "Do you make medical claims?", a: "No. Our peptides are research compounds and are not intended to diagnose, treat, cure or prevent any disease." },
   ],
   "Support": [
-    { q: "How do I contact you?", a: "Email hello@peptix.co or use the contact form. We reply within 4 working hours." },
+    { q: "How do I contact you?", a: "Email hello@pondok.co or use the contact form. We reply within 4 working hours." },
     { q: "Do you offer subscriptions?", a: "Yes — save 15% on recurring monthly deliveries. Cancel or pause anytime." },
   ],
 } as const;
@@ -197,11 +197,11 @@ function HomePage() {
 
       {/* ABOUT */}
       <section className="container-x py-20 md:py-28 text-center">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">About PeptiX</p>
+        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">About Pondok</p>
         <h2 className="font-display text-4xl md:text-5xl text-ink max-w-3xl mx-auto leading-tight">Committed To Precision. Built On Trust.</h2>
         <p className="mt-5 text-muted-foreground max-w-xl mx-auto">High quality peptides supplied with consistency, control and uncompromising standards.</p>
         <div className="mt-12 max-w-3xl mx-auto text-left text-foreground/80 space-y-4">
-          <p>At PeptiX, we supply <strong>premium peptides</strong> with a focus on purity, consistency and reliability.</p>
+          <p>At Pondok, we supply <strong>premium peptides</strong> with a focus on purity, consistency and reliability.</p>
           <p>Every peptide is handled with <strong>precision</strong> — from sourcing to delivery — ensuring dependable standards at every stage.</p>
         </div>
       </section>
@@ -209,7 +209,7 @@ function HomePage() {
 
       {/* CONTROLLED VERIFIED RELIABLE */}
       <section className="grid lg:grid-cols-2">
-        <img src={bottlesImg} alt="Cluster of clear glass PeptiX research peptide vials in a sterile pharmaceutical laboratory" loading="lazy" width={1280} height={896} className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto" />
+        <img src={bottlesImg} alt="Cluster of clear glass Pondok research peptide vials in a sterile pharmaceutical laboratory" loading="lazy" width={1280} height={896} className="w-full h-full object-cover aspect-[4/3] lg:aspect-auto" />
         <div className="bg-mist p-10 lg:p-20 flex flex-col justify-center">
           <h2 className="font-display text-3xl md:text-4xl text-ink mb-5">Controlled. Verified. Reliable.</h2>
           <ul className="space-y-3">
@@ -226,7 +226,7 @@ function HomePage() {
       {/* STATS */}
       <section className="container-x py-20 md:py-28 text-center">
         <h2 className="font-display text-3xl md:text-4xl text-ink">Built For Long-Term Reliability</h2>
-        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">PeptiX is designed to be a dependable supplier — focused on consistency, professionalism and trust.</p>
+        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Pondok is designed to be a dependable supplier — focused on consistency, professionalism and trust.</p>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-b border-border py-10 max-w-4xl mx-auto">
           {[["≥99%", "Purity"], ["Quality", "Tested"], ["UK-Based", "Supplier"], ["Next Day", "Delivery"]].map(([k, v]) => (
             <div key={v}>

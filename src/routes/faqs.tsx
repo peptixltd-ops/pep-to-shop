@@ -5,9 +5,9 @@ import { Plus } from "lucide-react";
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
-      { title: "FAQs — PeptiX" },
-      { name: "description", content: "Answers to common questions about PeptiX orders, products, payments and compliance." },
-      { property: "og:title", content: "FAQs — PeptiX" },
+      { title: "FAQs — Pondok" },
+      { name: "description", content: "Answers to common questions about Pondok orders, products, payments and compliance." },
+      { property: "og:title", content: "FAQs — Pondok" },
       { property: "og:description", content: "Common questions about orders, products, payments and compliance." },
     ],
   }),
@@ -37,7 +37,7 @@ const faqTabs = {
     { q: "Do you make medical claims?", a: "No. Products are food supplements and not intended to diagnose, treat, cure or prevent disease." },
   ],
   "Support": [
-    { q: "How do I contact you?", a: "Email hello@peptix.co or use the contact form. We reply within 4 working hours." },
+    { q: "How do I contact you?", a: "Email hello@pondok.co or use the contact form. We reply within 4 working hours." },
     { q: "Returns?", a: "Unopened products can be returned within 30 days for a full refund." },
   ],
 } as const;
