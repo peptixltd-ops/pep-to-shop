@@ -115,7 +115,7 @@ function HomePage() {
                 <span className="italic text-primary">Medical Grade</span><br />Research Peptides.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                3rd Party Tested — Pure Peptides for laboratory research only. Not for human consumption, in vivo use, or therapeutic application. Trusted by over 10,000 researchers.
+                3rd Party Tested — Pure Peptides. Trusted by over 10,000 customers.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/shop" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 transition">
