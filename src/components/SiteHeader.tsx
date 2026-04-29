@@ -29,7 +29,7 @@ export function SiteHeader() {
           <span className="font-display font-semibold text-primary text-2xl md:text-[1.6rem] lg:text-[1.8rem] tracking-[-0.03em] leading-none">
             Pondok
           </span>
-          <span className="hidden sm:inline font-mono text-[0.6rem] uppercase tracking-[0.25em] text-foreground/50">
+          <span className="font-mono text-[0.6rem] uppercase tracking-[0.25em] text-foreground/50">
             Peptides
           </span>
         </Link>
