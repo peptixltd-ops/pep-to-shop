@@ -14,15 +14,15 @@ export const Route = createFileRoute("/reviews")({
 });
 
 const all = [
-  { name: "Dr. Sarah M.", text: "Best UK supplier I've used. Consistent quality across batches and support responds in hours.", product: "Marine Collagen" },
-  { name: "Alex P.", text: "Ordered the recovery stack. Arrived next day, beautifully packaged.", product: "Recovery Protein" },
-  { name: "James K.", text: "Excellent quality and fast delivery. Will definitely reorder.", product: "Creatine Monohydrate" },
-  { name: "Priya S.", text: "Magnesium glycinate has become part of my evening routine. Sleep noticeably better.", product: "Magnesium Glycinate" },
-  { name: "Tom H.", text: "Electrolyte blend is the cleanest tasting one I've tried. No artificial sweetness.", product: "Electrolyte Blend" },
-  { name: "Mia R.", text: "Customer service replied within an hour on a Saturday. Genuinely impressive.", product: "Vitamin D3+K2" },
-  { name: "Daniel O.", text: "Packaging is premium without feeling wasteful. Quality from start to finish.", product: "Omega-3" },
-  { name: "Sophie L.", text: "Ashwagandha helped me through a stressful work period. Subtle but real difference.", product: "Ashwagandha" },
-  { name: "Marcus B.", text: "Reordered three times now. Consistent product, consistent delivery.", product: "Creatine Monohydrate" },
+  { name: "Dr. Sarah M.", text: "Easily the most reliable UK supplier we've used in the lab. Purity matches the COA every time and reconstitution is clean — no cloudiness, no residue.", product: "Retatrutide 10mg" },
+  { name: "Alex P., Research Tech", text: "Ordered Friday evening, arrived Monday morning, ice pack still cold. Lyophilised cake intact and the lot number matched the certificate exactly.", product: "BPC-157 5mg" },
+  { name: "James K., PhD candidate", text: "Independent third-party HPLC came back at 99.4% — bang on the label. Quality I can actually cite in my notes.", product: "Tirzepatide 15mg" },
+  { name: "Priya S., Researcher", text: "Every vial ships with a COA that actually means something. Support answered a technical solubility question within the hour.", product: "GHK-Cu 50mg" },
+  { name: "Tom H., Lab Manager", text: "We've standardised on Pondok for our peptide work. Consistent purity batch-to-batch and the cold-chain shipping is genuinely well thought out.", product: "Semaglutide 5mg" },
+  { name: "Mia R.", text: "Discreet packaging, fast delivery and clear labelling. As a personal-use buyer I appreciate how transparent the batch testing is.", product: "NAD+ 500mg" },
+  { name: "Daniel O., Postdoc", text: "Packaging is premium without being wasteful. Vials are well-sealed and the documentation is thorough — exactly what we need for record-keeping.", product: "TB-500 5mg" },
+  { name: "Sophie L.", text: "Customer service replied within an hour on a Saturday. Honest, knowledgeable answers — not scripted replies.", product: "Ipamorelin 5mg" },
+  { name: "Marcus B., Researcher", text: "Reordered four times now. Consistent purity, consistent delivery, consistent paperwork. Hard to find that combination.", product: "MOTS-C 10mg" },
 ];
 
 function ReviewsPage() {
