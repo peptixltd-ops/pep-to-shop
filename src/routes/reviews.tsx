@@ -4,10 +4,10 @@ import { Star } from "lucide-react";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Customer Reviews — PeptiX" },
-      { name: "description", content: "Read verified reviews from PeptiX customers across the UK." },
-      { property: "og:title", content: "Customer Reviews — PeptiX" },
-      { property: "og:description", content: "Verified reviews from thousands of PeptiX customers." },
+      { title: "Customer Reviews — Pondok" },
+      { name: "description", content: "Read verified reviews from Pondok customers across the UK." },
+      { property: "og:title", content: "Customer Reviews — Pondok" },
+      { property: "og:description", content: "Verified reviews from thousands of Pondok customers." },
     ],
   }),
   component: ReviewsPage,

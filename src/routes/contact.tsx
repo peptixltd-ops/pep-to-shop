@@ -5,9 +5,9 @@ import { useState } from "react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — PeptiX" },
-      { name: "description", content: "Get in touch with the PeptiX team. We respond within 4 working hours." },
-      { property: "og:title", content: "Contact PeptiX" },
+      { title: "Contact — Pondok" },
+      { name: "description", content: "Get in touch with the Pondok team. We respond within 4 working hours." },
+      { property: "og:title", content: "Contact Pondok" },
       { property: "og:description", content: "Get in touch — we respond within 4 working hours." },
     ],
   }),
@@ -26,7 +26,7 @@ function ContactPage() {
       <div className="grid lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
         <div className="space-y-6">
           {[
-            { icon: Mail, t: "Email", d: "hello@peptix.co" },
+            { icon: Mail, t: "Email", d: "hello@pondok.co" },
             { icon: MessageCircle, t: "Live chat", d: "Mon–Fri, 9am–6pm GMT" },
             { icon: MapPin, t: "Office", d: "London, United Kingdom" },
           ].map(({ icon: Icon, t, d }) => (

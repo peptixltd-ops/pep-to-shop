@@ -6,10 +6,10 @@ import { Loader2 } from "lucide-react";
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop All — PeptiX" },
-      { name: "description", content: "Browse PeptiX's full range of products." },
-      { property: "og:title", content: "Shop All — PeptiX" },
-      { property: "og:description", content: "Premium products from PeptiX." },
+      { title: "Shop All — Pondok" },
+      { name: "description", content: "Browse Pondok's full range of products." },
+      { property: "og:title", content: "Shop All — Pondok" },
+      { property: "og:description", content: "Premium products from Pondok." },
     ],
   }),
   component: ShopPage,
