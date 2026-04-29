@@ -5,9 +5,9 @@ import { products } from "@/data/products";
 export const Route = createFileRoute("/routine")({
   head: () => ({
     meta: [
-      { title: "Routine Builder — Pondok" },
-      { name: "description", content: "Answer 3 questions and we'll suggest a tailored Pondok supplement routine." },
-      { property: "og:title", content: "Routine Builder — Pondok" },
+      { title: "Routine Builder — Pondok Peptides" },
+      { name: "description", content: "Answer 3 questions and we'll suggest a tailored Pondok Peptides supplement routine." },
+      { property: "og:title", content: "Routine Builder — Pondok Peptides" },
       { property: "og:description", content: "Build a tailored supplement routine in 3 steps." },
     ],
   }),

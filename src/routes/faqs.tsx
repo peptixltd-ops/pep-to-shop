@@ -5,9 +5,9 @@ import { Plus } from "lucide-react";
 export const Route = createFileRoute("/faqs")({
   head: () => ({
     meta: [
-      { title: "FAQs — Pondok" },
-      { name: "description", content: "Answers to common questions about Pondok orders, products, payments and compliance." },
-      { property: "og:title", content: "FAQs — Pondok" },
+      { title: "FAQs — Pondok Peptides" },
+      { name: "description", content: "Answers to common questions about Pondok Peptides orders, products, payments and compliance." },
+      { property: "og:title", content: "FAQs — Pondok Peptides" },
       { property: "og:description", content: "Common questions about orders, products, payments and compliance." },
     ],
   }),
