@@ -43,7 +43,7 @@ export function SiteFooter() {
       <div className="border-t border-background/10">
         <div className="container-x py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-background/50">
           <p>© {new Date().getFullYear()} PeptiX Ltd. All rights reserved.</p>
-          <p>These statements have not been evaluated by the MHRA. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
+          <p>All products are sold strictly for in-vitro laboratory research purposes only. Not for human consumption, ingestion, injection, or use in food, drugs, cosmetics, or household products. These statements have not been evaluated by the MHRA. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
         </div>
       </div>
     </footer>
