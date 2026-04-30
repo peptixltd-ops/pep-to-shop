@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Loader2, ArrowLeft } from "lucide-react";
 import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { useCartStore } from "@/stores/cartStore";
-import { formatPrice } from "@/lib/shopify";
+import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/product/$handle")({
@@ -32,7 +32,7 @@ function ProductPage() {
 
   const variants = product.variants.edges.map((e) => e.node);
   const selectedVariant = variants.find((v) => v.id === variantId) || variants[0];
-  const images = product.images.edges;
+  const images = getSortedProductImageEdges(product.images.edges);
 
   const handleAdd = async () => {
     if (!selectedVariant) return;

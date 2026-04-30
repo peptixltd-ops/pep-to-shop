@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Loader2 } from "lucide-react";
 import bottle from "@/assets/product-bottle.jpg";
 import type { ShopifyProduct } from "@/lib/shopify";
-import { formatPrice } from "@/lib/shopify";
+import { formatPrice, getPrimaryProductImage } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 
@@ -13,7 +13,7 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
   const [adding, setAdding] = useState(false);
 
   const node = product.node;
-  const image = node.images.edges[0]?.node;
+  const image = getPrimaryProductImage(node);
   const variant = node.variants.edges[0]?.node;
   const price = node.priceRange.minVariantPrice;
 

@@ -32,6 +32,31 @@ export interface ShopifyProduct {
   };
 }
 
+type ShopifyImageEdge = ShopifyProduct["node"]["images"]["edges"][number];
+
+function getProductImageScore(image: ShopifyImageEdge["node"]) {
+  const text = `${image.url} ${image.altText ?? ""}`.toLowerCase();
+  let score = 0;
+
+  if (["vial", "bottle", "mockup", "packshot", "product"].some((token) => text.includes(token))) {
+    score += 2;
+  }
+
+  if (["label", "flat", "sticker", "artwork"].some((token) => text.includes(token))) {
+    score -= 3;
+  }
+
+  return score;
+}
+
+export function getSortedProductImageEdges(images: ShopifyProduct["node"]["images"]["edges"] = []) {
+  return [...images].sort((a, b) => getProductImageScore(b.node) - getProductImageScore(a.node));
+}
+
+export function getPrimaryProductImage(product: Pick<ShopifyProduct["node"], "images">) {
+  return getSortedProductImageEdges(product.images.edges)[0]?.node ?? null;
+}
+
 export const PRODUCTS_QUERY = `
   query GetProducts($first: Int!, $query: String) {
     products(first: $first, query: $query) {
