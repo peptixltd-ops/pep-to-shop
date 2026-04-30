@@ -85,8 +85,7 @@ function ProductPage() {
   const molecularWeight = specs["Molecular Weight"] || specs["MW"];
   const sequence = specs["Sequence"] || specs["Peptide Sequence"];
   const cas = specs["CAS"] || specs["CAS Number"];
-  const sku = selectedVariant?.selectedOptions?.find(() => false) ? undefined : undefined;
-  const variantSku = (selectedVariant as unknown as { sku?: string })?.sku;
+  const variantSku = selectedVariant?.sku ?? undefined;
 
   // Strip the parsed "Key: value" lines out of the description for the prose block
   const descriptionProse = (product.description || "")
