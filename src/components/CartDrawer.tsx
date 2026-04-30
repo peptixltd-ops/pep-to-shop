@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ShoppingBag, Minus, Plus, Trash2, Loader2, ExternalLink } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
-import { formatPrice } from "@/lib/shopify";
+import { formatPrice, getPrimaryProductImage } from "@/lib/shopify";
 
 export function CartDrawer() {
   const [open, setOpen] = useState(false);
@@ -54,7 +54,7 @@ export function CartDrawer() {
             <>
               <div className="flex-1 overflow-y-auto pr-2 min-h-0 space-y-4">
                 {items.map((item) => {
-                  const img = item.product.node.images.edges[0]?.node;
+                  const img = getPrimaryProductImage(item.product.node);
                   return (
                     <div key={item.variantId} className="flex gap-3 pb-4 border-b border-border">
                       <div className="w-16 h-16 bg-mist overflow-hidden flex-shrink-0">
