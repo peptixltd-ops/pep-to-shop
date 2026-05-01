@@ -149,11 +149,13 @@ function ProductPage() {
   const variantSku = selectedVariant?.sku ?? undefined;
 
   // Strip the parsed "Key: value" lines out of the description for the prose block
-  const descriptionProse = (product.description || "")
-    .split(/\r?\n+/)
-    .filter((line) => !/^[A-Z][A-Za-z0-9 /()\-]{2,40}:\s*.+/.test(line.trim()))
-    .join("\n")
-    .trim();
+  const descriptionProse = rewordDescription(
+    (product.description || "")
+      .split(/\r?\n+/)
+      .filter((line) => !/^[A-Z][A-Za-z0-9 /()\-]{2,40}:\s*.+/.test(line.trim()))
+      .join("\n")
+      .trim()
+  );
 
   return (
     <div className="container-x py-10 md:py-14">
