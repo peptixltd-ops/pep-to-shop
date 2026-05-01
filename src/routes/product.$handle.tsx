@@ -196,7 +196,7 @@ function ProductPage() {
           </ul>
 
           {/* Variants */}
-          {variants.length > 1 && (
+          {variants.length >= 1 && !(variants.length === 1 && variants[0].title === "Default Title") && (
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Variant</p>
               <div className="flex flex-wrap gap-2">
