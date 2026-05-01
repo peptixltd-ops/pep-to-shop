@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
 
 const reviews = [
   { name: "Dr. Sarah M.", text: "Easily the most reliable UK supplier we've used in the lab. Purity matches the COA every time and reconstitution is clean — no cloudiness, no residue." },
-  { name: "Alex P., Research Tech", text: "Ordered Friday evening, arrived Monday morning, ice pack still cold. Lyophilised cake was intact and the lot number matched the certificate exactly." },
+  { name: "Alex P., Research Tech", text: "Ordered Friday evening, arrived Monday morning in discreet, secure packaging. Lyophilised cake was intact and the lot number matched the certificate exactly." },
   { name: "James K., PhD candidate", text: "Independent third-party HPLC came back at 99.4% — bang on the label. Quality I can actually cite in my notes." },
   { name: "Emma L.", text: "Discreet packaging, fast delivery and clear labelling. As a personal-use buyer I appreciate how transparent the batch testing is." },
   { name: "Tom R., Lab Manager", text: "We've standardised on Pondok Peptides for our peptide work. Consistent purity batch-to-batch and the cold-chain shipping is genuinely well thought out." },
