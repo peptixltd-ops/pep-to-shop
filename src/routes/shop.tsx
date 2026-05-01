@@ -28,16 +28,17 @@ const PRIORITY_ORDER = [
   "nad",
   "bpc-157-tb-500-mix",
   "ipamorelin",
-  // Remaining
+  // Row 3
+  "selank",
   "semaglutide",
-  "tb-500",
   "tesamorelin",
+  "klow",
+  // Remaining
+  "tb-500",
   "igf-lr3",
   "cagrilintide",
-  "klow",
   "ss-31",
   "pt-141",
-  "selank",
   "semax",
 ];
 
