@@ -15,10 +15,10 @@ export const Route = createFileRoute("/reviews")({
 
 const all = [
   { name: "Dr. Sarah M.", text: "Easily the most reliable UK supplier we've used in the lab. Purity matches the COA every time and reconstitution is clean — no cloudiness, no residue.", product: "Retatrutide 10mg" },
-  { name: "Alex P., Research Tech", text: "Ordered Friday evening, arrived Monday morning, ice pack still cold. Lyophilised cake intact and the lot number matched the certificate exactly.", product: "BPC-157 5mg" },
+  { name: "Alex P., Research Tech", text: "Ordered Friday evening, arrived Monday morning in discreet, secure packaging. Lyophilised cake was intact and the lot number matched the certificate exactly.", product: "BPC-157 5mg" },
   { name: "James K., PhD candidate", text: "Independent third-party HPLC came back at 99.4% — bang on the label. Quality I can actually cite in my notes.", product: "Tirzepatide 15mg" },
   { name: "Priya S., Researcher", text: "Every vial ships with a COA that actually means something. Support answered a technical solubility question within the hour.", product: "GHK-Cu 50mg" },
-  { name: "Tom H., Lab Manager", text: "We've standardised on Pondok Peptides for our peptide work. Consistent purity batch-to-batch and the cold-chain shipping is genuinely well thought out.", product: "Semaglutide 5mg" },
+  { name: "Tom R., Lab Manager", text: "We've standardised on Pondok Peptides for our peptide work. Consistent purity batch-to-batch and the packaging arrives secure and well presented every time.", product: "Semaglutide 5mg" },
   { name: "Mia R.", text: "Discreet packaging, fast delivery and clear labelling. As a personal-use buyer I appreciate how transparent the batch testing is.", product: "NAD+ 500mg" },
   { name: "Daniel O., Postdoc", text: "Packaging is premium without being wasteful. Vials are well-sealed and the documentation is thorough — exactly what we need for record-keeping.", product: "TB-500 5mg" },
   { name: "Sophie L.", text: "Customer service replied within an hour on a Saturday. Honest, knowledgeable answers — not scripted replies.", product: "Ipamorelin 5mg" },
