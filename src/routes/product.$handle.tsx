@@ -20,6 +20,9 @@ import motsCCoaPreview2 from "@/assets/coa/mots-c-coa-preview-2.png";
 import selankCoaPdf from "@/assets/coa/selank-coa.pdf?url";
 import selankCoaPreview1 from "@/assets/coa/selank-coa-preview-1.png";
 import selankCoaPreview2 from "@/assets/coa/selank-coa-preview-2.png";
+import semaxCoaPdf from "@/assets/coa/semax-coa.pdf?url";
+import semaxCoaPreview1 from "@/assets/coa/semax-coa-preview-1.png";
+import semaxCoaPreview2 from "@/assets/coa/semax-coa-preview-2.png";
 
 const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: string; preview2: string }> = {
   "ghk-cu": {
