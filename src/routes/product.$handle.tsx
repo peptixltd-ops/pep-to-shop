@@ -10,6 +10,67 @@ export const Route = createFileRoute("/product/$handle")({
   component: ProductPage,
 });
 
+// Light rewording pass so descriptions don't read as verbatim copy from another site.
+// Whole-word, case-insensitive swaps that preserve meaning.
+const REWORD_MAP: Array<[RegExp, string]> = [
+  [/\bis a\b/gi, "is an investigational"],
+  [/\bis an\b/gi, "is an investigational"],
+  [/\bresearch peptide\b/gi, "research-grade peptide"],
+  [/\bsynthetic peptide\b/gi, "lab-synthesised peptide"],
+  [/\bhas been shown to\b/gi, "has been observed to"],
+  [/\bshown to\b/gi, "observed to"],
+  [/\bstudies have shown\b/gi, "studies suggest"],
+  [/\bstudies suggest\b/gi, "current research indicates"],
+  [/\bresearch suggests\b/gi, "current findings indicate"],
+  [/\bit is\b/gi, "it is currently"],
+  [/\bcommonly used\b/gi, "frequently utilised"],
+  [/\bwidely used\b/gi, "broadly utilised"],
+  [/\bused in\b/gi, "applied in"],
+  [/\butilized\b/gi, "utilised"],
+  [/\bplays a key role\b/gi, "performs a central function"],
+  [/\bplays a role\b/gi, "contributes a function"],
+  [/\bknown for\b/gi, "recognised for"],
+  [/\bknown to\b/gi, "recognised to"],
+  [/\bhelps to\b/gi, "may assist in"],
+  [/\bhelps\b/gi, "may support"],
+  [/\bcan help\b/gi, "may support"],
+  [/\bsupports\b/gi, "may support"],
+  [/\bpromotes\b/gi, "may promote"],
+  [/\benhances\b/gi, "may enhance"],
+  [/\bimproves\b/gi, "may improve"],
+  [/\bincreases\b/gi, "may increase"],
+  [/\breduces\b/gi, "may reduce"],
+  [/\bregulates\b/gi, "may regulate"],
+  [/\bstimulates\b/gi, "may stimulate"],
+  [/\bderived from\b/gi, "originating from"],
+  [/\bcomposed of\b/gi, "made up of"],
+  [/\bconsists of\b/gi, "is comprised of"],
+  [/\bnaturally occurring\b/gi, "naturally present"],
+  [/\bin the body\b/gi, "within biological systems"],
+  [/\bin the human body\b/gi, "within the human system"],
+  [/\bamino acids\b/gi, "amino-acid residues"],
+  [/\bpotential benefits\b/gi, "potential effects of interest"],
+  [/\bbenefits\b/gi, "potential effects"],
+  [/\beffects\b/gi, "outcomes"],
+  [/\bmechanism of action\b/gi, "mode of activity"],
+  [/\bovers?all\b/gi, "in summary"],
+  [/\bin conclusion\b/gi, "to summarise"],
+  [/\bfor research purposes only\b/gi, "intended exclusively for laboratory research"],
+  [/\bfor research use only\b/gi, "intended exclusively for laboratory research"],
+  [/\bnot for human consumption\b/gi, "not intended for human use"],
+];
+
+function rewordDescription(text: string) {
+  if (!text) return text;
+  let out = text;
+  for (const [pattern, replacement] of REWORD_MAP) {
+    out = out.replace(pattern, replacement);
+  }
+  // Collapse any double "currently currently" / "may may" artefacts from overlapping rules.
+  out = out.replace(/\b(\w+) \1\b/gi, "$1");
+  return out;
+}
+
 // Try to pull structured "key: value" lines out of the Shopify description
 function parseSpecs(description: string) {
   const specs: Record<string, string> = {};
