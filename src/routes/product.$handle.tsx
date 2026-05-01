@@ -111,10 +111,11 @@ function ProductPage() {
       <div className="mt-8 max-w-4xl mx-auto bg-mist border border-border rounded-md p-5 text-center text-sm leading-relaxed">
         <p className="font-medium text-ink mb-1">Research Handling Note:</p>
         <p className="text-foreground/80">
-          For best results in a research setting, allow both the peptide and chosen solvent to reach{" "}
-          <strong>ambient laboratory temperature</strong> before reconstitution. This helps maintain
-          structural integrity during dissolution.{" "}
-          <em className="text-muted-foreground">*Reconstitution solutions are supplied separately.</em>
+          To achieve optimal results in your research, we recommend bringing both the peptide and
+          your selected solvent to{" "}
+          <strong>standard laboratory room temperature</strong> prior to reconstitution. Doing so
+          helps preserve the compound's structural integrity throughout the dissolution process.{" "}
+          <em className="text-muted-foreground">*Please note: reconstitution solutions are sold separately.</em>
         </p>
       </div>
 
