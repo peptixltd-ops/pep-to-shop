@@ -333,7 +333,7 @@ function ProductPage() {
           {descriptionProse ? (
             <p className="whitespace-pre-line text-foreground/80 leading-relaxed">{descriptionProse}</p>
           ) : (
-            <p className="text-foreground/80 leading-relaxed">{product.description}</p>
+            <p className="text-foreground/80 leading-relaxed">{rewordDescription(product.description)}</p>
           )}
 
           {(purity || form || storage || molecularFormula || molecularWeight || sequence || cas) && (
