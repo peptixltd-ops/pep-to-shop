@@ -324,7 +324,7 @@ function ProductPage() {
 
             {handle === "ghk-cu" && (
               <a
-                href="/coa/ghk-cu-coa.pdf"
+                href={ghkCuCoaPdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition rounded text-sm uppercase tracking-wider"
