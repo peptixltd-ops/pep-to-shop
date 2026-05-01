@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck } from "lucide-react";
+import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText } from "lucide-react";
 import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
