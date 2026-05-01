@@ -27,7 +27,7 @@ const reviews = [
   { name: "Alex P., Research Tech", text: "Ordered Friday evening, arrived Monday morning in discreet, secure packaging. Lyophilised cake was intact and the lot number matched the certificate exactly." },
   { name: "James K., PhD candidate", text: "Independent third-party HPLC came back at 99.4% — bang on the label. Quality I can actually cite in my notes." },
   { name: "Emma L.", text: "Discreet packaging, fast delivery and clear labelling. As a personal-use buyer I appreciate how transparent the batch testing is." },
-  { name: "Tom R., Lab Manager", text: "We've standardised on Pondok Peptides for our peptide work. Consistent purity batch-to-batch and the cold-chain shipping is genuinely well thought out." },
+  { name: "Tom R., Lab Manager", text: "We've standardised on Pondok Peptides for our peptide work. Consistent purity batch-to-batch and the packaging arrives secure and well presented every time." },
   { name: "Priya S., Researcher", text: "Every vial ships with a COA that actually means something. Customer service answered a technical solubility question within the hour." },
   { name: "Mark D.", text: "Switched from a US supplier — half the lead time, no customs headaches, and the purity reports are more detailed. Won't go back." },
   { name: "Hannah W., Postdoc", text: "Support team is excellent. Asked about storage stability and got a proper, sourced answer — not a copy-paste reply." },
