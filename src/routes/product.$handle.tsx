@@ -6,6 +6,7 @@ import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
 import { toast } from "sonner";
 import ghkCuCoaPdf from "@/assets/coa/ghk-cu-coa.pdf?url";
+import ghkCuCoaPreview from "@/assets/coa/ghk-cu-coa-preview-1.png";
 
 export const Route = createFileRoute("/product/$handle")({
   component: ProductPage,
@@ -356,11 +357,14 @@ function ProductPage() {
                          </button>
                        </div>
 
-                       <iframe
-                         src={ghkCuCoaPdf}
-                         title="GHK-Cu Certificate of Analysis"
-                         className="min-h-0 flex-1 bg-background"
-                       />
+                       <div className="min-h-0 flex-1 overflow-auto bg-muted/30 p-4">
+                         <img
+                           src={ghkCuCoaPreview}
+                           alt="GHK-Cu Certificate of Analysis preview"
+                           className="mx-auto h-auto w-full max-w-4xl rounded-sm border border-border bg-background shadow-sm"
+                           loading="lazy"
+                         />
+                       </div>
 
                        <div className="flex items-center justify-between border-t border-border px-4 py-3">
                          <p className="text-xs text-muted-foreground">If the preview does not load, open the file directly.</p>
