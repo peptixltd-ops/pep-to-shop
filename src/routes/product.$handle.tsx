@@ -154,9 +154,13 @@ function ProductPage() {
         {/* Buy box */}
         <div className="space-y-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">from</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              {selectedVariant ? selectedVariant.title : "from"}
+            </p>
             <p className="mt-1 text-4xl font-medium text-ink">
-              {formatPrice(product.priceRange.minVariantPrice.amount, product.priceRange.minVariantPrice.currencyCode)}
+              {selectedVariant
+                ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode)
+                : formatPrice(product.priceRange.minVariantPrice.amount, product.priceRange.minVariantPrice.currencyCode)}
             </p>
           </div>
 
