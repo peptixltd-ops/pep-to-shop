@@ -170,7 +170,7 @@ function HomePage() {
         ) : (
           <Carousel setApi={setProductsApi} opts={{ align: "start", loop: true }} className="w-full">
             <CarouselContent className="-ml-4">
-              {shopifyProducts.slice(0, 8).map(p => (
+              {sortedBestSellers.slice(0, 8).map(p => (
                 <CarouselItem key={p.node.id} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
                   <ProductCard product={p} />
                 </CarouselItem>
