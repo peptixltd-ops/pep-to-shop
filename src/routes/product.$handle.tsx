@@ -5,6 +5,7 @@ import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
 import { toast } from "sonner";
+import ghkCuCoaPdf from "@/assets/coa/ghk-cu-coa.pdf?url";
 
 export const Route = createFileRoute("/product/$handle")({
   component: ProductPage,
