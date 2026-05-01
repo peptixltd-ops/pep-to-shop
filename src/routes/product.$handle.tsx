@@ -6,7 +6,8 @@ import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
 import { toast } from "sonner";
 import ghkCuCoaPdf from "@/assets/coa/ghk-cu-coa.pdf?url";
-import ghkCuCoaPreview from "@/assets/coa/ghk-cu-coa-preview-1.png";
+import ghkCuCoaPreview1 from "@/assets/coa/ghk-cu-coa-preview-1.png";
+import ghkCuCoaPreview2 from "@/assets/coa/ghk-cu-coa-preview-2.png";
 
 export const Route = createFileRoute("/product/$handle")({
   component: ProductPage,
