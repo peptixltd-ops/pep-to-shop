@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ShopRouteImport } from './routes/shop'
-import { Route as RoutineRouteImport } from './routes/routine'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as ContactRouteImport } from './routes/contact'
@@ -21,11 +20,6 @@ import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RoutineRoute = RoutineRouteImport.update({
-  id: '/routine',
-  path: '/routine',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReviewsRoute = ReviewsRouteImport.update({
@@ -65,7 +59,6 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/reviews': typeof ReviewsRoute
-  '/routine': typeof RoutineRoute
   '/shop': typeof ShopRoute
   '/product/$handle': typeof ProductHandleRoute
 }
@@ -75,7 +68,6 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/reviews': typeof ReviewsRoute
-  '/routine': typeof RoutineRoute
   '/shop': typeof ShopRoute
   '/product/$handle': typeof ProductHandleRoute
 }
@@ -86,7 +78,6 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
   '/reviews': typeof ReviewsRoute
-  '/routine': typeof RoutineRoute
   '/shop': typeof ShopRoute
   '/product/$handle': typeof ProductHandleRoute
 }
@@ -98,7 +89,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/reviews'
-    | '/routine'
     | '/shop'
     | '/product/$handle'
   fileRoutesByTo: FileRoutesByTo
@@ -108,7 +98,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/reviews'
-    | '/routine'
     | '/shop'
     | '/product/$handle'
   id:
@@ -118,7 +107,6 @@ export interface FileRouteTypes {
     | '/contact'
     | '/faqs'
     | '/reviews'
-    | '/routine'
     | '/shop'
     | '/product/$handle'
   fileRoutesById: FileRoutesById
@@ -129,7 +117,6 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   FaqsRoute: typeof FaqsRoute
   ReviewsRoute: typeof ReviewsRoute
-  RoutineRoute: typeof RoutineRoute
   ShopRoute: typeof ShopRoute
   ProductHandleRoute: typeof ProductHandleRoute
 }
@@ -141,13 +128,6 @@ declare module '@tanstack/react-router' {
       path: '/shop'
       fullPath: '/shop'
       preLoaderRoute: typeof ShopRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/routine': {
-      id: '/routine'
-      path: '/routine'
-      fullPath: '/routine'
-      preLoaderRoute: typeof RoutineRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reviews': {
@@ -201,7 +181,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   FaqsRoute: FaqsRoute,
   ReviewsRoute: ReviewsRoute,
-  RoutineRoute: RoutineRoute,
   ShopRoute: ShopRoute,
   ProductHandleRoute: ProductHandleRoute,
 }
