@@ -6,7 +6,8 @@ import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
 import { toast } from "sonner";
 import ghkCuCoaPdf from "@/assets/coa/ghk-cu-coa.pdf?url";
-import ghkCuCoaPreview from "@/assets/coa/ghk-cu-coa-preview-1.png";
+import ghkCuCoaPreview1 from "@/assets/coa/ghk-cu-coa-preview-1.png";
+import ghkCuCoaPreview2 from "@/assets/coa/ghk-cu-coa-preview-2.png";
 
 export const Route = createFileRoute("/product/$handle")({
   component: ProductPage,
@@ -357,11 +358,17 @@ function ProductPage() {
                          </button>
                        </div>
 
-                       <div className="min-h-0 flex-1 overflow-auto bg-muted/30 p-4">
+                       <div className="min-h-0 flex-1 overflow-auto bg-muted/30 p-4 space-y-4">
                          <img
-                           src={ghkCuCoaPreview}
-                           alt="GHK-Cu Certificate of Analysis preview"
-                           className="mx-auto h-auto w-full max-w-4xl rounded-sm border border-border bg-background shadow-sm"
+                           src={ghkCuCoaPreview1}
+                           alt="GHK-Cu Certificate of Analysis — page 1"
+                           className="mx-auto h-auto w-full max-w-3xl rounded-sm border border-border bg-background shadow-sm"
+                           loading="lazy"
+                         />
+                         <img
+                           src={ghkCuCoaPreview2}
+                           alt="GHK-Cu Certificate of Analysis — page 2"
+                           className="mx-auto h-auto w-full max-w-3xl rounded-sm border border-border bg-background shadow-sm"
                            loading="lazy"
                          />
                        </div>
