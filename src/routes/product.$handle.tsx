@@ -55,6 +55,12 @@ const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: stri
     preview1: selankCoaPreview1,
     preview2: selankCoaPreview2,
   },
+  "semax": {
+    label: "Semax",
+    pdf: semaxCoaPdf,
+    preview1: semaxCoaPreview1,
+    preview2: semaxCoaPreview2,
+  },
 };
 
 export const Route = createFileRoute("/product/$handle")({
