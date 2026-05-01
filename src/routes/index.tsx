@@ -65,7 +65,26 @@ function HomePage() {
   const [openQ, setOpenQ] = useState<number | null>(0);
   const [reviewIdx, setReviewIdx] = useState(0);
   const [productsApi, setProductsApi] = useState<CarouselApi>();
-  const { products: shopifyProducts, loading: productsLoading } = useShopifyProducts(8);
+  const { products: shopifyProducts, loading: productsLoading } = useShopifyProducts(50);
+
+  const BEST_SELLER_ORDER = [
+    "retatrutide",
+    "ghk-cu",
+    "bpc-157-tb-500-mix",
+    "tirzepatide",
+    "nad",
+    "mots-c",
+    "ipamorelin",
+    "semaglutide",
+  ];
+  const sortedBestSellers = [...shopifyProducts].sort((a, b) => {
+    const ai = BEST_SELLER_ORDER.indexOf(a.node.handle);
+    const bi = BEST_SELLER_ORDER.indexOf(b.node.handle);
+    const aRank = ai === -1 ? Number.MAX_SAFE_INTEGER : ai;
+    const bRank = bi === -1 ? Number.MAX_SAFE_INTEGER : bi;
+    if (aRank !== bRank) return aRank - bRank;
+    return a.node.title.localeCompare(b.node.title);
+  });
 
   useEffect(() => {
     const id = setInterval(() => setReviewIdx(i => (i + 1) % reviews.length), 5000);
