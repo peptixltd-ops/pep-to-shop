@@ -319,6 +319,17 @@ function ProductPage() {
           <button className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition">
             <Heart className="size-4" /> Add to Wish List
           </button>
+
+          {handle === "ghk-cu" && (
+            <a
+              href="/coa/ghk-cu-coa.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition rounded text-sm uppercase tracking-wider w-fit"
+            >
+              <FileText className="size-4" /> Certificate of Analysis
+            </a>
+          )}
         </div>
       </div>
 
