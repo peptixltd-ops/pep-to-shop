@@ -18,24 +18,27 @@ export const Route = createFileRoute("/shop")({
 // Best-seller priority order by product handle. Anything not listed
 // falls to the end, sorted alphabetically by title.
 const PRIORITY_ORDER = [
+  // Row 1
   "retatrutide",
   "tirzepatide",
   "ghk-cu",
   "mots-c",
-  "semaglutide",
+  // Row 2
+  "bacteriostatic-water",
+  "nad",
   "bpc-157-tb-500-mix",
-  "tb-500",
   "ipamorelin",
+  // Remaining
+  "semaglutide",
+  "tb-500",
   "tesamorelin",
   "igf-lr3",
-  "nad",
   "cagrilintide",
   "klow",
   "ss-31",
   "pt-141",
   "selank",
   "semax",
-  "bacteriostatic-water",
 ];
 
 function ShopPage() {
