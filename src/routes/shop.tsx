@@ -15,8 +15,40 @@ export const Route = createFileRoute("/shop")({
   component: ShopPage,
 });
 
+// Best-seller priority order by product handle. Anything not listed
+// falls to the end, sorted alphabetically by title.
+const PRIORITY_ORDER = [
+  "retatrutide",
+  "tirzepatide",
+  "ghk-cu",
+  "mots-c",
+  "semaglutide",
+  "bpc-157-tb-500-mix",
+  "tb-500",
+  "ipamorelin",
+  "tesamorelin",
+  "igf-lr3",
+  "nad",
+  "cagrilintide",
+  "klow",
+  "ss-31",
+  "pt-141",
+  "selank",
+  "semax",
+  "bacteriostatic-water",
+];
+
 function ShopPage() {
   const { products, loading, error } = useShopifyProducts(50);
+
+  const sortedProducts = [...products].sort((a, b) => {
+    const ai = PRIORITY_ORDER.indexOf(a.node.handle);
+    const bi = PRIORITY_ORDER.indexOf(b.node.handle);
+    const aRank = ai === -1 ? Number.MAX_SAFE_INTEGER : ai;
+    const bRank = bi === -1 ? Number.MAX_SAFE_INTEGER : bi;
+    if (aRank !== bRank) return aRank - bRank;
+    return a.node.title.localeCompare(b.node.title);
+  });
 
   return (
     <div className="container-x py-16 md:py-20">
