@@ -28,6 +28,12 @@ const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: stri
     preview1: ipamorelinCoaPreview1,
     preview2: ipamorelinCoaPreview2,
   },
+  "nad": {
+    label: "NAD+",
+    pdf: nadCoaPdf,
+    preview1: nadCoaPreview1,
+    preview2: nadCoaPreview2,
+  },
 };
 
 export const Route = createFileRoute("/product/$handle")({
