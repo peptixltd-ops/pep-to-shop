@@ -46,6 +46,12 @@ const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: stri
     preview1: motsCCoaPreview1,
     preview2: motsCCoaPreview2,
   },
+  "selank": {
+    label: "Selank",
+    pdf: selankCoaPdf,
+    preview1: selankCoaPreview1,
+    preview2: selankCoaPreview2,
+  },
 };
 
 export const Route = createFileRoute("/product/$handle")({
