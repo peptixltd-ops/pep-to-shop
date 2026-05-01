@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText } from "lucide-react";
+import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText, X } from "lucide-react";
 import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
@@ -97,6 +97,7 @@ function ProductPage() {
   const [qty, setQty] = useState(1);
   const [adding, setAdding] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
+  const [isCoaOpen, setIsCoaOpen] = useState(false);
 
   const variants = product?.variants.edges.map((e) => e.node) ?? [];
   const selectedVariant = variants.find((v) => v.id === variantId) || variants[0];
@@ -322,16 +323,68 @@ function ProductPage() {
               <Heart className="size-4" /> Add to Wish List
             </button>
 
-            {handle === "ghk-cu" && (
-              <a
-                href={ghkCuCoaPdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition rounded text-sm uppercase tracking-wider"
-              >
-                <FileText className="size-4" /> Certificate of Analysis
-              </a>
-            )}
+             {handle === "ghk-cu" && (
+               <>
+                 <button
+                   type="button"
+                   onClick={() => setIsCoaOpen(true)}
+                   className="inline-flex items-center gap-2 px-5 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition rounded text-sm uppercase tracking-wider"
+                 >
+                   <FileText className="size-4" /> Certificate of Analysis
+                 </button>
+
+                 {isCoaOpen && (
+                   <div
+                     className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/60 px-4 py-6"
+                     role="dialog"
+                     aria-modal="true"
+                     aria-label="Certificate of Analysis"
+                   >
+                     <div className="relative flex h-[min(88vh,900px)] w-full max-w-5xl flex-col overflow-hidden rounded-md border border-border bg-background shadow-2xl">
+                       <div className="flex items-center justify-between border-b border-border px-4 py-3">
+                         <div>
+                           <p className="text-sm font-medium text-foreground">Certificate of Analysis</p>
+                           <p className="text-xs text-muted-foreground">GHK-Cu</p>
+                         </div>
+                         <button
+                           type="button"
+                           onClick={() => setIsCoaOpen(false)}
+                           className="inline-flex items-center justify-center rounded border border-border p-2 text-muted-foreground transition hover:text-foreground"
+                           aria-label="Close certificate preview"
+                         >
+                           <X className="size-4" />
+                         </button>
+                       </div>
+
+                       <iframe
+                         src={ghkCuCoaPdf}
+                         title="GHK-Cu Certificate of Analysis"
+                         className="min-h-0 flex-1 bg-background"
+                       />
+
+                       <div className="flex items-center justify-between border-t border-border px-4 py-3">
+                         <p className="text-xs text-muted-foreground">If the preview does not load, open the file directly.</p>
+                         <a
+                           href={ghkCuCoaPdf}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80"
+                         >
+                           <FileText className="size-4" /> Open PDF
+                         </a>
+                       </div>
+                     </div>
+
+                     <button
+                       type="button"
+                       onClick={() => setIsCoaOpen(false)}
+                       className="absolute inset-0 -z-10"
+                       aria-label="Close certificate preview overlay"
+                     />
+                   </div>
+                 )}
+               </>
+             )}
           </div>
         </div>
       </div>
