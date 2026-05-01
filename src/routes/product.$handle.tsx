@@ -5,6 +5,7 @@ import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
 import { toast } from "sonner";
+import ghkCuCoaPdf from "@/assets/coa/ghk-cu-coa.pdf?url";
 
 export const Route = createFileRoute("/product/$handle")({
   component: ProductPage,
@@ -323,7 +324,7 @@ function ProductPage() {
 
             {handle === "ghk-cu" && (
               <a
-                href="/coa/ghk-cu-coa.pdf"
+                href={ghkCuCoaPdf}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-3 border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition rounded text-sm uppercase tracking-wider"
