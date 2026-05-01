@@ -14,6 +14,9 @@ import ipamorelinCoaPreview2 from "@/assets/coa/ipamorelin-coa-preview-2.png";
 import nadCoaPdf from "@/assets/coa/nad-coa.pdf?url";
 import nadCoaPreview1 from "@/assets/coa/nad-coa-preview-1.png";
 import nadCoaPreview2 from "@/assets/coa/nad-coa-preview-2.png";
+import motsCCoaPdf from "@/assets/coa/mots-c-coa.pdf?url";
+import motsCCoaPreview1 from "@/assets/coa/mots-c-coa-preview-1.png";
+import motsCCoaPreview2 from "@/assets/coa/mots-c-coa-preview-2.png";
 
 const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: string; preview2: string }> = {
   "ghk-cu": {
@@ -33,6 +36,12 @@ const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: stri
     pdf: nadCoaPdf,
     preview1: nadCoaPreview1,
     preview2: nadCoaPreview2,
+  },
+  "mots-c": {
+    label: "MOTS-C",
+    pdf: motsCCoaPdf,
+    preview1: motsCCoaPreview1,
+    preview2: motsCCoaPreview2,
   },
 };
 
