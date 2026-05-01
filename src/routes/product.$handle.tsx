@@ -8,6 +8,24 @@ import { toast } from "sonner";
 import ghkCuCoaPdf from "@/assets/coa/ghk-cu-coa.pdf?url";
 import ghkCuCoaPreview1 from "@/assets/coa/ghk-cu-coa-preview-1.png";
 import ghkCuCoaPreview2 from "@/assets/coa/ghk-cu-coa-preview-2.png";
+import ipamorelinCoaPdf from "@/assets/coa/ipamorelin-coa.pdf?url";
+import ipamorelinCoaPreview1 from "@/assets/coa/ipamorelin-coa-preview-1.png";
+import ipamorelinCoaPreview2 from "@/assets/coa/ipamorelin-coa-preview-2.png";
+
+const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: string; preview2: string }> = {
+  "ghk-cu": {
+    label: "GHK-Cu",
+    pdf: ghkCuCoaPdf,
+    preview1: ghkCuCoaPreview1,
+    preview2: ghkCuCoaPreview2,
+  },
+  "ipamorelin": {
+    label: "Ipamorelin",
+    pdf: ipamorelinCoaPdf,
+    preview1: ipamorelinCoaPreview1,
+    preview2: ipamorelinCoaPreview2,
+  },
+};
 
 export const Route = createFileRoute("/product/$handle")({
   component: ProductPage,
@@ -325,7 +343,7 @@ function ProductPage() {
               <Heart className="size-4" /> Add to Wish List
             </button>
 
-             {handle === "ghk-cu" && (
+             {COA_BY_HANDLE[handle] && (
                <>
                  <button
                    type="button"
@@ -346,7 +364,7 @@ function ProductPage() {
                        <div className="flex items-center justify-between border-b border-border px-4 py-3">
                          <div>
                            <p className="text-sm font-medium text-foreground">Certificate of Analysis</p>
-                           <p className="text-xs text-muted-foreground">GHK-Cu</p>
+                           <p className="text-xs text-muted-foreground">{COA_BY_HANDLE[handle].label}</p>
                          </div>
                          <button
                            type="button"
@@ -360,14 +378,14 @@ function ProductPage() {
 
                        <div className="min-h-0 flex-1 overflow-auto bg-muted/30 p-4 space-y-4">
                          <img
-                           src={ghkCuCoaPreview1}
-                           alt="GHK-Cu Certificate of Analysis — page 1"
+                           src={COA_BY_HANDLE[handle].preview1}
+                           alt={`${COA_BY_HANDLE[handle].label} Certificate of Analysis — page 1`}
                            className="mx-auto h-auto w-full max-w-3xl rounded-sm border border-border bg-background shadow-sm"
                            loading="lazy"
                          />
                          <img
-                           src={ghkCuCoaPreview2}
-                           alt="GHK-Cu Certificate of Analysis — page 2"
+                           src={COA_BY_HANDLE[handle].preview2}
+                           alt={`${COA_BY_HANDLE[handle].label} Certificate of Analysis — page 2`}
                            className="mx-auto h-auto w-full max-w-3xl rounded-sm border border-border bg-background shadow-sm"
                            loading="lazy"
                          />
@@ -376,7 +394,7 @@ function ProductPage() {
                        <div className="flex items-center justify-between border-t border-border px-4 py-3">
                          <p className="text-xs text-muted-foreground">If the preview does not load, open the file directly.</p>
                          <a
-                           href={ghkCuCoaPdf}
+                           href={COA_BY_HANDLE[handle].pdf}
                            target="_blank"
                            rel="noopener noreferrer"
                            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:opacity-80"
