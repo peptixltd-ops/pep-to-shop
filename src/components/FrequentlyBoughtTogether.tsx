@@ -4,26 +4,31 @@ import { Loader2 } from "lucide-react";
 import { storefrontApiRequest, formatPrice, getPrimaryProductImage, type ShopifyProduct } from "@/lib/shopify";
 import bottle from "@/assets/product-bottle.jpg";
 
+const BAC_WATER = "bacteriostatic-water";
+
 const RELATED_GROUPS: Record<string, string[]> = {
   // GLP-1 / metabolic group
-  "retatrutide": ["semaglutide", "tirzepatide", "cagrilintide", "mots-c"],
-  "semaglutide": ["retatrutide", "tirzepatide", "cagrilintide", "mots-c"],
-  "tirzepatide": ["retatrutide", "semaglutide", "cagrilintide", "mots-c"],
-  "cagrilintide": ["retatrutide", "semaglutide", "tirzepatide", "mots-c"],
-  "mots-c": ["retatrutide", "semaglutide", "tirzepatide", "cagrilintide"],
+  "retatrutide": ["semaglutide", "tirzepatide", "cagrilintide", "mots-c", BAC_WATER],
+  "semaglutide": ["retatrutide", "tirzepatide", "cagrilintide", "mots-c", BAC_WATER],
+  "tirzepatide": ["retatrutide", "semaglutide", "cagrilintide", "mots-c", BAC_WATER],
+  "cagrilintide": ["retatrutide", "semaglutide", "tirzepatide", "mots-c", BAC_WATER],
+  "mots-c": ["retatrutide", "semaglutide", "tirzepatide", "cagrilintide", BAC_WATER],
 
   // Healing / repair combo
-  "ghk-cu": ["tb-500", "bpc-157"],
-  "tb-500": ["ghk-cu", "bpc-157"],
-  "bpc-157": ["ghk-cu", "tb-500"],
+  "ghk-cu": ["tb-500", "bpc-157", BAC_WATER],
+  "tb-500": ["ghk-cu", "bpc-157", BAC_WATER],
+  "bpc-157": ["ghk-cu", "tb-500", BAC_WATER],
 
   // Mitochondrial / longevity
-  "ss-31": ["nad"],
-  "nad": ["ss-31"],
+  "ss-31": ["nad", BAC_WATER],
+  "nad": ["ss-31", BAC_WATER],
 
   // Nootropic pair
-  "selank": ["semax"],
-  "semax": ["selank"],
+  "selank": ["semax", BAC_WATER],
+  "semax": ["selank", BAC_WATER],
+
+  // Bacteriostatic water pairs back with the most common reconstitution targets
+  [BAC_WATER]: ["retatrutide", "semaglutide", "tirzepatide", "bpc-157"],
 };
 
 const PRODUCT_BY_HANDLE_LITE = `
@@ -87,7 +92,7 @@ export function FrequentlyBoughtTogether({ handle }: { handle: string }) {
       ) : items.length === 0 ? (
         <p className="text-sm text-muted-foreground">No related products available.</p>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {items.map((p) => {
             const img = getPrimaryProductImage(p as unknown as ShopifyProduct["node"]);
             const price = p.priceRange.minVariantPrice;
