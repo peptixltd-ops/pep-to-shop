@@ -92,7 +92,7 @@ export function FrequentlyBoughtTogether({ handle }: { handle: string }) {
       ) : items.length === 0 ? (
         <p className="text-sm text-muted-foreground">No related products available.</p>
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {items.map((p) => {
             const img = getPrimaryProductImage(p as unknown as ShopifyProduct["node"]);
             const price = p.priceRange.minVariantPrice;
