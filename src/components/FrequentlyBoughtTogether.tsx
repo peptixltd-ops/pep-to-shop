@@ -79,7 +79,7 @@ export function FrequentlyBoughtTogether({ handle }: { handle: string }) {
   return (
     <section className="mt-16 max-w-5xl mx-auto">
       <h2 className="font-display text-2xl text-ink mb-2">Frequently Bought Together</h2>
-      <p className="text-sm text-muted-foreground mb-6">Researchers often pair {`{`}this peptide{`}`} with the following.</p>
+      <p className="text-sm text-muted-foreground mb-6">Researchers often pair this peptide with the following.</p>
       {loading ? (
         <div className="flex justify-center py-10">
           <Loader2 className="size-5 animate-spin text-primary" />
