@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText, X } from "lucide-react";
 import { useShopifyProduct } from "@/hooks/useShopifyProducts";
+import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
 import { toast } from "sonner";
