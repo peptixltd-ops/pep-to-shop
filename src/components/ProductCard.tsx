@@ -11,6 +11,7 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
   const addItem = useCartStore((s) => s.addItem);
   const isLoading = useCartStore((s) => s.isLoading);
   const [adding, setAdding] = useState(false);
+  const [buying, setBuying] = useState(false);
 
   const node = product.node;
   const image = getPrimaryProductImage(node);
@@ -34,6 +35,28 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
     toast.success("Added to cart", { description: node.title, position: "top-center" });
   };
 
+  const handleBuyNow = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!variant) return;
+    setBuying(true);
+    await addItem({
+      product,
+      variantId: variant.id,
+      variantTitle: variant.title,
+      price: variant.price,
+      quantity: 1,
+      selectedOptions: variant.selectedOptions || [],
+    });
+    const checkoutUrl = useCartStore.getState().getCheckoutUrl();
+    setBuying(false);
+    if (checkoutUrl) {
+      window.open(checkoutUrl, "_blank");
+    } else {
+      toast.error("Unable to start checkout. Please try again.", { position: "top-center" });
+    }
+  };
+
   return (
     <Link to="/product/$handle" params={{ handle: node.handle }} className="group block">
       <div className="bg-mist aspect-square overflow-hidden">
@@ -49,10 +72,17 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
         <p className="mt-2 text-base font-medium text-ink">{formatPrice(price.amount, price.currencyCode)}</p>
         <button
           onClick={handleAdd}
-          disabled={!variant || isLoading || adding}
+          disabled={!variant || isLoading || adding || buying}
           className="mt-3 w-full bg-primary text-primary-foreground px-4 py-2.5 text-xs uppercase tracking-wider hover:bg-primary/90 transition disabled:opacity-50 inline-flex items-center justify-center gap-2"
         >
           {adding ? <Loader2 className="size-3.5 animate-spin" /> : "Add to cart"}
+        </button>
+        <button
+          onClick={handleBuyNow}
+          disabled={!variant || isLoading || adding || buying}
+          className="mt-2 w-full bg-ink text-background px-4 py-2.5 text-xs uppercase tracking-wider hover:bg-ink/90 transition disabled:opacity-50 inline-flex items-center justify-center gap-2"
+        >
+          {buying ? <Loader2 className="size-3.5 animate-spin" /> : "Buy now"}
         </button>
       </div>
     </Link>
