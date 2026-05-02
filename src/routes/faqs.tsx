@@ -21,6 +21,7 @@ const faqTabs = {
     { q: "Will I receive tracking?", a: "Yes — every order includes Royal Mail or DPD tracking." },
     { q: "What if my order hasn't arrived?", a: "Contact our team within 14 days and we'll resolve it the same working day." },
     { q: "Do you ship internationally?", a: "Currently UK only. EU shipping is planned for next year." },
+    { q: "What if my product shows up damaged?", a: "Get in touch with your order number, a clear photo of the damage and a brief description. We'll arrange a reshipment of the damaged product as quickly as possible." },
   ],
   "Payments": [
     { q: "Which payment methods do you accept?", a: "Visa, Mastercard, Amex, Apple Pay, Google Pay, Shop Pay." },
