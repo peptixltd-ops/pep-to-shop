@@ -24,6 +24,15 @@ import selankCoaPreview2 from "@/assets/coa/selank-coa-preview-2.png";
 import semaxCoaPdf from "@/assets/coa/semax-coa.pdf?url";
 import semaxCoaPreview1 from "@/assets/coa/semax-coa-preview-1.png";
 import semaxCoaPreview2 from "@/assets/coa/semax-coa-preview-2.png";
+import tesamorelinCoaPdf from "@/assets/coa/tesamorelin-coa.pdf?url";
+import tesamorelinCoaPreview1 from "@/assets/coa/tesamorelin-coa-preview-1.png";
+import tesamorelinCoaPreview2 from "@/assets/coa/tesamorelin-coa-preview-2.png";
+import igfLr3CoaPdf from "@/assets/coa/igf-lr3-coa.pdf?url";
+import igfLr3CoaPreview1 from "@/assets/coa/igf-lr3-coa-preview-1.png";
+import igfLr3CoaPreview2 from "@/assets/coa/igf-lr3-coa-preview-2.png";
+import pt141CoaPdf from "@/assets/coa/pt-141-coa.pdf?url";
+import pt141CoaPreview1 from "@/assets/coa/pt-141-coa-preview-1.png";
+import pt141CoaPreview2 from "@/assets/coa/pt-141-coa-preview-2.png";
 
 const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: string; preview2: string }> = {
   "ghk-cu": {
@@ -61,6 +70,24 @@ const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: stri
     pdf: semaxCoaPdf,
     preview1: semaxCoaPreview1,
     preview2: semaxCoaPreview2,
+  },
+  "tesamorelin": {
+    label: "Tesamorelin",
+    pdf: tesamorelinCoaPdf,
+    preview1: tesamorelinCoaPreview1,
+    preview2: tesamorelinCoaPreview2,
+  },
+  "igf-lr3": {
+    label: "IGF1-LR3",
+    pdf: igfLr3CoaPdf,
+    preview1: igfLr3CoaPreview1,
+    preview2: igfLr3CoaPreview2,
+  },
+  "pt-141": {
+    label: "PT-141",
+    pdf: pt141CoaPdf,
+    preview1: pt141CoaPreview1,
+    preview2: pt141CoaPreview2,
   },
 };
 
