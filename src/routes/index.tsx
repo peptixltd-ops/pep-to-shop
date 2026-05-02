@@ -79,13 +79,13 @@ function HomePage() {
 
   const BEST_SELLER_ORDER = [
     "retatrutide",
+    "tirzepatide",
+    "semaglutide",
     "ghk-cu",
     "bpc-157-tb-500-mix",
-    "tirzepatide",
     "nad",
     "mots-c",
     "ipamorelin",
-    "semaglutide",
   ];
   const sortedBestSellers = [...shopifyProducts].sort((a, b) => {
     const ai = BEST_SELLER_ORDER.indexOf(a.node.handle);
