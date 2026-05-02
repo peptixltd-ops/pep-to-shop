@@ -153,6 +153,7 @@ function ProductPage() {
   const [variantId, setVariantId] = useState<string | null>(null);
   const [qty, setQty] = useState(1);
   const [adding, setAdding] = useState(false);
+  const [buying, setBuying] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
   const [isCoaOpen, setIsCoaOpen] = useState(false);
 
@@ -195,6 +196,28 @@ function ProductPage() {
     }
     setAdding(false);
     toast.success("Added to cart", { description: `${qty} × ${product.title}` });
+  };
+
+  const handleBuyNow = async () => {
+    if (!selectedVariant) return;
+    setBuying(true);
+    for (let i = 0; i < qty; i++) {
+      await addItem({
+        product: { node: product },
+        variantId: selectedVariant.id,
+        variantTitle: selectedVariant.title,
+        price: selectedVariant.price,
+        quantity: 1,
+        selectedOptions: selectedVariant.selectedOptions || [],
+      });
+    }
+    const checkoutUrl = useCartStore.getState().getCheckoutUrl();
+    setBuying(false);
+    if (checkoutUrl) {
+      window.open(checkoutUrl, "_blank");
+    } else {
+      toast.error("Unable to start checkout. Please try again.", { position: "top-center" });
+    }
   };
 
   // Pull common spec keys with sensible fallbacks
@@ -341,37 +364,46 @@ function ProductPage() {
             </div>
           )}
 
-          {/* Qty + Add to cart */}
-          <div className="flex items-stretch gap-3">
-            <div className="inline-flex items-center border border-border rounded">
+          {/* Qty + Add to cart + Buy now */}
+          <div className="space-y-3">
+            <div className="flex items-stretch gap-3">
+              <div className="inline-flex items-center border border-border rounded">
+                <button
+                  onClick={() => setQty((q) => Math.max(1, q - 1))}
+                  className="px-3 py-3 hover:bg-mist transition"
+                  aria-label="Decrease quantity"
+                >
+                  <Minus className="size-4" />
+                </button>
+                <input
+                  type="number"
+                  min={1}
+                  value={qty}
+                  onChange={(e) => setQty(Math.max(1, parseInt(e.target.value) || 1))}
+                  className="w-14 text-center bg-transparent outline-none text-sm"
+                />
+                <button
+                  onClick={() => setQty((q) => q + 1)}
+                  className="px-3 py-3 hover:bg-mist transition"
+                  aria-label="Increase quantity"
+                >
+                  <Plus className="size-4" />
+                </button>
+              </div>
               <button
-                onClick={() => setQty((q) => Math.max(1, q - 1))}
-                className="px-3 py-3 hover:bg-mist transition"
-                aria-label="Decrease quantity"
+                onClick={handleAdd}
+                disabled={!selectedVariant?.availableForSale || isLoading || adding || buying}
+                className="flex-1 bg-primary text-primary-foreground px-8 py-3 text-sm uppercase tracking-wider hover:bg-primary/90 transition disabled:opacity-50 inline-flex items-center justify-center gap-2 rounded"
               >
-                <Minus className="size-4" />
-              </button>
-              <input
-                type="number"
-                min={1}
-                value={qty}
-                onChange={(e) => setQty(Math.max(1, parseInt(e.target.value) || 1))}
-                className="w-14 text-center bg-transparent outline-none text-sm"
-              />
-              <button
-                onClick={() => setQty((q) => q + 1)}
-                className="px-3 py-3 hover:bg-mist transition"
-                aria-label="Increase quantity"
-              >
-                <Plus className="size-4" />
+                {adding ? <Loader2 className="size-4 animate-spin" /> : selectedVariant?.availableForSale ? "Add to cart" : "Sold out"}
               </button>
             </div>
             <button
-              onClick={handleAdd}
-              disabled={!selectedVariant?.availableForSale || isLoading || adding}
-              className="flex-1 bg-primary text-primary-foreground px-8 py-3 text-sm uppercase tracking-wider hover:bg-primary/90 transition disabled:opacity-50 inline-flex items-center justify-center gap-2 rounded"
+              onClick={handleBuyNow}
+              disabled={!selectedVariant?.availableForSale || isLoading || adding || buying}
+              className="w-full bg-ink text-background px-8 py-3 text-sm uppercase tracking-wider hover:bg-ink/90 transition disabled:opacity-50 inline-flex items-center justify-center gap-2 rounded"
             >
-              {adding ? <Loader2 className="size-4 animate-spin" /> : selectedVariant?.availableForSale ? "Add to cart" : "Sold out"}
+              {buying ? <Loader2 className="size-4 animate-spin" /> : "Buy now"}
             </button>
           </div>
 
