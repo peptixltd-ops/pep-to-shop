@@ -59,7 +59,7 @@ function ShopPage() {
       <div className="text-center mb-12">
         <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Our Products</p>
         <h1 className="font-display text-5xl md:text-6xl text-ink">Shop <span className="text-primary italic">All</span></h1>
-        <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Carefully selected products to support how you live, train and recover.</p>
+        <p className="mt-4 text-muted-foreground max-w-xl mx-auto">For research purpose only.</p>
       </div>
 
       {loading && (
