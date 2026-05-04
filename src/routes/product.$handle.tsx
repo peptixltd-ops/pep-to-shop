@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText, X } from "lucide-react";
 import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
+import { TrustStrip } from "@/components/TrustStrip";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
 import { toast } from "sonner";
@@ -267,6 +268,8 @@ function ProductPage() {
   );
 
   return (
+    <>
+    <TrustStrip />
     <div className="container-x py-10 md:py-14">
       <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6">
         <ArrowLeft className="size-4" /> Back to shop
