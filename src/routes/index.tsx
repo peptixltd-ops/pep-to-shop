@@ -49,7 +49,7 @@ const faqTabs = {
   "Payments": [
     { q: "Which payment methods do you accept?", a: "Visa, Mastercard, Amex, Apple Pay, Google Pay, Shop Pay." },
     { q: "Is checkout secure?", a: "All payments are PCI-compliant with end-to-end encryption." },
-    { q: "Do you offer subscriptions?", a: "Yes — save 15% on recurring monthly deliveries. Cancel anytime." },
+    { q: "Do you offer subscriptions?", a: "Yes — save 10% on recurring monthly deliveries. Cancel anytime." },
   ],
   "Product & Quality": [
     { q: "Do you provide a Certificate of Analysis (CoA)?", a: "In-house CoAs are available to download on every product page. They are not batch-specific — they confirm peptide identity and minimum purity based on our internal HPLC and MS testing. CoAs are not shipped with orders. A typical CoA includes peptide identity (sequence, molecular formula and weight), HPLC purity (typically ≥98%), MS or LC-MS confirmation, appearance of the lyophilised product, and a batch/lot reference. If a CoA is missing from a product page, get in touch and we'll sort it. Researchers needing batch-level verification are encouraged to arrange independent testing." },

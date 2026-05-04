@@ -269,7 +269,6 @@ function ProductPage() {
 
   return (
     <>
-    <TrustStrip />
     <div className="container-x py-10 md:py-14">
       <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6">
         <ArrowLeft className="size-4" /> Back to shop
@@ -281,6 +280,9 @@ function ProductPage() {
         <span className="mx-2">/</span>
         <span>{product.title}</span>
       </nav>
+      <div className="mt-6">
+        <TrustStrip />
+      </div>
 
       {/* Research handling note */}
       <div className="mt-8 max-w-4xl mx-auto bg-mist border border-border rounded-md p-5 text-center text-sm leading-relaxed">
@@ -612,6 +614,7 @@ function ProductPage() {
                 <SpecRow label="Reconstitution Stability" value="Stable for up to 28 days at 2–8 °C in aqueous solution under sterile conditions" />
               </tbody>
             </table>
+          </div>
         </div>
       </div>
 
