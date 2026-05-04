@@ -6,9 +6,9 @@ import { Loader2 } from "lucide-react";
 export const Route = createFileRoute("/shop")({
   head: () => ({
     meta: [
-      { title: "Shop All — Pondok Peptides" },
+      { title: "Shop All, Pondok Peptides" },
       { name: "description", content: "Browse Pondok Peptides's full range of products." },
-      { property: "og:title", content: "Shop All — Pondok Peptides" },
+      { property: "og:title", content: "Shop All, Pondok Peptides" },
       { property: "og:description", content: "Premium products from Pondok Peptides." },
     ],
   }),

@@ -481,13 +481,13 @@ function ProductPage() {
                        <div className="min-h-0 flex-1 overflow-auto bg-muted/30 p-4 space-y-4">
                          <img
                            src={COA_BY_HANDLE[handle].preview1}
-                           alt={`${COA_BY_HANDLE[handle].label} Certificate of Analysis — page 1`}
+                           alt={`${COA_BY_HANDLE[handle].label} Certificate of Analysis, page 1`}
                            className="mx-auto h-auto w-full max-w-3xl rounded-sm border border-border bg-background shadow-sm"
                            loading="lazy"
                          />
                          <img
                            src={COA_BY_HANDLE[handle].preview2}
-                           alt={`${COA_BY_HANDLE[handle].label} Certificate of Analysis — page 2`}
+                           alt={`${COA_BY_HANDLE[handle].label} Certificate of Analysis, page 2`}
                            className="mx-auto h-auto w-full max-w-3xl rounded-sm border border-border bg-background shadow-sm"
                            loading="lazy"
                          />
@@ -527,7 +527,7 @@ function ProductPage() {
         </div>
 
         <div className="py-8 prose prose-sm max-w-none">
-          <h2 className="font-display text-2xl text-ink mb-4">{product.title} — Research Peptide</h2>
+          <h2 className="font-display text-2xl text-ink mb-4">{product.title}, Research Peptide</h2>
           {descriptionProse ? (
             <p className="whitespace-pre-line text-foreground/80 leading-relaxed">{descriptionProse}</p>
           ) : (

@@ -12,9 +12,9 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/com
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pondok Peptides — Unlock More | Premium Recovery & Performance Supplements" },
+      { title: "Pondok Peptides, Unlock More | Premium Recovery & Performance Supplements" },
       { name: "description", content: "UK-made recovery, performance and daily wellness supplements. Tested for purity. Trusted by 14,500+ customers." },
-      { property: "og:title", content: "Pondok Peptides — Unlock More" },
+      { property: "og:title", content: "Pondok Peptides, Unlock More" },
       { property: "og:description", content: "Premium recovery & performance supplements made in the UK." },
     ],
   }),
@@ -24,14 +24,14 @@ export const Route = createFileRoute("/")({
 
 
 const reviews = [
-  { name: "Dr. Sarah M.", text: "Easily the most reliable UK supplier we've used in the lab. Purity matches the COA every time and reconstitution is clean — no cloudiness, no residue." },
+  { name: "Dr. Sarah M.", text: "Easily the most reliable UK supplier we've used in the lab. Purity matches the COA every time and reconstitution is clean, no cloudiness, no residue." },
   { name: "Alex P., Research Tech", text: "Ordered Friday evening, arrived Monday morning in discreet, secure packaging. Lyophilised cake was intact and the lot number matched the certificate exactly." },
-  { name: "James K., PhD candidate", text: "Independent third-party HPLC came back at 99.4% — bang on the label. Quality I can actually cite in my notes." },
+  { name: "James K., PhD candidate", text: "Independent third-party HPLC came back at 99.4%, bang on the label. Quality I can actually cite in my notes." },
   { name: "Emma L.", text: "Discreet packaging, fast delivery and clear labelling. As a personal-use buyer I appreciate how transparent the batch testing is." },
   { name: "Tom R., Lab Manager", text: "We've standardised on Pondok Peptides for our peptide work. Consistent purity batch-to-batch and the packaging arrives secure and well presented every time." },
   { name: "Priya S., Researcher", text: "Every vial ships with a COA that actually means something. Customer service answered a technical solubility question within the hour." },
-  { name: "Mark D.", text: "Switched from a US supplier — half the lead time, no customs headaches, and the purity reports are more detailed. Won't go back." },
-  { name: "Hannah W., Postdoc", text: "Support team is excellent. Asked about storage stability and got a proper, sourced answer — not a copy-paste reply." },
+  { name: "Mark D.", text: "Switched from a US supplier, half the lead time, no customs headaches, and the purity reports are more detailed. Won't go back." },
+  { name: "Hannah W., Postdoc", text: "Support team is excellent. Asked about storage stability and got a proper, sourced answer, not a copy-paste reply." },
   { name: "Liam C.", text: "Whether it's for the lab bench or personal research interest, the quality and turnaround are unmatched. Reordered four times now." },
 ];
 
@@ -40,7 +40,7 @@ const faqTabs = {
   "Orders & Shipping": [
     { q: "How long does delivery take?", a: "Orders placed before 3pm ship same day via tracked next-day courier within the UK." },
     { q: "When are orders dispatched?", a: "Monday to Friday, excluding bank holidays." },
-    { q: "Will I receive tracking?", a: "Yes — every order includes Royal Mail or DPD tracking." },
+    { q: "Will I receive tracking?", a: "Yes, every order includes Royal Mail or DPD tracking." },
     { q: "What if my order hasn't arrived?", a: "Contact our team within 14 days and we'll resolve it the same working day." },
     { q: "Do you ship internationally?", a: "Currently UK only. EU shipping is planned for next year." },
     { q: "What if my product shows up damaged?", a: "Get in touch with your order number, a clear photo of the damage and a brief description. We'll arrange a reshipment of the damaged product as quickly as possible." },
@@ -49,15 +49,15 @@ const faqTabs = {
   "Payments": [
     { q: "Which payment methods do you accept?", a: "Visa, Mastercard, Amex, Apple Pay, Google Pay, Shop Pay." },
     { q: "Is checkout secure?", a: "All payments are PCI-compliant with end-to-end encryption." },
-    { q: "Do you offer subscriptions?", a: "Yes — save 10% on recurring monthly deliveries. Cancel anytime." },
+    { q: "Do you offer subscriptions?", a: "Yes, save 10% on recurring monthly deliveries. Cancel anytime." },
   ],
   "Product & Quality": [
-    { q: "Do you provide a Certificate of Analysis (CoA)?", a: "In-house CoAs are available to download on every product page. They are not batch-specific — they confirm peptide identity and minimum purity based on our internal HPLC and MS testing. CoAs are not shipped with orders. A typical CoA includes peptide identity (sequence, molecular formula and weight), HPLC purity (typically ≥98%), MS or LC-MS confirmation, appearance of the lyophilised product, and a batch/lot reference. If a CoA is missing from a product page, get in touch and we'll sort it. Researchers needing batch-level verification are encouraged to arrange independent testing." },
-    { q: "What is the difference between peptide purity and peptide yield?", a: "Purity is the proportion of the target peptide relative to all peptide-related species, measured by HPLC — a purity of 98% means 98% is the correct sequence and 2% are related impurities. This is the main quality metric. Yield is the total mass recovered from a synthesis run after purification — a manufacturing figure, not a quality indicator. We specify products by purity, not yield, and yield figures are not published." },
-    { q: "Why does a 5mg vial appear nearly empty? Can it be verified by weight?", a: "This is completely normal. 5mg is a tiny amount of material — roughly a few grains of fine salt — and in a standard 2ml or 3ml vial it appears as a thin film, a small disc, or barely visible powder at the bottom. Weighing the vial isn't a reliable check: lab balance tolerances often exceed the peptide mass at this scale, the glass, stopper, crimp seal and residual moisture dwarf the peptide weight, and tare weights vary vial-to-vial even within the same batch. The proper way to verify content is analytical testing (HPLC or mass spectrometry) — see the in-house CoA on each product page. If you have a concern about a specific vial, send the order reference and photos and we'll look into it." },
-    { q: "Why does my vial appear different or lack a vacuum seal?", a: "Minor cosmetic differences between vials are normal and don't indicate a quality issue. The freeze-dried cake can range from a compact disc to a looser powder, and cap colours sometimes differ between batches. Not every vial is sealed under vacuum — some are nitrogen-flushed instead, and this depends on the manufacturer and the peptide. Vacuum or no vacuum, quality and purity are unaffected provided the vial has been stored correctly (sealed, refrigerated, away from light). If something looks wrong — a broken seal or visible contamination — send us photos and we'll investigate." },
+    { q: "Do you provide a Certificate of Analysis (CoA)?", a: "In-house CoAs are available to download on every product page. They are not batch-specific, they confirm peptide identity and minimum purity based on our internal HPLC and MS testing. CoAs are not shipped with orders. A typical CoA includes peptide identity (sequence, molecular formula and weight), HPLC purity (typically ≥98%), MS or LC-MS confirmation, appearance of the lyophilised product, and a batch/lot reference. If a CoA is missing from a product page, get in touch and we'll sort it. Researchers needing batch-level verification are encouraged to arrange independent testing." },
+    { q: "What is the difference between peptide purity and peptide yield?", a: "Purity is the proportion of the target peptide relative to all peptide-related species, measured by HPLC, a purity of 98% means 98% is the correct sequence and 2% are related impurities. This is the main quality metric. Yield is the total mass recovered from a synthesis run after purification, a manufacturing figure, not a quality indicator. We specify products by purity, not yield, and yield figures are not published." },
+    { q: "Why does a 5mg vial appear nearly empty? Can it be verified by weight?", a: "This is completely normal. 5mg is a tiny amount of material, roughly a few grains of fine salt, and in a standard 2ml or 3ml vial it appears as a thin film, a small disc, or barely visible powder at the bottom. Weighing the vial isn't a reliable check: lab balance tolerances often exceed the peptide mass at this scale, the glass, stopper, crimp seal and residual moisture dwarf the peptide weight, and tare weights vary vial-to-vial even within the same batch. The proper way to verify content is analytical testing (HPLC or mass spectrometry), see the in-house CoA on each product page. If you have a concern about a specific vial, send the order reference and photos and we'll look into it." },
+    { q: "Why does my vial appear different or lack a vacuum seal?", a: "Minor cosmetic differences between vials are normal and don't indicate a quality issue. The freeze-dried cake can range from a compact disc to a looser powder, and cap colours sometimes differ between batches. Not every vial is sealed under vacuum, some are nitrogen-flushed instead, and this depends on the manufacturer and the peptide. Vacuum or no vacuum, quality and purity are unaffected provided the vial has been stored correctly (sealed, refrigerated, away from light). If something looks wrong, a broken seal or visible contamination, send us photos and we'll investigate." },
     { q: "What vial sizes are available?", a: "Vial sizes and peptide quantities vary by product and are listed on each product page. Common sizes are 2mg, 5mg, 10mg and 15mg, with some products available in larger quantities. All vials are laboratory-grade borosilicate glass with crimped aluminium seals and rubber stoppers. If you need a quantity not listed on the site, let us know." },
-    { q: "How should peptides be handled and stored?", a: "Proper handling keeps peptides in good condition. Temperature: store freeze-dried peptides at 2–8°C (fridge) for short-term use, or -20°C (freezer) for long-term storage. Light: keep away from direct light — UV can degrade tryptophan and tyrosine residues in particular. Moisture: keep vials sealed until use, as freeze-dried peptides absorb moisture from the air, accelerating degradation. Handling: let refrigerated or frozen vials reach room temperature before opening to prevent condensation forming inside. After reconstitution: aliquot into single-use volumes where possible and store frozen, avoiding repeated freeze-thaw cycles. Treat all products as research chemicals in line with your institutional safety guidelines. MSDS sheets are available on request for any product." },
+    { q: "How should peptides be handled and stored?", a: "Proper handling keeps peptides in good condition. Temperature: store freeze-dried peptides at 2–8°C (fridge) for short-term use, or -20°C (freezer) for long-term storage. Light: keep away from direct light, UV can degrade tryptophan and tyrosine residues in particular. Moisture: keep vials sealed until use, as freeze-dried peptides absorb moisture from the air, accelerating degradation. Handling: let refrigerated or frozen vials reach room temperature before opening to prevent condensation forming inside. After reconstitution: aliquot into single-use volumes where possible and store frozen, avoiding repeated freeze-thaw cycles. Treat all products as research chemicals in line with your institutional safety guidelines. MSDS sheets are available on request for any product." },
     { q: "Where are products made?", a: "Produced in audited UK facilities to strict quality and research standards." },
   ],
   "Compliance": [
@@ -121,7 +121,7 @@ function HomePage() {
       {/* TRUST STRIP */}
       <TrustStrip />
 
-      {/* HERO — 50/50 split */}
+      {/* HERO, 50/50 split */}
       <section className="bg-mist">
         <div className="grid items-stretch min-[700px]:grid-cols-2">
           <div className="flex items-center px-6 md:px-10 lg:px-16 py-14 lg:py-24 min-w-0">
@@ -131,7 +131,7 @@ function HomePage() {
                 <span className="italic text-primary">Medical Grade</span><br />Research Peptides.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                3rd Party Tested — Pure Peptides. Trusted by over 10,000 customers.
+                3rd Party Tested, Pure Peptides. Trusted by over 10,000 customers.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/shop" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 transition">
@@ -149,7 +149,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* BEST SELLERS — single row carousel */}
+      {/* BEST SELLERS, single row carousel */}
       <section className="container-x py-16 md:py-20">
         <div className="flex items-end justify-between mb-8">
           <div>
@@ -177,7 +177,7 @@ function HomePage() {
         )}
       </section>
 
-      {/* REVIEWS — compact horizontal carousel */}
+      {/* REVIEWS, compact horizontal carousel */}
       <section className="bg-background py-12 md:py-16 border-b border-border">
         <div className="container-x">
           <div className="text-center mb-8">
@@ -218,7 +218,7 @@ function HomePage() {
         <p className="mt-5 text-muted-foreground max-w-xl mx-auto">High quality peptides supplied with consistency, control and uncompromising standards.</p>
         <div className="mt-12 max-w-3xl mx-auto text-left text-foreground/80 space-y-4">
           <p>At Pondok Peptides, we supply <strong>premium peptides</strong> with a focus on purity, consistency and reliability.</p>
-          <p>Every peptide is handled with <strong>precision</strong> — from sourcing to delivery — ensuring dependable standards at every stage.</p>
+          <p>Every peptide is handled with <strong>precision</strong>, from sourcing to delivery, ensuring dependable standards at every stage.</p>
         </div>
       </section>
 
@@ -242,7 +242,7 @@ function HomePage() {
       {/* STATS */}
       <section className="container-x py-20 md:py-28 text-center">
         <h2 className="font-display text-3xl md:text-4xl text-ink">Built For Long-Term Reliability</h2>
-        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Pondok Peptides is designed to be a dependable supplier — focused on consistency, professionalism and trust.</p>
+        <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">Pondok Peptides is designed to be a dependable supplier, focused on consistency, professionalism and trust.</p>
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-b border-border py-10 max-w-4xl mx-auto">
           {[["≥99%", "Purity"], ["Quality", "Tested"], ["UK-Based", "Supplier"], ["Next Day", "Delivery"]].map(([k, v]) => (
             <div key={v}>
