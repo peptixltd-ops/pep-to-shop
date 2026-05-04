@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { ShoppingBag, Minus, Plus, Trash2, Loader2, ExternalLink } from "lucide-react";
+import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getPrimaryProductImage } from "@/lib/shopify";
 
@@ -18,7 +19,7 @@ export function CartDrawer() {
   const handleCheckout = () => {
     const url = getCheckoutUrl();
     if (url) {
-      window.location.href = url;
+      navigateToCheckout(url);
       setOpen(false);
     }
   };

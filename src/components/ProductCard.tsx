@@ -4,6 +4,7 @@ import { Loader2 } from "lucide-react";
 import bottle from "@/assets/product-bottle.jpg";
 import type { ShopifyProduct } from "@/lib/shopify";
 import { formatPrice, getPrimaryProductImage } from "@/lib/shopify";
+import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 
@@ -51,7 +52,7 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
     const checkoutUrl = useCartStore.getState().getCheckoutUrl();
     setBuying(false);
     if (checkoutUrl) {
-      window.location.href = checkoutUrl;
+      navigateToCheckout(checkoutUrl);
     } else {
       toast.error("Unable to start checkout. Please try again.", { position: "top-center" });
     }
