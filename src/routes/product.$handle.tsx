@@ -242,7 +242,7 @@ function ProductPage() {
     const checkoutUrl = useCartStore.getState().getCheckoutUrl();
     setBuying(false);
     if (checkoutUrl) {
-      window.open(checkoutUrl, "_blank");
+      window.location.href = checkoutUrl;
     } else {
       toast.error("Unable to start checkout. Please try again.", { position: "top-center" });
     }
