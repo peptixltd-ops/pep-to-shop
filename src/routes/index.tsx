@@ -17,7 +17,6 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "Buy Peptides UK | Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
       { property: "og:description", content: "Buy research peptides in the UK with 3rd party verified purity and COAs per batch. Fast UK delivery from a trusted supplier." },
       { property: "og:url", content: "https://pondokpeptides.com/" },
-      { rel: "canonical", href: "https://pondokpeptides.com/" } as never,
     ],
     links: [{ rel: "canonical", href: "https://pondokpeptides.com/" }],
   }),
