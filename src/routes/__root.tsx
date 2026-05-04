@@ -54,6 +54,52 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" },
+      { rel: "canonical", href: "https://pondokpeptides.com" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://pondokpeptides.com/#org",
+              name: "Pondok Peptides",
+              url: "https://pondokpeptides.com",
+              logo: "https://pondokpeptides.com/favicon.png",
+              sameAs: [],
+              contactPoint: [{
+                "@type": "ContactPoint",
+                email: "hello@pondok.co",
+                contactType: "customer support",
+                areaServed: "GB",
+                availableLanguage: "en",
+              }],
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://pondokpeptides.com/#website",
+              url: "https://pondokpeptides.com",
+              name: "Pondok Peptides",
+              publisher: { "@id": "https://pondokpeptides.com/#org" },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: "https://pondokpeptides.com/shop?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+            },
+            {
+              "@type": "Store",
+              name: "Pondok Peptides",
+              image: "https://pondokpeptides.com/favicon.png",
+              url: "https://pondokpeptides.com",
+              priceRange: "££",
+              areaServed: "GB",
+            },
+          ],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
