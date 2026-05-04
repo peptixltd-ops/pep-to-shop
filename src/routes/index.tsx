@@ -12,11 +12,13 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/com
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Pondok Peptides, Unlock More | Premium Recovery & Performance Supplements" },
-      { name: "description", content: "UK-made recovery, performance and daily wellness supplements. Tested for purity. Trusted by 14,500+ customers." },
-      { property: "og:title", content: "Pondok Peptides, Unlock More" },
-      { property: "og:description", content: "Premium recovery & performance supplements made in the UK." },
+      { title: "Buy Peptides UK | Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
+      { name: "description", content: "Buy research peptides in the UK with 3rd party verified purity and COAs per batch. Retatrutide, BPC-157, TB-500, tirzepatide and more, fast UK delivery." },
+      { property: "og:title", content: "Buy Peptides UK | Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
+      { property: "og:description", content: "Buy research peptides in the UK with 3rd party verified purity and COAs per batch. Fast UK delivery from a trusted supplier." },
+      { property: "og:url", content: "https://pondokpeptides.com/" },
     ],
+    links: [{ rel: "canonical", href: "https://pondokpeptides.com/" }],
   }),
   component: HomePage,
 });
