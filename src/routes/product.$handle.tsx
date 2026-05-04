@@ -614,6 +614,7 @@ function ProductPage() {
                 <SpecRow label="Reconstitution Stability" value="Stable for up to 28 days at 2–8 °C in aqueous solution under sterile conditions" />
               </tbody>
             </table>
+          </div>
         </div>
       </div>
 
