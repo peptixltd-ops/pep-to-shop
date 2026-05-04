@@ -617,7 +617,7 @@ function ProductPage() {
 
       <FrequentlyBoughtTogether handle={handle} />
     </div>
-    </div>
+    </>
   );
 }
 
