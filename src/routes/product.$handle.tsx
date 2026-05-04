@@ -4,6 +4,7 @@ import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText, X
 import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
 import { TrustStrip } from "@/components/TrustStrip";
+import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
 import { toast } from "sonner";
@@ -242,7 +243,7 @@ function ProductPage() {
     const checkoutUrl = useCartStore.getState().getCheckoutUrl();
     setBuying(false);
     if (checkoutUrl) {
-      window.location.href = checkoutUrl;
+      navigateToCheckout(checkoutUrl);
     } else {
       toast.error("Unable to start checkout. Please try again.", { position: "top-center" });
     }
