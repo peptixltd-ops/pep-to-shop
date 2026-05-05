@@ -7,6 +7,7 @@ import { formatPrice, getPrimaryProductImage } from "@/lib/shopify";
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
+import { getProductImageOverride } from "@/data/variantImages";
 
 export function ProductCard({ product }: { product: ShopifyProduct }) {
   const addItem = useCartStore((s) => s.addItem);
@@ -15,8 +16,9 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
   const [buying, setBuying] = useState(false);
 
   const node = product.node;
-  const image = getPrimaryProductImage(node);
   const variant = node.variants.edges[0]?.node;
+  const overrideImage = getProductImageOverride(node.handle, variant?.title);
+  const image = overrideImage ? null : getPrimaryProductImage(node);
   const price = node.priceRange.minVariantPrice;
 
   const handleAdd = async (e: React.MouseEvent) => {
@@ -62,8 +64,8 @@ export function ProductCard({ product }: { product: ShopifyProduct }) {
     <Link to="/product/$handle" params={{ handle: node.handle }} className="group block">
       <div className="bg-mist aspect-square overflow-hidden">
         <img
-          src={image?.url || bottle}
-          alt={image?.altText || node.title}
+          src={overrideImage || image?.url || bottle}
+          alt={overrideImage ? `${node.title}${variant?.title ? ` ${variant.title}` : ""} vial` : image?.altText || node.title}
           loading="lazy"
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
