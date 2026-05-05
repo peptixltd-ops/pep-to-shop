@@ -8,7 +8,7 @@ import { TrustStrip } from "@/components/TrustStrip";
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
-import { getVariantImage } from "@/data/variantImages";
+import { getProductImageOverride } from "@/data/variantImages";
 import { toast } from "sonner";
 import ghkCuCoaPdf from "@/assets/coa/ghk-cu-coa.pdf?url";
 import ghkCuCoaPreview1 from "@/assets/coa/ghk-cu-coa-preview-1.png";
@@ -377,7 +377,7 @@ function ProductPage() {
         <div className="space-y-3">
           <div className="relative bg-mist aspect-square overflow-hidden rounded-md">
             {(() => {
-              const variantOverride = getVariantImage(handle, selectedVariant?.title);
+              const variantOverride = getProductImageOverride(handle, selectedVariant?.title);
               const src = variantOverride || images[activeImage]?.node.url;
               const alt = variantOverride
                 ? `${product.title} ${selectedVariant?.title} vial`
