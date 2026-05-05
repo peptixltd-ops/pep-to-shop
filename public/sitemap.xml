@@ -2,10 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://pondokpeptides.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://pondokpeptides.com/shop</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://pondokpeptides.com/blog</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://pondokpeptides.com/about</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://pondokpeptides.com/reviews</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pondokpeptides.com/faqs</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://pondokpeptides.com/contact</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://pondokpeptides.com/weight-loss-peptides</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pondokpeptides.com/recovery-peptides</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pondokpeptides.com/longevity-peptides</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pondokpeptides.com/nootropics</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pondokpeptides.com/growth-hormone-peptides</loc><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://pondokpeptides.com/blog/what-is-retatrutide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pondokpeptides.com/blog/bpc-157-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pondokpeptides.com/blog/tb-500-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pondokpeptides.com/blog/ghk-cu-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pondokpeptides.com/blog/mots-c-guide</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pondokpeptides.com/blog/how-to-store-peptides</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://pondokpeptides.com/blog/how-to-reconstitute-peptides</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://pondokpeptides.com/product/retatrutide</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://pondokpeptides.com/product/tirzepatide</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://pondokpeptides.com/product/semaglutide</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
