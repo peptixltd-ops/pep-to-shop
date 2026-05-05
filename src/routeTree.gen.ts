@@ -9,14 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WeightLossPeptidesRouteImport } from './routes/weight-loss-peptides'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as RecoveryPeptidesRouteImport } from './routes/recovery-peptides'
+import { Route as NootropicsRouteImport } from './routes/nootropics'
+import { Route as LongevityPeptidesRouteImport } from './routes/longevity-peptides'
+import { Route as GrowthHormonePeptidesRouteImport } from './routes/growth-hormone-peptides'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 
+const WeightLossPeptidesRoute = WeightLossPeptidesRouteImport.update({
+  id: '/weight-loss-peptides',
+  path: '/weight-loss-peptides',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
@@ -25,6 +35,26 @@ const ShopRoute = ShopRouteImport.update({
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RecoveryPeptidesRoute = RecoveryPeptidesRouteImport.update({
+  id: '/recovery-peptides',
+  path: '/recovery-peptides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NootropicsRoute = NootropicsRouteImport.update({
+  id: '/nootropics',
+  path: '/nootropics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LongevityPeptidesRoute = LongevityPeptidesRouteImport.update({
+  id: '/longevity-peptides',
+  path: '/longevity-peptides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GrowthHormonePeptidesRoute = GrowthHormonePeptidesRouteImport.update({
+  id: '/growth-hormone-peptides',
+  path: '/growth-hormone-peptides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqsRoute = FaqsRouteImport.update({
@@ -58,8 +88,13 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
+  '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
+  '/longevity-peptides': typeof LongevityPeptidesRoute
+  '/nootropics': typeof NootropicsRoute
+  '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
+  '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesByTo {
@@ -67,8 +102,13 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
+  '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
+  '/longevity-peptides': typeof LongevityPeptidesRoute
+  '/nootropics': typeof NootropicsRoute
+  '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
+  '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRoutesById {
@@ -77,8 +117,13 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
+  '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
+  '/longevity-peptides': typeof LongevityPeptidesRoute
+  '/nootropics': typeof NootropicsRoute
+  '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
+  '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/product/$handle': typeof ProductHandleRoute
 }
 export interface FileRouteTypes {
@@ -88,8 +133,13 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/faqs'
+    | '/growth-hormone-peptides'
+    | '/longevity-peptides'
+    | '/nootropics'
+    | '/recovery-peptides'
     | '/reviews'
     | '/shop'
+    | '/weight-loss-peptides'
     | '/product/$handle'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -97,8 +147,13 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/faqs'
+    | '/growth-hormone-peptides'
+    | '/longevity-peptides'
+    | '/nootropics'
+    | '/recovery-peptides'
     | '/reviews'
     | '/shop'
+    | '/weight-loss-peptides'
     | '/product/$handle'
   id:
     | '__root__'
@@ -106,8 +161,13 @@ export interface FileRouteTypes {
     | '/about'
     | '/contact'
     | '/faqs'
+    | '/growth-hormone-peptides'
+    | '/longevity-peptides'
+    | '/nootropics'
+    | '/recovery-peptides'
     | '/reviews'
     | '/shop'
+    | '/weight-loss-peptides'
     | '/product/$handle'
   fileRoutesById: FileRoutesById
 }
@@ -116,13 +176,25 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   FaqsRoute: typeof FaqsRoute
+  GrowthHormonePeptidesRoute: typeof GrowthHormonePeptidesRoute
+  LongevityPeptidesRoute: typeof LongevityPeptidesRoute
+  NootropicsRoute: typeof NootropicsRoute
+  RecoveryPeptidesRoute: typeof RecoveryPeptidesRoute
   ReviewsRoute: typeof ReviewsRoute
   ShopRoute: typeof ShopRoute
+  WeightLossPeptidesRoute: typeof WeightLossPeptidesRoute
   ProductHandleRoute: typeof ProductHandleRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/weight-loss-peptides': {
+      id: '/weight-loss-peptides'
+      path: '/weight-loss-peptides'
+      fullPath: '/weight-loss-peptides'
+      preLoaderRoute: typeof WeightLossPeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop': {
       id: '/shop'
       path: '/shop'
@@ -135,6 +207,34 @@ declare module '@tanstack/react-router' {
       path: '/reviews'
       fullPath: '/reviews'
       preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/recovery-peptides': {
+      id: '/recovery-peptides'
+      path: '/recovery-peptides'
+      fullPath: '/recovery-peptides'
+      preLoaderRoute: typeof RecoveryPeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nootropics': {
+      id: '/nootropics'
+      path: '/nootropics'
+      fullPath: '/nootropics'
+      preLoaderRoute: typeof NootropicsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/longevity-peptides': {
+      id: '/longevity-peptides'
+      path: '/longevity-peptides'
+      fullPath: '/longevity-peptides'
+      preLoaderRoute: typeof LongevityPeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/growth-hormone-peptides': {
+      id: '/growth-hormone-peptides'
+      path: '/growth-hormone-peptides'
+      fullPath: '/growth-hormone-peptides'
+      preLoaderRoute: typeof GrowthHormonePeptidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faqs': {
@@ -180,10 +280,24 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   FaqsRoute: FaqsRoute,
+  GrowthHormonePeptidesRoute: GrowthHormonePeptidesRoute,
+  LongevityPeptidesRoute: LongevityPeptidesRoute,
+  NootropicsRoute: NootropicsRoute,
+  RecoveryPeptidesRoute: RecoveryPeptidesRoute,
   ReviewsRoute: ReviewsRoute,
   ShopRoute: ShopRoute,
+  WeightLossPeptidesRoute: WeightLossPeptidesRoute,
   ProductHandleRoute: ProductHandleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
