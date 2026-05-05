@@ -4,6 +4,7 @@ import { storefrontApiRequest, formatPrice, getPrimaryProductImage, type Shopify
 import bottle from "@/assets/product-bottle.jpg";
 import { TrustStrip } from "@/components/TrustStrip";
 import type { Category } from "@/data/categories";
+import { getProductImageOverride } from "@/data/variantImages";
 
 const PRODUCT_BY_HANDLE_LITE = `
   query GetProductLite($handle: String!) {
@@ -64,12 +65,13 @@ export function CategoryPage({ category }: { category: Category }) {
           <h2 className="font-display text-2xl md:text-3xl text-ink mb-6">Shop {category.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {items.map((p) => {
-              const img = getPrimaryProductImage(p as unknown as ShopifyProduct["node"]);
+              const overrideImage = getProductImageOverride(p.handle);
+              const img = overrideImage ? null : getPrimaryProductImage(p as unknown as ShopifyProduct["node"]);
               const price = p.priceRange.minVariantPrice;
               return (
                 <Link key={p.id} to="/product/$handle" params={{ handle: p.handle }} className="group block">
                   <div className="bg-mist aspect-square overflow-hidden rounded-md">
-                    <img src={img?.url || bottle} alt={img?.altText || p.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <img src={overrideImage || img?.url || bottle} alt={overrideImage ? `${p.title} vial` : img?.altText || p.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
                   <div className="pt-3">
                     <h3 className="font-display text-sm text-ink line-clamp-2">{p.title}</h3>
