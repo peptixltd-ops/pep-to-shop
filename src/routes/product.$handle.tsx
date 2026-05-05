@@ -693,6 +693,7 @@ function ProductPage() {
       </div>
 
       <FrequentlyBoughtTogether handle={handle} />
+      <RelatedGuides handle={handle} />
     </div>
     </>
   );
