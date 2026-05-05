@@ -8,6 +8,7 @@ import { TrustStrip } from "@/components/TrustStrip";
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
+import { getVariantImage } from "@/data/variantImages";
 import { toast } from "sonner";
 import ghkCuCoaPdf from "@/assets/coa/ghk-cu-coa.pdf?url";
 import ghkCuCoaPreview1 from "@/assets/coa/ghk-cu-coa-preview-1.png";
