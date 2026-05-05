@@ -4,6 +4,7 @@ import { ShoppingBag, Minus, Plus, Trash2, Loader2, ExternalLink } from "lucide-
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getPrimaryProductImage } from "@/lib/shopify";
+import { getProductImageOverride } from "@/data/variantImages";
 
 export function CartDrawer() {
   const [open, setOpen] = useState(false);
@@ -55,11 +56,12 @@ export function CartDrawer() {
             <>
               <div className="flex-1 overflow-y-auto pr-2 min-h-0 space-y-4">
                 {items.map((item) => {
-                  const img = getPrimaryProductImage(item.product.node);
+                  const overrideImage = getProductImageOverride(item.product.node.handle, item.variantTitle);
+                  const img = overrideImage ? null : getPrimaryProductImage(item.product.node);
                   return (
                     <div key={item.variantId} className="flex gap-3 pb-4 border-b border-border">
                       <div className="w-16 h-16 bg-mist overflow-hidden flex-shrink-0">
-                        {img && <img src={img.url} alt={item.product.node.title} className="w-full h-full object-cover" />}
+                        {(overrideImage || img?.url) && <img src={overrideImage || img?.url} alt={overrideImage ? `${item.product.node.title} ${item.variantTitle} vial` : item.product.node.title} className="w-full h-full object-cover" />}
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-medium text-sm truncate">{item.product.node.title}</h4>
