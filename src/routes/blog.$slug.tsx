@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { blogBySlug, blogPosts } from "@/data/blog";
-import { categoriesBySlug } from "@/data/categories";
+import { blogBySlug, blogPosts, type BlogPost, type BlogFAQ } from "@/data/blog";
+import { categoriesBySlug, type Category } from "@/data/categories";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -98,11 +98,11 @@ function BlogPostPage() {
       <p className="mt-4 text-lg text-muted-foreground leading-relaxed">{post.excerpt}</p>
 
       <div className="mt-10 space-y-10">
-        {post.sections.map((s) => (
+        {post.sections.map((s: BlogPost["sections"][number]) => (
           <section key={s.h2}>
             <h2 className="font-display text-2xl md:text-3xl text-ink mb-4">{s.h2}</h2>
             <div className="space-y-4 text-foreground/80 leading-relaxed">
-              {s.body.map((p, i) => (<p key={i}>{p}</p>))}
+              {s.body.map((p: string, i: number) => (<p key={i}>{p}</p>))}
             </div>
           </section>
         ))}
@@ -113,7 +113,7 @@ function BlogPostPage() {
         <section className="mt-12 bg-mist border border-border rounded-md p-6">
           <h2 className="font-display text-xl text-ink mb-4">Products mentioned in this guide</h2>
           <div className="flex flex-wrap gap-2">
-            {post.productLinks.map((h) => (
+            {post.productLinks.map((h: string) => (
               <Link key={h} to="/product/$handle" params={{ handle: h }} className="text-xs uppercase tracking-wider border border-border px-4 py-2 bg-background hover:border-primary hover:text-primary transition">
                 {h.replace(/-/g, " ")}
               </Link>
@@ -126,7 +126,7 @@ function BlogPostPage() {
       <section className="mt-12">
         <h2 className="font-display text-2xl md:text-3xl text-ink mb-6">Frequently Asked Questions</h2>
         <div className="space-y-3">
-          {post.faqs.map((f) => (
+          {post.faqs.map((f: BlogFAQ) => (
             <details key={f.q} className="group bg-mist border border-border rounded-md p-5">
               <summary className="cursor-pointer font-medium text-ink list-none flex justify-between items-center">
                 <span>{f.q}</span>
@@ -143,7 +143,7 @@ function BlogPostPage() {
         <section className="mt-12">
           <h2 className="font-display text-xl text-ink mb-4">Browse related categories</h2>
           <div className="flex flex-wrap gap-2">
-            {linkedCategories.map((c) => (
+            {linkedCategories.map((c: Category) => (
               <Link key={c.slug} to={`/${c.slug}` as "/weight-loss-peptides"} className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">
                 {c.title}
               </Link>
@@ -157,7 +157,7 @@ function BlogPostPage() {
         <section className="mt-12">
           <h2 className="font-display text-xl text-ink mb-4">Related guides</h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {related.map((r) => (
+            {related.map((r: BlogPost) => (
               <Link key={r.slug} to="/blog/$slug" params={{ slug: r.slug }} className="block bg-mist border border-border p-5 hover:border-primary transition rounded-md">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-primary mb-2">{r.category}</p>
                 <h3 className="font-display text-base text-ink">{r.title}</h3>
