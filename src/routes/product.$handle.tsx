@@ -376,13 +376,16 @@ function ProductPage() {
         {/* Images */}
         <div className="space-y-3">
           <div className="relative bg-mist aspect-square overflow-hidden rounded-md">
-            {images[activeImage] && (
-              <img
-                src={images[activeImage].node.url}
-                alt={images[activeImage].node.altText || product.title}
-                className="w-full h-full object-contain"
-              />
-            )}
+            {(() => {
+              const variantOverride = getVariantImage(handle, selectedVariant?.title);
+              const src = variantOverride || images[activeImage]?.node.url;
+              const alt = variantOverride
+                ? `${product.title} ${selectedVariant?.title} vial`
+                : images[activeImage]?.node.altText || product.title;
+              return src ? (
+                <img src={src} alt={alt} className="w-full h-full object-contain" />
+              ) : null;
+            })()}
             <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-destructive/10 text-destructive text-[11px] uppercase tracking-wider px-2.5 py-1 rounded">
               <Flame className="size-3" /> Selling fast
             </span>
