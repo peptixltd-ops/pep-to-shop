@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText, X } from "lucide-react";
 import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
+import { RelatedGuides } from "@/components/RelatedGuides";
 import { TrustStrip } from "@/components/TrustStrip";
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
@@ -93,7 +94,79 @@ const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: stri
   },
 };
 
+async function fetchProductForHead(handle: string) {
+  const { storefrontApiRequest, PRODUCT_BY_HANDLE_QUERY } = await import("@/lib/shopify");
+  try {
+    const data = await storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle });
+    return data?.data?.product as { title: string; description: string; priceRange: { minVariantPrice: { amount: string; currencyCode: string } }; images: { edges: Array<{ node: { url: string } }> } } | null;
+  } catch {
+    return null;
+  }
+}
+
 export const Route = createFileRoute("/product/$handle")({
+  loader: async ({ params }) => {
+    const product = await fetchProductForHead(params.handle);
+    return { product };
+  },
+  head: ({ params, loaderData }) => {
+    const handle = params.handle;
+    const url = `https://pondokpeptides.com/product/${handle}`;
+    const p = loaderData?.product;
+    const name = p?.title || handle.replace(/-/g, " ");
+    const title = `${name} UK | Buy ${name} Research Peptide | 3rd Party Tested | Pondok Peptides`;
+    const desc = `Buy ${name} research peptide in the UK. Third-party tested with batch-specific COAs, high purity and fast UK delivery from Pondok Peptides.`;
+    const image = p?.images?.edges?.[0]?.node?.url;
+    const price = p?.priceRange?.minVariantPrice;
+    const ldGraph: Array<Record<string, unknown>> = [
+      {
+        "@type": "Product",
+        name,
+        description: p?.description?.slice(0, 500) || desc,
+        url,
+        brand: { "@type": "Brand", name: "Pondok Peptides" },
+        ...(image ? { image } : {}),
+        ...(price
+          ? {
+              offers: {
+                "@type": "Offer",
+                price: parseFloat(price.amount).toFixed(2),
+                priceCurrency: price.currencyCode,
+                availability: "https://schema.org/InStock",
+                url,
+                seller: { "@type": "Organization", name: "Pondok Peptides" },
+              },
+            }
+          : {}),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://pondokpeptides.com/" },
+          { "@type": "ListItem", position: 2, name: "Shop", item: "https://pondokpeptides.com/shop" },
+          { "@type": "ListItem", position: 3, name, item: url },
+        ],
+      },
+    ];
+    return {
+      meta: [
+        { title },
+        { name: "description", content: desc },
+        { property: "og:title", content: title },
+        { property: "og:description", content: desc },
+        { property: "og:type", content: "product" },
+        { property: "og:url", content: url },
+        ...(image ? [{ property: "og:image", content: image }] : []),
+      ],
+      links: [{ rel: "canonical", href: url }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({ "@context": "https://schema.org", "@graph": ldGraph }),
+        },
+      ],
+    };
+  },
   component: ProductPage,
 });
 
