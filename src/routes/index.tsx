@@ -219,8 +219,16 @@ function HomePage() {
         <h2 className="font-display text-4xl md:text-5xl text-ink max-w-3xl mx-auto leading-tight">Committed To Precision. Built On Trust.</h2>
         <p className="mt-5 text-muted-foreground max-w-xl mx-auto">High quality peptides supplied with consistency, control and uncompromising standards.</p>
         <div className="mt-12 max-w-3xl mx-auto text-left text-foreground/80 space-y-4">
-          <p>At Pondok Peptides, we supply <strong>premium peptides</strong> with a focus on purity, consistency and reliability.</p>
-          <p>Every peptide is handled with <strong>precision</strong>, from sourcing to delivery, ensuring dependable standards at every stage.</p>
+          <p>At Pondok Peptides we supply <strong>premium research peptides UK</strong> researchers can rely on, with a focus on purity, consistency and reliability. Whether you're looking to <strong>buy peptides UK</strong>-wide or you need a long-term <strong>UK peptide supplier</strong>, every order ships with verified third-party testing.</p>
+          <p>Every peptide is handled with <strong>precision</strong> from sourcing to delivery. We're a <strong>peptide supplier UK</strong> labs and independent researchers trust because every batch is independently HPLC tested. Our <strong>third party tested peptides</strong> include <Link to="/product/$handle" params={{ handle: "retatrutide" }} className="text-primary underline">retatrutide</Link>, <Link to="/product/$handle" params={{ handle: "tirzepatide" }} className="text-primary underline">tirzepatide</Link>, <Link to="/product/$handle" params={{ handle: "semaglutide" }} className="text-primary underline">semaglutide</Link>, <Link to="/product/$handle" params={{ handle: "bpc-157-tb-500-mix" }} className="text-primary underline">BPC-157</Link> and <Link to="/product/$handle" params={{ handle: "tb-500" }} className="text-primary underline">TB-500</Link>.</p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            <Link to="/weight-loss-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Weight Loss</Link>
+            <Link to="/recovery-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Recovery</Link>
+            <Link to="/longevity-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Longevity</Link>
+            <Link to="/nootropics" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Nootropics</Link>
+            <Link to="/growth-hormone-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Growth Hormone</Link>
+            <Link to="/blog" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Research Guides</Link>
+          </div>
         </div>
       </section>
 
