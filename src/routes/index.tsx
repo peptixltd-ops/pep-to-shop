@@ -12,10 +12,10 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/com
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Buy Peptides UK | Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
-      { name: "description", content: "Buy research peptides in the UK with 3rd party verified purity and COAs per batch. Retatrutide, BPC-157, TB-500, tirzepatide and more, fast UK delivery." },
-      { property: "og:title", content: "Buy Peptides UK | Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
-      { property: "og:description", content: "Buy research peptides in the UK with 3rd party verified purity and COAs per batch. Fast UK delivery from a trusted supplier." },
+      { title: "Buy Research Peptides UK | Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
+      { name: "description", content: "Buy premium research peptides in the UK with batch-specific third-party testing and verified COAs. Shop Retatrutide, BPC-157, TB-500, Tirzepatide, Semaglutide and more with fast UK delivery." },
+      { property: "og:title", content: "Buy Research Peptides UK | Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
+      { property: "og:description", content: "Buy premium research peptides in the UK with batch-specific third-party testing and verified COAs. Fast UK delivery from a trusted UK peptide supplier." },
       { property: "og:url", content: "https://pondokpeptides.com/" },
     ],
     links: [{ rel: "canonical", href: "https://pondokpeptides.com/" }],
@@ -130,10 +130,10 @@ function HomePage() {
             <div className="w-full max-w-xl">
               <span className="inline-block mb-4 px-3 py-1 text-[10px] uppercase tracking-[0.25em] bg-ink text-background">For Research Use Only</span>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-ink leading-[1.05]">
-                <span className="italic text-primary">Medical Grade</span><br />Research Peptides.
+                <span className="italic text-primary">Medical Grade</span><br />Research Peptides UK.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                3rd Party Tested, Pure Peptides. Trusted by over 10,000 customers.
+                The trusted UK peptide supplier. Buy peptides UK with batch-specific third-party testing, verified COAs and fast next-day UK delivery. Trusted by over 10,000 researchers.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/shop" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 transition">
