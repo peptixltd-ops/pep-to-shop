@@ -6,10 +6,13 @@ import { CartDrawer } from "@/components/CartDrawer";
 
 const nav = [
   { to: "/shop", label: "Shop All" },
+  { to: "/weight-loss-peptides", label: "Weight Loss" },
+  { to: "/recovery-peptides", label: "Recovery" },
+  { to: "/blog", label: "Blog" },
   { to: "/reviews", label: "Reviews" },
-  { to: "/about", label: "About Us" },
+  { to: "/about", label: "About" },
   { to: "/faqs", label: "FAQs" },
-  { to: "/contact", label: "Contact Us" },
+  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function SiteHeader() {

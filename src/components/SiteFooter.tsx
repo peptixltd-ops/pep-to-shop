@@ -19,13 +19,19 @@ export function SiteFooter() {
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Shop</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/shop" className="hover:text-accent">All peptides</Link></li>
-            <li><Link to="/reviews" className="hover:text-accent">Reviews</Link></li>
+            <li><Link to="/weight-loss-peptides" className="hover:text-accent">Weight loss peptides UK</Link></li>
+            <li><Link to="/recovery-peptides" className="hover:text-accent">Recovery peptides UK</Link></li>
+            <li><Link to="/longevity-peptides" className="hover:text-accent">Longevity peptides UK</Link></li>
+            <li><Link to="/nootropics" className="hover:text-accent">Nootropic peptides UK</Link></li>
+            <li><Link to="/growth-hormone-peptides" className="hover:text-accent">Growth hormone peptides UK</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Company</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/about" className="hover:text-accent">About us</Link></li>
+            <li><Link to="/blog" className="hover:text-accent">Research blog</Link></li>
+            <li><Link to="/reviews" className="hover:text-accent">Reviews</Link></li>
             <li><Link to="/faqs" className="hover:text-accent">FAQs</Link></li>
             <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
           </ul>
