@@ -1,4 +1,4 @@
-import { createServerFileRoute } from "@tanstack/react-start/server";
+import { createFileRoute } from "@tanstack/react-router";
 import { categories } from "@/data/categories";
 import { blogPosts } from "@/data/blog";
 
@@ -29,6 +29,10 @@ function buildSitemap() {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>`;
 }
 
-export const ServerRoute = createServerFileRoute("/sitemap.xml").methods({
-  GET: () => new Response(buildSitemap(), { headers: { "Content-Type": "application/xml; charset=utf-8" } }),
+export const Route = createFileRoute("/sitemap[.]xml")({
+  server: {
+    handlers: {
+      GET: () => new Response(buildSitemap(), { headers: { "Content-Type": "application/xml; charset=utf-8" } }),
+    },
+  },
 });
