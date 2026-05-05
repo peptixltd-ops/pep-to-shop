@@ -76,12 +76,12 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function BlogPostPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: typeof blogPosts[number] };
   const related = post.relatedSlugs
-    .map((s) => blogBySlug[s])
+    .map((s: string) => blogBySlug[s])
     .filter(Boolean);
   const linkedCategories = post.categoryLinks
-    .map((s) => categoriesBySlug[s])
+    .map((s: string) => categoriesBySlug[s])
     .filter(Boolean);
 
   return (
