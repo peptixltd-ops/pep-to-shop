@@ -9,6 +9,11 @@ import tirz10 from "@/assets/variant-mockups/tirzepatide-10mg-mockup.png";
 import tirz20 from "@/assets/variant-mockups/tirzepatide-20mg-mockup.png";
 import tirz40 from "@/assets/variant-mockups/tirzepatide-40mg-mockup.png";
 
+export const DEFAULT_PRODUCT_IMAGES: Record<string, string> = {
+  retatrutide: reta10,
+  tirzepatide: tirz10,
+};
+
 export const VARIANT_IMAGES: Record<string, Record<string, string>> = {
   retatrutide: {
     "10mg": reta10,
@@ -27,4 +32,8 @@ export function getVariantImage(handle: string, variantTitle: string | undefined
   if (!variantTitle) return null;
   const key = variantTitle.trim().toLowerCase();
   return VARIANT_IMAGES[handle]?.[key] ?? null;
+}
+
+export function getProductImageOverride(handle: string, variantTitle?: string): string | null {
+  return getVariantImage(handle, variantTitle) ?? DEFAULT_PRODUCT_IMAGES[handle] ?? null;
 }

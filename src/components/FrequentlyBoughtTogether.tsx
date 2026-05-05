@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Loader2 } from "lucide-react";
 import { storefrontApiRequest, formatPrice, getPrimaryProductImage, type ShopifyProduct } from "@/lib/shopify";
 import bottle from "@/assets/product-bottle.jpg";
+import { getProductImageOverride } from "@/data/variantImages";
 
 const BAC_WATER = "bacteriostatic-water";
 
@@ -94,14 +95,15 @@ export function FrequentlyBoughtTogether({ handle }: { handle: string }) {
       ) : (
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {items.map((p) => {
-            const img = getPrimaryProductImage(p as unknown as ShopifyProduct["node"]);
+            const overrideImage = getProductImageOverride(p.handle);
+            const img = overrideImage ? null : getPrimaryProductImage(p as unknown as ShopifyProduct["node"]);
             const price = p.priceRange.minVariantPrice;
             return (
               <Link key={p.id} to="/product/$handle" params={{ handle: p.handle }} className="group block">
                 <div className="bg-mist aspect-square overflow-hidden rounded-md">
                   <img
-                    src={img?.url || bottle}
-                    alt={img?.altText || p.title}
+                    src={overrideImage || img?.url || bottle}
+                    alt={overrideImage ? `${p.title} vial` : img?.altText || p.title}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
