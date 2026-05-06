@@ -26,7 +26,52 @@ interface CartStore {
   getCheckoutUrl: () => string | null;
 }
 
-const CART_QUERY = `query cart($id: ID!) { cart(id: $id) { id totalQuantity } }`;
+const CART_QUERY = `
+  query cart($id: ID!) {
+    cart(id: $id) {
+      id
+      totalQuantity
+      checkoutUrl
+      lines(first: 100) {
+        edges {
+          node {
+            id
+            quantity
+            merchandise {
+              ... on ProductVariant {
+                id
+                title
+                price { amount currencyCode }
+                selectedOptions { name value }
+                product {
+                  id
+                  title
+                  handle
+                  description
+                  priceRange { minVariantPrice { amount currencyCode } }
+                  images(first: 5) { edges { node { url altText } } }
+                  variants(first: 10) {
+                    edges {
+                      node {
+                        id
+                        title
+                        sku
+                        price { amount currencyCode }
+                        availableForSale
+                        selectedOptions { name value }
+                      }
+                    }
+                  }
+                  options { name values }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 const CART_CREATE_MUTATION = `
   mutation cartCreate($input: CartInput!) {
@@ -246,7 +291,31 @@ export const useCartStore = create<CartStore>()(
           const data = await storefrontApiRequest(CART_QUERY, { id: cartId });
           if (!data) return;
           const cart = data?.data?.cart;
-          if (!cart || cart.totalQuantity === 0) clearCart();
+          if (!cart || cart.totalQuantity === 0) {
+            clearCart();
+            return;
+          }
+          const lines = cart.lines?.edges || [];
+          const rebuiltItems: CartItem[] = lines
+            .map((edge: any) => {
+              const node = edge.node;
+              const merch = node.merchandise;
+              if (!merch?.product) return null;
+              return {
+                lineId: node.id,
+                product: { node: merch.product },
+                variantId: merch.id,
+                variantTitle: merch.title,
+                price: merch.price,
+                quantity: node.quantity,
+                selectedOptions: merch.selectedOptions || [],
+              } as CartItem;
+            })
+            .filter(Boolean) as CartItem[];
+          set({
+            items: rebuiltItems,
+            checkoutUrl: cart.checkoutUrl ? formatCheckoutUrl(cart.checkoutUrl) : get().checkoutUrl,
+          });
         } catch (error) {
           console.error("Failed to sync cart:", error);
         } finally {
