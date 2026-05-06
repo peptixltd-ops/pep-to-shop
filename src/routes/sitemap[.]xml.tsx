@@ -69,9 +69,8 @@ function urlTag(loc: string, opts: { lastmod?: string; changefreq?: string; prio
 }
 
 export const Route = createFileRoute("/sitemap.xml")({
+  // @ts-expect-error - server route handlers supported at runtime by start
   server: {
-    // @ts-expect-error - server route handlers supported at runtime
-    handlers: {
       GET: async () => {
         let products: Array<{ handle: string; updatedAt: string }> = [];
         try {
