@@ -26,7 +26,52 @@ interface CartStore {
   getCheckoutUrl: () => string | null;
 }
 
-const CART_QUERY = `query cart($id: ID!) { cart(id: $id) { id totalQuantity } }`;
+const CART_QUERY = `
+  query cart($id: ID!) {
+    cart(id: $id) {
+      id
+      totalQuantity
+      checkoutUrl
+      lines(first: 100) {
+        edges {
+          node {
+            id
+            quantity
+            merchandise {
+              ... on ProductVariant {
+                id
+                title
+                price { amount currencyCode }
+                selectedOptions { name value }
+                product {
+                  id
+                  title
+                  handle
+                  description
+                  priceRange { minVariantPrice { amount currencyCode } }
+                  images(first: 5) { edges { node { url altText } } }
+                  variants(first: 10) {
+                    edges {
+                      node {
+                        id
+                        title
+                        sku
+                        price { amount currencyCode }
+                        availableForSale
+                        selectedOptions { name value }
+                      }
+                    }
+                  }
+                  options { name values }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 const CART_CREATE_MUTATION = `
   mutation cartCreate($input: CartInput!) {
