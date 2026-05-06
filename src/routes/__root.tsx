@@ -57,6 +57,11 @@ export const Route = createRootRoute({
       { rel: "canonical", href: "https://pondokpeptides.com" },
     ],
     scripts: [
+      // Google tag (gtag.js) — replace AW-XXXXXXXXX with your Google Ads conversion ID, and add GA4 ID if you have one
+      { src: "https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX", async: true },
+      {
+        children: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-XXXXXXXXX');`,
+      },
       {
         type: "application/ld+json",
         children: JSON.stringify({

@@ -52,7 +52,7 @@ export function SiteHeader() {
             SHOP NOW
           </Link>
           <a
-            href="https://cqdyni-4v.myshopify.com/account"
+            href="https://account.pondokpeptides.com"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Sign in to your account"
