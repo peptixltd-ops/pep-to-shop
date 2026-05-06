@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeightLossPeptidesRouteImport } from './routes/weight-loss-peptides'
+import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as ReviewsRouteImport } from './routes/reviews'
@@ -29,6 +30,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const WeightLossPeptidesRoute = WeightLossPeptidesRouteImport.update({
   id: '/weight-loss-peptides',
   path: '/weight-loss-peptides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThankYouRoute = ThankYouRouteImport.update({
+  id: '/thank-you',
+  path: '/thank-you',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -120,6 +126,7 @@ export interface FileRoutesByFullPath {
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/thank-you': typeof ThankYouRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -138,6 +145,7 @@ export interface FileRoutesByTo {
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/thank-you': typeof ThankYouRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -157,6 +165,7 @@ export interface FileRoutesById {
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/thank-you': typeof ThankYouRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -177,6 +186,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/shop'
     | '/sitemap.xml'
+    | '/thank-you'
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/product/$handle'
@@ -195,6 +205,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/shop'
     | '/sitemap.xml'
+    | '/thank-you'
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/product/$handle'
@@ -213,6 +224,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/shop'
     | '/sitemap.xml'
+    | '/thank-you'
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/product/$handle'
@@ -232,6 +244,7 @@ export interface RootRouteChildren {
   ReviewsRoute: typeof ReviewsRoute
   ShopRoute: typeof ShopRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ThankYouRoute: typeof ThankYouRoute
   WeightLossPeptidesRoute: typeof WeightLossPeptidesRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ProductHandleRoute: typeof ProductHandleRoute
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       path: '/weight-loss-peptides'
       fullPath: '/weight-loss-peptides'
       preLoaderRoute: typeof WeightLossPeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thank-you': {
+      id: '/thank-you'
+      path: '/thank-you'
+      fullPath: '/thank-you'
+      preLoaderRoute: typeof ThankYouRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -368,6 +388,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewsRoute: ReviewsRoute,
   ShopRoute: ShopRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ThankYouRoute: ThankYouRoute,
   WeightLossPeptidesRoute: WeightLossPeptidesRoute,
   BlogSlugRoute: BlogSlugRoute,
   ProductHandleRoute: ProductHandleRoute,
@@ -376,3 +397,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
