@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>You left something behind · Pondok Peptides</title></head>
+<body style="margin:0;padding:0;background:#E7F4F9;font-family:'Inter',Helvetica,Arial,sans-serif;color:#061D2B;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#E7F4F9;padding:32px 16px;">
+    <tr><td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background:#FFFFFF;border:1px solid #DAE3E6;">
+        <tr><td style="padding:28px 32px;border-bottom:1px solid #DAE3E6;text-align:center;">
+          <img src="https://pondokpeptides.com/press/pondok-wordmark.png" alt="Pondok Peptides" height="28" style="height:28px;">
+        </td></tr>
+        <tr><td style="padding:48px 32px 8px;text-align:center;">
+          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#59656E;font-family:'Courier New',monospace;">Still thinking it over?</p>
+          <h1 style="margin:0;font-family:'Syne','Inter',sans-serif;font-size:34px;line-height:1.15;letter-spacing:-.02em;">Your cart is waiting.</h1>
+          <p style="margin:18px auto 0;max-width:440px;font-size:15px;line-height:1.6;color:#59656E;">We saved your selection. Every batch is independently verified, and UK orders ship the next business day.</p>
+        </td></tr>
+        <tr><td style="padding:32px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #DAE3E6;">
+            {% for line in checkout.line_items %}
+            <tr><td style="padding:16px 20px;border-bottom:1px solid #DAE3E6;">
+              <table width="100%"><tr>
+                {% if line.image %}<td width="64" style="padding-right:14px;"><img src="{{ line.image | img_url: 'small' }}" width="56" height="56" alt="" style="display:block;border:1px solid #DAE3E6;"></td>{% endif %}
+                <td style="font-size:14px;color:#061D2B;">{{ line.product.title }}<br><span style="color:#59656E;font-size:12px;">{{ line.variant.title }} · × {{ line.quantity }}</span></td>
+                <td align="right" style="font-size:14px;color:#061D2B;">{{ line.line_price | money }}</td>
+              </tr></table>
+            </td></tr>
+            {% endfor %}
+          </table>
+        </td></tr>
+        <tr><td style="padding:0 32px 40px;text-align:center;">
+          <a href="{{ url }}" style="display:inline-block;background:#486748;color:#FFFFFF;text-decoration:none;padding:16px 40px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;">Complete checkout</a>
+          <p style="margin:18px 0 0;font-size:12px;color:#59656E;">Free UK shipping · 14,500+ verified customers</p>
+        </td></tr>
+        <tr><td style="padding:22px 32px;background:#E3EFE3;border-top:1px solid #DAE3E6;">
+          <table width="100%"><tr>
+            <td style="font-size:12px;color:#486748;line-height:1.5;">Questions about a product or batch? Reply to this email, our team responds within a few hours.</td>
+          </tr></table>
+        </td></tr>
+        <tr><td style="padding:18px 32px;background:#E7F4F9;text-align:center;">
+          <p style="margin:0;font-size:11px;color:#59656E;">For research use only · <a href="https://pondokpeptides.com" style="color:#486748;text-decoration:none;">pondokpeptides.com</a></p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body></html>
