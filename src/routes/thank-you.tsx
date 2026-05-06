@@ -59,6 +59,7 @@ function ThankYouPage() {
   return (
     <div className="bg-background">
       <section className="container-x py-20 md:py-28 text-center">
+        <img src="/press/pondok-wordmark.png" alt="Pondok Peptides" className="mx-auto h-8 md:h-10 mb-10 opacity-90" />
         <div className="mx-auto inline-flex size-16 items-center justify-center rounded-full bg-[hsl(var(--accent))]/30 mb-6">
           <CheckCircle2 className="size-9 text-primary" />
         </div>
