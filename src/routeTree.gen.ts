@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeightLossPeptidesRouteImport } from './routes/weight-loss-peptides'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as RecoveryPeptidesRouteImport } from './routes/recovery-peptides'
@@ -27,6 +28,11 @@ import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 const WeightLossPeptidesRoute = WeightLossPeptidesRouteImport.update({
   id: '/weight-loss-peptides',
   path: '/weight-loss-peptides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShopRoute = ShopRouteImport.update({
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -122,6 +129,7 @@ export interface FileRoutesByTo {
   '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -139,6 +147,7 @@ export interface FileRoutesById {
   '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/recovery-peptides'
     | '/reviews'
     | '/shop'
+    | '/sitemap.xml'
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/product/$handle'
@@ -173,6 +183,7 @@ export interface FileRouteTypes {
     | '/recovery-peptides'
     | '/reviews'
     | '/shop'
+    | '/sitemap.xml'
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/product/$handle'
@@ -189,6 +200,7 @@ export interface FileRouteTypes {
     | '/recovery-peptides'
     | '/reviews'
     | '/shop'
+    | '/sitemap.xml'
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/product/$handle'
@@ -206,6 +218,7 @@ export interface RootRouteChildren {
   RecoveryPeptidesRoute: typeof RecoveryPeptidesRoute
   ReviewsRoute: typeof ReviewsRoute
   ShopRoute: typeof ShopRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   WeightLossPeptidesRoute: typeof WeightLossPeptidesRoute
   BlogSlugRoute: typeof BlogSlugRoute
   ProductHandleRoute: typeof ProductHandleRoute
@@ -219,6 +232,13 @@ declare module '@tanstack/react-router' {
       path: '/weight-loss-peptides'
       fullPath: '/weight-loss-peptides'
       preLoaderRoute: typeof WeightLossPeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop': {
@@ -326,6 +346,7 @@ const rootRouteChildren: RootRouteChildren = {
   RecoveryPeptidesRoute: RecoveryPeptidesRoute,
   ReviewsRoute: ReviewsRoute,
   ShopRoute: ShopRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   WeightLossPeptidesRoute: WeightLossPeptidesRoute,
   BlogSlugRoute: BlogSlugRoute,
   ProductHandleRoute: ProductHandleRoute,
@@ -334,12 +355,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
