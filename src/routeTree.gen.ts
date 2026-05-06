@@ -14,6 +14,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as RecoveryPeptidesRouteImport } from './routes/recovery-peptides'
+import { Route as PressRouteImport } from './routes/press'
 import { Route as NootropicsRouteImport } from './routes/nootropics'
 import { Route as LongevityPeptidesRouteImport } from './routes/longevity-peptides'
 import { Route as GrowthHormonePeptidesRouteImport } from './routes/growth-hormone-peptides'
@@ -48,6 +49,11 @@ const ReviewsRoute = ReviewsRouteImport.update({
 const RecoveryPeptidesRoute = RecoveryPeptidesRouteImport.update({
   id: '/recovery-peptides',
   path: '/recovery-peptides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PressRoute = PressRouteImport.update({
+  id: '/press',
+  path: '/press',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NootropicsRoute = NootropicsRouteImport.update({
@@ -109,6 +115,7 @@ export interface FileRoutesByFullPath {
   '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
   '/longevity-peptides': typeof LongevityPeptidesRoute
   '/nootropics': typeof NootropicsRoute
+  '/press': typeof PressRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
@@ -126,6 +133,7 @@ export interface FileRoutesByTo {
   '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
   '/longevity-peptides': typeof LongevityPeptidesRoute
   '/nootropics': typeof NootropicsRoute
+  '/press': typeof PressRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
@@ -144,6 +152,7 @@ export interface FileRoutesById {
   '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
   '/longevity-peptides': typeof LongevityPeptidesRoute
   '/nootropics': typeof NootropicsRoute
+  '/press': typeof PressRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/reviews': typeof ReviewsRoute
   '/shop': typeof ShopRoute
@@ -163,6 +172,7 @@ export interface FileRouteTypes {
     | '/growth-hormone-peptides'
     | '/longevity-peptides'
     | '/nootropics'
+    | '/press'
     | '/recovery-peptides'
     | '/reviews'
     | '/shop'
@@ -180,6 +190,7 @@ export interface FileRouteTypes {
     | '/growth-hormone-peptides'
     | '/longevity-peptides'
     | '/nootropics'
+    | '/press'
     | '/recovery-peptides'
     | '/reviews'
     | '/shop'
@@ -197,6 +208,7 @@ export interface FileRouteTypes {
     | '/growth-hormone-peptides'
     | '/longevity-peptides'
     | '/nootropics'
+    | '/press'
     | '/recovery-peptides'
     | '/reviews'
     | '/shop'
@@ -215,6 +227,7 @@ export interface RootRouteChildren {
   GrowthHormonePeptidesRoute: typeof GrowthHormonePeptidesRoute
   LongevityPeptidesRoute: typeof LongevityPeptidesRoute
   NootropicsRoute: typeof NootropicsRoute
+  PressRoute: typeof PressRoute
   RecoveryPeptidesRoute: typeof RecoveryPeptidesRoute
   ReviewsRoute: typeof ReviewsRoute
   ShopRoute: typeof ShopRoute
@@ -260,6 +273,13 @@ declare module '@tanstack/react-router' {
       path: '/recovery-peptides'
       fullPath: '/recovery-peptides'
       preLoaderRoute: typeof RecoveryPeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/press': {
+      id: '/press'
+      path: '/press'
+      fullPath: '/press'
+      preLoaderRoute: typeof PressRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nootropics': {
@@ -343,6 +363,7 @@ const rootRouteChildren: RootRouteChildren = {
   GrowthHormonePeptidesRoute: GrowthHormonePeptidesRoute,
   LongevityPeptidesRoute: LongevityPeptidesRoute,
   NootropicsRoute: NootropicsRoute,
+  PressRoute: PressRoute,
   RecoveryPeptidesRoute: RecoveryPeptidesRoute,
   ReviewsRoute: ReviewsRoute,
   ShopRoute: ShopRoute,

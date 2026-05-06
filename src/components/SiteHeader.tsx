@@ -51,7 +51,17 @@ export function SiteHeader() {
           <Link to="/shop" className="hidden md:inline-flex items-center justify-center bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors">
             SHOP NOW
           </Link>
-          <button aria-label="Account" className="p-2 text-foreground/70 hover:text-primary"><User className="size-5" /></button>
+          <a
+            href="https://cqdyni-4v.myshopify.com/account"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Sign in to your account"
+            title="Sign in / My account"
+            className="hidden sm:inline-flex items-center gap-1.5 p-2 text-foreground/70 hover:text-primary text-xs font-medium uppercase tracking-wider"
+          >
+            <User className="size-5" />
+            <span className="hidden md:inline">Account</span>
+          </a>
           <CartDrawer />
           <button aria-label="Menu" onClick={() => setOpen(!open)} className="lg:hidden p-2"><Menu className="size-5" /></button>
         </div>
