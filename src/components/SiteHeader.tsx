@@ -5,9 +5,6 @@ import { useState } from "react";
 import { CartDrawer } from "@/components/CartDrawer";
 
 const nav = [
-  { to: "/shop", label: "Shop All" },
-  { to: "/weight-loss-peptides", label: "Weight Loss" },
-  { to: "/recovery-peptides", label: "Recovery" },
   { to: "/blog", label: "Blog" },
   { to: "/reviews", label: "Reviews" },
   { to: "/about", label: "About" },
