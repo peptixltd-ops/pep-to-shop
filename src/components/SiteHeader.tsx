@@ -53,8 +53,6 @@ export function SiteHeader() {
           </Link>
           <a
             href="https://account.pondokpeptides.com"
-            target="_blank"
-            rel="noopener noreferrer"
             aria-label="Sign in to your account"
             title="Sign in / My account"
             className="hidden sm:inline-flex items-center gap-1.5 p-2 text-foreground/70 hover:text-primary text-xs font-medium uppercase tracking-wider"
