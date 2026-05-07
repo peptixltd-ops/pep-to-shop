@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { trackViewItem } from "@/lib/analytics";
 import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText, X } from "lucide-react";
 import { FrequentlyBoughtTogether, getFrequentlyBoughtTogetherHandles } from "@/components/FrequentlyBoughtTogether";
 import { BundleCardsForProduct } from "@/components/BundleCard";
