@@ -8,7 +8,7 @@ export function SiteFooter() {
           For Research Use Only · Not For Human Consumption
         </div>
       </div>
-      <div className="container-x py-16 grid gap-10 md:grid-cols-4">
+      <div className="container-x py-16 grid gap-10 md:grid-cols-5">
         <div>
           <div className="font-display text-2xl font-semibold mb-3">Pondok Peptides</div>
           <p className="text-sm text-background/70 leading-relaxed">
@@ -24,6 +24,17 @@ export function SiteFooter() {
             <li><Link to="/longevity-peptides" className="hover:text-accent">Longevity peptides UK</Link></li>
             <li><Link to="/nootropics" className="hover:text-accent">Nootropic peptides UK</Link></li>
             <li><Link to="/growth-hormone-peptides" className="hover:text-accent">Growth hormone peptides UK</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Top Peptides</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/product/$handle" params={{ handle: "retatrutide" }} className="hover:text-accent">Buy Retatrutide UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "tirzepatide" }} className="hover:text-accent">Buy Tirzepatide UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "semaglutide" }} className="hover:text-accent">Buy Semaglutide UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "bpc-157" }} className="hover:text-accent">Buy BPC-157 UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "tb-500" }} className="hover:text-accent">Buy TB-500 UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "bacteriostatic-water" }} className="hover:text-accent">Bacteriostatic Water</Link></li>
           </ul>
         </div>
         <div>

@@ -6,6 +6,8 @@ import { FrequentlyBoughtTogether, getFrequentlyBoughtTogetherHandles } from "@/
 import { BundleCardsForProduct } from "@/components/BundleCard";
 import { RelatedGuides } from "@/components/RelatedGuides";
 import { TrustStrip } from "@/components/TrustStrip";
+import { ProductInternalLinks } from "@/components/ProductInternalLinks";
+import { getProductFAQs } from "@/data/productFaqs";
 
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { navigateToCheckout } from "@/lib/checkout";
@@ -166,6 +168,7 @@ export const Route = createFileRoute("/product/$handle")({
     const image = p?.images?.edges?.[0]?.node?.url;
     const price = p?.priceRange?.minVariantPrice;
     const sku = p?.variants?.edges?.[0]?.node?.sku || undefined;
+    const productFaqs = getProductFAQs(handle);
     const ldGraph: Array<Record<string, unknown>> = [
       {
         "@type": "Product",
@@ -196,6 +199,16 @@ export const Route = createFileRoute("/product/$handle")({
           { "@type": "ListItem", position: 3, name, item: url },
         ],
       },
+      ...(productFaqs.length > 0
+        ? [{
+            "@type": "FAQPage",
+            mainEntity: productFaqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }]
+        : []),
     ];
     return {
       meta: [
@@ -753,6 +766,8 @@ function ProductPage() {
 
       <BundleCardsForProduct handle={handle} initialProducts={bundles} />
       <FrequentlyBoughtTogether handle={handle} initialItems={frequentlyBoughtTogether} />
+      <ProductInternalLinks handle={handle} />
+      <ProductFAQSection handle={handle} />
       <RelatedGuides handle={handle} />
     </div>
     <MobileStickyCTA
@@ -777,5 +792,26 @@ function SpecRow({ label, value, mono }: { label: string; value: string; mono?: 
       <td className="px-4 py-2.5 text-muted-foreground w-1/3 align-top">{label}</td>
       <td className={`px-4 py-2.5 text-ink ${mono ? "font-mono text-xs break-all" : ""}`}>{value}</td>
     </tr>
+  );
+}
+
+function ProductFAQSection({ handle }: { handle: string }) {
+  const faqs = getProductFAQs(handle);
+  if (faqs.length === 0) return null;
+  return (
+    <section className="mt-16 max-w-3xl mx-auto">
+      <h2 className="font-display text-2xl md:text-3xl text-ink mb-6 text-center">Frequently Asked Questions</h2>
+      <div className="space-y-3">
+        {faqs.map((f) => (
+          <details key={f.q} className="group bg-mist border border-border rounded-md p-5">
+            <summary className="cursor-pointer font-medium text-ink list-none flex justify-between items-center gap-4">
+              <span>{f.q}</span>
+              <span className="text-primary group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p className="mt-3 text-sm text-foreground/75 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   );
 }
