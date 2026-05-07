@@ -26,9 +26,9 @@ function ContactPage() {
       <div className="grid lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
         <div className="space-y-6">
           {[
-            { icon: Mail, t: "Email", d: "hello@pondok.co" },
+            { icon: Mail, t: "Email", d: "info@pondokpeptides.com" },
             { icon: MessageCircle, t: "Live chat", d: "Mon–Fri, 9am–6pm GMT" },
-            { icon: MapPin, t: "Office", d: "London, United Kingdom" },
+            { icon: MapPin, t: "Office", d: "131 Movers Lane, Barking, IG11 7UQ, United Kingdom" },
           ].map(({ icon: Icon, t, d }) => (
             <div key={t} className="flex gap-4">
               <div className="size-10 rounded-full bg-accent/40 flex items-center justify-center shrink-0"><Icon className="size-4 text-primary" /></div>

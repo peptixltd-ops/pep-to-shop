@@ -78,6 +78,24 @@ export function SiteHeader() {
           <button aria-label="Menu" onClick={() => setOpen(!open)} className="lg:hidden p-2"><Menu className="size-5" /></button>
         </div>
       </div>
+      {searchOpen && (
+        <div className="border-t border-border bg-background">
+          <form onSubmit={submitSearch} className="container-x py-4 flex items-center gap-2">
+            <Search className="size-4 text-muted-foreground" />
+            <input
+              autoFocus
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Search peptides (e.g. Retatrutide, BPC-157)"
+              className="flex-1 bg-transparent border-0 focus:outline-none text-sm py-2"
+            />
+            <button type="button" onClick={() => setSearchOpen(false)} aria-label="Close search" className="p-1 text-muted-foreground hover:text-primary">
+              <X className="size-4" />
+            </button>
+          </form>
+        </div>
+      )}
       {open && (
         <div className="lg:hidden border-t border-border bg-background">
           <nav className="container-x py-4 flex flex-col gap-3 text-sm uppercase tracking-wider">
