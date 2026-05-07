@@ -4,12 +4,16 @@ import { TrustStrip } from "@/components/TrustStrip";
 import { useState, useEffect } from "react";
 import heroRightImg from "@/assets/hero-right-image.png";
 import bottlesImg from "@/assets/bottles-desk.jpg";
-import { useShopifyProducts } from "@/hooks/useShopifyProducts";
+import { getShopifyProducts, type ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { PressMarquee } from "@/components/PressMarquee";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 
 export const Route = createFileRoute("/")({
+  loader: async () => {
+    const products = await getShopifyProducts(50);
+    return { products };
+  },
   head: () => ({
     meta: [
       { title: "Buy Research Peptides UK | Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
@@ -74,11 +78,11 @@ const faqTabs = {
 } as const;
 
 function HomePage() {
+  const { products: shopifyProducts } = Route.useLoaderData();
   const [tab, setTab] = useState<keyof typeof faqTabs>("Orders & Shipping");
   const [openQ, setOpenQ] = useState<number | null>(0);
   const [reviewIdx, setReviewIdx] = useState(0);
   const [productsApi, setProductsApi] = useState<CarouselApi>();
-  const { products: shopifyProducts, loading: productsLoading } = useShopifyProducts(50);
 
   const BEST_SELLER_ORDER = [
     "retatrutide",
@@ -162,14 +166,12 @@ function HomePage() {
             View All <ArrowRight className="size-4" />
           </Link>
         </div>
-        {productsLoading ? (
-          <div className="flex justify-center py-16"><span className="text-muted-foreground text-sm">Loading peptides…</span></div>
-        ) : shopifyProducts.length === 0 ? (
+        {shopifyProducts.length === 0 ? (
           <p className="text-center text-muted-foreground py-16">No peptides yet.</p>
         ) : (
           <Carousel setApi={setProductsApi} opts={{ align: "start", loop: true }} className="w-full">
             <CarouselContent className="-ml-4">
-              {sortedBestSellers.slice(0, 8).map(p => (
+              {sortedBestSellers.slice(0, 8).map((p: ShopifyProduct) => (
                 <CarouselItem key={p.node.id} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4">
                   <ProductCard product={p} />
                 </CarouselItem>
