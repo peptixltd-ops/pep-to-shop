@@ -61,13 +61,14 @@ function ThankYouPage() {
         transaction_id: orderId ?? "",
         value: value ?? 0,
         currency,
+        items: [],
       });
     }
     // GTM dataLayer fallback
     if (Array.isArray(w.dataLayer)) {
       w.dataLayer.push({
         event: "purchase",
-        ecommerce: { transaction_id: orderId, value, currency },
+        ecommerce: { transaction_id: orderId, value, currency, items: [] },
       });
     }
 

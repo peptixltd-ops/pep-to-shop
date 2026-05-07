@@ -8,6 +8,7 @@ import { getShopifyProducts, type ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { PressMarquee } from "@/components/PressMarquee";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import { trackViewItemList } from "@/lib/analytics";
 
 export const Route = createFileRoute("/")({
   loader: async () => {
@@ -106,6 +107,20 @@ function HomePage() {
   useEffect(() => {
     const id = setInterval(() => setReviewIdx(i => (i + 1) % reviews.length), 5000);
     return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    trackViewItemList({
+      list_id: "home_best_sellers",
+      list_name: "Home Best Sellers",
+      items: sortedBestSellers.slice(0, 8).map((p: ShopifyProduct) => ({
+        id: p.node.handle,
+        name: p.node.title,
+        price: p.node.priceRange.minVariantPrice.amount,
+        currency: p.node.priceRange.minVariantPrice.currencyCode,
+      })),
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

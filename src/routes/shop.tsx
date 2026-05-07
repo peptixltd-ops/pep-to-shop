@@ -5,6 +5,7 @@ import { Search, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { z } from "zod";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
+import { trackViewItemList } from "@/lib/analytics";
 
 const shopSearchSchema = z.object({
   q: fallback(z.string(), "").default(""),
@@ -43,6 +44,19 @@ function ShopPage() {
   const [query, setQuery] = useState(q);
 
   useEffect(() => { setQuery(q); }, [q]);
+
+  useEffect(() => {
+    trackViewItemList({
+      list_id: "shop_all",
+      list_name: "Shop All",
+      items: products.slice(0, 20).map((p: ShopifyProduct) => ({
+        id: p.node.handle,
+        name: p.node.title,
+        price: p.node.priceRange.minVariantPrice.amount,
+        currency: p.node.priceRange.minVariantPrice.currencyCode,
+      })),
+    });
+  }, [products]);
 
   const term = q.trim().toLowerCase();
   const filtered = term

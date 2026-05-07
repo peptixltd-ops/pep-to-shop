@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { trackViewItem } from "@/lib/analytics";
 import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText, X } from "lucide-react";
 import { FrequentlyBoughtTogether, getFrequentlyBoughtTogetherHandles } from "@/components/FrequentlyBoughtTogether";
 import { BundleCardsForProduct } from "@/components/BundleCard";
@@ -314,6 +315,19 @@ function ProductPage() {
     [product],
   );
   const specs = useMemo(() => (product ? parseSpecs(product.description || "") : {}), [product]);
+
+  useEffect(() => {
+    if (!product) return;
+    const v = product.variants.edges[0]?.node;
+    const price = v?.price || product.priceRange.minVariantPrice;
+    trackViewItem({
+      id: product.handle || handle,
+      name: product.title,
+      price: price.amount,
+      currency: price.currencyCode,
+      variant: v?.title,
+    });
+  }, [product, handle]);
 
   if (!product) {
     return (

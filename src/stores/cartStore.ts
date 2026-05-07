@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { storefrontApiRequest, type ShopifyProduct } from "@/lib/shopify";
+import { trackAddToCart } from "@/lib/analytics";
 
 export interface CartItem {
   lineId: string | null;
@@ -236,6 +237,16 @@ export const useCartStore = create<CartStore>()(
         } finally {
           set({ isLoading: false });
         }
+        try {
+          trackAddToCart({
+            id: item.product.node.handle || item.variantId,
+            name: item.product.node.title,
+            price: item.price.amount,
+            currency: item.price.currencyCode,
+            variant: item.variantTitle,
+            quantity: item.quantity,
+          });
+        } catch { /* ignore */ }
       },
 
       updateQuantity: async (variantId, quantity) => {
