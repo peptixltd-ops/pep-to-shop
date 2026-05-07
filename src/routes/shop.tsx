@@ -5,6 +5,7 @@ import { Search, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { z } from "zod";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
+import { trackViewItemList } from "@/lib/analytics";
 
 const shopSearchSchema = z.object({
   q: fallback(z.string(), "").default(""),
