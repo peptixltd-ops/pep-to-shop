@@ -28,7 +28,7 @@ const SIBLING_PRIORITY = [
 ];
 
 export function ProductInternalLinks({ handle }: { handle: string }) {
-  const categories = findCategoriesForProduct(handle);
+  const categories = getCategoriesForProduct(handle);
   const parent = categories[0];
   if (!parent) return null;
 
