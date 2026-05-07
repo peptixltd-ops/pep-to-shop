@@ -203,6 +203,38 @@ function HomePage() {
         )}
       </section>
 
+      {/* TOP RESEARCH PEPTIDES, internal links for indexing */}
+      <section className="container-x pb-16 md:pb-20">
+        <div className="bg-mist border border-border rounded-md p-8 md:p-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-6">
+            <div>
+              <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Most Researched</p>
+              <h2 className="font-display text-2xl md:text-3xl text-ink">Top <span className="italic text-primary">Research Peptides</span></h2>
+            </div>
+            <Link to="/shop" className="text-sm uppercase tracking-wider text-primary hover:underline">Browse all peptides →</Link>
+          </div>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+            {[
+              { handle: "retatrutide", label: "Buy Retatrutide UK" },
+              { handle: "tirzepatide", label: "Buy Tirzepatide UK" },
+              { handle: "semaglutide", label: "Buy Semaglutide UK" },
+              { handle: "bpc-157", label: "Buy BPC-157 UK" },
+              { handle: "tb-500", label: "Buy TB-500 UK" },
+            ].map((p) => (
+              <li key={p.handle}>
+                <Link
+                  to="/product/$handle"
+                  params={{ handle: p.handle }}
+                  className="block bg-background border border-border rounded-md px-4 py-3 text-sm text-ink hover:border-primary hover:text-primary transition text-center"
+                >
+                  {p.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* REVIEWS, compact horizontal carousel */}
       <section className="bg-background py-12 md:py-16 border-b border-border">
         <div className="container-x">
