@@ -1,9 +1,17 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ProductCard } from "@/components/ProductCard";
 import { useShopifyProducts } from "@/hooks/useShopifyProducts";
-import { Loader2 } from "lucide-react";
+import { Loader2, Search, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { z } from "zod";
+import { zodValidator, fallback } from "@tanstack/zod-adapter";
+
+const shopSearchSchema = z.object({
+  q: fallback(z.string(), "").default(""),
+});
 
 export const Route = createFileRoute("/shop")({
+  validateSearch: zodValidator(shopSearchSchema),
   head: () => ({
     meta: [
       { title: "Shop UK Research Peptides | Buy Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
@@ -17,37 +25,31 @@ export const Route = createFileRoute("/shop")({
   component: ShopPage,
 });
 
-// Best-seller priority order by product handle. Anything not listed
-// falls to the end, sorted alphabetically by title.
 const PRIORITY_ORDER = [
-  // Row 1
-  "retatrutide",
-  "tirzepatide",
-  "ghk-cu",
-  "mots-c",
-  // Row 2
-  "bacteriostatic-water",
-  "nad",
-  "bpc-157-tb-500-mix",
-  "ipamorelin",
-  // Row 3
-  "selank",
-  "semaglutide",
-  "tesamorelin",
-  "klow",
-  // Remaining
-  "tb-500",
-  "igf-lr3",
-  "cagrilintide",
-  "ss-31",
-  "pt-141",
-  "semax",
+  "retatrutide", "tirzepatide", "ghk-cu", "mots-c",
+  "bacteriostatic-water", "nad", "bpc-157-tb-500-mix", "ipamorelin",
+  "selank", "semaglutide", "tesamorelin", "klow",
+  "tb-500", "igf-lr3", "cagrilintide", "ss-31", "pt-141", "semax",
 ];
 
 function ShopPage() {
+  const { q } = Route.useSearch();
+  const navigate = useNavigate({ from: "/shop" });
   const { products, loading, error } = useShopifyProducts(50);
+  const [query, setQuery] = useState(q);
 
-  const sortedProducts = [...products].sort((a, b) => {
+  useEffect(() => { setQuery(q); }, [q]);
+
+  const term = q.trim().toLowerCase();
+  const filtered = term
+    ? products.filter(p =>
+        p.node.title.toLowerCase().includes(term) ||
+        p.node.handle.toLowerCase().includes(term) ||
+        (p.node.description || "").toLowerCase().includes(term)
+      )
+    : products;
+
+  const sortedProducts = [...filtered].sort((a, b) => {
     const ai = PRIORITY_ORDER.indexOf(a.node.handle);
     const bi = PRIORITY_ORDER.indexOf(b.node.handle);
     const aRank = ai === -1 ? Number.MAX_SAFE_INTEGER : ai;
@@ -58,11 +60,36 @@ function ShopPage() {
 
   return (
     <div className="container-x py-16 md:py-20">
-      <div className="text-center mb-12">
+      <div className="text-center mb-10">
         <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Our Products</p>
         <h1 className="font-display text-5xl md:text-6xl text-ink">Shop <span className="text-primary italic">All</span></h1>
         <p className="mt-4 text-muted-foreground max-w-xl mx-auto">For research purpose only.</p>
       </div>
+
+      <form
+        onSubmit={(e) => { e.preventDefault(); navigate({ search: { q: query.trim() } }); }}
+        className="max-w-xl mx-auto mb-12 relative"
+      >
+        <Search className="absolute left-4 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search peptides (e.g. Retatrutide, BPC-157)"
+          className="w-full bg-background border border-border pl-11 pr-11 py-3 text-sm focus:outline-none focus:border-primary"
+          aria-label="Search products"
+        />
+        {q && (
+          <button
+            type="button"
+            onClick={() => { setQuery(""); navigate({ search: { q: "" } }); }}
+            className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-primary"
+            aria-label="Clear search"
+          >
+            <X className="size-4" />
+          </button>
+        )}
+      </form>
 
       {loading && (
         <div className="flex justify-center py-20"><Loader2 className="size-6 animate-spin text-primary" /></div>
@@ -70,10 +97,12 @@ function ShopPage() {
       {error && (
         <p className="text-center text-destructive py-20">Failed to load products: {error}</p>
       )}
-      {!loading && !error && products.length === 0 && (
-        <p className="text-center text-muted-foreground py-20">No products found.</p>
+      {!loading && !error && sortedProducts.length === 0 && (
+        <p className="text-center text-muted-foreground py-20">
+          {term ? `No products found for "${q}".` : "No products found."}
+        </p>
       )}
-      {!loading && products.length > 0 && (
+      {!loading && sortedProducts.length > 0 && (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {sortedProducts.map((p) => <ProductCard key={p.node.id} product={p} />)}
         </div>
