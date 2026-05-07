@@ -102,7 +102,13 @@ async function fetchProductForHead(handle: string) {
   const { storefrontApiRequest, PRODUCT_BY_HANDLE_QUERY } = await import("@/lib/shopify");
   try {
     const data = await storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle });
-    return data?.data?.product as { title: string; description: string; priceRange: { minVariantPrice: { amount: string; currencyCode: string } }; images: { edges: Array<{ node: { url: string } }> } } | null;
+    return data?.data?.product as {
+      title: string;
+      description: string;
+      priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
+      images: { edges: Array<{ node: { url: string } }> };
+      variants: { edges: Array<{ node: { sku?: string | null } }> };
+    } | null;
   } catch {
     return null;
   }
@@ -116,14 +122,13 @@ export const Route = createFileRoute("/product/$handle")({
   head: ({ params, loaderData }) => {
     const handle = params.handle;
     const url = `https://pondokpeptides.com/product/${handle}`;
-    const p = loaderData?.product as (typeof loaderData extends { product: infer T } ? T : null) & { variants?: { edges: Array<{ node: { sku?: string | null; price: { amount: string; currencyCode: string }; availableForSale: boolean } }> } } | null;
+    const p = loaderData?.product;
     const name = p?.title || handle.replace(/-/g, " ");
     const title = `Buy ${name} UK | 3rd-Party Tested | Pondok Peptides`;
     const desc = `Buy ${name} research peptide in the UK. Third-party HPLC tested with batch-specific COAs and fast UK delivery from Pondok Peptides.`;
     const image = p?.images?.edges?.[0]?.node?.url;
     const price = p?.priceRange?.minVariantPrice;
-    const firstVariant = (p as { variants?: { edges: Array<{ node: { sku?: string | null } }> } } | null)?.variants?.edges?.[0]?.node;
-    const sku = firstVariant?.sku || undefined;
+    const sku = p?.variants?.edges?.[0]?.node?.sku || undefined;
     const ldGraph: Array<Record<string, unknown>> = [
       {
         "@type": "Product",
