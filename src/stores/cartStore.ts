@@ -237,6 +237,16 @@ export const useCartStore = create<CartStore>()(
         } finally {
           set({ isLoading: false });
         }
+        try {
+          trackAddToCart({
+            id: item.product.node.handle || item.variantId,
+            name: item.product.node.title,
+            price: item.price.amount,
+            currency: item.price.currencyCode,
+            variant: item.variantTitle,
+            quantity: item.quantity,
+          });
+        } catch { /* ignore */ }
       },
 
       updateQuantity: async (variantId, quantity) => {
