@@ -316,6 +316,19 @@ function ProductPage() {
   );
   const specs = useMemo(() => (product ? parseSpecs(product.description || "") : {}), [product]);
 
+  useEffect(() => {
+    if (!product) return;
+    const v = product.variants.edges[0]?.node;
+    const price = v?.price || product.priceRange.minVariantPrice;
+    trackViewItem({
+      id: product.handle || handle,
+      name: product.title,
+      price: price.amount,
+      currency: price.currencyCode,
+      variant: v?.title,
+    });
+  }, [product, handle]);
+
   if (!product) {
     return (
       <div className="container-x py-32 text-center">
