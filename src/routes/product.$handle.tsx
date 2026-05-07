@@ -6,6 +6,8 @@ import { FrequentlyBoughtTogether, getFrequentlyBoughtTogetherHandles } from "@/
 import { BundleCardsForProduct } from "@/components/BundleCard";
 import { RelatedGuides } from "@/components/RelatedGuides";
 import { TrustStrip } from "@/components/TrustStrip";
+import { ProductInternalLinks } from "@/components/ProductInternalLinks";
+import { getProductFAQs } from "@/data/productFaqs";
 
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { navigateToCheckout } from "@/lib/checkout";
