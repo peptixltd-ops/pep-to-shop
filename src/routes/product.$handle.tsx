@@ -6,7 +6,7 @@ import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether"
 import { BundleCardsForProduct } from "@/components/BundleCard";
 import { RelatedGuides } from "@/components/RelatedGuides";
 import { TrustStrip } from "@/components/TrustStrip";
-import { TrustBadgeStrip } from "@/components/TrustBadges";
+
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
@@ -102,7 +102,13 @@ async function fetchProductForHead(handle: string) {
   const { storefrontApiRequest, PRODUCT_BY_HANDLE_QUERY } = await import("@/lib/shopify");
   try {
     const data = await storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle });
-    return data?.data?.product as { title: string; description: string; priceRange: { minVariantPrice: { amount: string; currencyCode: string } }; images: { edges: Array<{ node: { url: string } }> } } | null;
+    return data?.data?.product as {
+      title: string;
+      description: string;
+      priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
+      images: { edges: Array<{ node: { url: string } }> };
+      variants: { edges: Array<{ node: { sku?: string | null } }> };
+    } | null;
   } catch {
     return null;
   }
@@ -118,10 +124,11 @@ export const Route = createFileRoute("/product/$handle")({
     const url = `https://pondokpeptides.com/product/${handle}`;
     const p = loaderData?.product;
     const name = p?.title || handle.replace(/-/g, " ");
-    const title = `${name} UK | Buy ${name} Research Peptide | 3rd Party Tested | Pondok Peptides`;
-    const desc = `Buy ${name} research peptide in the UK. Third-party tested with batch-specific COAs, high purity and fast UK delivery from Pondok Peptides.`;
+    const title = `Buy ${name} UK | 3rd-Party Tested | Pondok Peptides`;
+    const desc = `Buy ${name} research peptide in the UK. Third-party HPLC tested with batch-specific COAs and fast UK delivery from Pondok Peptides.`;
     const image = p?.images?.edges?.[0]?.node?.url;
     const price = p?.priceRange?.minVariantPrice;
+    const sku = p?.variants?.edges?.[0]?.node?.sku || undefined;
     const ldGraph: Array<Record<string, unknown>> = [
       {
         "@type": "Product",
@@ -129,6 +136,7 @@ export const Route = createFileRoute("/product/$handle")({
         description: p?.description?.slice(0, 500) || desc,
         url,
         brand: { "@type": "Brand", name: "Pondok Peptides" },
+        ...(sku ? { sku, mpn: sku } : {}),
         ...(image ? { image } : {}),
         ...(price
           ? {
@@ -702,9 +710,6 @@ function ProductPage() {
 
       <BundleCardsForProduct handle={handle} />
       <FrequentlyBoughtTogether handle={handle} />
-      <div className="container-x mt-10">
-        <TrustBadgeStrip />
-      </div>
       <RelatedGuides handle={handle} />
     </div>
     <MobileStickyCTA

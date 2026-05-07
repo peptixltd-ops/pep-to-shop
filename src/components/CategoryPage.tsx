@@ -5,6 +5,14 @@ import bottle from "@/assets/product-bottle.jpg";
 import { TrustStrip } from "@/components/TrustStrip";
 import type { Category } from "@/data/categories";
 import { getProductImageOverride } from "@/data/variantImages";
+import { BundleCard } from "@/components/BundleCard";
+import { bundles } from "@/data/bundles";
+
+const CATEGORY_TO_BUNDLE: Record<string, string> = {
+  "weight-loss-peptides": "glp-1-stack",
+  "recovery-peptides": "recovery-stack",
+  "longevity-peptides": "longevity-stack",
+};
 
 const PRODUCT_BY_HANDLE_LITE = `
   query GetProductLite($handle: String!) {
@@ -83,6 +91,17 @@ export function CategoryPage({ category }: { category: Category }) {
           </div>
         </section>
       )}
+
+      {(() => {
+        const slug = CATEGORY_TO_BUNDLE[category.slug];
+        const bundle = slug ? bundles.find((b) => b.slug === slug) : undefined;
+        if (!bundle) return null;
+        return (
+          <div className="container-x">
+            <BundleCard bundle={bundle} />
+          </div>
+        );
+      })()}
 
       <section className="container-x py-10 md:py-16 max-w-4xl mx-auto space-y-10">
         {category.sections.map((s) => (
