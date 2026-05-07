@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ProductCard } from "@/components/ProductCard";
-import { getShopifyProducts, type ShopifyProduct } from "@/lib/shopify";
+import { formatPrice, getShopifyProducts, type ShopifyProduct } from "@/lib/shopify";
 import { Search, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { z } from "zod";
@@ -68,6 +68,17 @@ function ShopPage() {
         <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Our Products</p>
         <h1 className="font-display text-5xl md:text-6xl text-ink">Shop <span className="text-primary italic">All</span></h1>
         <p className="mt-4 text-muted-foreground max-w-xl mx-auto">For research purpose only.</p>
+      </div>
+
+      <div className="sr-only" aria-hidden="true">
+        <h2>Available research peptides</h2>
+        <ul>
+          {sortedProducts.map((product: ShopifyProduct) => (
+            <li key={`crawl-${product.node.id}`}>
+              {product.node.title} {formatPrice(product.node.priceRange.minVariantPrice.amount, product.node.priceRange.minVariantPrice.currencyCode)}
+            </li>
+          ))}
+        </ul>
       </div>
 
       <form

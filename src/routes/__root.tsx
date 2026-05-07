@@ -1,6 +1,9 @@
-import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import { Outlet, Link, createRootRoute, HeadContent, Scripts, useLocation } from "@tanstack/react-router";
+import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
+
+const GA_MEASUREMENT_ID = "G-FWN8D6ZQZ4";
 
 function NotFoundComponent() {
   return (
@@ -58,9 +61,9 @@ export const Route = createRootRoute({
     ],
     scripts: [
       // Google tag (gtag.js) - GA4
-      { src: "https://www.googletagmanager.com/gtag/js?id=G-FWN8D6ZQZ4", async: true },
+        { src: `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`, async: true },
       {
-        children: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-FWN8D6ZQZ4');`,
+          children: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}window.gtag = gtag;gtag('js', new Date());gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });`,
       },
       {
         type: "application/ld+json",
@@ -133,7 +136,19 @@ import { Toaster } from "@/components/ui/sonner";
 import { useCartSync } from "@/hooks/useCartSync";
 
 function RootComponent() {
+  const location = useLocation();
   useCartSync();
+
+  useEffect(() => {
+    if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+
+    window.gtag("config", GA_MEASUREMENT_ID, {
+      page_path: location.pathname + location.search,
+      page_location: window.location.href,
+      page_title: document.title,
+    });
+  }, [location.pathname, location.search]);
+
   return (
     <>
       <SiteHeader />
@@ -145,4 +160,11 @@ function RootComponent() {
       <Toaster position="top-center" />
     </>
   );
+}
+
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
 }
