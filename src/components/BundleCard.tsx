@@ -3,7 +3,7 @@ import { Loader2, Plus, Check } from "lucide-react";
 import { storefrontApiRequest, formatPrice, getPrimaryProductImage, type ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
-import type { Bundle } from "@/data/bundles";
+import { findBundlesForProduct, type Bundle } from "@/data/bundles";
 
 const BUNDLE_PRODUCTS_QUERY = `
   query BundleProducts($handles: [String!]!) {
@@ -139,8 +139,6 @@ export function BundleCard({ bundle }: { bundle: Bundle }) {
 }
 
 export function BundleCardsForProduct({ handle }: { handle: string }) {
-  // Inline import to avoid top-level cycle if any
-  const { findBundlesForProduct } = require("@/data/bundles") as typeof import("@/data/bundles");
   const matches = findBundlesForProduct(handle);
   if (matches.length === 0) return null;
   return (
