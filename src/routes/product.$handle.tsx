@@ -517,6 +517,7 @@ function ProductPage() {
             >
               {buying ? <Loader2 className="size-4 animate-spin" /> : "Buy now"}
             </button>
+            <div id="pdp-buybox-sentinel" aria-hidden="true" />
           </div>
 
           <div className="flex flex-col items-start gap-3 pt-2">
@@ -699,8 +700,23 @@ function ProductPage() {
       </div>
 
       <FrequentlyBoughtTogether handle={handle} />
+      <div className="container-x mt-10">
+        <TrustBadgeStrip />
+      </div>
       <RelatedGuides handle={handle} />
     </div>
+    <MobileStickyCTA
+      title={product.title}
+      price={
+        selectedVariant
+          ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode)
+          : formatPrice(product.priceRange.minVariantPrice.amount, product.priceRange.minVariantPrice.currencyCode)
+      }
+      available={!!selectedVariant?.availableForSale}
+      loading={isLoading || adding || buying}
+      onAdd={handleAdd}
+      onBuy={handleBuyNow}
+    />
     </>
   );
 }
