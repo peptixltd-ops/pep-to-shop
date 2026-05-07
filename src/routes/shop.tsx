@@ -70,6 +70,17 @@ function ShopPage() {
         <p className="mt-4 text-muted-foreground max-w-xl mx-auto">For research purpose only.</p>
       </div>
 
+      <div className="sr-only" aria-hidden="true">
+        <h2>Available research peptides</h2>
+        <ul>
+          {sortedProducts.map((product: ShopifyProduct) => (
+            <li key={`crawl-${product.node.id}`}>
+              {product.node.title} {formatPrice(product.node.priceRange.minVariantPrice.amount, product.node.priceRange.minVariantPrice.currencyCode)}
+            </li>
+          ))}
+        </ul>
+      </div>
+
       <form
         onSubmit={(e) => { e.preventDefault(); navigate({ search: { q: query.trim() } }); }}
         className="max-w-xl mx-auto mb-12 relative"
