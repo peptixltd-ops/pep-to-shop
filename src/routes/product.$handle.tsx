@@ -346,7 +346,7 @@ function ProductPage() {
 
   return (
     <>
-    <div className="container-x py-10 md:py-14">
+    <div className="container-x py-10 md:py-14 pb-32 md:pb-14">
       <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6">
         <ArrowLeft className="size-4" /> Back to shop
       </Link>
