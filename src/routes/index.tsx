@@ -110,6 +110,20 @@ function HomePage() {
   }, []);
 
   useEffect(() => {
+    trackViewItemList({
+      list_id: "home_best_sellers",
+      list_name: "Home Best Sellers",
+      items: sortedBestSellers.slice(0, 8).map((p: ShopifyProduct) => ({
+        id: p.node.handle,
+        name: p.node.title,
+        price: p.node.priceRange.minVariantPrice.amount,
+        currency: p.node.priceRange.minVariantPrice.currencyCode,
+      })),
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     if (!productsApi) return;
     const id = setInterval(() => {
       if (productsApi.canScrollNext()) productsApi.scrollNext();
