@@ -8,6 +8,7 @@ import { getShopifyProducts, type ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { PressMarquee } from "@/components/PressMarquee";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import { trackViewItemList } from "@/lib/analytics";
 
 export const Route = createFileRoute("/")({
   loader: async () => {
