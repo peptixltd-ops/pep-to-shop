@@ -19,17 +19,27 @@ const RELATED_GROUPS: Record<string, string[]> = {
   "ghk-cu": ["tb-500", "bpc-157", BAC_WATER],
   "tb-500": ["ghk-cu", "bpc-157", BAC_WATER],
   "bpc-157": ["ghk-cu", "tb-500", BAC_WATER],
+  "bpc-157-tb-500-mix": ["ghk-cu", "bpc-157", "tb-500", BAC_WATER],
 
   // Mitochondrial / longevity
-  "ss-31": ["nad", BAC_WATER],
-  "nad": ["ss-31", BAC_WATER],
+  "ss-31": ["nad", "mots-c", BAC_WATER],
+  "nad": ["ss-31", "mots-c", BAC_WATER],
 
   // Nootropic pair
   "selank": ["semax", BAC_WATER],
   "semax": ["selank", BAC_WATER],
 
+  // Growth hormone secretagogues
+  "ipamorelin": ["tesamorelin", "igf-lr3", "ghk-cu", BAC_WATER],
+  "tesamorelin": ["ipamorelin", "igf-lr3", "ghk-cu", BAC_WATER],
+  "igf-lr3": ["ipamorelin", "tesamorelin", "ghk-cu", BAC_WATER],
+
+  // Other peptides
+  "pt-141": ["semax", "selank", BAC_WATER],
+  "klow": ["bpc-157", "ghk-cu", "tb-500", BAC_WATER],
+
   // Bacteriostatic water pairs back with the most common reconstitution targets
-  [BAC_WATER]: ["retatrutide", "semaglutide", "tirzepatide", "bpc-157"],
+  [BAC_WATER]: ["retatrutide", "semaglutide", "tirzepatide", "bpc-157", "tb-500"],
 };
 
 const PRODUCT_BY_HANDLE_LITE = `
