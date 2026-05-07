@@ -123,6 +123,7 @@ function HomePage() {
 
       {/* TRUST STRIP */}
       <TrustStrip />
+      <TrustBadgeStrip />
 
       {/* HERO, 50/50 split */}
       <section className="bg-mist">

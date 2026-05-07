@@ -1,8 +1,17 @@
 import { Link } from "@tanstack/react-router";
+import { SatisfactionBadge, CertifiedBadge, TrustedBadge, SecureBadge } from "@/components/TrustBadges";
 
 export function SiteFooter() {
   return (
     <footer className="bg-ink text-background mt-24">
+      <div className="bg-background py-8 border-b border-border">
+        <div className="container-x grid grid-cols-4 gap-3 md:gap-6 items-center justify-items-center max-w-3xl mx-auto">
+          <SatisfactionBadge className="w-14 h-14 md:w-20 md:h-20" />
+          <CertifiedBadge className="w-14 h-14 md:w-20 md:h-20" />
+          <TrustedBadge className="w-14 h-14 md:w-20 md:h-20" />
+          <SecureBadge className="w-14 h-14 md:w-20 md:h-20" />
+        </div>
+      </div>
       <div className="bg-primary/10 border-y border-background/10">
         <div className="container-x py-4 text-center text-xs md:text-sm text-background/80 uppercase tracking-[0.2em]">
           For Research Use Only · Not For Human Consumption
