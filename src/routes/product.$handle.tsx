@@ -307,8 +307,8 @@ function ProductPage() {
   const [activeImage, setActiveImage] = useState(0);
   const [isCoaOpen, setIsCoaOpen] = useState(false);
 
-  const variants = product?.variants.edges.map((e) => e.node) ?? [];
-  const selectedVariant = variants.find((v) => v.id === variantId) || variants[0];
+  const variants = product?.variants.edges.map((e: ShopifyProduct["node"]["variants"]["edges"][number]) => e.node) ?? [];
+  const selectedVariant = variants.find((v: ShopifyProduct["node"]["variants"]["edges"][number]["node"]) => v.id === variantId) || variants[0];
   const images = useMemo(
     () => (product ? getSortedProductImageEdges(product.images.edges) : []),
     [product],
@@ -377,7 +377,7 @@ function ProductPage() {
   const descriptionProse = rewordDescription(
     (product.description || "")
       .split(/\r?\n+/)
-      .filter((line) => !/^[A-Z][A-Za-z0-9 /()\-]{2,40}:\s*.+/.test(line.trim()))
+      .filter((line: string) => !/^[A-Z][A-Za-z0-9 /()\-]{2,40}:\s*.+/.test(line.trim()))
       .join("\n")
       .trim()
   );
@@ -496,7 +496,7 @@ function ProductPage() {
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Variant</p>
               <div className="flex flex-wrap gap-2">
-                {variants.map((v) => (
+                {variants.map((v: ShopifyProduct["node"]["variants"]["edges"][number]["node"]) => (
                   <button
                     key={v.id}
                     onClick={() => setVariantId(v.id)}
