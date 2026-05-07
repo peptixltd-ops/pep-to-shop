@@ -794,3 +794,24 @@ function SpecRow({ label, value, mono }: { label: string; value: string; mono?: 
     </tr>
   );
 }
+
+function ProductFAQSection({ handle }: { handle: string }) {
+  const faqs = getProductFAQs(handle);
+  if (faqs.length === 0) return null;
+  return (
+    <section className="mt-16 max-w-3xl mx-auto">
+      <h2 className="font-display text-2xl md:text-3xl text-ink mb-6 text-center">Frequently Asked Questions</h2>
+      <div className="space-y-3">
+        {faqs.map((f) => (
+          <details key={f.q} className="group bg-mist border border-border rounded-md p-5">
+            <summary className="cursor-pointer font-medium text-ink list-none flex justify-between items-center gap-4">
+              <span>{f.q}</span>
+              <span className="text-primary group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p className="mt-3 text-sm text-foreground/75 leading-relaxed">{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
