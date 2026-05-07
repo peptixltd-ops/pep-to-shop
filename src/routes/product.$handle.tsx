@@ -5,6 +5,8 @@ import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
 import { RelatedGuides } from "@/components/RelatedGuides";
 import { TrustStrip } from "@/components/TrustStrip";
+import { TrustBadgeStrip } from "@/components/TrustBadges";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
