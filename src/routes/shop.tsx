@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ProductCard } from "@/components/ProductCard";
-import { getShopifyProducts, type ShopifyProduct } from "@/lib/shopify";
+import { formatPrice, getShopifyProducts, type ShopifyProduct } from "@/lib/shopify";
 import { Search, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { z } from "zod";
