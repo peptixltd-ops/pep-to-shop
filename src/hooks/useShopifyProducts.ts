@@ -1,18 +1,22 @@
 import { useEffect, useState } from "react";
-import { storefrontApiRequest, PRODUCTS_QUERY, PRODUCT_BY_HANDLE_QUERY, type ShopifyProduct } from "@/lib/shopify";
+import {
+  getShopifyProductByHandle,
+  getShopifyProducts,
+  type ShopifyProduct,
+} from "@/lib/shopify";
 
 export function useShopifyProducts(first = 50, query?: string) {
+  const [initialData] = useState<ShopifyProduct[] | null>(null);
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!initialData);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    storefrontApiRequest(PRODUCTS_QUERY, { first, query })
-      .then((data) => {
+    getShopifyProducts(first, query)
+      .then((edges) => {
         if (cancelled) return;
-        const edges = (data?.data?.products?.edges || []) as ShopifyProduct[];
         setProducts(edges);
         setError(null);
       })
@@ -27,17 +31,18 @@ export function useShopifyProducts(first = 50, query?: string) {
 }
 
 export function useShopifyProduct(handle: string) {
+  const [initialData] = useState<ShopifyProduct["node"] | null>(null);
   const [product, setProduct] = useState<ShopifyProduct["node"] | null>(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!initialData);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     setLoading(true);
-    storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle })
-      .then((data) => {
+    getShopifyProductByHandle(handle)
+      .then((productData) => {
         if (cancelled) return;
-        setProduct(data?.data?.product || null);
+        setProduct(productData);
         setError(null);
       })
       .catch((e: Error) => !cancelled && setError(e.message))
