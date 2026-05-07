@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { blogBySlug, blogPosts, type BlogPost, type BlogFAQ } from "@/data/blog";
 import { categoriesBySlug, type Category } from "@/data/categories";
+import { RelatedProducts } from "@/components/RelatedProducts";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
@@ -114,18 +115,9 @@ function BlogPostPage() {
         ))}
       </div>
 
-      {/* Internal product links */}
+      {/* Related products */}
       {post.productLinks.length > 0 && (
-        <section className="mt-12 bg-mist border border-border rounded-md p-6">
-          <h2 className="font-display text-xl text-ink mb-4">Products mentioned in this guide</h2>
-          <div className="flex flex-wrap gap-2">
-            {post.productLinks.map((h: string) => (
-              <Link key={h} to="/product/$handle" params={{ handle: h }} className="text-xs uppercase tracking-wider border border-border px-4 py-2 bg-background hover:border-primary hover:text-primary transition">
-                {h.replace(/-/g, " ")}
-              </Link>
-            ))}
-          </div>
-        </section>
+        <RelatedProducts handles={post.productLinks} heading="Products mentioned in this guide" />
       )}
 
       {/* FAQs */}
