@@ -6,7 +6,7 @@ import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether"
 import { BundleCardsForProduct } from "@/components/BundleCard";
 import { RelatedGuides } from "@/components/RelatedGuides";
 import { TrustStrip } from "@/components/TrustStrip";
-import { TrustBadgeStrip } from "@/components/TrustBadges";
+
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
@@ -702,9 +702,6 @@ function ProductPage() {
 
       <BundleCardsForProduct handle={handle} />
       <FrequentlyBoughtTogether handle={handle} />
-      <div className="container-x mt-10">
-        <TrustBadgeStrip />
-      </div>
       <RelatedGuides handle={handle} />
     </div>
     <MobileStickyCTA
