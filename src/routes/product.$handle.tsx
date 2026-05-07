@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText, X } from "lucide-react";
-import { useShopifyProduct } from "@/hooks/useShopifyProducts";
-import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
+import { FrequentlyBoughtTogether, getFrequentlyBoughtTogetherHandles } from "@/components/FrequentlyBoughtTogether";
 import { BundleCardsForProduct } from "@/components/BundleCard";
 import { RelatedGuides } from "@/components/RelatedGuides";
 import { TrustStrip } from "@/components/TrustStrip";
@@ -10,7 +9,7 @@ import { TrustStrip } from "@/components/TrustStrip";
 import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
-import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
+import { formatPrice, getShopifyProductByHandle, getSortedProductImageEdges, type ShopifyProduct } from "@/lib/shopify";
 import { getProductImageOverride } from "@/data/variantImages";
 import { toast } from "sonner";
 import ghkCuCoaPdf from "@/assets/coa/ghk-cu-coa.pdf?url";
@@ -99,10 +98,9 @@ const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: stri
 };
 
 async function fetchProductForHead(handle: string) {
-  const { storefrontApiRequest, PRODUCT_BY_HANDLE_QUERY } = await import("@/lib/shopify");
   try {
-    const data = await storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle });
-    return data?.data?.product as {
+    const product = await getShopifyProductByHandle(handle);
+    return product as {
       title: string;
       description: string;
       priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
@@ -117,7 +115,45 @@ async function fetchProductForHead(handle: string) {
 export const Route = createFileRoute("/product/$handle")({
   loader: async ({ params }) => {
     const product = await fetchProductForHead(params.handle);
-    return { product };
+    const handle = params.handle;
+    const frequentlyBoughtTogether = await Promise.all(
+      getFrequentlyBoughtTogetherHandles(handle).map(async (relatedHandle) => {
+        try {
+          return await getShopifyProductByHandle(relatedHandle);
+        } catch {
+          return null;
+        }
+      }),
+    );
+    const { findBundlesForProduct } = await import("@/data/bundles");
+    const bundleMatches = findBundlesForProduct(handle);
+    const bundles = Object.fromEntries(
+      await Promise.all(
+        bundleMatches.map(async (bundle) => {
+          const items = await Promise.all(
+            bundle.productHandles.map(async (bundleHandle) => {
+              try {
+                return await getShopifyProductByHandle(bundleHandle);
+              } catch {
+                return null;
+              }
+            }),
+          );
+          return [bundle.slug, items.filter((item): item is ShopifyProduct["node"] => !!item)];
+        }),
+      ),
+    );
+    return {
+      product,
+      frequentlyBoughtTogether: frequentlyBoughtTogether.filter((item): item is ShopifyProduct["node"] => !!item).map((item) => ({
+        id: item.id,
+        title: item.title,
+        handle: item.handle,
+        priceRange: item.priceRange,
+        images: item.images,
+      })),
+      bundles,
+    };
   },
   head: ({ params, loaderData }) => {
     const handle = params.handle;
@@ -261,7 +297,7 @@ function parseSpecs(description: string) {
 
 function ProductPage() {
   const { handle } = Route.useParams();
-  const { product, loading, error } = useShopifyProduct(handle);
+  const { product, frequentlyBoughtTogether, bundles } = Route.useLoaderData();
   const addItem = useCartStore((s) => s.addItem);
   const isLoading = useCartStore((s) => s.isLoading);
   const [variantId, setVariantId] = useState<string | null>(null);
@@ -279,14 +315,7 @@ function ProductPage() {
   );
   const specs = useMemo(() => (product ? parseSpecs(product.description || "") : {}), [product]);
 
-  if (loading) {
-    return (
-      <div className="container-x py-32 flex justify-center">
-        <Loader2 className="size-6 animate-spin text-primary" />
-      </div>
-    );
-  }
-  if (error || !product) {
+  if (!product) {
     return (
       <div className="container-x py-32 text-center">
         <p className="text-muted-foreground mb-4">Product not found.</p>
@@ -708,8 +737,8 @@ function ProductPage() {
         </div>
       </div>
 
-      <BundleCardsForProduct handle={handle} />
-      <FrequentlyBoughtTogether handle={handle} />
+      <BundleCardsForProduct handle={handle} initialProducts={bundles} />
+      <FrequentlyBoughtTogether handle={handle} initialItems={frequentlyBoughtTogether} />
       <RelatedGuides handle={handle} />
     </div>
     <MobileStickyCTA
