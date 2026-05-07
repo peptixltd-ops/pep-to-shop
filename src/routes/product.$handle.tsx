@@ -168,6 +168,7 @@ export const Route = createFileRoute("/product/$handle")({
     const image = p?.images?.edges?.[0]?.node?.url;
     const price = p?.priceRange?.minVariantPrice;
     const sku = p?.variants?.edges?.[0]?.node?.sku || undefined;
+    const productFaqs = getProductFAQs(handle);
     const ldGraph: Array<Record<string, unknown>> = [
       {
         "@type": "Product",
