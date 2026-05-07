@@ -5,13 +5,7 @@ import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 import { findBundlesForProduct, type Bundle } from "@/data/bundles";
 
-const BUNDLE_PRODUCTS_QUERY = `
-  query BundleProducts($handles: [String!]!) {
-    nodes: products(first: 10, query: $handles) { edges { node { id } } }
-  }
-`;
-
-// Simpler: fetch each product by handle individually via the existing single-product query.
+// Single-product query (one call per bundle item) — keeps it simple and reuses an existing pattern.
 const PRODUCT_BY_HANDLE_MIN = `
   query ProductByHandleMin($handle: String!) {
     product(handle: $handle) {
