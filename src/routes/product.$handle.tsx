@@ -199,6 +199,16 @@ export const Route = createFileRoute("/product/$handle")({
           { "@type": "ListItem", position: 3, name, item: url },
         ],
       },
+      ...(productFaqs.length > 0
+        ? [{
+            "@type": "FAQPage",
+            mainEntity: productFaqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }]
+        : []),
     ];
     return {
       meta: [
