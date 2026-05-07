@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Loader2, ArrowLeft, Minus, Plus, Heart, Flame, ShieldCheck, FileText, X } from "lucide-react";
 import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
+import { BundleCardsForProduct } from "@/components/BundleCard";
 import { RelatedGuides } from "@/components/RelatedGuides";
 import { TrustStrip } from "@/components/TrustStrip";
 import { TrustBadgeStrip } from "@/components/TrustBadges";
@@ -699,6 +700,7 @@ function ProductPage() {
         </div>
       </div>
 
+      <BundleCardsForProduct handle={handle} />
       <FrequentlyBoughtTogether handle={handle} />
       <div className="container-x mt-10">
         <TrustBadgeStrip />

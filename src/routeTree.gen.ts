@@ -23,8 +23,10 @@ import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BundlesIndexRouteImport } from './routes/bundles.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
+import { Route as BundlesSlugRouteImport } from './routes/bundles.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const WeightLossPeptidesRoute = WeightLossPeptidesRouteImport.update({
@@ -97,6 +99,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BundlesIndexRoute = BundlesIndexRouteImport.update({
+  id: '/bundles/',
+  path: '/bundles/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -105,6 +112,11 @@ const BlogIndexRoute = BlogIndexRouteImport.update({
 const ProductHandleRoute = ProductHandleRouteImport.update({
   id: '/product/$handle',
   path: '/product/$handle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BundlesSlugRoute = BundlesSlugRouteImport.update({
+  id: '/bundles/$slug',
+  path: '/bundles/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
@@ -129,8 +141,10 @@ export interface FileRoutesByFullPath {
   '/thank-you': typeof ThankYouRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/bundles/$slug': typeof BundlesSlugRoute
   '/product/$handle': typeof ProductHandleRoute
   '/blog/': typeof BlogIndexRoute
+  '/bundles/': typeof BundlesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -148,8 +162,10 @@ export interface FileRoutesByTo {
   '/thank-you': typeof ThankYouRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/bundles/$slug': typeof BundlesSlugRoute
   '/product/$handle': typeof ProductHandleRoute
   '/blog': typeof BlogIndexRoute
+  '/bundles': typeof BundlesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -168,8 +184,10 @@ export interface FileRoutesById {
   '/thank-you': typeof ThankYouRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/bundles/$slug': typeof BundlesSlugRoute
   '/product/$handle': typeof ProductHandleRoute
   '/blog/': typeof BlogIndexRoute
+  '/bundles/': typeof BundlesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -189,8 +207,10 @@ export interface FileRouteTypes {
     | '/thank-you'
     | '/weight-loss-peptides'
     | '/blog/$slug'
+    | '/bundles/$slug'
     | '/product/$handle'
     | '/blog/'
+    | '/bundles/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -208,8 +228,10 @@ export interface FileRouteTypes {
     | '/thank-you'
     | '/weight-loss-peptides'
     | '/blog/$slug'
+    | '/bundles/$slug'
     | '/product/$handle'
     | '/blog'
+    | '/bundles'
   id:
     | '__root__'
     | '/'
@@ -227,8 +249,10 @@ export interface FileRouteTypes {
     | '/thank-you'
     | '/weight-loss-peptides'
     | '/blog/$slug'
+    | '/bundles/$slug'
     | '/product/$handle'
     | '/blog/'
+    | '/bundles/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -247,8 +271,10 @@ export interface RootRouteChildren {
   ThankYouRoute: typeof ThankYouRoute
   WeightLossPeptidesRoute: typeof WeightLossPeptidesRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  BundlesSlugRoute: typeof BundlesSlugRoute
   ProductHandleRoute: typeof ProductHandleRoute
   BlogIndexRoute: typeof BlogIndexRoute
+  BundlesIndexRoute: typeof BundlesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -351,6 +377,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bundles/': {
+      id: '/bundles/'
+      path: '/bundles'
+      fullPath: '/bundles/'
+      preLoaderRoute: typeof BundlesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/': {
       id: '/blog/'
       path: '/blog'
@@ -363,6 +396,13 @@ declare module '@tanstack/react-router' {
       path: '/product/$handle'
       fullPath: '/product/$handle'
       preLoaderRoute: typeof ProductHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bundles/$slug': {
+      id: '/bundles/$slug'
+      path: '/bundles/$slug'
+      fullPath: '/bundles/$slug'
+      preLoaderRoute: typeof BundlesSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog/$slug': {
@@ -391,9 +431,20 @@ const rootRouteChildren: RootRouteChildren = {
   ThankYouRoute: ThankYouRoute,
   WeightLossPeptidesRoute: WeightLossPeptidesRoute,
   BlogSlugRoute: BlogSlugRoute,
+  BundlesSlugRoute: BundlesSlugRoute,
   ProductHandleRoute: ProductHandleRoute,
   BlogIndexRoute: BlogIndexRoute,
+  BundlesIndexRoute: BundlesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
