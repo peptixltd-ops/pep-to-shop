@@ -27,6 +27,17 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
+          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Top Peptides</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/product/$handle" params={{ handle: "retatrutide" }} className="hover:text-accent">Buy Retatrutide UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "tirzepatide" }} className="hover:text-accent">Buy Tirzepatide UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "semaglutide" }} className="hover:text-accent">Buy Semaglutide UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "bpc-157" }} className="hover:text-accent">Buy BPC-157 UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "tb-500" }} className="hover:text-accent">Buy TB-500 UK</Link></li>
+            <li><Link to="/product/$handle" params={{ handle: "bacteriostatic-water" }} className="hover:text-accent">Bacteriostatic Water</Link></li>
+          </ul>
+        </div>
+        <div>
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Company</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/about" className="hover:text-accent">About us</Link></li>
