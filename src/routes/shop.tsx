@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ProductCard } from "@/components/ProductCard";
-import { getShopifyProducts } from "@/lib/shopify";
-import { Loader2, Search, X } from "lucide-react";
+import { getShopifyProducts, type ShopifyProduct } from "@/lib/shopify";
+import { Search, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { z } from "zod";
 import { zodValidator, fallback } from "@tanstack/zod-adapter";
@@ -46,7 +46,7 @@ function ShopPage() {
 
   const term = q.trim().toLowerCase();
   const filtered = term
-    ? products.filter(p =>
+    ? products.filter((p: ShopifyProduct) =>
         p.node.title.toLowerCase().includes(term) ||
         p.node.handle.toLowerCase().includes(term) ||
         (p.node.description || "").toLowerCase().includes(term)
