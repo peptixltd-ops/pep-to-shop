@@ -766,6 +766,8 @@ function ProductPage() {
 
       <BundleCardsForProduct handle={handle} initialProducts={bundles} />
       <FrequentlyBoughtTogether handle={handle} initialItems={frequentlyBoughtTogether} />
+      <ProductInternalLinks handle={handle} />
+      <ProductFAQSection handle={handle} />
       <RelatedGuides handle={handle} />
     </div>
     <MobileStickyCTA
