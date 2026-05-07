@@ -8,7 +8,7 @@ export function SiteFooter() {
           For Research Use Only · Not For Human Consumption
         </div>
       </div>
-      <div className="container-x py-16 grid gap-10 md:grid-cols-4">
+      <div className="container-x py-16 grid gap-10 md:grid-cols-5">
         <div>
           <div className="font-display text-2xl font-semibold mb-3">Pondok Peptides</div>
           <p className="text-sm text-background/70 leading-relaxed">
