@@ -45,6 +45,19 @@ function ShopPage() {
 
   useEffect(() => { setQuery(q); }, [q]);
 
+  useEffect(() => {
+    trackViewItemList({
+      list_id: "shop_all",
+      list_name: "Shop All",
+      items: products.slice(0, 20).map((p: ShopifyProduct) => ({
+        id: p.node.handle,
+        name: p.node.title,
+        price: p.node.priceRange.minVariantPrice.amount,
+        currency: p.node.priceRange.minVariantPrice.currencyCode,
+      })),
+    });
+  }, [products]);
+
   const term = q.trim().toLowerCase();
   const filtered = term
     ? products.filter((p: ShopifyProduct) =>
