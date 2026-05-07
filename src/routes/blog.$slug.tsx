@@ -90,6 +90,12 @@ function BlogPostPage() {
         <Link to="/" className="hover:text-primary">Home</Link>
         <span className="mx-2">/</span>
         <Link to="/blog" className="hover:text-primary">Blog</Link>
+        {linkedCategories[0] && (
+          <>
+            <span className="mx-2">/</span>
+            <Link to={`/${linkedCategories[0].slug}` as "/weight-loss-peptides"} className="hover:text-primary">{linkedCategories[0].title}</Link>
+          </>
+        )}
         <span className="mx-2">/</span>
         <span>{post.title}</span>
       </nav>
