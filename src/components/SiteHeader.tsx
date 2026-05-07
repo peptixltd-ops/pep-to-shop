@@ -1,5 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { User, Menu } from "lucide-react";
+import { Link, useNavigate } from "@tanstack/react-router";
+import { User, Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 
 import { CartDrawer } from "@/components/CartDrawer";
@@ -14,6 +14,15 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+  const submitSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    const q = query.trim();
+    navigate({ to: "/shop", search: { q } });
+    setSearchOpen(false);
+  };
   return (
     <header className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
       <div className="bg-primary text-primary-foreground text-xs md:text-sm py-2 tracking-wide overflow-hidden">
@@ -45,6 +54,14 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <button
+            type="button"
+            aria-label="Search products"
+            onClick={() => setSearchOpen(v => !v)}
+            className="p-2 text-foreground/70 hover:text-primary"
+          >
+            <Search className="size-5" />
+          </button>
           <Link to="/shop" className="hidden md:inline-flex items-center justify-center bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors">
             SHOP NOW
           </Link>
