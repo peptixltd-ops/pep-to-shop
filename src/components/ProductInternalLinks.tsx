@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { findCategoriesForProduct } from "@/data/categories";
+import { getCategoriesForProduct } from "@/data/categories";
 
 const SIBLING_LABEL: Record<string, string> = {
   "retatrutide": "Buy Retatrutide UK",
