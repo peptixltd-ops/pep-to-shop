@@ -52,13 +52,22 @@ type LiteProduct = {
   images: ShopifyProduct["node"]["images"];
 };
 
-export function FrequentlyBoughtTogether({ handle }: { handle: string }) {
-  const related = RELATED_GROUPS[handle] || [];
-  const [items, setItems] = useState<LiteProduct[]>([]);
-  const [loading, setLoading] = useState(true);
+export function getFrequentlyBoughtTogetherHandles(handle: string) {
+  return RELATED_GROUPS[handle] || [];
+}
+
+export function FrequentlyBoughtTogether({ handle, initialItems }: { handle: string; initialItems?: LiteProduct[] }) {
+  const related = getFrequentlyBoughtTogetherHandles(handle);
+  const [items, setItems] = useState<LiteProduct[]>(initialItems ?? []);
+  const [loading, setLoading] = useState(initialItems ? false : true);
 
   useEffect(() => {
     if (related.length === 0) {
+      setLoading(false);
+      return;
+    }
+    if (initialItems) {
+      setItems(initialItems);
       setLoading(false);
       return;
     }
@@ -78,7 +87,7 @@ export function FrequentlyBoughtTogether({ handle }: { handle: string }) {
     return () => {
       cancelled = true;
     };
-  }, [handle, related.join(",")]);
+  }, [handle, initialItems, related.join(",")]);
 
   if (related.length === 0) return null;
 

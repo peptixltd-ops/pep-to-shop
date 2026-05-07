@@ -114,6 +114,16 @@ export const PRODUCT_BY_HANDLE_QUERY = `
   }
 `;
 
+export async function getShopifyProducts(first = 50, query?: string) {
+  const data = await storefrontApiRequest(PRODUCTS_QUERY, { first, query });
+  return (data?.data?.products?.edges || []) as ShopifyProduct[];
+}
+
+export async function getShopifyProductByHandle(handle: string) {
+  const data = await storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle });
+  return (data?.data?.product || null) as ShopifyProduct["node"] | null;
+}
+
 export async function storefrontApiRequest(query: string, variables: Record<string, unknown> = {}) {
   const response = await fetch(SHOPIFY_STOREFRONT_URL, {
     method: "POST",
