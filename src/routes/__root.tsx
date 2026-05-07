@@ -137,17 +137,18 @@ import { useCartSync } from "@/hooks/useCartSync";
 
 function RootComponent() {
   const location = useLocation();
+  const browserSearch = typeof window !== "undefined" ? window.location.search : "";
   useCartSync();
 
   useEffect(() => {
     if (typeof window === "undefined" || typeof window.gtag !== "function") return;
 
     window.gtag("config", GA_MEASUREMENT_ID, {
-      page_path: location.pathname + location.search,
+      page_path: window.location.pathname + window.location.search,
       page_location: window.location.href,
       page_title: document.title,
     });
-  }, [location.pathname, location.search]);
+  }, [location.pathname, browserSearch]);
 
   return (
     <>
