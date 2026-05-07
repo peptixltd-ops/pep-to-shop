@@ -5,6 +5,8 @@ import { useShopifyProduct } from "@/hooks/useShopifyProducts";
 import { FrequentlyBoughtTogether } from "@/components/FrequentlyBoughtTogether";
 import { RelatedGuides } from "@/components/RelatedGuides";
 import { TrustStrip } from "@/components/TrustStrip";
+import { TrustBadgeStrip } from "@/components/TrustBadges";
+import { MobileStickyCTA } from "@/components/MobileStickyCTA";
 import { navigateToCheckout } from "@/lib/checkout";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice, getSortedProductImageEdges } from "@/lib/shopify";
@@ -344,7 +346,7 @@ function ProductPage() {
 
   return (
     <>
-    <div className="container-x py-10 md:py-14">
+    <div className="container-x py-10 md:py-14 pb-32 md:pb-14">
       <Link to="/shop" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary mb-6">
         <ArrowLeft className="size-4" /> Back to shop
       </Link>
@@ -515,6 +517,7 @@ function ProductPage() {
             >
               {buying ? <Loader2 className="size-4 animate-spin" /> : "Buy now"}
             </button>
+            <div id="pdp-buybox-sentinel" aria-hidden="true" />
           </div>
 
           <div className="flex flex-col items-start gap-3 pt-2">
@@ -697,8 +700,23 @@ function ProductPage() {
       </div>
 
       <FrequentlyBoughtTogether handle={handle} />
+      <div className="container-x mt-10">
+        <TrustBadgeStrip />
+      </div>
       <RelatedGuides handle={handle} />
     </div>
+    <MobileStickyCTA
+      title={product.title}
+      price={
+        selectedVariant
+          ? formatPrice(selectedVariant.price.amount, selectedVariant.price.currencyCode)
+          : formatPrice(product.priceRange.minVariantPrice.amount, product.priceRange.minVariantPrice.currencyCode)
+      }
+      available={!!selectedVariant?.availableForSale}
+      loading={isLoading || adding || buying}
+      onAdd={handleAdd}
+      onBuy={handleBuyNow}
+    />
     </>
   );
 }

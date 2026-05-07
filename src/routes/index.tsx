@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { CheckCircle2, ArrowRight, Star, Plus } from "lucide-react";
 import { TrustStrip } from "@/components/TrustStrip";
+import { TrustBadgeStrip } from "@/components/TrustBadges";
 import { useState, useEffect } from "react";
 import heroRightImg from "@/assets/hero-right-image.png";
 import bottlesImg from "@/assets/bottles-desk.jpg";
@@ -122,6 +123,7 @@ function HomePage() {
 
       {/* TRUST STRIP */}
       <TrustStrip />
+      <TrustBadgeStrip />
 
       {/* HERO, 50/50 split */}
       <section className="bg-mist">
