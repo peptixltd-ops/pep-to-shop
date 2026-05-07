@@ -1,6 +1,6 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { ProductCard } from "@/components/ProductCard";
-import { useShopifyProducts } from "@/hooks/useShopifyProducts";
+import { getShopifyProducts } from "@/lib/shopify";
 import { Loader2, Search, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { z } from "zod";
@@ -12,6 +12,10 @@ const shopSearchSchema = z.object({
 
 export const Route = createFileRoute("/shop")({
   validateSearch: zodValidator(shopSearchSchema),
+  loader: async () => {
+    const products = await getShopifyProducts(50);
+    return { products };
+  },
   head: () => ({
     meta: [
       { title: "Shop UK Research Peptides | Buy Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
@@ -34,8 +38,8 @@ const PRIORITY_ORDER = [
 
 function ShopPage() {
   const { q } = Route.useSearch();
+  const { products } = Route.useLoaderData();
   const navigate = useNavigate({ from: "/shop" });
-  const { products, loading, error } = useShopifyProducts(50);
   const [query, setQuery] = useState(q);
 
   useEffect(() => { setQuery(q); }, [q]);
@@ -91,18 +95,12 @@ function ShopPage() {
         )}
       </form>
 
-      {loading && (
-        <div className="flex justify-center py-20"><Loader2 className="size-6 animate-spin text-primary" /></div>
-      )}
-      {error && (
-        <p className="text-center text-destructive py-20">Failed to load products: {error}</p>
-      )}
-      {!loading && !error && sortedProducts.length === 0 && (
+      {sortedProducts.length === 0 && (
         <p className="text-center text-muted-foreground py-20">
           {term ? `No products found for "${q}".` : "No products found."}
         </p>
       )}
-      {!loading && sortedProducts.length > 0 && (
+      {sortedProducts.length > 0 && (
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {sortedProducts.map((p) => <ProductCard key={p.node.id} product={p} />)}
         </div>
