@@ -33,7 +33,23 @@ function ThankYouPage() {
     const value = valueRaw ? Number(valueRaw) : undefined;
     const currency = getQueryParam("currency") || "GBP";
 
-    // Google Ads conversion (replace AW-CONVERSION_ID/LABEL in index.html)
+    // Dedup: only fire conversion once per order_id (per browser)
+    const dedupKey = orderId ? `pp_fired_conversion_${orderId}` : null;
+    let alreadyFired = false;
+    if (dedupKey) {
+      try {
+        alreadyFired = window.localStorage.getItem(dedupKey) === "1";
+      } catch {
+        try {
+          alreadyFired = window.sessionStorage.getItem(dedupKey) === "1";
+        } catch {
+          alreadyFired = false;
+        }
+      }
+    }
+    if (alreadyFired) return;
+
+    // Google Ads conversion (replace AW-CONVERSION_ID/LABEL with real IDs)
     if (typeof w.gtag === "function") {
       w.gtag("event", "conversion", {
         send_to: "AW-CONVERSION_ID/CONVERSION_LABEL",
@@ -53,6 +69,19 @@ function ThankYouPage() {
         event: "purchase",
         ecommerce: { transaction_id: orderId, value, currency },
       });
+    }
+
+    // Mark as fired
+    if (dedupKey) {
+      try {
+        window.localStorage.setItem(dedupKey, "1");
+      } catch {
+        try {
+          window.sessionStorage.setItem(dedupKey, "1");
+        } catch {
+          /* ignore */
+        }
+      }
     }
   }, [clearCart]);
 
