@@ -132,6 +132,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { BackToTop } from "@/components/BackToTop";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { Toaster } from "@/components/ui/sonner";
 import { useCartSync } from "@/hooks/useCartSync";
 
@@ -158,6 +159,7 @@ function RootComponent() {
       </main>
       <SiteFooter />
       <BackToTop />
+      <WhatsAppFloat />
       <Toaster position="top-center" />
     </>
   );
