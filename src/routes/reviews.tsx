@@ -4,10 +4,10 @@ import { Star } from "lucide-react";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Customer Reviews, Pondok Peptides" },
-      { name: "description", content: "Read verified reviews from Pondok Peptides customers across the UK." },
-      { property: "og:title", content: "Customer Reviews, Pondok Peptides" },
-      { property: "og:description", content: "Verified reviews from thousands of Pondok Peptides customers." },
+      { title: "Customer Feedback, Pondok Peptides" },
+      { name: "description", content: "Read customer feedback from Pondok Peptides researchers across the UK." },
+      { property: "og:title", content: "Customer Feedback, Pondok Peptides" },
+      { property: "og:description", content: "Customer feedback from Pondok Peptides researchers." },
     ],
   }),
   component: ReviewsPage,
