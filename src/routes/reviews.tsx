@@ -44,10 +44,10 @@ function ReviewsPage() {
   return (
     <div className="container-x py-16 md:py-20">
       <div className="text-center mb-12">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Customer Reviews</p>
-        <h1 className="font-display text-5xl md:text-6xl text-ink">Trusted By <span className="text-primary italic">Thousands</span></h1>
+        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Customer Feedback</p>
+        <h1 className="font-display text-5xl md:text-6xl text-ink">What <span className="text-primary italic">Researchers Say</span></h1>
         <div className="mx-auto mt-4 h-px w-12 bg-primary" />
-        <p className="mt-6 text-muted-foreground">Average rating <strong className="text-ink">4.8/5</strong> from 14,500+ verified buyers.</p>
+        <p className="mt-6 text-muted-foreground">Trusted by researchers across the UK.</p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {all.map(r => (
