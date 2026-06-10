@@ -1,10 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { CategoryPage, buildCategoryHead } from "@/components/CategoryPage";
-import { categoriesBySlug } from "@/data/categories";
-
-const cat = categoriesBySlug["longevity-peptides"];
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/longevity-peptides")({
-  head: () => buildCategoryHead(cat),
-  component: () => <CategoryPage category={cat} />,
+  beforeLoad: () => {
+    throw redirect({ to: "/senolytic-longevity-peptides", statusCode: 301 });
+  },
+  component: () => null,
 });
