@@ -236,8 +236,8 @@ function HomePage() {
       <section className="bg-background py-12 md:py-16 border-b border-border">
         <div className="container-x">
           <div className="text-center mb-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Customer Reviews</p>
-            <h2 className="font-display text-3xl md:text-4xl text-ink">Trusted By <span className="text-primary italic">Thousands</span></h2>
+            <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Customer Feedback</p>
+            <h2 className="font-display text-3xl md:text-4xl text-ink">What <span className="text-primary italic">Researchers Say</span></h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4 transition-opacity duration-500">
             {visibleReviews.map(r => (
@@ -248,7 +248,6 @@ function HomePage() {
                     {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3 fill-current" />)}
                   </div>
                 </div>
-                <p className="text-[9px] uppercase tracking-[0.2em] text-muted-foreground mb-2">Verified Buyer</p>
                 <p className="text-sm text-foreground/80 leading-relaxed line-clamp-3">{r.text}</p>
               </div>
             ))}
