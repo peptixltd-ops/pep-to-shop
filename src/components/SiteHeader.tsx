@@ -6,7 +6,7 @@ import { CartDrawer } from "@/components/CartDrawer";
 
 const nav = [
   { to: "/blog", label: "Blog" },
-  { to: "/reviews", label: "Reviews" },
+  { to: "/reviews", label: "Customer Feedback" },
   { to: "/about", label: "About" },
   { to: "/faqs", label: "FAQs" },
   { to: "/contact", label: "Contact" },
@@ -28,7 +28,7 @@ export function SiteHeader() {
       <div className="bg-primary text-primary-foreground text-xs md:text-sm py-2 tracking-wide overflow-hidden">
         <div className="flex marquee whitespace-nowrap">
           {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="mx-8 shrink-0">14,500+ satisfied customers · FREE UK Shipping</span>
+            <span key={i} className="mx-8 shrink-0">Trusted by researchers across the UK · FREE UK Shipping</span>
           ))}
         </div>
       </div>

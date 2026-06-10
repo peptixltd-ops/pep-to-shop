@@ -8,8 +8,8 @@ export function SiteFooter() {
           For Research Use Only · Not For Human Consumption
         </div>
       </div>
-      <div className="container-x py-16 grid gap-10 md:grid-cols-5">
-        <div>
+      <div className="container-x py-16 grid gap-10 md:grid-cols-6">
+        <div className="md:col-span-2">
           <div className="font-display text-2xl font-semibold mb-3">Pondok Peptides</div>
           <p className="text-sm text-background/70 leading-relaxed">
             Advanced peptide research compounds for laboratory use only. UK-manufactured. Not intended for human or veterinary use.
@@ -42,23 +42,30 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm">
             <li><Link to="/about" className="hover:text-accent">About us</Link></li>
             <li><Link to="/blog" className="hover:text-accent">Research blog</Link></li>
-            <li><Link to="/reviews" className="hover:text-accent">Reviews</Link></li>
+            <li><Link to="/reviews" className="hover:text-accent">Customer Feedback</Link></li>
             <li><Link to="/faqs" className="hover:text-accent">FAQs</Link></li>
             <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Newsletter</h4>
-          <p className="text-sm text-background/70 mb-3">Routines, restocks and member-only offers.</p>
-          <form className="flex">
-            <input type="email" placeholder="Email address" className="flex-1 bg-background/10 border border-background/20 px-3 py-2 text-sm placeholder:text-background/40 focus:outline-none focus:border-accent" />
-            <button type="submit" className="bg-primary px-4 text-sm uppercase tracking-wide hover:bg-primary/80">Join</button>
-          </form>
+          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Legal</h4>
+          <ul className="space-y-2 text-sm">
+            <li><Link to="/privacy-policy" className="hover:text-accent">Privacy Policy</Link></li>
+            <li><Link to="/terms-and-conditions" className="hover:text-accent">Terms &amp; Conditions</Link></li>
+            <li><Link to="/returns-policy" className="hover:text-accent">Returns Policy</Link></li>
+            <li><Link to="/shipping-policy" className="hover:text-accent">Shipping Policy</Link></li>
+            <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
+          </ul>
+        </div>
+      </div>
+      <div className="border-t border-background/10">
+        <div className="container-x py-6 text-center text-xs text-background/60 leading-relaxed">
+          Pondok Peptides is a trading name of Prapen Group Ltd · Company No. 17207898 · Registered in England &amp; Wales · Registered Address: 131 Movers Lane, Barking, IG11 7UQ
         </div>
       </div>
       <div className="border-t border-background/10">
         <div className="container-x py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-background/50">
-          <p>© {new Date().getFullYear()} Pondok Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Prapen Group Ltd. All rights reserved.</p>
           <p>All products are sold strictly for in-vitro laboratory research purposes only. Not for human consumption, ingestion, injection, or use in food, drugs, cosmetics, or household products. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
         </div>
       </div>

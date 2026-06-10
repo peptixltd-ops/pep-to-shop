@@ -4,10 +4,10 @@ import { Star } from "lucide-react";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Customer Reviews, Pondok Peptides" },
-      { name: "description", content: "Read verified reviews from Pondok Peptides customers across the UK." },
-      { property: "og:title", content: "Customer Reviews, Pondok Peptides" },
-      { property: "og:description", content: "Verified reviews from thousands of Pondok Peptides customers." },
+      { title: "Customer Feedback, Pondok Peptides" },
+      { name: "description", content: "Read customer feedback from Pondok Peptides researchers across the UK." },
+      { property: "og:title", content: "Customer Feedback, Pondok Peptides" },
+      { property: "og:description", content: "Customer feedback from Pondok Peptides researchers." },
     ],
   }),
   component: ReviewsPage,
@@ -44,10 +44,10 @@ function ReviewsPage() {
   return (
     <div className="container-x py-16 md:py-20">
       <div className="text-center mb-12">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Customer Reviews</p>
-        <h1 className="font-display text-5xl md:text-6xl text-ink">Trusted By <span className="text-primary italic">Thousands</span></h1>
+        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Customer Feedback</p>
+        <h1 className="font-display text-5xl md:text-6xl text-ink">What <span className="text-primary italic">Researchers Say</span></h1>
         <div className="mx-auto mt-4 h-px w-12 bg-primary" />
-        <p className="mt-6 text-muted-foreground">Average rating <strong className="text-ink">4.8/5</strong> from 14,500+ verified buyers.</p>
+        <p className="mt-6 text-muted-foreground">Trusted by researchers across the UK.</p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {all.map(r => (
@@ -56,7 +56,7 @@ function ReviewsPage() {
             <div className="flex gap-0.5 my-2 text-primary">
               {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}
             </div>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground border-b border-border pb-3 mb-4">Verified Buyer · {r.product}</p>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground border-b border-border pb-3 mb-4">{r.product}</p>
             <p className="text-sm text-foreground/80 leading-relaxed">{r.text}</p>
           </div>
         ))}

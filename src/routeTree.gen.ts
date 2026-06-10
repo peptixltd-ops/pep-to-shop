@@ -11,10 +11,14 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeightLossPeptidesRouteImport } from './routes/weight-loss-peptides'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
+import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as ReturnsPolicyRouteImport } from './routes/returns-policy'
 import { Route as RecoveryPeptidesRouteImport } from './routes/recovery-peptides'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PressRouteImport } from './routes/press'
 import { Route as NootropicsRouteImport } from './routes/nootropics'
 import { Route as LongevityPeptidesRouteImport } from './routes/longevity-peptides'
@@ -39,6 +43,11 @@ const ThankYouRoute = ThankYouRouteImport.update({
   path: '/thank-you',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
+  id: '/terms-and-conditions',
+  path: '/terms-and-conditions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -49,14 +58,29 @@ const ShopRoute = ShopRouteImport.update({
   path: '/shop',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ShippingPolicyRoute = ShippingPolicyRouteImport.update({
+  id: '/shipping-policy',
+  path: '/shipping-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ReturnsPolicyRoute = ReturnsPolicyRouteImport.update({
+  id: '/returns-policy',
+  path: '/returns-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RecoveryPeptidesRoute = RecoveryPeptidesRouteImport.update({
   id: '/recovery-peptides',
   path: '/recovery-peptides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PressRoute = PressRouteImport.update({
@@ -134,10 +158,14 @@ export interface FileRoutesByFullPath {
   '/longevity-peptides': typeof LongevityPeptidesRoute
   '/nootropics': typeof NootropicsRoute
   '/press': typeof PressRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
+  '/returns-policy': typeof ReturnsPolicyRoute
   '/reviews': typeof ReviewsRoute
+  '/shipping-policy': typeof ShippingPolicyRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -155,10 +183,14 @@ export interface FileRoutesByTo {
   '/longevity-peptides': typeof LongevityPeptidesRoute
   '/nootropics': typeof NootropicsRoute
   '/press': typeof PressRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
+  '/returns-policy': typeof ReturnsPolicyRoute
   '/reviews': typeof ReviewsRoute
+  '/shipping-policy': typeof ShippingPolicyRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -177,10 +209,14 @@ export interface FileRoutesById {
   '/longevity-peptides': typeof LongevityPeptidesRoute
   '/nootropics': typeof NootropicsRoute
   '/press': typeof PressRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
+  '/returns-policy': typeof ReturnsPolicyRoute
   '/reviews': typeof ReviewsRoute
+  '/shipping-policy': typeof ShippingPolicyRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -200,10 +236,14 @@ export interface FileRouteTypes {
     | '/longevity-peptides'
     | '/nootropics'
     | '/press'
+    | '/privacy-policy'
     | '/recovery-peptides'
+    | '/returns-policy'
     | '/reviews'
+    | '/shipping-policy'
     | '/shop'
     | '/sitemap.xml'
+    | '/terms-and-conditions'
     | '/thank-you'
     | '/weight-loss-peptides'
     | '/blog/$slug'
@@ -221,10 +261,14 @@ export interface FileRouteTypes {
     | '/longevity-peptides'
     | '/nootropics'
     | '/press'
+    | '/privacy-policy'
     | '/recovery-peptides'
+    | '/returns-policy'
     | '/reviews'
+    | '/shipping-policy'
     | '/shop'
     | '/sitemap.xml'
+    | '/terms-and-conditions'
     | '/thank-you'
     | '/weight-loss-peptides'
     | '/blog/$slug'
@@ -242,10 +286,14 @@ export interface FileRouteTypes {
     | '/longevity-peptides'
     | '/nootropics'
     | '/press'
+    | '/privacy-policy'
     | '/recovery-peptides'
+    | '/returns-policy'
     | '/reviews'
+    | '/shipping-policy'
     | '/shop'
     | '/sitemap.xml'
+    | '/terms-and-conditions'
     | '/thank-you'
     | '/weight-loss-peptides'
     | '/blog/$slug'
@@ -264,10 +312,14 @@ export interface RootRouteChildren {
   LongevityPeptidesRoute: typeof LongevityPeptidesRoute
   NootropicsRoute: typeof NootropicsRoute
   PressRoute: typeof PressRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RecoveryPeptidesRoute: typeof RecoveryPeptidesRoute
+  ReturnsPolicyRoute: typeof ReturnsPolicyRoute
   ReviewsRoute: typeof ReviewsRoute
+  ShippingPolicyRoute: typeof ShippingPolicyRoute
   ShopRoute: typeof ShopRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   ThankYouRoute: typeof ThankYouRoute
   WeightLossPeptidesRoute: typeof WeightLossPeptidesRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -293,6 +345,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThankYouRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/terms-and-conditions': {
+      id: '/terms-and-conditions'
+      path: '/terms-and-conditions'
+      fullPath: '/terms-and-conditions'
+      preLoaderRoute: typeof TermsAndConditionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -307,6 +366,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/shipping-policy': {
+      id: '/shipping-policy'
+      path: '/shipping-policy'
+      fullPath: '/shipping-policy'
+      preLoaderRoute: typeof ShippingPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reviews': {
       id: '/reviews'
       path: '/reviews'
@@ -314,11 +380,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/returns-policy': {
+      id: '/returns-policy'
+      path: '/returns-policy'
+      fullPath: '/returns-policy'
+      preLoaderRoute: typeof ReturnsPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/recovery-peptides': {
       id: '/recovery-peptides'
       path: '/recovery-peptides'
       fullPath: '/recovery-peptides'
       preLoaderRoute: typeof RecoveryPeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/press': {
@@ -424,10 +504,14 @@ const rootRouteChildren: RootRouteChildren = {
   LongevityPeptidesRoute: LongevityPeptidesRoute,
   NootropicsRoute: NootropicsRoute,
   PressRoute: PressRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   RecoveryPeptidesRoute: RecoveryPeptidesRoute,
+  ReturnsPolicyRoute: ReturnsPolicyRoute,
   ReviewsRoute: ReviewsRoute,
+  ShippingPolicyRoute: ShippingPolicyRoute,
   ShopRoute: ShopRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsAndConditionsRoute: TermsAndConditionsRoute,
   ThankYouRoute: ThankYouRoute,
   WeightLossPeptidesRoute: WeightLossPeptidesRoute,
   BlogSlugRoute: BlogSlugRoute,
