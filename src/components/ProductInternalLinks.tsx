@@ -51,7 +51,7 @@ export function ProductInternalLinks({ handle }: { handle: string }) {
         <p className="text-sm text-foreground/70 mb-5">
           Browse the full{" "}
           <Link
-            to={`/${parent.slug}` as "/weight-loss-peptides"}
+            to={`/${parent.slug}` as "/glp1-metabolic-peptides"}
             className="text-primary underline underline-offset-2 hover:no-underline"
           >
             {parent.title.toLowerCase()} collection
