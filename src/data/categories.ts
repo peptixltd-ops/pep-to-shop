@@ -79,15 +79,15 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "recovery-peptides",
-    title: "Recovery Peptides",
-    h1: "Recovery Peptides UK",
+    slug: "tissue-repair-peptides",
+    title: "Tissue Repair Peptides",
+    h1: "Tissue Repair Peptides UK",
     metaTitle:
-      "Recovery Peptides UK | Buy BPC-157 UK, TB-500 UK | 3rd Party Tested | Pondok Peptides",
+      "Tissue Repair Peptides UK | Buy BPC-157 UK, TB-500 UK | 3rd Party Tested | Pondok Peptides",
     metaDescription:
-      "Buy recovery research peptides in the UK. Shop BPC-157 UK and TB500 UK with batch-specific third-party COAs, high purity and fast UK delivery from Pondok Peptides.",
+      "Buy tissue repair research peptides in the UK. Shop BPC-157 UK and TB500 UK with batch-specific third-party COAs, high purity and fast UK delivery from Pondok Peptides.",
     intro:
-      "Recovery peptides such as BPC-157 UK and TB500 UK are studied for their roles in tissue repair, angiogenesis and gastrointestinal protection. Pondok Peptides supplies both as research-grade lyophilised powder, with batch-specific Certificates of Analysis available on every product page.",
+      "Tissue repair peptides such as BPC-157 UK and TB500 UK are studied for their roles in tissue regeneration, angiogenesis and gastrointestinal protection. Pondok Peptides supplies both as research-grade lyophilised powder, with batch-specific Certificates of Analysis available on every product page.",
     productHandles: ["bpc-157-tb-500-mix", "tb-500"],
     sections: [
       {
@@ -101,7 +101,7 @@ export const categories: Category[] = [
       {
         h2: "Why pair BPC-157 with TB-500?",
         body: [
-          "Current research suggests BPC-157 and TB-500 act through complementary mechanisms. BPC-157 has been observed to influence growth factor expression and angiogenesis, while TB-500 plays a role in cell migration and actin regulation. Together they form one of the most studied combinations in recovery research.",
+          "Current research suggests BPC-157 and TB-500 act through complementary mechanisms. BPC-157 has been observed to influence growth factor expression and angiogenesis, while TB-500 plays a role in cell migration and actin regulation. Together they form one of the most studied combinations in tissue repair research.",
           "Pondok supplies the combination as a pre-blended mix vial for protocol consistency, alongside individual TB-500 vials for researchers who want to dose-titrate independently.",
         ],
       },
@@ -139,15 +139,15 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "longevity-peptides",
-    title: "Longevity Peptides",
-    h1: "Longevity Peptides UK",
+    slug: "senolytic-longevity-peptides",
+    title: "Senolytic & Longevity Peptides",
+    h1: "Senolytic & Longevity Peptides UK",
     metaTitle:
-      "Longevity Peptides UK | Buy GHK-Cu UK, MOTS-C UK, NAD Peptide UK | Pondok Peptides",
+      "Senolytic & Longevity Peptides UK | Buy GHK-Cu UK, MOTS-C UK, NAD Peptide UK | Pondok Peptides",
     metaDescription:
-      "Buy longevity research peptides in the UK. Shop GHK-Cu UK, MOTS-C UK and NAD peptide UK with batch-specific third-party COAs and fast UK delivery from Pondok Peptides.",
+      "Buy senolytic and longevity research peptides in the UK. Shop GHK-Cu UK, MOTS-C UK and NAD peptide UK with batch-specific third-party COAs and fast UK delivery from Pondok Peptides.",
     intro:
-      "Longevity peptides are an emerging research category covering mitochondrial function, cellular signalling and copper-mediated repair. Pondok Peptides supplies GHK-Cu UK, MOTS-C UK and NAD peptide UK as research-grade lyophilised material, all third-party tested.",
+      "Senolytic and longevity peptides are an emerging research category covering mitochondrial function, cellular signalling and copper-mediated repair. Pondok Peptides supplies GHK-Cu UK, MOTS-C UK and NAD peptide UK as research-grade lyophilised material, all third-party tested.",
     productHandles: ["ghk-cu", "mots-c", "nad", "ss-31"],
     sections: [
       {
@@ -159,10 +159,10 @@ export const categories: Category[] = [
         ],
       },
       {
-        h2: "The longevity research stack",
+        h2: "The senolytic and longevity research stack",
         body: [
           "Researchers frequently study GHK-Cu, MOTS-C and NAD in parallel to compare effects across mitochondrial, dermal and cellular signalling pathways. SS-31 (Elamipretide) is also commonly included for its targeted mitochondrial cardiolipin binding profile.",
-          "Pondok stocks all four longevity peptides for direct comparative laboratory work.",
+          "Pondok stocks all four senolytic and longevity peptides for direct comparative laboratory work.",
         ],
       },
       {
@@ -174,7 +174,7 @@ export const categories: Category[] = [
       {
         h2: "Storage protocol",
         body: [
-          "Store lyophilised longevity peptides at minus 20 degrees Celsius long term. After reconstitution with sterile bacteriostatic water, refrigerate at 2 to 8 degrees Celsius and use within 28 days. GHK-Cu in particular is light-sensitive and should be stored away from direct UV exposure.",
+          "Store lyophilised senolytic and longevity peptides at minus 20 degrees Celsius long term. After reconstitution with sterile bacteriostatic water, refrigerate at 2 to 8 degrees Celsius and use within 28 days. GHK-Cu in particular is light-sensitive and should be stored away from direct UV exposure.",
         ],
       },
     ],
@@ -198,15 +198,15 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "nootropics",
-    title: "Nootropic Peptides",
-    h1: "Nootropic Peptides UK",
+    slug: "cognitive-neuropeptides",
+    title: "Cognitive & Neuropeptides",
+    h1: "Cognitive & Neuropeptides UK",
     metaTitle:
-      "Nootropic Peptides UK | Buy Semax UK, Selank UK | 3rd Party Tested | Pondok Peptides",
+      "Cognitive & Neuropeptides UK | Buy Semax UK, Selank UK | 3rd Party Tested | Pondok Peptides",
     metaDescription:
-      "Buy nootropic research peptides in the UK. Shop Semax UK and Selank UK with batch-specific third-party COAs, high purity and fast UK delivery from Pondok Peptides.",
+      "Buy cognitive and neuropeptide research compounds in the UK. Shop Semax UK and Selank UK with batch-specific third-party COAs, high purity and fast UK delivery from Pondok Peptides.",
     intro:
-      "Nootropic peptides such as Semax UK and Selank UK are Russian-origin research compounds studied for their roles in modulating BDNF expression, attention and stress response in laboratory models. Pondok Peptides supplies both as third-party tested research material.",
+      "Cognitive peptides and neuropeptides such as Semax UK and Selank UK are Russian-origin research compounds studied for their roles in modulating BDNF expression, attention and stress response in laboratory models. Pondok Peptides supplies both as third-party tested research material.",
     productHandles: ["semax", "selank"],
     sections: [
       {
@@ -220,7 +220,7 @@ export const categories: Category[] = [
       {
         h2: "Why pair Semax with Selank?",
         body: [
-          "Researchers commonly compare Semax and Selank head to head. Semax is studied for BDNF modulation and attention, while Selank is studied for its calming, anxiolytic-like profile. Together they form the canonical Russian nootropic peptide pair in current literature.",
+          "Researchers commonly compare Semax and Selank head to head. Semax is studied for BDNF modulation and attention, while Selank is studied for its calming, anxiolytic-like profile. Together they form the canonical Russian cognitive and neuropeptide pair in current literature.",
         ],
       },
       {
@@ -256,15 +256,15 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "growth-hormone-peptides",
-    title: "Growth Hormone Peptides",
-    h1: "Growth Hormone Peptides UK",
+    slug: "growth-hormone-secretagogues",
+    title: "Growth Hormone Secretagogues",
+    h1: "Growth Hormone Secretagogues UK",
     metaTitle:
-      "Growth Hormone Peptides UK | Buy Ipamorelin UK, Tesamorelin UK, IGF-LR3 UK | Pondok Peptides",
+      "Growth Hormone Secretagogues UK | Buy Ipamorelin UK, Tesamorelin UK, IGF-LR3 UK | Pondok Peptides",
     metaDescription:
-      "Buy growth hormone research peptides in the UK. Shop Ipamorelin UK, Tesamorelin UK and IGF-LR3 UK with batch-specific third-party COAs and fast UK delivery.",
+      "Buy growth hormone secretagogue research peptides in the UK. Shop Ipamorelin UK, Tesamorelin UK and IGF-LR3 UK with batch-specific third-party COAs and fast UK delivery.",
     intro:
-      "Growth hormone peptides cover GHRPs, GHRH analogues and IGF-1 variants. Pondok Peptides supplies Ipamorelin UK, Tesamorelin UK and IGF-LR3 UK as research-grade lyophilised material, all with batch-specific third-party COAs.",
+      "Growth hormone secretagogues cover GHRPs, GHRH analogues and IGF-1 variants. Pondok Peptides supplies Ipamorelin UK, Tesamorelin UK and IGF-LR3 UK as research-grade lyophilised material, all with batch-specific third-party COAs.",
     productHandles: ["ipamorelin", "tesamorelin", "igf-lr3"],
     sections: [
       {
@@ -291,7 +291,7 @@ export const categories: Category[] = [
       {
         h2: "Storage",
         body: [
-          "Store lyophilised growth hormone peptides at minus 20 degrees Celsius long term. IGF-LR3 in particular benefits from minimised freeze-thaw exposure. After reconstitution, refrigerate at 2 to 8 degrees Celsius and use within 28 days.",
+          "Store lyophilised growth hormone secretagogues at minus 20 degrees Celsius long term. IGF-LR3 in particular benefits from minimised freeze-thaw exposure. After reconstitution, refrigerate at 2 to 8 degrees Celsius and use within 28 days.",
         ],
       },
     ],
@@ -309,7 +309,7 @@ export const categories: Category[] = [
         a: "Tesamorelin is a GHRH (growth hormone releasing hormone) analogue, not a GHRP. They act on different receptors.",
       },
       {
-        q: "Do you third-party test growth hormone peptides?",
+        q: "Do you third-party test growth hormone secretagogues?",
         a: "Yes. Every Ipamorelin, Tesamorelin and IGF-LR3 batch is independently HPLC tested. COAs are downloadable from each product page.",
       },
     ],
