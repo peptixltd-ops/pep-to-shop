@@ -18,15 +18,15 @@ const TRUST_LINE =
 
 export const categories: Category[] = [
   {
-    slug: "weight-loss-peptides",
-    title: "Weight Loss Peptides",
-    h1: "Weight Loss Peptides UK",
+    slug: "glp1-metabolic-peptides",
+    title: "GLP-1 & Metabolic Peptides",
+    h1: "GLP-1 & Metabolic Peptides UK",
     metaTitle:
-      "Weight Loss Peptides UK | Buy Retatrutide, Tirzepatide, Semaglutide | Pondok Peptides",
+      "GLP-1 & Metabolic Peptides UK | Buy Retatrutide, Tirzepatide, Semaglutide | Pondok Peptides",
     metaDescription:
-      "Buy weight loss research peptides in the UK. Shop Retatrutide UK, Tirzepatide UK and Semaglutide UK with batch-specific third-party COAs and fast UK delivery.",
+      "Buy GLP-1 and metabolic research peptides in the UK. Shop Retatrutide UK, Tirzepatide UK and Semaglutide UK with batch-specific third-party COAs and fast UK delivery.",
     intro:
-      "Weight loss peptides are among the most studied compounds in modern metabolic research. Whether you are exploring GLP-1 receptor activity with Semaglutide UK, the dual GIP/GLP-1 mechanism of Tirzepatide UK, or the next-generation triple agonist Retatrutide UK, Pondok Peptides supplies research-grade material with verified purity for laboratory study.",
+      "GLP-1 and metabolic peptides are among the most studied compounds in modern incretin research. Whether you are exploring GLP-1 receptor activity with Semaglutide UK, the dual GIP/GLP-1 mechanism of Tirzepatide UK, or the next-generation triple agonist Retatrutide UK, Pondok Peptides supplies research-grade material with verified purity for laboratory study.",
     productHandles: ["retatrutide", "tirzepatide", "semaglutide", "cagrilintide"],
     sections: [
       {
@@ -38,7 +38,7 @@ export const categories: Category[] = [
         ],
       },
       {
-        h2: "Why researchers choose Pondok for weight loss peptides",
+        h2: "Why researchers choose Pondok for GLP-1 and metabolic peptides",
         body: [
           "We commission independent third-party HPLC testing on every batch and publish the resulting COA on each product page. That means when you buy Retatrutide UK, Tirzepatide UK or Semaglutide UK from Pondok, the lot number on the vial matches the certificate.",
           "Discreet packaging, tracked next-day UK delivery, and a UK-based support team that responds within four working hours. We do not split shipments, we do not substitute lots, and we do not ship without a sealed, intact lyophilised cake.",
@@ -54,14 +54,14 @@ export const categories: Category[] = [
       {
         h2: "Reconstitution and storage",
         body: [
-          "Weight loss peptides are supplied as lyophilised powder. Reconstitute with sterile bacteriostatic water at room temperature and store reconstituted material at 2 to 8 degrees Celsius for up to 28 days. Unopened vials should be stored at minus 20 degrees Celsius for long-term stability.",
+          "GLP-1 and metabolic peptides are supplied as lyophilised powder. Reconstitute with sterile bacteriostatic water at room temperature and store reconstituted material at 2 to 8 degrees Celsius for up to 28 days. Unopened vials should be stored at minus 20 degrees Celsius for long-term stability.",
           "Pair every vial with our bacteriostatic water for clean, contamination-free reconstitution. See our blog guide on how to reconstitute peptides for the full step-by-step protocol.",
         ],
       },
     ],
     faqs: [
       {
-        q: "What is the strongest weight loss peptide currently in research?",
+        q: "What is the strongest GLP-1 / metabolic peptide currently in research?",
         a: "Retatrutide is currently the most potent in published literature, acting as a triple agonist on GLP-1, GIP and glucagon receptors. Tirzepatide is the strongest dual agonist, and Semaglutide remains the benchmark single-receptor GLP-1 reference compound.",
       },
       {
