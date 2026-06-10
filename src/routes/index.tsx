@@ -6,7 +6,7 @@ import heroRightImg from "@/assets/hero-right-image.png";
 import bottlesImg from "@/assets/bottles-desk.jpg";
 import { getShopifyProducts, type ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
-import { PressMarquee } from "@/components/PressMarquee";
+
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { trackViewItemList } from "@/lib/analytics";
 
