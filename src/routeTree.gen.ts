@@ -9,22 +9,22 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as WeightLossPeptidesRouteImport } from './routes/weight-loss-peptides'
+import { Route as TissueRepairPeptidesRouteImport } from './routes/tissue-repair-peptides'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
+import { Route as SenolyticLongevityPeptidesRouteImport } from './routes/senolytic-longevity-peptides'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as ReturnsPolicyRouteImport } from './routes/returns-policy'
-import { Route as RecoveryPeptidesRouteImport } from './routes/recovery-peptides'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PressRouteImport } from './routes/press'
-import { Route as NootropicsRouteImport } from './routes/nootropics'
-import { Route as LongevityPeptidesRouteImport } from './routes/longevity-peptides'
-import { Route as GrowthHormonePeptidesRouteImport } from './routes/growth-hormone-peptides'
+import { Route as GrowthHormoneSecretagoguesRouteImport } from './routes/growth-hormone-secretagogues'
+import { Route as Glp1MetabolicPeptidesRouteImport } from './routes/glp1-metabolic-peptides'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CognitiveNeuropeptidesRouteImport } from './routes/cognitive-neuropeptides'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BundlesIndexRouteImport } from './routes/bundles.index'
@@ -33,9 +33,9 @@ import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 import { Route as BundlesSlugRouteImport } from './routes/bundles.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
-const WeightLossPeptidesRoute = WeightLossPeptidesRouteImport.update({
-  id: '/weight-loss-peptides',
-  path: '/weight-loss-peptides',
+const TissueRepairPeptidesRoute = TissueRepairPeptidesRouteImport.update({
+  id: '/tissue-repair-peptides',
+  path: '/tissue-repair-peptides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ThankYouRoute = ThankYouRouteImport.update({
@@ -63,6 +63,12 @@ const ShippingPolicyRoute = ShippingPolicyRouteImport.update({
   path: '/shipping-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SenolyticLongevityPeptidesRoute =
+  SenolyticLongevityPeptidesRouteImport.update({
+    id: '/senolytic-longevity-peptides',
+    path: '/senolytic-longevity-peptides',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
@@ -71,11 +77,6 @@ const ReviewsRoute = ReviewsRouteImport.update({
 const ReturnsPolicyRoute = ReturnsPolicyRouteImport.update({
   id: '/returns-policy',
   path: '/returns-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RecoveryPeptidesRoute = RecoveryPeptidesRouteImport.update({
-  id: '/recovery-peptides',
-  path: '/recovery-peptides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -88,19 +89,15 @@ const PressRoute = PressRouteImport.update({
   path: '/press',
   getParentRoute: () => rootRouteImport,
 } as any)
-const NootropicsRoute = NootropicsRouteImport.update({
-  id: '/nootropics',
-  path: '/nootropics',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LongevityPeptidesRoute = LongevityPeptidesRouteImport.update({
-  id: '/longevity-peptides',
-  path: '/longevity-peptides',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GrowthHormonePeptidesRoute = GrowthHormonePeptidesRouteImport.update({
-  id: '/growth-hormone-peptides',
-  path: '/growth-hormone-peptides',
+const GrowthHormoneSecretagoguesRoute =
+  GrowthHormoneSecretagoguesRouteImport.update({
+    id: '/growth-hormone-secretagogues',
+    path: '/growth-hormone-secretagogues',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const Glp1MetabolicPeptidesRoute = Glp1MetabolicPeptidesRouteImport.update({
+  id: '/glp1-metabolic-peptides',
+  path: '/glp1-metabolic-peptides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqsRoute = FaqsRouteImport.update({
@@ -111,6 +108,11 @@ const FaqsRoute = FaqsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CognitiveNeuropeptidesRoute = CognitiveNeuropeptidesRouteImport.update({
+  id: '/cognitive-neuropeptides',
+  path: '/cognitive-neuropeptides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -152,22 +154,22 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cognitive-neuropeptides': typeof CognitiveNeuropeptidesRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
-  '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
-  '/longevity-peptides': typeof LongevityPeptidesRoute
-  '/nootropics': typeof NootropicsRoute
+  '/glp1-metabolic-peptides': typeof Glp1MetabolicPeptidesRoute
+  '/growth-hormone-secretagogues': typeof GrowthHormoneSecretagoguesRoute
   '/press': typeof PressRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/returns-policy': typeof ReturnsPolicyRoute
   '/reviews': typeof ReviewsRoute
+  '/senolytic-longevity-peptides': typeof SenolyticLongevityPeptidesRoute
   '/shipping-policy': typeof ShippingPolicyRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
-  '/weight-loss-peptides': typeof WeightLossPeptidesRoute
+  '/tissue-repair-peptides': typeof TissueRepairPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/bundles/$slug': typeof BundlesSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -177,22 +179,22 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cognitive-neuropeptides': typeof CognitiveNeuropeptidesRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
-  '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
-  '/longevity-peptides': typeof LongevityPeptidesRoute
-  '/nootropics': typeof NootropicsRoute
+  '/glp1-metabolic-peptides': typeof Glp1MetabolicPeptidesRoute
+  '/growth-hormone-secretagogues': typeof GrowthHormoneSecretagoguesRoute
   '/press': typeof PressRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/returns-policy': typeof ReturnsPolicyRoute
   '/reviews': typeof ReviewsRoute
+  '/senolytic-longevity-peptides': typeof SenolyticLongevityPeptidesRoute
   '/shipping-policy': typeof ShippingPolicyRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
-  '/weight-loss-peptides': typeof WeightLossPeptidesRoute
+  '/tissue-repair-peptides': typeof TissueRepairPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/bundles/$slug': typeof BundlesSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -203,22 +205,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cognitive-neuropeptides': typeof CognitiveNeuropeptidesRoute
   '/contact': typeof ContactRoute
   '/faqs': typeof FaqsRoute
-  '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
-  '/longevity-peptides': typeof LongevityPeptidesRoute
-  '/nootropics': typeof NootropicsRoute
+  '/glp1-metabolic-peptides': typeof Glp1MetabolicPeptidesRoute
+  '/growth-hormone-secretagogues': typeof GrowthHormoneSecretagoguesRoute
   '/press': typeof PressRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
-  '/recovery-peptides': typeof RecoveryPeptidesRoute
   '/returns-policy': typeof ReturnsPolicyRoute
   '/reviews': typeof ReviewsRoute
+  '/senolytic-longevity-peptides': typeof SenolyticLongevityPeptidesRoute
   '/shipping-policy': typeof ShippingPolicyRoute
   '/shop': typeof ShopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
-  '/weight-loss-peptides': typeof WeightLossPeptidesRoute
+  '/tissue-repair-peptides': typeof TissueRepairPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/bundles/$slug': typeof BundlesSlugRoute
   '/product/$handle': typeof ProductHandleRoute
@@ -230,22 +232,22 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/cognitive-neuropeptides'
     | '/contact'
     | '/faqs'
-    | '/growth-hormone-peptides'
-    | '/longevity-peptides'
-    | '/nootropics'
+    | '/glp1-metabolic-peptides'
+    | '/growth-hormone-secretagogues'
     | '/press'
     | '/privacy-policy'
-    | '/recovery-peptides'
     | '/returns-policy'
     | '/reviews'
+    | '/senolytic-longevity-peptides'
     | '/shipping-policy'
     | '/shop'
     | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/thank-you'
-    | '/weight-loss-peptides'
+    | '/tissue-repair-peptides'
     | '/blog/$slug'
     | '/bundles/$slug'
     | '/product/$handle'
@@ -255,22 +257,22 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/cognitive-neuropeptides'
     | '/contact'
     | '/faqs'
-    | '/growth-hormone-peptides'
-    | '/longevity-peptides'
-    | '/nootropics'
+    | '/glp1-metabolic-peptides'
+    | '/growth-hormone-secretagogues'
     | '/press'
     | '/privacy-policy'
-    | '/recovery-peptides'
     | '/returns-policy'
     | '/reviews'
+    | '/senolytic-longevity-peptides'
     | '/shipping-policy'
     | '/shop'
     | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/thank-you'
-    | '/weight-loss-peptides'
+    | '/tissue-repair-peptides'
     | '/blog/$slug'
     | '/bundles/$slug'
     | '/product/$handle'
@@ -280,22 +282,22 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/cognitive-neuropeptides'
     | '/contact'
     | '/faqs'
-    | '/growth-hormone-peptides'
-    | '/longevity-peptides'
-    | '/nootropics'
+    | '/glp1-metabolic-peptides'
+    | '/growth-hormone-secretagogues'
     | '/press'
     | '/privacy-policy'
-    | '/recovery-peptides'
     | '/returns-policy'
     | '/reviews'
+    | '/senolytic-longevity-peptides'
     | '/shipping-policy'
     | '/shop'
     | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/thank-you'
-    | '/weight-loss-peptides'
+    | '/tissue-repair-peptides'
     | '/blog/$slug'
     | '/bundles/$slug'
     | '/product/$handle'
@@ -306,22 +308,22 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CognitiveNeuropeptidesRoute: typeof CognitiveNeuropeptidesRoute
   ContactRoute: typeof ContactRoute
   FaqsRoute: typeof FaqsRoute
-  GrowthHormonePeptidesRoute: typeof GrowthHormonePeptidesRoute
-  LongevityPeptidesRoute: typeof LongevityPeptidesRoute
-  NootropicsRoute: typeof NootropicsRoute
+  Glp1MetabolicPeptidesRoute: typeof Glp1MetabolicPeptidesRoute
+  GrowthHormoneSecretagoguesRoute: typeof GrowthHormoneSecretagoguesRoute
   PressRoute: typeof PressRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
-  RecoveryPeptidesRoute: typeof RecoveryPeptidesRoute
   ReturnsPolicyRoute: typeof ReturnsPolicyRoute
   ReviewsRoute: typeof ReviewsRoute
+  SenolyticLongevityPeptidesRoute: typeof SenolyticLongevityPeptidesRoute
   ShippingPolicyRoute: typeof ShippingPolicyRoute
   ShopRoute: typeof ShopRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   ThankYouRoute: typeof ThankYouRoute
-  WeightLossPeptidesRoute: typeof WeightLossPeptidesRoute
+  TissueRepairPeptidesRoute: typeof TissueRepairPeptidesRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BundlesSlugRoute: typeof BundlesSlugRoute
   ProductHandleRoute: typeof ProductHandleRoute
@@ -331,11 +333,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/weight-loss-peptides': {
-      id: '/weight-loss-peptides'
-      path: '/weight-loss-peptides'
-      fullPath: '/weight-loss-peptides'
-      preLoaderRoute: typeof WeightLossPeptidesRouteImport
+    '/tissue-repair-peptides': {
+      id: '/tissue-repair-peptides'
+      path: '/tissue-repair-peptides'
+      fullPath: '/tissue-repair-peptides'
+      preLoaderRoute: typeof TissueRepairPeptidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/thank-you': {
@@ -373,6 +375,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShippingPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/senolytic-longevity-peptides': {
+      id: '/senolytic-longevity-peptides'
+      path: '/senolytic-longevity-peptides'
+      fullPath: '/senolytic-longevity-peptides'
+      preLoaderRoute: typeof SenolyticLongevityPeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reviews': {
       id: '/reviews'
       path: '/reviews'
@@ -385,13 +394,6 @@ declare module '@tanstack/react-router' {
       path: '/returns-policy'
       fullPath: '/returns-policy'
       preLoaderRoute: typeof ReturnsPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/recovery-peptides': {
-      id: '/recovery-peptides'
-      path: '/recovery-peptides'
-      fullPath: '/recovery-peptides'
-      preLoaderRoute: typeof RecoveryPeptidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -408,25 +410,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PressRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/nootropics': {
-      id: '/nootropics'
-      path: '/nootropics'
-      fullPath: '/nootropics'
-      preLoaderRoute: typeof NootropicsRouteImport
+    '/growth-hormone-secretagogues': {
+      id: '/growth-hormone-secretagogues'
+      path: '/growth-hormone-secretagogues'
+      fullPath: '/growth-hormone-secretagogues'
+      preLoaderRoute: typeof GrowthHormoneSecretagoguesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/longevity-peptides': {
-      id: '/longevity-peptides'
-      path: '/longevity-peptides'
-      fullPath: '/longevity-peptides'
-      preLoaderRoute: typeof LongevityPeptidesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/growth-hormone-peptides': {
-      id: '/growth-hormone-peptides'
-      path: '/growth-hormone-peptides'
-      fullPath: '/growth-hormone-peptides'
-      preLoaderRoute: typeof GrowthHormonePeptidesRouteImport
+    '/glp1-metabolic-peptides': {
+      id: '/glp1-metabolic-peptides'
+      path: '/glp1-metabolic-peptides'
+      fullPath: '/glp1-metabolic-peptides'
+      preLoaderRoute: typeof Glp1MetabolicPeptidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faqs': {
@@ -441,6 +436,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cognitive-neuropeptides': {
+      id: '/cognitive-neuropeptides'
+      path: '/cognitive-neuropeptides'
+      fullPath: '/cognitive-neuropeptides'
+      preLoaderRoute: typeof CognitiveNeuropeptidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -498,22 +500,22 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CognitiveNeuropeptidesRoute: CognitiveNeuropeptidesRoute,
   ContactRoute: ContactRoute,
   FaqsRoute: FaqsRoute,
-  GrowthHormonePeptidesRoute: GrowthHormonePeptidesRoute,
-  LongevityPeptidesRoute: LongevityPeptidesRoute,
-  NootropicsRoute: NootropicsRoute,
+  Glp1MetabolicPeptidesRoute: Glp1MetabolicPeptidesRoute,
+  GrowthHormoneSecretagoguesRoute: GrowthHormoneSecretagoguesRoute,
   PressRoute: PressRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
-  RecoveryPeptidesRoute: RecoveryPeptidesRoute,
   ReturnsPolicyRoute: ReturnsPolicyRoute,
   ReviewsRoute: ReviewsRoute,
+  SenolyticLongevityPeptidesRoute: SenolyticLongevityPeptidesRoute,
   ShippingPolicyRoute: ShippingPolicyRoute,
   ShopRoute: ShopRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   ThankYouRoute: ThankYouRoute,
-  WeightLossPeptidesRoute: WeightLossPeptidesRoute,
+  TissueRepairPeptidesRoute: TissueRepairPeptidesRoute,
   BlogSlugRoute: BlogSlugRoute,
   BundlesSlugRoute: BundlesSlugRoute,
   ProductHandleRoute: ProductHandleRoute,
@@ -523,3 +525,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
