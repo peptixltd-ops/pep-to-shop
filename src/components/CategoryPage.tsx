@@ -9,9 +9,9 @@ import { BundleCard } from "@/components/BundleCard";
 import { bundles } from "@/data/bundles";
 
 const CATEGORY_TO_BUNDLE: Record<string, string> = {
-  "weight-loss-peptides": "glp-1-stack",
-  "recovery-peptides": "recovery-stack",
-  "longevity-peptides": "longevity-stack",
+  "glp1-metabolic-peptides": "glp-1-stack",
+  "tissue-repair-peptides": "recovery-stack",
+  "senolytic-longevity-peptides": "longevity-stack",
 };
 
 const PRODUCT_BY_HANDLE_LITE = `
@@ -134,11 +134,11 @@ export function CategoryPage({ category }: { category: Category }) {
       <section className="container-x py-16 text-center">
         <h2 className="font-display text-2xl md:text-3xl text-ink mb-6">Explore other categories</h2>
         <div className="flex flex-wrap gap-3 justify-center">
-          <Link to="/weight-loss-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Weight Loss</Link>
-          <Link to="/recovery-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Recovery</Link>
-          <Link to="/longevity-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Longevity</Link>
-          <Link to="/nootropics" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Nootropics</Link>
-          <Link to="/growth-hormone-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Growth Hormone</Link>
+          <Link to="/glp1-metabolic-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">GLP-1 &amp; Metabolic</Link>
+          <Link to="/tissue-repair-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Tissue Repair</Link>
+          <Link to="/senolytic-longevity-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Senolytic &amp; Longevity</Link>
+          <Link to="/cognitive-neuropeptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Cognitive &amp; Neuro</Link>
+          <Link to="/growth-hormone-secretagogues" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">GH Secretagogues</Link>
           <Link to="/blog" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Research Guides</Link>
         </div>
       </section>

@@ -19,11 +19,11 @@ export function SiteFooter() {
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Shop</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/shop" className="hover:text-accent">All peptides</Link></li>
-            <li><Link to="/weight-loss-peptides" className="hover:text-accent">Weight loss peptides UK</Link></li>
-            <li><Link to="/recovery-peptides" className="hover:text-accent">Recovery peptides UK</Link></li>
-            <li><Link to="/longevity-peptides" className="hover:text-accent">Longevity peptides UK</Link></li>
-            <li><Link to="/nootropics" className="hover:text-accent">Nootropic peptides UK</Link></li>
-            <li><Link to="/growth-hormone-peptides" className="hover:text-accent">Growth hormone peptides UK</Link></li>
+            <li><Link to="/glp1-metabolic-peptides" className="hover:text-accent">GLP-1 &amp; metabolic peptides UK</Link></li>
+            <li><Link to="/tissue-repair-peptides" className="hover:text-accent">Tissue repair peptides UK</Link></li>
+            <li><Link to="/senolytic-longevity-peptides" className="hover:text-accent">Senolytic &amp; longevity peptides UK</Link></li>
+            <li><Link to="/cognitive-neuropeptides" className="hover:text-accent">Cognitive &amp; neuropeptides UK</Link></li>
+            <li><Link to="/growth-hormone-secretagogues" className="hover:text-accent">Growth hormone secretagogues UK</Link></li>
           </ul>
         </div>
         <div>
