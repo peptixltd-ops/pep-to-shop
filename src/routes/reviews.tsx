@@ -56,7 +56,7 @@ function ReviewsPage() {
             <div className="flex gap-0.5 my-2 text-primary">
               {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3.5 fill-current" />)}
             </div>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground border-b border-border pb-3 mb-4">Verified Buyer · {r.product}</p>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground border-b border-border pb-3 mb-4">{r.product}</p>
             <p className="text-sm text-foreground/80 leading-relaxed">{r.text}</p>
           </div>
         ))}
