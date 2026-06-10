@@ -136,9 +136,6 @@ function HomePage() {
 
   return (
     <div>
-      {/* PRESS MARQUEE */}
-      <PressMarquee />
-
       {/* TRUST STRIP */}
       <TrustStrip />
 
