@@ -60,7 +60,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-background/10">
         <div className="container-x py-6 text-center text-xs text-background/60 leading-relaxed">
-          Pondok Peptides is a trading name of Prapen Group Ltd · Company No. 17207898 · Registered in England &amp; Wales · Registered Address: 131 Movers Lane, Barking, IG11 7UQ
+          Pondok Peptides is a trading name of Prapen Group Ltd · Company No. 17207898 · Registered in England &amp; Wales · Registered Address: 11 Bethell Avenue, Ilford, Essex, IG1 4UX
         </div>
       </div>
       <div className="border-t border-background/10">
