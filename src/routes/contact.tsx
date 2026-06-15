@@ -41,7 +41,7 @@ function ContactPage() {
           {[
             { icon: Mail, t: "Email", d: SUPPORT_EMAIL, href: `mailto:${SUPPORT_EMAIL}` },
             { icon: MessageCircle, t: "Live chat", d: "Mon–Fri, 9am–6pm GMT" },
-            { icon: MapPin, t: "Office", d: "131 Movers Lane, Barking, IG11 7UQ, United Kingdom" },
+            { icon: MapPin, t: "Address", d: "11 Bethell Avenue, Ilford, Essex, IG1 4UX, United Kingdom" },
           ].map(({ icon: Icon, t, d, href }) => (
             <div key={t} className="flex gap-4">
               <div className="size-10 rounded-full bg-accent/40 flex items-center justify-center shrink-0"><Icon className="size-4 text-primary" /></div>
