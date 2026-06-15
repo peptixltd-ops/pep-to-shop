@@ -60,7 +60,8 @@ function ContactPage() {
           {sent ? (
             <div className="py-12 text-center">
               <p className="font-display text-2xl text-ink">Thank you.</p>
-              <p className="mt-2 text-muted-foreground">Your email client should have opened with your message. If it didn't, email us at <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary underline">{SUPPORT_EMAIL}</a>.</p>
+              <p className="mt-2 text-muted-foreground">We've received your enquiry and a member of our team will review it shortly.</p>
+              <p className="mt-2 text-muted-foreground text-sm">If your email client didn't open, please email us directly at <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary underline">{SUPPORT_EMAIL}</a>.</p>
             </div>
           ) : (
             <>
