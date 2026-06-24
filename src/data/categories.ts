@@ -74,7 +74,7 @@ export const categories: Category[] = [
       },
       {
         q: "What purity should I expect?",
-        a: "All Pondok weight loss peptides are HPLC verified at a minimum of 98 percent purity, with batch-specific COAs available for download on each product page.",
+        a: "All Pondok metabolic research peptides are HPLC verified at a minimum of 98 percent purity, with batch-specific COAs available for download on each product page.",
       },
     ],
   },
@@ -102,7 +102,7 @@ export const categories: Category[] = [
         h2: "Why pair BPC-157 with TB-500?",
         body: [
           "Current research suggests BPC-157 and TB-500 act through complementary mechanisms. BPC-157 has been observed to influence growth factor expression and angiogenesis, while TB-500 plays a role in cell migration and actin regulation. Together they form one of the most studied combinations in tissue repair research.",
-          "Pondok supplies the combination as a pre-blended mix vial for protocol consistency, alongside individual TB-500 vials for researchers who want to dose-titrate independently.",
+          "Pondok supplies the combination as a pre-blended mix vial for protocol consistency, alongside individual TB-500 vials for researchers running standalone protocols.",
         ],
       },
       {

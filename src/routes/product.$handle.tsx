@@ -169,15 +169,27 @@ export const Route = createFileRoute("/product/$handle")({
     const price = p?.priceRange?.minVariantPrice;
     const sku = p?.variants?.edges?.[0]?.node?.sku || undefined;
     const productFaqs = getProductFAQs(handle);
+    // Neutral, research-use-only description used in structured data.
+    // We intentionally do NOT pipe the live Shopify description into JSON-LD,
+    // to keep schema fields free of medical / outcome / dosage / administration
+    // language until the Shopify product copy itself has been remediated.
+    const schemaDescription = `${name} supplied as a lyophilised research-grade peptide by Oxford Research Syndicate Ltd. HPLC purity ≥98%, identity confirmed by mass spectrometry, batch-specific Certificate of Analysis. For in-vitro laboratory research use only. Not a medicine. Not for human or veterinary use.`;
     const ldGraph: Array<Record<string, unknown>> = [
       {
         "@type": "Product",
         name,
-        description: p?.description?.slice(0, 500) || desc,
+        description: schemaDescription,
         url,
+        category: "Business & Industrial > Science & Laboratory > Laboratory Chemicals",
         brand: { "@type": "Brand", name: "Pondok Peptides" },
-        ...(sku ? { sku, mpn: sku } : {}),
+        manufacturer: { "@type": "Organization", name: "Oxford Research Syndicate Ltd" },
+        ...(sku ? { sku, mpn: sku, productID: sku } : {}),
         ...(image ? { image } : {}),
+        additionalProperty: [
+          { "@type": "PropertyValue", name: "Form", value: "Lyophilised powder" },
+          { "@type": "PropertyValue", name: "Purity", value: "≥98% by HPLC" },
+          { "@type": "PropertyValue", name: "Intended Use", value: "For in-vitro laboratory research use only" },
+        ],
         ...(price
           ? {
               offers: {
@@ -185,8 +197,9 @@ export const Route = createFileRoute("/product/$handle")({
                 price: parseFloat(price.amount).toFixed(2),
                 priceCurrency: price.currencyCode,
                 availability: "https://schema.org/InStock",
+                itemCondition: "https://schema.org/NewCondition",
                 url,
-                seller: { "@type": "Organization", name: "Pondok Peptides" },
+                seller: { "@type": "Organization", name: "Oxford Research Syndicate Ltd" },
               },
             }
           : {}),
