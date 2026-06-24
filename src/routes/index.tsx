@@ -72,7 +72,7 @@ const faqTabs = {
     { q: "Do you make medical claims?", a: "No. Products are research compounds and not intended to diagnose, treat, cure or prevent disease." },
   ],
   "Support": [
-    { q: "How do I contact you?", a: "Email hello@pondok.co or use the contact form. We reply within 4 working hours." },
+    { q: "How do I contact you?", a: "Email info@pondokpeptides.com, call 07457 404317 (Mon–Fri 9am–6pm GMT), or use the contact form. We reply within 4 working hours." },
     { q: "Do you accept returns?", a: "Due to the nature of our products, we cannot accept returns. We will, however, resolve any issues with your order promptly." },
     { q: "Do you issue refunds?", a: "Refunds are handled case-by-case by our customer service team. When asking about a refund, please include your order number and a description of the issue along with any supporting photos." },
   ],
