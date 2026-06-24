@@ -5,12 +5,15 @@ export const SHOPIFY_STORE_PERMANENT_DOMAIN = "cqdyni-4v.myshopify.com";
 export const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
 export const SHOPIFY_STOREFRONT_TOKEN = "b20f6326fed24e760c7ebd7e2a8873aa";
 
+export const POND_VENDOR = "Pondok Peptides";
+
 export interface ShopifyProduct {
   node: {
     id: string;
     title: string;
     description: string;
     handle: string;
+    vendor?: string;
     priceRange: {
       minVariantPrice: { amount: string; currencyCode: string };
     };
