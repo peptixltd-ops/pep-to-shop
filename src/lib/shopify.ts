@@ -120,13 +120,17 @@ export const PRODUCT_BY_HANDLE_QUERY = `
 `;
 
 export async function getShopifyProducts(first = 50, query?: string) {
-  const data = await storefrontApiRequest(PRODUCTS_QUERY, { first, query });
-  return (data?.data?.products?.edges || []) as ShopifyProduct[];
+  const scopedQuery = query ? `vendor:"${POND_VENDOR}" ${query}` : `vendor:"${POND_VENDOR}"`;
+  const data = await storefrontApiRequest(PRODUCTS_QUERY, { first, query: scopedQuery });
+  const edges = (data?.data?.products?.edges || []) as ShopifyProduct[];
+  return edges.filter((e) => !e.node.vendor || e.node.vendor === POND_VENDOR);
 }
 
 export async function getShopifyProductByHandle(handle: string) {
   const data = await storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle });
-  return (data?.data?.product || null) as ShopifyProduct["node"] | null;
+  const product = (data?.data?.product || null) as ShopifyProduct["node"] | null;
+  if (product && product.vendor && product.vendor !== POND_VENDOR) return null;
+  return product;
 }
 
 export async function storefrontApiRequest(query: string, variables: Record<string, unknown> = {}) {
