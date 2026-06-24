@@ -5,12 +5,15 @@ export const SHOPIFY_STORE_PERMANENT_DOMAIN = "cqdyni-4v.myshopify.com";
 export const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
 export const SHOPIFY_STOREFRONT_TOKEN = "b20f6326fed24e760c7ebd7e2a8873aa";
 
+export const POND_VENDOR = "Pondok Peptides";
+
 export interface ShopifyProduct {
   node: {
     id: string;
     title: string;
     description: string;
     handle: string;
+    vendor?: string;
     priceRange: {
       minVariantPrice: { amount: string; currencyCode: string };
     };
@@ -67,6 +70,7 @@ export const PRODUCTS_QUERY = `
           title
           description
           handle
+          vendor
           priceRange { minVariantPrice { amount currencyCode } }
           images(first: 5) { edges { node { url altText } } }
           variants(first: 10) {
@@ -95,6 +99,7 @@ export const PRODUCT_BY_HANDLE_QUERY = `
       title
       description
       handle
+      vendor
       priceRange { minVariantPrice { amount currencyCode } }
       images(first: 10) { edges { node { url altText } } }
       variants(first: 20) {
@@ -115,13 +120,17 @@ export const PRODUCT_BY_HANDLE_QUERY = `
 `;
 
 export async function getShopifyProducts(first = 50, query?: string) {
-  const data = await storefrontApiRequest(PRODUCTS_QUERY, { first, query });
-  return (data?.data?.products?.edges || []) as ShopifyProduct[];
+  const scopedQuery = query ? `vendor:"${POND_VENDOR}" ${query}` : `vendor:"${POND_VENDOR}"`;
+  const data = await storefrontApiRequest(PRODUCTS_QUERY, { first, query: scopedQuery });
+  const edges = (data?.data?.products?.edges || []) as ShopifyProduct[];
+  return edges.filter((e) => !e.node.vendor || e.node.vendor === POND_VENDOR);
 }
 
 export async function getShopifyProductByHandle(handle: string) {
   const data = await storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle });
-  return (data?.data?.product || null) as ShopifyProduct["node"] | null;
+  const product = (data?.data?.product || null) as ShopifyProduct["node"] | null;
+  if (product && product.vendor && product.vendor !== POND_VENDOR) return null;
+  return product;
 }
 
 export async function storefrontApiRequest(query: string, variables: Record<string, unknown> = {}) {
