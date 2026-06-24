@@ -1,12 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { COMPANY, COMPANY_ADDRESS_ONELINE, CompanyInfoBlock } from "@/components/CompanyInfo";
 
 export const Route = createFileRoute("/privacy-policy")({
   head: () => ({
     meta: [
       { title: "Privacy Policy, Pondok Peptides" },
-      { name: "description", content: "How Pondok Peptides (Prapen Group Ltd) collects, uses and protects your personal data under UK GDPR." },
+      { name: "description", content: "How Pondok Peptides (Oxford Research Syndicate Ltd) collects, uses and protects your personal data under UK GDPR." },
       { property: "og:title", content: "Privacy Policy, Pondok Peptides" },
       { property: "og:description", content: "Our UK GDPR-compliant privacy practices." },
+      { property: "og:url", content: "https://pondokpeptides.com/privacy-policy" },
     ],
     links: [{ rel: "canonical", href: "https://pondokpeptides.com/privacy-policy" }],
   }),
@@ -23,12 +25,12 @@ function PrivacyPage() {
       <div className="prose-style space-y-8 text-foreground/85 leading-relaxed text-[15px]">
         <section>
           <h2 className="font-display text-2xl text-ink mb-3">1. Who we are</h2>
-          <p>Pondok Peptides is a trading name of <strong>Prapen Group Ltd</strong> (Company No. 17207898), registered in England &amp; Wales, with registered address 131 Movers Lane, Barking, IG11 7UQ, United Kingdom. We are the data controller for personal data collected through this website.</p>
+          <p>Pondok Peptides is a storefront brand operated by <strong>{COMPANY.legalName}</strong> (Company No. {COMPANY.companyNumber}), registered in England &amp; Wales, with registered address {COMPANY_ADDRESS_ONELINE}. {COMPANY.legalName} is the data controller for personal data collected through pondokpeptides.com and at checkout on checkout.oxfordresearchsyndicate.com.</p>
         </section>
 
         <section>
           <h2 className="font-display text-2xl text-ink mb-3">2. Data we collect</h2>
-          <p>We collect information you provide directly (name, email, billing and delivery address, phone number, order details) as well as technical data (IP address, browser, device, pages viewed, cookies) when you use the site.</p>
+          <p>We collect information you provide directly (name, email, billing and delivery address, phone number, order details) as well as technical data (IP address, browser, device, pages viewed, cookies) when you use the site or complete checkout.</p>
         </section>
 
         <section>
@@ -49,7 +51,7 @@ function PrivacyPage() {
 
         <section>
           <h2 className="font-display text-2xl text-ink mb-3">5. Sharing</h2>
-          <p>We share data only with trusted processors (payment providers, couriers, hosting, email, analytics) under written agreements, and with authorities where legally required. We do not sell personal data.</p>
+          <p>We share data only with trusted processors (payment providers, couriers, hosting, email, analytics) under written agreements, and with authorities where legally required. We do not sell personal data. Order data may be shared internally between Pondok Peptides and the shared checkout, fulfilment and customer-service operations of {COMPANY.legalName}.</p>
         </section>
 
         <section>
@@ -69,7 +71,10 @@ function PrivacyPage() {
 
         <section>
           <h2 className="font-display text-2xl text-ink mb-3">9. Contact</h2>
-          <p>Privacy queries: <a className="text-primary hover:underline" href="mailto:info@pondokpeptides.com">info@pondokpeptides.com</a><br />Prapen Group Ltd, 131 Movers Lane, Barking, IG11 7UQ, United Kingdom.</p>
+          <p>Privacy queries: <a className="text-primary hover:underline" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> · Phone: <a className="text-primary hover:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}>{COMPANY.phone}</a></p>
+          <div className="mt-4 bg-mist border border-border p-5">
+            <CompanyInfoBlock />
+          </div>
         </section>
       </div>
     </div>
