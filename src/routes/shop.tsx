@@ -19,10 +19,10 @@ export const Route = createFileRoute("/shop")({
   },
   head: () => ({
     meta: [
-      { title: "Shop UK Research Peptides | Buy Retatrutide, BPC-157, TB-500 | Pondok Peptides" },
-      { name: "description", content: "Browse the full Pondok Peptides range. Buy retatrutide, tirzepatide, BPC-157, TB-500, GHK-Cu and more. 3rd party tested, COAs per batch, fast UK delivery." },
-      { property: "og:title", content: "Shop UK Research Peptides | Pondok Peptides" },
-      { property: "og:description", content: "3rd party tested research peptides with COAs per batch. Fast UK delivery." },
+      { title: "Research Peptide Catalogue | Laboratory Research Use Only | Pondok Peptides" },
+      { name: "description", content: "Browse the Pondok Peptides research catalogue: retatrutide, tirzepatide, BPC-157, TB-500, GHK-Cu and more. Supplied for in-vitro laboratory research use only. UK dispatch." },
+      { property: "og:title", content: "Research Peptide Catalogue | Pondok Peptides" },
+      { property: "og:description", content: "Laboratory research peptide catalogue. HPLC and MS verified, COA on request. UK dispatch." },
       { property: "og:url", content: "https://pondokpeptides.com/shop" },
     ],
     links: [{ rel: "canonical", href: "https://pondokpeptides.com/shop" }],

@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /bundles
+Disallow: /bundles/
 
 Sitemap: https://pondokpeptides.com/sitemap.xml

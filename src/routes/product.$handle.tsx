@@ -163,8 +163,8 @@ export const Route = createFileRoute("/product/$handle")({
     const url = `https://pondokpeptides.com/product/${handle}`;
     const p = loaderData?.product;
     const name = p?.title || handle.replace(/-/g, " ");
-    const title = `Buy ${name} UK | 3rd-Party Tested | Pondok Peptides`;
-    const desc = `Buy ${name} research peptide in the UK. Third-party HPLC tested with batch-specific COAs and fast UK delivery from Pondok Peptides.`;
+    const title = `${name} — Research Use Only | Pondok Peptides`;
+    const desc = `${name} laboratory research peptide. HPLC and MS verified, Certificate of Analysis available on request. For in-vitro laboratory research use only — not for human or veterinary use.`;
     const image = p?.images?.edges?.[0]?.node?.url;
     const price = p?.priceRange?.minVariantPrice;
     const sku = p?.variants?.edges?.[0]?.node?.sku || undefined;
@@ -453,8 +453,8 @@ function ProductPage() {
                 <img src={src} alt={alt} className="w-full h-full object-contain" />
               ) : null;
             })()}
-            <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-destructive/10 text-destructive text-[11px] uppercase tracking-wider px-2.5 py-1 rounded">
-              <Flame className="size-3" /> Selling fast
+            <span className="absolute top-3 left-3 inline-flex items-center gap-1.5 bg-primary/10 text-primary text-[11px] uppercase tracking-wider px-2.5 py-1 rounded">
+              <Flame className="size-3" /> Research Use Only
             </span>
           </div>
           {images.length > 1 && (
@@ -764,7 +764,8 @@ function ProductPage() {
         </div>
       </div>
 
-      <BundleCardsForProduct handle={handle} initialProducts={bundles} />
+      {/* Bundles hidden during GMC review — re-enable post-appeal */}
+      {false && <BundleCardsForProduct handle={handle} initialProducts={bundles} />}
       <FrequentlyBoughtTogether handle={handle} initialItems={frequentlyBoughtTogether} />
       <ProductInternalLinks handle={handle} />
       <ProductFAQSection handle={handle} />

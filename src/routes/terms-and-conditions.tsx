@@ -1,12 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { COMPANY, COMPANY_ADDRESS_ONELINE, CompanyInfoBlock } from "@/components/CompanyInfo";
 
 export const Route = createFileRoute("/terms-and-conditions")({
   head: () => ({
     meta: [
       { title: "Terms & Conditions, Pondok Peptides" },
-      { name: "description", content: "The terms governing your use of pondokpeptides.com and purchases from Prapen Group Ltd." },
+      { name: "description", content: "The terms governing your use of pondokpeptides.com and purchases from Oxford Research Syndicate Ltd." },
       { property: "og:title", content: "Terms & Conditions, Pondok Peptides" },
       { property: "og:description", content: "Terms governing use of pondokpeptides.com." },
+      { property: "og:url", content: "https://pondokpeptides.com/terms-and-conditions" },
     ],
     links: [{ rel: "canonical", href: "https://pondokpeptides.com/terms-and-conditions" }],
   }),
@@ -23,7 +25,7 @@ function TermsPage() {
       <div className="space-y-8 text-foreground/85 leading-relaxed text-[15px]">
         <section>
           <h2 className="font-display text-2xl text-ink mb-3">1. About us</h2>
-          <p>This website is operated by <strong>Prapen Group Ltd</strong> (trading as Pondok Peptides), a company registered in England &amp; Wales (Company No. 17207898), registered address 131 Movers Lane, Barking, IG11 7UQ.</p>
+          <p>This website (pondokpeptides.com) is operated by <strong>{COMPANY.legalName}</strong> (trading as Pondok Peptides), a company registered in England &amp; Wales (Company No. {COMPANY.companyNumber}), registered address {COMPANY_ADDRESS_ONELINE}. {COMPANY.legalName} is the merchant of record for all orders and operates the shared checkout at checkout.oxfordresearchsyndicate.com.</p>
         </section>
 
         <section>
@@ -38,7 +40,7 @@ function TermsPage() {
 
         <section>
           <h2 className="font-display text-2xl text-ink mb-3">4. Orders &amp; pricing</h2>
-          <p>Placing an order is an offer to buy, subject to our acceptance. We reserve the right to refuse or cancel any order. Prices are shown in GBP and include VAT where applicable. We may correct pricing errors prior to dispatch.</p>
+          <p>Placing an order is an offer to buy, subject to our acceptance. We reserve the right to refuse or cancel any order. Prices are shown in GBP. {COMPANY.legalName} is currently <strong>not VAT registered</strong>; no VAT is charged or shown on invoices. We may correct pricing errors prior to dispatch.</p>
         </section>
 
         <section>
@@ -53,7 +55,7 @@ function TermsPage() {
 
         <section>
           <h2 className="font-display text-2xl text-ink mb-3">7. Returns &amp; refunds</h2>
-          <p>See our <a className="text-primary hover:underline" href="/returns-policy">Returns Policy</a>. Due to the nature of research compounds, returns are restricted.</p>
+          <p>See our <a className="text-primary hover:underline" href="/returns-policy">Returns Policy</a>. Due to the nature of laboratory research compounds, returns are restricted.</p>
         </section>
 
         <section>
@@ -63,7 +65,7 @@ function TermsPage() {
 
         <section>
           <h2 className="font-display text-2xl text-ink mb-3">9. Intellectual property</h2>
-          <p>All site content, branding, photography and copy are owned by Prapen Group Ltd or licensed to it. You may not reproduce, copy or republish content without written permission.</p>
+          <p>All site content, branding, photography and copy are owned by {COMPANY.legalName} or licensed to it. You may not reproduce, copy or republish content without written permission.</p>
         </section>
 
         <section>
@@ -73,7 +75,10 @@ function TermsPage() {
 
         <section>
           <h2 className="font-display text-2xl text-ink mb-3">11. Contact</h2>
-          <p>Prapen Group Ltd, 131 Movers Lane, Barking, IG11 7UQ, United Kingdom. Email: <a className="text-primary hover:underline" href="mailto:info@pondokpeptides.com">info@pondokpeptides.com</a>.</p>
+          <p>Email: <a className="text-primary hover:underline" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> · Phone: <a className="text-primary hover:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}>{COMPANY.phone}</a></p>
+          <div className="mt-4 bg-mist border border-border p-5">
+            <CompanyInfoBlock />
+          </div>
         </section>
       </div>
     </div>
