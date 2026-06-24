@@ -1,10 +1,10 @@
-import { Stethoscope, FlaskConical, Truck, Award } from "lucide-react";
+import { FlaskConical, ShieldCheck, Truck, FileCheck2 } from "lucide-react";
 
 const items = [
-  { icon: Stethoscope, title: "Medical Grade" },
-  { icon: FlaskConical, title: "3rd Party Tested" },
-  { icon: Truck, title: "Fast & Discreet UK Delivery" },
-  { icon: Award, title: "Trusted Since 2021" },
+  { icon: FlaskConical, title: "Laboratory Research Use" },
+  { icon: ShieldCheck, title: "HPLC & MS Verified" },
+  { icon: Truck, title: "UK Dispatch, Tracked" },
+  { icon: FileCheck2, title: "COA Available On Request" },
 ];
 
 export function TrustStrip() {

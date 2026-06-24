@@ -25,12 +25,8 @@ export function SiteHeader() {
   };
   return (
     <header className="sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
-      <div className="bg-primary text-primary-foreground text-xs md:text-sm py-2 tracking-wide overflow-hidden">
-        <div className="flex marquee whitespace-nowrap">
-          {Array.from({ length: 8 }).map((_, i) => (
-            <span key={i} className="mx-8 shrink-0">Trusted by researchers across the UK · FREE UK Shipping</span>
-          ))}
-        </div>
+      <div className="bg-primary text-primary-foreground text-xs md:text-sm py-2 tracking-wide text-center">
+        For Laboratory Research Use Only · Not For Human Or Veterinary Use
       </div>
       <div className="container-x flex items-center justify-between py-4">
         <Link to="/" aria-label="Pondok Peptides home" className="flex items-baseline gap-2">
@@ -63,7 +59,7 @@ export function SiteHeader() {
             <Search className="size-5" />
           </button>
           <Link to="/shop" className="hidden md:inline-flex items-center justify-center bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors">
-            SHOP NOW
+            Catalogue
           </Link>
           <a
             href="https://account.pondokpeptides.com"
