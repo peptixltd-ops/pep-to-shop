@@ -70,6 +70,7 @@ export const PRODUCTS_QUERY = `
           title
           description
           handle
+          vendor
           priceRange { minVariantPrice { amount currencyCode } }
           images(first: 5) { edges { node { url altText } } }
           variants(first: 10) {
