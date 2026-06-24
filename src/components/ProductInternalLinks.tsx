@@ -2,25 +2,25 @@ import { Link } from "@tanstack/react-router";
 import { getCategoriesForProduct } from "@/data/categories";
 
 const SIBLING_LABEL: Record<string, string> = {
-  "retatrutide": "Buy Retatrutide UK",
-  "tirzepatide": "Buy Tirzepatide UK",
-  "semaglutide": "Buy Semaglutide UK",
-  "cagrilintide": "Buy Cagrilintide UK",
-  "bpc-157": "Buy BPC-157 UK",
-  "tb-500": "Buy TB-500 UK",
-  "bpc-157-tb-500-mix": "BPC-157 + TB-500 Mix UK",
-  "ghk-cu": "Buy GHK-Cu UK",
-  "mots-c": "Buy MOTS-C UK",
-  "nad": "Buy NAD+ UK",
-  "ss-31": "Buy SS-31 UK",
-  "ipamorelin": "Buy Ipamorelin UK",
-  "tesamorelin": "Buy Tesamorelin UK",
-  "igf-lr3": "Buy IGF-1 LR3 UK",
-  "selank": "Buy Selank UK",
-  "semax": "Buy Semax UK",
-  "pt-141": "Buy PT-141 UK",
-  "klow": "Buy KLOW Blend UK",
-  "bacteriostatic-water": "Bacteriostatic Water UK",
+  "retatrutide": "Retatrutide (Research)",
+  "tirzepatide": "Tirzepatide (Research)",
+  "semaglutide": "Semaglutide (Research)",
+  "cagrilintide": "Cagrilintide (Research)",
+  "bpc-157": "BPC-157 (Research)",
+  "tb-500": "TB-500 (Research)",
+  "bpc-157-tb-500-mix": "BPC-157 + TB-500 Mix (Research)",
+  "ghk-cu": "GHK-Cu (Research)",
+  "mots-c": "MOTS-c (Research)",
+  "nad": "NAD+ (Research)",
+  "ss-31": "SS-31 (Research)",
+  "ipamorelin": "Ipamorelin (Research)",
+  "tesamorelin": "Tesamorelin (Research)",
+  "igf-lr3": "IGF-1 LR3 (Research)",
+  "selank": "Selank (Research)",
+  "semax": "Semax (Research)",
+  "pt-141": "PT-141 (Research)",
+  "klow": "KLOW Blend (Research)",
+  "bacteriostatic-water": "Bacteriostatic Water",
 };
 
 const SIBLING_PRIORITY = [
@@ -46,7 +46,7 @@ export function ProductInternalLinks({ handle }: { handle: string }) {
   return (
     <section className="mt-16 max-w-5xl mx-auto">
       <div className="bg-mist border border-border rounded-md p-6 md:p-8">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Explore the range</p>
+        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Explore the catalogue</p>
         <h2 className="font-display text-2xl text-ink mb-2">More from {parent.title}</h2>
         <p className="text-sm text-foreground/70 mb-5">
           Browse the full{" "}
@@ -54,9 +54,9 @@ export function ProductInternalLinks({ handle }: { handle: string }) {
             to={`/${parent.slug}` as "/glp1-metabolic-peptides"}
             className="text-primary underline underline-offset-2 hover:no-underline"
           >
-            {parent.title.toLowerCase()} collection
+            {parent.title.toLowerCase()} catalogue
           </Link>{" "}
-          or jump straight to a related research peptide below.
+          or view a related research peptide below.
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {siblings.map((h: string) => (

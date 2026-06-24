@@ -92,7 +92,8 @@ export function CategoryPage({ category }: { category: Category }) {
         </section>
       )}
 
-      {(() => {
+      {/* Bundle promo hidden during GMC compliance review */}
+      {false && (() => {
         const slug = CATEGORY_TO_BUNDLE[category.slug];
         const bundle = slug ? bundles.find((b) => b.slug === slug) : undefined;
         if (!bundle) return null;

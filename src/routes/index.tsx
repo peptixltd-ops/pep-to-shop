@@ -17,10 +17,10 @@ export const Route = createFileRoute("/")({
   },
   head: () => ({
     meta: [
-      { title: "Buy Research Peptides UK | Third-Party Tested | Pondok Peptides" },
-      { name: "description", content: "Buy premium research peptides in the UK with batch-specific third-party testing and verified COAs. Browse our full range with fast UK delivery from Pondok Peptides." },
-      { property: "og:title", content: "Buy Research Peptides UK | Third-Party Tested | Pondok Peptides" },
-      { property: "og:description", content: "Premium UK research peptides with batch-specific third-party testing and verified COAs. Fast UK delivery from a trusted UK peptide supplier." },
+      { title: "Research Peptides UK | Laboratory Research Use Only | Pondok Peptides" },
+      { name: "description", content: "Pondok Peptides supplies laboratory research peptides in the UK with HPLC and MS verification and Certificate of Analysis on request. For laboratory research use only — not for human or veterinary use." },
+      { property: "og:title", content: "Research Peptides UK | Laboratory Research Use Only | Pondok Peptides" },
+      { property: "og:description", content: "UK laboratory research peptides with HPLC and MS verification and COA on request. Operated by Oxford Research Syndicate Ltd." },
       { property: "og:url", content: "https://pondokpeptides.com/" },
     ],
     links: [{ rel: "canonical", href: "https://pondokpeptides.com/" }],
@@ -144,19 +144,19 @@ function HomePage() {
         <div className="grid items-stretch min-[700px]:grid-cols-2">
           <div className="flex items-center px-6 md:px-10 lg:px-16 py-14 lg:py-24 min-w-0">
             <div className="w-full max-w-xl">
-              <span className="inline-block mb-4 px-3 py-1 text-[10px] uppercase tracking-[0.25em] bg-ink text-background">For Research Use Only</span>
+              <span className="inline-block mb-4 px-3 py-1 text-[10px] uppercase tracking-[0.25em] bg-ink text-background">For Laboratory Research Use Only</span>
               <h1 className="font-display text-5xl md:text-6xl lg:text-7xl text-ink leading-[1.05]">
-                <span className="italic text-primary">Medical Grade</span><br />Research Peptides UK.
+                <span className="italic text-primary">Laboratory-Grade</span><br />Research Peptides, UK.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                The trusted UK peptide supplier. Buy peptides UK with batch-specific third-party testing, verified COAs and fast next-day UK delivery. Trusted by over 10,000 researchers.
+                A UK supplier of laboratory research peptides. HPLC and MS verification with Certificate of Analysis available on request. For in-vitro laboratory research only — not for human or veterinary use.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/shop" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 transition">
-                  Shop Now <ArrowRight className="size-4" />
+                  View Catalogue <ArrowRight className="size-4" />
                 </Link>
                 <Link to="/about" className="inline-flex items-center bg-transparent border border-ink/20 text-ink px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-ink hover:text-background transition">
-                  Learn More
+                  About Us
                 </Link>
               </div>
             </div>
@@ -212,11 +212,11 @@ function HomePage() {
           </div>
           <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {[
-              { handle: "retatrutide", label: "Buy Retatrutide UK" },
-              { handle: "tirzepatide", label: "Buy Tirzepatide UK" },
-              { handle: "semaglutide", label: "Buy Semaglutide UK" },
-              { handle: "bpc-157", label: "Buy BPC-157 UK" },
-              { handle: "tb-500", label: "Buy TB-500 UK" },
+              { handle: "retatrutide", label: "Retatrutide (Research)" },
+              { handle: "tirzepatide", label: "Tirzepatide (Research)" },
+              { handle: "semaglutide", label: "Semaglutide (Research)" },
+              { handle: "bpc-157", label: "BPC-157 (Research)" },
+              { handle: "tb-500", label: "TB-500 (Research)" },
             ].map((p) => (
               <li key={p.handle}>
                 <Link
@@ -271,8 +271,8 @@ function HomePage() {
         <h2 className="font-display text-4xl md:text-5xl text-ink max-w-3xl mx-auto leading-tight">Committed To Precision. Built On Trust.</h2>
         <p className="mt-5 text-muted-foreground max-w-xl mx-auto">High quality peptides supplied with consistency, control and uncompromising standards.</p>
         <div className="mt-12 max-w-3xl mx-auto text-left text-foreground/80 space-y-4">
-          <p>At Pondok Peptides we supply <strong>premium research peptides UK</strong> researchers can rely on, with a focus on purity, consistency and reliability. Whether you're looking to <strong>buy peptides UK</strong>-wide or you need a long-term <strong>UK peptide supplier</strong>, every order ships with verified third-party testing.</p>
-          <p>Every peptide is handled with <strong>precision</strong> from sourcing to delivery. We're a <strong>peptide supplier UK</strong> labs and independent researchers trust because every batch is independently HPLC tested. Our <strong>third party tested peptides</strong> include <Link to="/product/$handle" params={{ handle: "retatrutide" }} className="text-primary underline">retatrutide</Link>, <Link to="/product/$handle" params={{ handle: "tirzepatide" }} className="text-primary underline">tirzepatide</Link>, <Link to="/product/$handle" params={{ handle: "semaglutide" }} className="text-primary underline">semaglutide</Link>, <Link to="/product/$handle" params={{ handle: "bpc-157-tb-500-mix" }} className="text-primary underline">BPC-157</Link> and <Link to="/product/$handle" params={{ handle: "tb-500" }} className="text-primary underline">TB-500</Link>.</p>
+          <p>Pondok Peptides supplies <strong>laboratory research peptides</strong> in the UK, with a focus on identity verification, documented purity and reliable dispatch. Every product is intended strictly for in-vitro laboratory research by qualified researchers and institutions.</p>
+          <p>Each batch is verified by HPLC and MS; an in-house Certificate of Analysis is available on every product page and independent third-party testing is available on request. Our research catalogue includes <Link to="/product/$handle" params={{ handle: "retatrutide" }} className="text-primary underline">retatrutide</Link>, <Link to="/product/$handle" params={{ handle: "tirzepatide" }} className="text-primary underline">tirzepatide</Link>, <Link to="/product/$handle" params={{ handle: "semaglutide" }} className="text-primary underline">semaglutide</Link>, <Link to="/product/$handle" params={{ handle: "bpc-157-tb-500-mix" }} className="text-primary underline">BPC-157</Link> and <Link to="/product/$handle" params={{ handle: "tb-500" }} className="text-primary underline">TB-500</Link>.</p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Link to="/glp1-metabolic-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">GLP-1 &amp; Metabolic</Link>
             <Link to="/tissue-repair-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Tissue Repair</Link>
