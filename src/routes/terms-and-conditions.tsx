@@ -1,13 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { COMPANY, COMPANY_ADDRESS_ONELINE, CompanyInfoBlock } from "@/components/CompanyInfo";
+import { PolicyHeader } from "@/components/PolicyHeader";
 
 export const Route = createFileRoute("/terms-and-conditions")({
   head: () => ({
     meta: [
       { title: "Terms & Conditions, Pondok Peptides" },
-      { name: "description", content: "The terms governing your use of pondokpeptides.com and purchases from Oxford Research Syndicate Ltd." },
+      { name: "description", content: "Terms and conditions of sale for Oxford Research Syndicate Ltd, trading as Pondok Peptides. Research-use-only laboratory peptides." },
       { property: "og:title", content: "Terms & Conditions, Pondok Peptides" },
-      { property: "og:description", content: "Terms governing use of pondokpeptides.com." },
+      { property: "og:description", content: "UK terms of sale for laboratory research peptides." },
       { property: "og:url", content: "https://pondokpeptides.com/terms-and-conditions" },
     ],
     links: [{ rel: "canonical", href: "https://pondokpeptides.com/terms-and-conditions" }],
@@ -20,65 +20,63 @@ function TermsPage() {
     <div className="container-x py-16 md:py-20 max-w-3xl">
       <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Legal</p>
       <h1 className="font-display text-4xl md:text-5xl text-ink mb-6">Terms &amp; <span className="italic text-primary">Conditions</span></h1>
-      <p className="text-sm text-muted-foreground mb-10">Last updated: {new Date().toLocaleDateString("en-GB", { year: "numeric", month: "long" })}</p>
 
-      <div className="space-y-8 text-foreground/85 leading-relaxed text-[15px]">
+      <PolicyHeader />
+
+      <div className="space-y-7 text-foreground/85 leading-relaxed text-[15px]">
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">1. About us</h2>
-          <p>This website (pondokpeptides.com) is operated by <strong>{COMPANY.legalName}</strong> (trading as Pondok Peptides), a company registered in England &amp; Wales (Company No. {COMPANY.companyNumber}), registered address {COMPANY_ADDRESS_ONELINE}. {COMPANY.legalName} is the merchant of record for all orders and operates the shared checkout at checkout.oxfordresearchsyndicate.com.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">1. These terms</h2>
+          <p>These terms govern the sale of goods through pondokpeptides.com by Oxford Research Syndicate Ltd ("we", "us"). By placing an order you accept them.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">2. Research use only</h2>
-          <p>All products sold on this site are supplied strictly for <strong>in-vitro laboratory research purposes only</strong>. They are not intended, and must not be used, for human or veterinary consumption, diagnosis, treatment, cure or prevention of any disease, or for use in food, drugs, cosmetics or household products. By placing an order you confirm you are a qualified researcher or institution and that you accept full responsibility for the lawful handling and use of the products.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">2. Research use only</h2>
+          <p>All products are sold strictly for in-vitro laboratory research use. They are not medicines, food, cosmetics, supplements or veterinary products. They are not for human or animal consumption, injection, ingestion or topical use. By ordering you confirm you are a qualified researcher or research-procurement officer aged 18 or over and that the products will be used solely for laboratory research.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">3. Eligibility</h2>
-          <p>You must be at least 18 years old and have legal capacity to purchase. You are responsible for ensuring purchase and use of our products is lawful in your jurisdiction.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">3. Orders &amp; acceptance</h2>
+          <p>Your order is an offer. A contract forms when we dispatch the goods and email you a shipping confirmation. We may decline or cancel any order at our discretion and refund in full.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">4. Orders &amp; pricing</h2>
-          <p>Placing an order is an offer to buy, subject to our acceptance. We reserve the right to refuse or cancel any order. Prices are shown in GBP. {COMPANY.legalName} is currently <strong>not VAT registered</strong>; no VAT is charged or shown on invoices. We may correct pricing errors prior to dispatch.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">4. Price &amp; payment</h2>
+          <p>Prices are in GBP. We are not VAT registered, so no VAT is charged. Payment is taken at checkout via Shopify Payments / Stripe.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">5. Payment</h2>
-          <p>Payment is taken at checkout via our secure payment processors. Title to the goods passes on full payment and dispatch.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">5. Delivery</h2>
+          <p>See our Shipping Policy. Risk passes on delivery; title passes on full payment.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">6. Delivery</h2>
-          <p>See our <a className="text-primary hover:underline" href="/shipping-policy">Shipping Policy</a> for dispatch times, carriers and delivery terms.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">6. Right to cancel</h2>
+          <p>Where the buyer is a consumer, under the Consumer Contracts (Information, Cancellation and Additional Charges) Regulations 2013 you have 14 days from delivery to cancel an unopened, unused, sealed product. See our Returns Policy.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">7. Returns &amp; refunds</h2>
-          <p>See our <a className="text-primary hover:underline" href="/returns-policy">Returns Policy</a>. Due to the nature of laboratory research compounds, returns are restricted.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">7. Faulty or incorrect items</h2>
+          <p>Contact us within 14 days of delivery with photos and batch number. We will replace, refund or credit.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">8. Liability</h2>
-          <p>To the maximum extent permitted by law, our liability for any product is limited to the price paid for it. We do not exclude liability for death or personal injury caused by negligence, fraud, or any other liability that cannot be excluded under English law.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">8. Liability</h2>
+          <p>To the maximum extent permitted by law, our total liability for any order is limited to the price paid for that order. We do not exclude liability for death or personal injury caused by negligence, for fraud, or for any liability that cannot be excluded by law. We accept no liability for any use of the products outside in-vitro research.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">9. Intellectual property</h2>
-          <p>All site content, branding, photography and copy are owned by {COMPANY.legalName} or licensed to it. You may not reproduce, copy or republish content without written permission.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">9. Force majeure</h2>
+          <p>We are not liable for delays caused by events outside our reasonable control.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">10. Governing law</h2>
-          <p>These terms are governed by the laws of England &amp; Wales, and the courts of England &amp; Wales have exclusive jurisdiction over any dispute.</p>
+          <h2 className="font-display text-2xl text-ink mb-2">10. Complaints &amp; ODR</h2>
+          <p>Email info@pondokpeptides.com; we acknowledge within 2 working days and aim to resolve within 14 days. EU residents may also use the European Commission ODR platform at ec.europa.eu/consumers/odr.</p>
         </section>
 
         <section>
-          <h2 className="font-display text-2xl text-ink mb-3">11. Contact</h2>
-          <p>Email: <a className="text-primary hover:underline" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> · Phone: <a className="text-primary hover:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}>{COMPANY.phone}</a></p>
-          <div className="mt-4 bg-mist border border-border p-5">
-            <CompanyInfoBlock />
-          </div>
+          <h2 className="font-display text-2xl text-ink mb-2">11. Governing law</h2>
+          <p>English law applies. The courts of England and Wales have exclusive jurisdiction.</p>
         </section>
       </div>
     </div>
