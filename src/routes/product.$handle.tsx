@@ -106,6 +106,7 @@ async function fetchProductForHead(handle: string) {
     return product as {
       title: string;
       description: string;
+      seo?: { title: string | null; description: string | null } | null;
       priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
       images: { edges: Array<{ node: { url: string } }> };
       variants: { edges: Array<{ node: { sku?: string | null } }> };
@@ -163,8 +164,13 @@ export const Route = createFileRoute("/product/$handle")({
     const url = `https://pondokpeptides.com/product/${handle}`;
     const p = loaderData?.product;
     const name = p?.title || handle.replace(/-/g, " ");
-    const title = `${name} — Research Use Only | Pondok Peptides`;
-    const desc = `${name} laboratory research peptide. HPLC and MS verified, Certificate of Analysis available on request. For in-vitro laboratory research use only — not for human or veterinary use.`;
+    const fallbackTitle = `${name} — Research Use Only | Pondok Peptides`;
+    const fallbackDesc = `${name} laboratory research peptide. HPLC and MS verified, Certificate of Analysis available on request. For in-vitro laboratory research use only — not for human or veterinary use.`;
+    // Prefer Shopify-managed SEO fields when present, fall back to neutral template.
+    // This makes Shopify "Search engine listing" the single source of truth for both
+    // the public storefront tags and the Google Merchant Center feed.
+    const title = p?.seo?.title?.trim() || fallbackTitle;
+    const desc = p?.seo?.description?.trim() || fallbackDesc;
     const image = p?.images?.edges?.[0]?.node?.url;
     const price = p?.priceRange?.minVariantPrice;
     const sku = p?.variants?.edges?.[0]?.node?.sku || undefined;

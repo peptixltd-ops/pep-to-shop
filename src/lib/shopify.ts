@@ -14,6 +14,7 @@ export interface ShopifyProduct {
     description: string;
     handle: string;
     vendor?: string;
+    seo?: { title: string | null; description: string | null } | null;
     priceRange: {
       minVariantPrice: { amount: string; currencyCode: string };
     };
@@ -100,6 +101,7 @@ export const PRODUCT_BY_HANDLE_QUERY = `
       description
       handle
       vendor
+      seo { title description }
       priceRange { minVariantPrice { amount currencyCode } }
       images(first: 10) { edges { node { url altText } } }
       variants(first: 20) {
