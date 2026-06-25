@@ -16,6 +16,15 @@ const STATIC_ROUTES: Array<{ path: string; changefreq: string; priority: string 
   { path: "/reviews", changefreq: "weekly", priority: "0.7" },
   { path: "/faqs", changefreq: "monthly", priority: "0.6" },
   { path: "/contact", changefreq: "monthly", priority: "0.5" },
+  { path: "/privacy-policy", changefreq: "yearly", priority: "0.3" },
+  { path: "/terms-and-conditions", changefreq: "yearly", priority: "0.3" },
+  { path: "/cookie-policy", changefreq: "yearly", priority: "0.3" },
+  { path: "/disclaimer", changefreq: "yearly", priority: "0.3" },
+  { path: "/returns-policy", changefreq: "yearly", priority: "0.3" },
+  { path: "/refund-policy", changefreq: "yearly", priority: "0.3" },
+  { path: "/shipping-policy", changefreq: "yearly", priority: "0.3" },
+  { path: "/cancellation-policy", changefreq: "yearly", priority: "0.3" },
+  { path: "/sitemap", changefreq: "monthly", priority: "0.3" },
 ];
 
 async function fetchAllProductHandles(): Promise<Array<{ handle: string; updatedAt: string }>> {
