@@ -106,6 +106,7 @@ async function fetchProductForHead(handle: string) {
     return product as {
       title: string;
       description: string;
+      seo?: { title: string | null; description: string | null } | null;
       priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
       images: { edges: Array<{ node: { url: string } }> };
       variants: { edges: Array<{ node: { sku?: string | null } }> };
