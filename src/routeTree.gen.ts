@@ -14,11 +14,13 @@ import { Route as TissueRepairPeptidesRouteImport } from './routes/tissue-repair
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SitemapRouteImport } from './routes/sitemap'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
 import { Route as SenolyticLongevityPeptidesRouteImport } from './routes/senolytic-longevity-peptides'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as ReturnsPolicyRouteImport } from './routes/returns-policy'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as RecoveryPeptidesRouteImport } from './routes/recovery-peptides'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PressRouteImport } from './routes/press'
@@ -28,8 +30,11 @@ import { Route as GrowthHormoneSecretagoguesRouteImport } from './routes/growth-
 import { Route as GrowthHormonePeptidesRouteImport } from './routes/growth-hormone-peptides'
 import { Route as Glp1MetabolicPeptidesRouteImport } from './routes/glp1-metabolic-peptides'
 import { Route as FaqsRouteImport } from './routes/faqs'
+import { Route as DisclaimerRouteImport } from './routes/disclaimer'
+import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CognitiveNeuropeptidesRouteImport } from './routes/cognitive-neuropeptides'
+import { Route as CancellationPolicyRouteImport } from './routes/cancellation-policy'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BundlesIndexRouteImport } from './routes/bundles.index'
@@ -63,6 +68,11 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapRoute = SitemapRouteImport.update({
+  id: '/sitemap',
+  path: '/sitemap',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
@@ -87,6 +97,11 @@ const ReviewsRoute = ReviewsRouteImport.update({
 const ReturnsPolicyRoute = ReturnsPolicyRouteImport.update({
   id: '/returns-policy',
   path: '/returns-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RecoveryPeptidesRoute = RecoveryPeptidesRouteImport.update({
@@ -135,6 +150,16 @@ const FaqsRoute = FaqsRouteImport.update({
   path: '/faqs',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DisclaimerRoute = DisclaimerRouteImport.update({
+  id: '/disclaimer',
+  path: '/disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiePolicyRoute = CookiePolicyRouteImport.update({
+  id: '/cookie-policy',
+  path: '/cookie-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -143,6 +168,11 @@ const ContactRoute = ContactRouteImport.update({
 const CognitiveNeuropeptidesRoute = CognitiveNeuropeptidesRouteImport.update({
   id: '/cognitive-neuropeptides',
   path: '/cognitive-neuropeptides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CancellationPolicyRoute = CancellationPolicyRouteImport.update({
+  id: '/cancellation-policy',
+  path: '/cancellation-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -184,8 +214,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cancellation-policy': typeof CancellationPolicyRoute
   '/cognitive-neuropeptides': typeof CognitiveNeuropeptidesRoute
   '/contact': typeof ContactRoute
+  '/cookie-policy': typeof CookiePolicyRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
   '/glp1-metabolic-peptides': typeof Glp1MetabolicPeptidesRoute
   '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
@@ -195,11 +228,13 @@ export interface FileRoutesByFullPath {
   '/press': typeof PressRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/returns-policy': typeof ReturnsPolicyRoute
   '/reviews': typeof ReviewsRoute
   '/senolytic-longevity-peptides': typeof SenolyticLongevityPeptidesRoute
   '/shipping-policy': typeof ShippingPolicyRoute
   '/shop': typeof ShopRoute
+  '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
@@ -214,8 +249,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cancellation-policy': typeof CancellationPolicyRoute
   '/cognitive-neuropeptides': typeof CognitiveNeuropeptidesRoute
   '/contact': typeof ContactRoute
+  '/cookie-policy': typeof CookiePolicyRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
   '/glp1-metabolic-peptides': typeof Glp1MetabolicPeptidesRoute
   '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
@@ -225,11 +263,13 @@ export interface FileRoutesByTo {
   '/press': typeof PressRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/returns-policy': typeof ReturnsPolicyRoute
   '/reviews': typeof ReviewsRoute
   '/senolytic-longevity-peptides': typeof SenolyticLongevityPeptidesRoute
   '/shipping-policy': typeof ShippingPolicyRoute
   '/shop': typeof ShopRoute
+  '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
@@ -245,8 +285,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/cancellation-policy': typeof CancellationPolicyRoute
   '/cognitive-neuropeptides': typeof CognitiveNeuropeptidesRoute
   '/contact': typeof ContactRoute
+  '/cookie-policy': typeof CookiePolicyRoute
+  '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
   '/glp1-metabolic-peptides': typeof Glp1MetabolicPeptidesRoute
   '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
@@ -256,11 +299,13 @@ export interface FileRoutesById {
   '/press': typeof PressRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
+  '/refund-policy': typeof RefundPolicyRoute
   '/returns-policy': typeof ReturnsPolicyRoute
   '/reviews': typeof ReviewsRoute
   '/senolytic-longevity-peptides': typeof SenolyticLongevityPeptidesRoute
   '/shipping-policy': typeof ShippingPolicyRoute
   '/shop': typeof ShopRoute
+  '/sitemap': typeof SitemapRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
@@ -277,8 +322,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/cancellation-policy'
     | '/cognitive-neuropeptides'
     | '/contact'
+    | '/cookie-policy'
+    | '/disclaimer'
     | '/faqs'
     | '/glp1-metabolic-peptides'
     | '/growth-hormone-peptides'
@@ -288,11 +336,13 @@ export interface FileRouteTypes {
     | '/press'
     | '/privacy-policy'
     | '/recovery-peptides'
+    | '/refund-policy'
     | '/returns-policy'
     | '/reviews'
     | '/senolytic-longevity-peptides'
     | '/shipping-policy'
     | '/shop'
+    | '/sitemap'
     | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/thank-you'
@@ -307,8 +357,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/cancellation-policy'
     | '/cognitive-neuropeptides'
     | '/contact'
+    | '/cookie-policy'
+    | '/disclaimer'
     | '/faqs'
     | '/glp1-metabolic-peptides'
     | '/growth-hormone-peptides'
@@ -318,11 +371,13 @@ export interface FileRouteTypes {
     | '/press'
     | '/privacy-policy'
     | '/recovery-peptides'
+    | '/refund-policy'
     | '/returns-policy'
     | '/reviews'
     | '/senolytic-longevity-peptides'
     | '/shipping-policy'
     | '/shop'
+    | '/sitemap'
     | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/thank-you'
@@ -337,8 +392,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/cancellation-policy'
     | '/cognitive-neuropeptides'
     | '/contact'
+    | '/cookie-policy'
+    | '/disclaimer'
     | '/faqs'
     | '/glp1-metabolic-peptides'
     | '/growth-hormone-peptides'
@@ -348,11 +406,13 @@ export interface FileRouteTypes {
     | '/press'
     | '/privacy-policy'
     | '/recovery-peptides'
+    | '/refund-policy'
     | '/returns-policy'
     | '/reviews'
     | '/senolytic-longevity-peptides'
     | '/shipping-policy'
     | '/shop'
+    | '/sitemap'
     | '/sitemap.xml'
     | '/terms-and-conditions'
     | '/thank-you'
@@ -368,8 +428,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CancellationPolicyRoute: typeof CancellationPolicyRoute
   CognitiveNeuropeptidesRoute: typeof CognitiveNeuropeptidesRoute
   ContactRoute: typeof ContactRoute
+  CookiePolicyRoute: typeof CookiePolicyRoute
+  DisclaimerRoute: typeof DisclaimerRoute
   FaqsRoute: typeof FaqsRoute
   Glp1MetabolicPeptidesRoute: typeof Glp1MetabolicPeptidesRoute
   GrowthHormonePeptidesRoute: typeof GrowthHormonePeptidesRoute
@@ -379,11 +442,13 @@ export interface RootRouteChildren {
   PressRoute: typeof PressRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RecoveryPeptidesRoute: typeof RecoveryPeptidesRoute
+  RefundPolicyRoute: typeof RefundPolicyRoute
   ReturnsPolicyRoute: typeof ReturnsPolicyRoute
   ReviewsRoute: typeof ReviewsRoute
   SenolyticLongevityPeptidesRoute: typeof SenolyticLongevityPeptidesRoute
   ShippingPolicyRoute: typeof ShippingPolicyRoute
   ShopRoute: typeof ShopRoute
+  SitemapRoute: typeof SitemapRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   ThankYouRoute: typeof ThankYouRoute
@@ -433,6 +498,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap': {
+      id: '/sitemap'
+      path: '/sitemap'
+      fullPath: '/sitemap'
+      preLoaderRoute: typeof SitemapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop': {
       id: '/shop'
       path: '/shop'
@@ -466,6 +538,13 @@ declare module '@tanstack/react-router' {
       path: '/returns-policy'
       fullPath: '/returns-policy'
       preLoaderRoute: typeof ReturnsPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/recovery-peptides': {
@@ -531,6 +610,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/disclaimer': {
+      id: '/disclaimer'
+      path: '/disclaimer'
+      fullPath: '/disclaimer'
+      preLoaderRoute: typeof DisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookie-policy': {
+      id: '/cookie-policy'
+      path: '/cookie-policy'
+      fullPath: '/cookie-policy'
+      preLoaderRoute: typeof CookiePolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -543,6 +636,13 @@ declare module '@tanstack/react-router' {
       path: '/cognitive-neuropeptides'
       fullPath: '/cognitive-neuropeptides'
       preLoaderRoute: typeof CognitiveNeuropeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cancellation-policy': {
+      id: '/cancellation-policy'
+      path: '/cancellation-policy'
+      fullPath: '/cancellation-policy'
+      preLoaderRoute: typeof CancellationPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -600,8 +700,11 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CancellationPolicyRoute: CancellationPolicyRoute,
   CognitiveNeuropeptidesRoute: CognitiveNeuropeptidesRoute,
   ContactRoute: ContactRoute,
+  CookiePolicyRoute: CookiePolicyRoute,
+  DisclaimerRoute: DisclaimerRoute,
   FaqsRoute: FaqsRoute,
   Glp1MetabolicPeptidesRoute: Glp1MetabolicPeptidesRoute,
   GrowthHormonePeptidesRoute: GrowthHormonePeptidesRoute,
@@ -611,11 +714,13 @@ const rootRouteChildren: RootRouteChildren = {
   PressRoute: PressRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RecoveryPeptidesRoute: RecoveryPeptidesRoute,
+  RefundPolicyRoute: RefundPolicyRoute,
   ReturnsPolicyRoute: ReturnsPolicyRoute,
   ReviewsRoute: ReviewsRoute,
   SenolyticLongevityPeptidesRoute: SenolyticLongevityPeptidesRoute,
   ShippingPolicyRoute: ShippingPolicyRoute,
   ShopRoute: ShopRoute,
+  SitemapRoute: SitemapRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   ThankYouRoute: ThankYouRoute,
@@ -630,12 +735,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

@@ -68,8 +68,15 @@ export function SiteFooter() {
           <ul className="space-y-2 text-sm">
             <li><Link to="/privacy-policy" className="hover:text-accent">Privacy Policy</Link></li>
             <li><Link to="/terms-and-conditions" className="hover:text-accent">Terms &amp; Conditions</Link></li>
+            <li><Link to="/cookie-policy" className="hover:text-accent">Cookie Policy</Link></li>
+            <li><Link to="/disclaimer" className="hover:text-accent">Disclaimer</Link></li>
             <li><Link to="/returns-policy" className="hover:text-accent">Returns Policy</Link></li>
+            <li><Link to="/refund-policy" className="hover:text-accent">Refund Policy</Link></li>
             <li><Link to="/shipping-policy" className="hover:text-accent">Shipping Policy</Link></li>
+            <li><Link to="/cancellation-policy" className="hover:text-accent">Cancellation Policy</Link></li>
+            <li><Link to="/faqs" className="hover:text-accent">FAQ</Link></li>
+            <li><Link to="/sitemap" className="hover:text-accent">Sitemap</Link></li>
+            <li><Link to="/about" className="hover:text-accent">About us</Link></li>
             <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
           </ul>
         </div>
@@ -81,7 +88,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-background/10">
         <div className="container-x py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-background/50">
-          <p>© {new Date().getFullYear()} {COMPANY.legalName}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {COMPANY.legalName}. All Rights Reserved.</p>
           <p>All products are supplied strictly for in-vitro laboratory research purposes only. Not for human or veterinary consumption, injection, ingestion or use in food, drugs, cosmetics or household products. Products are not intended to diagnose, treat, cure or prevent any disease.</p>
         </div>
       </div>
