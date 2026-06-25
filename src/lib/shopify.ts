@@ -101,6 +101,7 @@ export const PRODUCT_BY_HANDLE_QUERY = `
       description
       handle
       vendor
+      seo { title description }
       priceRange { minVariantPrice { amount currencyCode } }
       images(first: 10) { edges { node { url altText } } }
       variants(first: 20) {
