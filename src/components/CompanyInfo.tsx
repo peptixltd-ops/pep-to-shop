@@ -11,7 +11,6 @@ export const COMPANY = {
   country: "United Kingdom",
   email: "info@pondokpeptides.com",
   phone: "07457 404317",
-  vat: "Not VAT registered",
 } as const;
 
 export const COMPANY_ADDRESS_ONELINE = `${COMPANY.addressLine1}, ${COMPANY.addressLine2}, ${COMPANY.postcode}, ${COMPANY.country}`;
