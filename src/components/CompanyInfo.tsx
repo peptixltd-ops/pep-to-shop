@@ -33,7 +33,7 @@ export function CompanyInfoBlock({ className = "" }: { className?: string }) {
       <p>
         Phone: <a className="text-primary hover:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}>{COMPANY.phone}</a>
       </p>
-      <p>VAT: {COMPANY.vat}</p>
+      
     </div>
   );
 }
