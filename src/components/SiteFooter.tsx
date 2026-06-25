@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { COMPANY, RELATIONSHIP_DISCLOSURE } from "@/components/CompanyInfo";
+import orsLogo from "@/assets/ors-logo.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -28,7 +29,7 @@ export function SiteFooter() {
             <p>
               <a className="hover:text-accent" href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}>{COMPANY.phone}</a>
             </p>
-            <p className="text-background/60">{COMPANY.vat}</p>
+            <p className="text-background/60">Registered in England &amp; Wales</p>
           </div>
         </div>
         <div>
@@ -82,8 +83,11 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-background/10">
-        <div className="container-x py-6 text-xs text-background/70 leading-relaxed">
-          <p className="mb-2"><span className="font-semibold text-background">Who operates this store: </span>{RELATIONSHIP_DISCLOSURE}</p>
+        <div className="container-x py-6 flex flex-col md:flex-row items-start md:items-center gap-4 text-xs text-background/70 leading-relaxed">
+          <div className="shrink-0 rounded-md bg-background/95 p-3">
+            <img src={orsLogo.url} alt="Oxford Research Syndicate Ltd" className="h-10 md:h-12 w-auto" loading="lazy" />
+          </div>
+          <p><span className="font-semibold text-background">Who operates this store: </span>{RELATIONSHIP_DISCLOSURE}</p>
         </div>
       </div>
       <div className="border-t border-background/10">

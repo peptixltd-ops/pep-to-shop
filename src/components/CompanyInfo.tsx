@@ -11,7 +11,6 @@ export const COMPANY = {
   country: "United Kingdom",
   email: "info@pondokpeptides.com",
   phone: "07457 404317",
-  vat: "Not VAT registered",
 } as const;
 
 export const COMPANY_ADDRESS_ONELINE = `${COMPANY.addressLine1}, ${COMPANY.addressLine2}, ${COMPANY.postcode}, ${COMPANY.country}`;
@@ -34,7 +33,7 @@ export function CompanyInfoBlock({ className = "" }: { className?: string }) {
       <p>
         Phone: <a className="text-primary hover:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}>{COMPANY.phone}</a>
       </p>
-      <p>VAT: {COMPANY.vat}</p>
+      
     </div>
   );
 }
