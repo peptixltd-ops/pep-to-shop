@@ -27,6 +27,7 @@ import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as RecoveryPeptidesRouteImport } from './routes/recovery-peptides'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as PressRouteImport } from './routes/press'
+import { Route as NootropicsPeptidesRouteImport } from './routes/nootropics-peptides'
 import { Route as NootropicsRouteImport } from './routes/nootropics'
 import { Route as NeuroResearchPeptidesRouteImport } from './routes/neuro-research-peptides'
 import { Route as LongevityPeptidesRouteImport } from './routes/longevity-peptides'
@@ -147,6 +148,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const PressRoute = PressRouteImport.update({
   id: '/press',
   path: '/press',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NootropicsPeptidesRoute = NootropicsPeptidesRouteImport.update({
+  id: '/nootropics-peptides',
+  path: '/nootropics-peptides',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NootropicsRoute = NootropicsRouteImport.update({
@@ -313,6 +319,7 @@ export interface FileRoutesByFullPath {
   '/longevity-peptides': typeof LongevityPeptidesRoute
   '/neuro-research-peptides': typeof NeuroResearchPeptidesRoute
   '/nootropics': typeof NootropicsRoute
+  '/nootropics-peptides': typeof NootropicsPeptidesRoute
   '/press': typeof PressRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
@@ -361,6 +368,7 @@ export interface FileRoutesByTo {
   '/longevity-peptides': typeof LongevityPeptidesRoute
   '/neuro-research-peptides': typeof NeuroResearchPeptidesRoute
   '/nootropics': typeof NootropicsRoute
+  '/nootropics-peptides': typeof NootropicsPeptidesRoute
   '/press': typeof PressRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
@@ -410,6 +418,7 @@ export interface FileRoutesById {
   '/longevity-peptides': typeof LongevityPeptidesRoute
   '/neuro-research-peptides': typeof NeuroResearchPeptidesRoute
   '/nootropics': typeof NootropicsRoute
+  '/nootropics-peptides': typeof NootropicsPeptidesRoute
   '/press': typeof PressRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/recovery-peptides': typeof RecoveryPeptidesRoute
@@ -460,6 +469,7 @@ export interface FileRouteTypes {
     | '/longevity-peptides'
     | '/neuro-research-peptides'
     | '/nootropics'
+    | '/nootropics-peptides'
     | '/press'
     | '/privacy-policy'
     | '/recovery-peptides'
@@ -508,6 +518,7 @@ export interface FileRouteTypes {
     | '/longevity-peptides'
     | '/neuro-research-peptides'
     | '/nootropics'
+    | '/nootropics-peptides'
     | '/press'
     | '/privacy-policy'
     | '/recovery-peptides'
@@ -556,6 +567,7 @@ export interface FileRouteTypes {
     | '/longevity-peptides'
     | '/neuro-research-peptides'
     | '/nootropics'
+    | '/nootropics-peptides'
     | '/press'
     | '/privacy-policy'
     | '/recovery-peptides'
@@ -605,6 +617,7 @@ export interface RootRouteChildren {
   LongevityPeptidesRoute: typeof LongevityPeptidesRoute
   NeuroResearchPeptidesRoute: typeof NeuroResearchPeptidesRoute
   NootropicsRoute: typeof NootropicsRoute
+  NootropicsPeptidesRoute: typeof NootropicsPeptidesRoute
   PressRoute: typeof PressRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RecoveryPeptidesRoute: typeof RecoveryPeptidesRoute
@@ -762,6 +775,13 @@ declare module '@tanstack/react-router' {
       path: '/press'
       fullPath: '/press'
       preLoaderRoute: typeof PressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/nootropics-peptides': {
+      id: '/nootropics-peptides'
+      path: '/nootropics-peptides'
+      fullPath: '/nootropics-peptides'
+      preLoaderRoute: typeof NootropicsPeptidesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/nootropics': {
@@ -981,6 +1001,7 @@ const rootRouteChildren: RootRouteChildren = {
   LongevityPeptidesRoute: LongevityPeptidesRoute,
   NeuroResearchPeptidesRoute: NeuroResearchPeptidesRoute,
   NootropicsRoute: NootropicsRoute,
+  NootropicsPeptidesRoute: NootropicsPeptidesRoute,
   PressRoute: PressRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RecoveryPeptidesRoute: RecoveryPeptidesRoute,

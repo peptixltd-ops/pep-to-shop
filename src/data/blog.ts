@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
         h2: "How Retatrutide compares to Tirzepatide and Semaglutide",
         body: [
           "Semaglutide is the original long-acting GLP-1 reference compound. Tirzepatide added GIP for additive effect. Retatrutide adds glucagon receptor agonism on top of that, producing a third dimension of metabolic modulation. The three sit on a clear receptor-coverage spectrum, which is why they are frequently studied head-to-head.",
-          "If your lab is comparing incretin strategies, Pondok stocks all three. See our weight loss peptides UK category for the full lineup.",
+          "If your lab is comparing incretin strategies, Pondok stocks all three. See our GLP-1 research peptides category for the full lineup.",
         ],
       },
       {
@@ -88,7 +88,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       "Complete BPC-157 UK research guide. Learn the mechanism of action, current literature, reconstitution, storage and where to buy BPC-157 UK with verified COAs.",
     excerpt:
-      "BPC-157 (Body Protection Compound 157) is one of the most studied recovery peptides in research. Full UK guide with mechanism, storage and protocol.",
+      "BPC-157 (Body Protection Compound 157) is one of the most studied structural research peptides. Full UK guide with mechanism, storage and protocol.",
     date: "2026-04-10",
     readingMinutes: 10,
     category: "Compound guide",
@@ -99,7 +99,7 @@ export const blogPosts: BlogPost[] = [
       {
         h2: "What is BPC-157?",
         body: [
-          "BPC-157 (Body Protection Compound 157) is a synthetic pentadecapeptide derived from a partial sequence of a protective gastric protein. It is one of the most extensively studied compounds in recovery peptide research, with literature spanning tendon, ligament, muscle, gastrointestinal and vascular models.",
+          "BPC-157 (Body Protection Compound 157) is a synthetic pentadecapeptide derived from a partial sequence of a protective gastric protein. It is one of the most extensively studied compounds in structural research peptide literature, with literature spanning tendon, ligament, muscle, gastrointestinal and vascular models.",
         ],
       },
       {
@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
       {
         h2: "Why pair BPC-157 with TB-500?",
         body: [
-          "BPC-157 and TB-500 are the canonical recovery peptide pair in current research. They act through complementary mechanisms, BPC-157 on growth factor and angiogenic pathways, TB-500 on actin sequestration and cell migration. Pondok offers a pre-blended BPC-157 / TB-500 mix vial for protocol consistency.",
+          "BPC-157 and TB-500 are the canonical structural-research peptide pairing in current research. They act through complementary mechanisms, BPC-157 on growth factor and angiogenic pathways, TB-500 on actin sequestration and cell migration. Pondok offers a pre-blended BPC-157 / TB-500 mix vial for protocol consistency.",
           "See the full TB-500 guide for the partner compound's profile.",
         ],
       },
@@ -144,7 +144,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription:
       "Complete TB500 UK research guide. Learn the mechanism, how it pairs with BPC-157, reconstitution, storage and where to buy TB-500 UK with verified COAs.",
     excerpt:
-      "TB-500 is the bioactive fragment of Thymosin Beta-4 and one of the most studied recovery peptides. Here is the complete UK research guide.",
+      "TB-500 is the bioactive fragment of Thymosin Beta-4 and one of the most studied structural research peptides. Here is the complete UK research guide.",
     date: "2026-04-08",
     readingMinutes: 9,
     category: "Compound guide",
@@ -161,7 +161,7 @@ export const blogPosts: BlogPost[] = [
       {
         h2: "Mechanism of action",
         body: [
-          "Thymosin Beta-4 is a major actin-sequestering protein in cells. TB-500 has been observed in research models to influence cell migration, extracellular matrix remodelling and angiogenesis. It is one of the most discussed recovery peptides in current literature.",
+          "Thymosin Beta-4 is a major actin-sequestering protein in cells. TB-500 has been observed in research models to influence cell migration, extracellular matrix remodelling and angiogenesis. It is one of the most discussed structural research peptides in current literature.",
         ],
       },
       {
@@ -186,7 +186,7 @@ export const blogPosts: BlogPost[] = [
     ],
     faqs: [
       { q: "Is TB-500 the same as Thymosin Beta-4?", a: "TB-500 is the synthetic active fragment of Thymosin Beta-4. It is not the full-length protein but retains the studied bioactivity." },
-      { q: "Can TB-500 be combined with BPC-157?", a: "Yes. The combination is the most studied recovery pairing in current literature, available pre-blended in Pondok's BPC-157 / TB-500 mix." },
+      { q: "Can TB-500 be combined with BPC-157?", a: "Yes. The combination is the most studied structural-research pairing in current literature, available pre-blended in Pondok's BPC-157 / TB-500 mix." },
       { q: "What purity is Pondok TB-500?", a: "98 percent or higher, HPLC verified, with batch-specific COA on the product page." },
       { q: "How long does reconstituted TB-500 last?", a: "Up to 28 days at 2 to 8 degrees Celsius under sterile conditions." },
     ],
@@ -209,7 +209,7 @@ export const blogPosts: BlogPost[] = [
       {
         h2: "What is GHK-Cu?",
         body: [
-          "GHK-Cu is a naturally occurring copper-binding tripeptide (glycyl-histidyl-lysine) originally identified in human plasma. Its concentration declines with age, which is part of why it has attracted such consistent research interest in dermal and longevity contexts.",
+          "GHK-Cu is a naturally occurring copper-binding tripeptide (glycyl-histidyl-lysine) originally identified in human plasma. Its concentration declines with age, which is part of why it has attracted such consistent research interest in dermal and senescence-pathway research contexts.",
         ],
       },
       {
@@ -221,7 +221,7 @@ export const blogPosts: BlogPost[] = [
       {
         h2: "Pairing with MOTS-C and NAD",
         body: [
-          "GHK-Cu sits within the broader longevity peptide research stack alongside MOTS-C (mitochondrial-derived peptide) and NAD precursor research compounds. Together they cover dermal, mitochondrial and cellular energetics pathways.",
+          "GHK-Cu sits within the broader senescence research peptide stack alongside MOTS-C (mitochondrial-derived peptide) and NAD precursor research compounds. Together they cover dermal, mitochondrial and cellular energetics pathways.",
         ],
       },
       {
@@ -242,7 +242,7 @@ export const blogPosts: BlogPost[] = [
       { q: "What is the difference between GHK and GHK-Cu?", a: "GHK is the base tripeptide. GHK-Cu is the copper-bound complex, which is the form most studied in research." },
       { q: "Is GHK-Cu light-sensitive?", a: "Yes. Store away from direct UV and in opaque or shielded containers where possible." },
       { q: "What purity is Pondok GHK-Cu?", a: "98 percent or higher with batch-specific COA available on the product page." },
-      { q: "Can GHK-Cu be paired with MOTS-C?", a: "Yes, both are commonly studied within the same longevity peptide research stack." },
+      { q: "Can GHK-Cu be paired with MOTS-C?", a: "Yes, both are commonly studied within the same senescence research peptide stack." },
     ],
   },
   {
@@ -273,9 +273,9 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        h2: "Place in the longevity stack",
+        h2: "Place in the senescence research stack",
         body: [
-          "MOTS-C frequently sits alongside GHK-Cu, NAD precursors and SS-31 in laboratory longevity research, each compound covering different mitochondrial or cellular pathways.",
+          "MOTS-C frequently sits alongside GHK-Cu, NAD precursors and SS-31 in laboratory senescence research, each compound covering different mitochondrial or cellular pathways.",
         ],
       },
       {
@@ -295,7 +295,7 @@ export const blogPosts: BlogPost[] = [
     faqs: [
       { q: "Is MOTS-C a mitochondrial peptide?", a: "Yes. MOTS-C is encoded within mitochondrial DNA and is one of the studied mitochondrial-derived peptides." },
       { q: "What is the purity of Pondok MOTS-C?", a: "98 percent or higher, HPLC verified, with batch COA on the product page." },
-      { q: "Can MOTS-C be combined with NAD?", a: "Yes. Researchers frequently study them in parallel within the longevity peptide stack." },
+      { q: "Can MOTS-C be combined with NAD?", a: "Yes. Researchers frequently study them in parallel within the senescence research peptide stack." },
       { q: "How should MOTS-C be stored?", a: "Lyophilised at minus 20 degrees Celsius. Reconstituted at 2 to 8 degrees Celsius for up to 28 days." },
     ],
   },
