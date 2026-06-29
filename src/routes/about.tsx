@@ -66,7 +66,7 @@ function AboutPage() {
             </div>
             <div className="bg-background border border-border p-6">
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Payment processing &amp; checkout</p>
-              <p className="text-foreground/85 text-sm leading-relaxed">Checkout is operated on shared Oxford Research Syndicate infrastructure at checkout.oxfordresearchsyndicate.com. Payments are processed by the merchant of record, {COMPANY.legalName}, through PCI-compliant payment providers.</p>
+              <p className="text-foreground/85 text-sm leading-relaxed">Payments are processed by Oxford Research Syndicate Ltd, the parent company that operates this storefront, through PCI-compliant payment providers.</p>
             </div>
             <div className="bg-background border border-border p-6">
               <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">Customer service</p>
