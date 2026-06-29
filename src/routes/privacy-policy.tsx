@@ -26,7 +26,7 @@ function PrivacyPage() {
       <div className="space-y-7 text-foreground/85 leading-relaxed text-[15px]">
         <section>
           <h2 id="controller" className="font-display text-2xl text-ink mb-2">1. Data Controller</h2>
-          <p>Oxford Research Syndicate Ltd, 131A Movers Lane, Barking, IG11 7UQ, is the data controller for personal data collected via pondokpeptides.com and checkout.oxfordresearchsyndicate.com.</p>
+          <p>Oxford Research Syndicate Ltd, 131A Movers Lane, Barking, IG11 7UQ, is the data controller for personal data collected via pondokpeptides.com.</p>
         </section>
 
         <section>
