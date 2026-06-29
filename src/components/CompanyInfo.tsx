@@ -16,7 +16,7 @@ export const COMPANY = {
 export const COMPANY_ADDRESS_ONELINE = `${COMPANY.addressLine1}, ${COMPANY.addressLine2}, ${COMPANY.postcode}, ${COMPANY.country}`;
 
 export const RELATIONSHIP_DISCLOSURE =
-  "Pondok Peptides is a storefront brand operated by Oxford Research Syndicate Ltd (Company No. 17207898), which also operates BuyRetaUK, UK Peptide Labs and Oxford Research Peptides. Orders placed through pondokpeptides.com are processed, fulfilled and supported by Oxford Research Syndicate Ltd. Checkout is handled on shared Oxford Research Syndicate infrastructure at checkout.oxfordresearchsyndicate.com.";
+  "Payments are processed by Oxford Research Syndicate Ltd, the parent company that operates this storefront.";
 
 export function CompanyInfoBlock({ className = "" }: { className?: string }) {
   return (
