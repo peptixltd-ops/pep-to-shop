@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as WeightLossPeptidesRouteImport } from './routes/weight-loss-peptides'
+import { Route as UnsubscribeRouteImport } from './routes/unsubscribe'
 import { Route as TissueRepairPeptidesRouteImport } from './routes/tissue-repair-peptides'
 import { Route as ThankYouRouteImport } from './routes/thank-you'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
@@ -45,6 +46,7 @@ import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe
 import { Route as BundlesSlugRouteImport } from './routes/bundles.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
+import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/email/queue/process'
@@ -52,6 +54,11 @@ import { Route as LovableEmailQueueProcessRouteImport } from './routes/lovable/e
 const WeightLossPeptidesRoute = WeightLossPeptidesRouteImport.update({
   id: '/weight-loss-peptides',
   path: '/weight-loss-peptides',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UnsubscribeRoute = UnsubscribeRouteImport.update({
+  id: '/unsubscribe',
+  path: '/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TissueRepairPeptidesRoute = TissueRepairPeptidesRouteImport.update({
@@ -231,6 +238,11 @@ const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   path: '/lovable/email/suppression',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicContactRoute = ApiPublicContactRouteImport.update({
+  id: '/api/public/contact',
+  path: '/api/public/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LovableEmailTransactionalSendRoute =
   LovableEmailTransactionalSendRouteImport.update({
     id: '/lovable/email/transactional/send',
@@ -279,6 +291,7 @@ export interface FileRoutesByFullPath {
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
   '/tissue-repair-peptides': typeof TissueRepairPeptidesRoute
+  '/unsubscribe': typeof UnsubscribeRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/bundles/$slug': typeof BundlesSlugRoute
@@ -286,6 +299,7 @@ export interface FileRoutesByFullPath {
   '/product/$handle': typeof ProductHandleRoute
   '/blog/': typeof BlogIndexRoute
   '/bundles/': typeof BundlesIndexRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -320,6 +334,7 @@ export interface FileRoutesByTo {
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
   '/tissue-repair-peptides': typeof TissueRepairPeptidesRoute
+  '/unsubscribe': typeof UnsubscribeRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/bundles/$slug': typeof BundlesSlugRoute
@@ -327,6 +342,7 @@ export interface FileRoutesByTo {
   '/product/$handle': typeof ProductHandleRoute
   '/blog': typeof BlogIndexRoute
   '/bundles': typeof BundlesIndexRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -362,6 +378,7 @@ export interface FileRoutesById {
   '/terms-and-conditions': typeof TermsAndConditionsRoute
   '/thank-you': typeof ThankYouRoute
   '/tissue-repair-peptides': typeof TissueRepairPeptidesRoute
+  '/unsubscribe': typeof UnsubscribeRoute
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/bundles/$slug': typeof BundlesSlugRoute
@@ -369,6 +386,7 @@ export interface FileRoutesById {
   '/product/$handle': typeof ProductHandleRoute
   '/blog/': typeof BlogIndexRoute
   '/bundles/': typeof BundlesIndexRoute
+  '/api/public/contact': typeof ApiPublicContactRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -405,6 +423,7 @@ export interface FileRouteTypes {
     | '/terms-and-conditions'
     | '/thank-you'
     | '/tissue-repair-peptides'
+    | '/unsubscribe'
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/bundles/$slug'
@@ -412,6 +431,7 @@ export interface FileRouteTypes {
     | '/product/$handle'
     | '/blog/'
     | '/bundles/'
+    | '/api/public/contact'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -446,6 +466,7 @@ export interface FileRouteTypes {
     | '/terms-and-conditions'
     | '/thank-you'
     | '/tissue-repair-peptides'
+    | '/unsubscribe'
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/bundles/$slug'
@@ -453,6 +474,7 @@ export interface FileRouteTypes {
     | '/product/$handle'
     | '/blog'
     | '/bundles'
+    | '/api/public/contact'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -487,6 +509,7 @@ export interface FileRouteTypes {
     | '/terms-and-conditions'
     | '/thank-you'
     | '/tissue-repair-peptides'
+    | '/unsubscribe'
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/bundles/$slug'
@@ -494,6 +517,7 @@ export interface FileRouteTypes {
     | '/product/$handle'
     | '/blog/'
     | '/bundles/'
+    | '/api/public/contact'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -529,6 +553,7 @@ export interface RootRouteChildren {
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
   ThankYouRoute: typeof ThankYouRoute
   TissueRepairPeptidesRoute: typeof TissueRepairPeptidesRoute
+  UnsubscribeRoute: typeof UnsubscribeRoute
   WeightLossPeptidesRoute: typeof WeightLossPeptidesRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BundlesSlugRoute: typeof BundlesSlugRoute
@@ -536,6 +561,7 @@ export interface RootRouteChildren {
   ProductHandleRoute: typeof ProductHandleRoute
   BlogIndexRoute: typeof BlogIndexRoute
   BundlesIndexRoute: typeof BundlesIndexRoute
+  ApiPublicContactRoute: typeof ApiPublicContactRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
@@ -549,6 +575,13 @@ declare module '@tanstack/react-router' {
       path: '/weight-loss-peptides'
       fullPath: '/weight-loss-peptides'
       preLoaderRoute: typeof WeightLossPeptidesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/unsubscribe': {
+      id: '/unsubscribe'
+      path: '/unsubscribe'
+      fullPath: '/unsubscribe'
+      preLoaderRoute: typeof UnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tissue-repair-peptides': {
@@ -796,6 +829,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailSuppressionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/contact': {
+      id: '/api/public/contact'
+      path: '/api/public/contact'
+      fullPath: '/api/public/contact'
+      preLoaderRoute: typeof ApiPublicContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/lovable/email/transactional/send': {
       id: '/lovable/email/transactional/send'
       path: '/lovable/email/transactional/send'
@@ -849,6 +889,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsAndConditionsRoute: TermsAndConditionsRoute,
   ThankYouRoute: ThankYouRoute,
   TissueRepairPeptidesRoute: TissueRepairPeptidesRoute,
+  UnsubscribeRoute: UnsubscribeRoute,
   WeightLossPeptidesRoute: WeightLossPeptidesRoute,
   BlogSlugRoute: BlogSlugRoute,
   BundlesSlugRoute: BundlesSlugRoute,
@@ -856,6 +897,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProductHandleRoute: ProductHandleRoute,
   BlogIndexRoute: BlogIndexRoute,
   BundlesIndexRoute: BundlesIndexRoute,
+  ApiPublicContactRoute: ApiPublicContactRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
