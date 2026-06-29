@@ -29,6 +29,7 @@ import { Route as LongevityPeptidesRouteImport } from './routes/longevity-peptid
 import { Route as GrowthHormoneSecretagoguesRouteImport } from './routes/growth-hormone-secretagogues'
 import { Route as GrowthHormonePeptidesRouteImport } from './routes/growth-hormone-peptides'
 import { Route as Glp1MetabolicPeptidesRouteImport } from './routes/glp1-metabolic-peptides'
+import { Route as FeedDotxmlRouteImport } from './routes/feed[.]xml'
 import { Route as FaqsRouteImport } from './routes/faqs'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
 import { Route as CookiePolicyRouteImport } from './routes/cookie-policy'
@@ -145,6 +146,11 @@ const Glp1MetabolicPeptidesRoute = Glp1MetabolicPeptidesRouteImport.update({
   path: '/glp1-metabolic-peptides',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FeedDotxmlRoute = FeedDotxmlRouteImport.update({
+  id: '/feed.xml',
+  path: '/feed.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FaqsRoute = FaqsRouteImport.update({
   id: '/faqs',
   path: '/faqs',
@@ -220,6 +226,7 @@ export interface FileRoutesByFullPath {
   '/cookie-policy': typeof CookiePolicyRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
+  '/feed.xml': typeof FeedDotxmlRoute
   '/glp1-metabolic-peptides': typeof Glp1MetabolicPeptidesRoute
   '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
   '/growth-hormone-secretagogues': typeof GrowthHormoneSecretagoguesRoute
@@ -255,6 +262,7 @@ export interface FileRoutesByTo {
   '/cookie-policy': typeof CookiePolicyRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
+  '/feed.xml': typeof FeedDotxmlRoute
   '/glp1-metabolic-peptides': typeof Glp1MetabolicPeptidesRoute
   '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
   '/growth-hormone-secretagogues': typeof GrowthHormoneSecretagoguesRoute
@@ -291,6 +299,7 @@ export interface FileRoutesById {
   '/cookie-policy': typeof CookiePolicyRoute
   '/disclaimer': typeof DisclaimerRoute
   '/faqs': typeof FaqsRoute
+  '/feed.xml': typeof FeedDotxmlRoute
   '/glp1-metabolic-peptides': typeof Glp1MetabolicPeptidesRoute
   '/growth-hormone-peptides': typeof GrowthHormonePeptidesRoute
   '/growth-hormone-secretagogues': typeof GrowthHormoneSecretagoguesRoute
@@ -328,6 +337,7 @@ export interface FileRouteTypes {
     | '/cookie-policy'
     | '/disclaimer'
     | '/faqs'
+    | '/feed.xml'
     | '/glp1-metabolic-peptides'
     | '/growth-hormone-peptides'
     | '/growth-hormone-secretagogues'
@@ -363,6 +373,7 @@ export interface FileRouteTypes {
     | '/cookie-policy'
     | '/disclaimer'
     | '/faqs'
+    | '/feed.xml'
     | '/glp1-metabolic-peptides'
     | '/growth-hormone-peptides'
     | '/growth-hormone-secretagogues'
@@ -398,6 +409,7 @@ export interface FileRouteTypes {
     | '/cookie-policy'
     | '/disclaimer'
     | '/faqs'
+    | '/feed.xml'
     | '/glp1-metabolic-peptides'
     | '/growth-hormone-peptides'
     | '/growth-hormone-secretagogues'
@@ -434,6 +446,7 @@ export interface RootRouteChildren {
   CookiePolicyRoute: typeof CookiePolicyRoute
   DisclaimerRoute: typeof DisclaimerRoute
   FaqsRoute: typeof FaqsRoute
+  FeedDotxmlRoute: typeof FeedDotxmlRoute
   Glp1MetabolicPeptidesRoute: typeof Glp1MetabolicPeptidesRoute
   GrowthHormonePeptidesRoute: typeof GrowthHormonePeptidesRoute
   GrowthHormoneSecretagoguesRoute: typeof GrowthHormoneSecretagoguesRoute
@@ -603,6 +616,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Glp1MetabolicPeptidesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/feed.xml': {
+      id: '/feed.xml'
+      path: '/feed.xml'
+      fullPath: '/feed.xml'
+      preLoaderRoute: typeof FeedDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/faqs': {
       id: '/faqs'
       path: '/faqs'
@@ -706,6 +726,7 @@ const rootRouteChildren: RootRouteChildren = {
   CookiePolicyRoute: CookiePolicyRoute,
   DisclaimerRoute: DisclaimerRoute,
   FaqsRoute: FaqsRoute,
+  FeedDotxmlRoute: FeedDotxmlRoute,
   Glp1MetabolicPeptidesRoute: Glp1MetabolicPeptidesRoute,
   GrowthHormonePeptidesRoute: GrowthHormonePeptidesRoute,
   GrowthHormoneSecretagoguesRoute: GrowthHormoneSecretagoguesRoute,
@@ -735,12 +756,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
