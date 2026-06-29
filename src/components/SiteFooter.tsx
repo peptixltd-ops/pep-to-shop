@@ -10,8 +10,8 @@ export function SiteFooter() {
           For Laboratory Research Use Only · Not For Human Or Veterinary Use
         </div>
       </div>
-      <div className="container-x py-16 grid gap-10 md:grid-cols-6">
-        <div className="md:col-span-2">
+      <div className="container-x py-16 grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
+        <div>
           <div className="font-display text-2xl font-semibold mb-3">Pondok Peptides</div>
           <p className="text-sm text-background/70 leading-relaxed">
             Laboratory research peptides for in-vitro investigative use only. UK-dispatched. Not intended for human or veterinary use.
@@ -24,10 +24,10 @@ export function SiteFooter() {
             <p>{COMPANY.addressLine2}, {COMPANY.postcode}</p>
             <p>{COMPANY.country}</p>
             <p className="pt-1">
-              <a className="hover:text-accent" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
+              <a className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a>
             </p>
             <p>
-              <a className="hover:text-accent" href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}>{COMPANY.phone}</a>
+              <a className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}>{COMPANY.phone}</a>
             </p>
             <p className="text-background/60">Registered in England &amp; Wales</p>
           </div>
@@ -35,50 +35,37 @@ export function SiteFooter() {
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Shop</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/shop" className="hover:text-accent">All peptides</Link></li>
-            <li><Link to="/glp1-research-peptides" className="hover:text-accent">GLP-1 research peptides</Link></li>
-            <li><Link to="/structural-research-peptides" className="hover:text-accent">Structural research peptides</Link></li>
-            <li><Link to="/senescence-research-peptides" className="hover:text-accent">Senescence research peptides</Link></li>
-            <li><Link to="/neuro-research-peptides" className="hover:text-accent">Neuro research peptides</Link></li>
-            <li><Link to="/endocrine-research-peptides" className="hover:text-accent">Endocrine research peptides</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Shop All</h4>
-          <ul className="space-y-2 text-sm">
-            <li><Link to="/product/$handle" params={{ handle: "retatrutide" }} className="hover:text-accent">Retatrutide (Research)</Link></li>
-            <li><Link to="/product/$handle" params={{ handle: "tirzepatide" }} className="hover:text-accent">Tirzepatide (Research)</Link></li>
-            <li><Link to="/product/$handle" params={{ handle: "semaglutide" }} className="hover:text-accent">Semaglutide (Research)</Link></li>
-            <li><Link to="/product/$handle" params={{ handle: "bpc-157" }} className="hover:text-accent">BPC-157 (Research)</Link></li>
-            <li><Link to="/product/$handle" params={{ handle: "tb-500" }} className="hover:text-accent">TB-500 (Research)</Link></li>
-            <li><Link to="/product/$handle" params={{ handle: "bacteriostatic-water" }} className="hover:text-accent">Bacteriostatic Water</Link></li>
+            <li><Link to="/shop" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">All peptides</Link></li>
+            <li><Link to="/glp1-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">GLP-1 &amp; metabolic research peptides</Link></li>
+            <li><Link to="/structural-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Tissue and cellular research peptides</Link></li>
+            <li><Link to="/senescence-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Senescence research peptides</Link></li>
+            <li><Link to="/neuro-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Cognitive and neurological research peptides</Link></li>
+            <li><Link to="/endocrine-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Endocrine and growth-factor research peptides</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Company</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/about" className="hover:text-accent">About us</Link></li>
-            <li><Link to="/blog" className="hover:text-accent">Research blog</Link></li>
-            <li><Link to="/reviews" className="hover:text-accent">Customer feedback</Link></li>
-            <li><Link to="/faqs" className="hover:text-accent">FAQs</Link></li>
-            <li><Link to="/contact" className="hover:text-accent">Contact &amp; customer service</Link></li>
+            <li><Link to="/about" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">About us</Link></li>
+            <li><Link to="/blog" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Research blog</Link></li>
+            <li><Link to="/reviews" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Customer feedback</Link></li>
+            <li><Link to="/faqs" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">FAQs</Link></li>
+            <li><Link to="/contact" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Contact &amp; customer service</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Legal</h4>
           <ul className="space-y-2 text-sm">
-            <li><Link to="/privacy-policy" className="hover:text-accent">Privacy Policy</Link></li>
-            <li><Link to="/terms-and-conditions" className="hover:text-accent">Terms &amp; Conditions</Link></li>
-            <li><Link to="/cookie-policy" className="hover:text-accent">Cookie Policy</Link></li>
-            <li><Link to="/disclaimer" className="hover:text-accent">Disclaimer</Link></li>
-            <li><Link to="/returns-policy" className="hover:text-accent">Returns Policy</Link></li>
-            <li><Link to="/refund-policy" className="hover:text-accent">Refund Policy</Link></li>
-            <li><Link to="/shipping-policy" className="hover:text-accent">Shipping Policy</Link></li>
-            <li><Link to="/cancellation-policy" className="hover:text-accent">Cancellation Policy</Link></li>
-            <li><Link to="/faqs" className="hover:text-accent">FAQ</Link></li>
-            <li><Link to="/sitemap" className="hover:text-accent">Sitemap</Link></li>
-            <li><Link to="/about" className="hover:text-accent">About us</Link></li>
-            <li><Link to="/contact" className="hover:text-accent">Contact</Link></li>
+            <li><Link to="/privacy-policy" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Privacy Policy</Link></li>
+            <li><Link to="/terms-and-conditions" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Terms &amp; Conditions</Link></li>
+            <li><Link to="/cookie-policy" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Cookie Policy</Link></li>
+            <li><Link to="/disclaimer" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Disclaimer</Link></li>
+            <li><Link to="/returns-policy" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Returns &amp; Refund Policy</Link></li>
+            <li><Link to="/shipping-policy" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Shipping Policy</Link></li>
+            <li><Link to="/cancellation-policy" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Cancellation Policy</Link></li>
+            <li><Link to="/faqs" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">FAQ</Link></li>
+            <li><Link to="/sitemap" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Sitemap</Link></li>
+            <li><Link to="/contact" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Contact</Link></li>
           </ul>
         </div>
       </div>
