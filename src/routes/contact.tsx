@@ -21,55 +21,38 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", order: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
+  const [form, setForm] = useState({ name: "", email: "", order: "", message: "", website: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = `Website enquiry from ${form.name}${form.order ? ` (Order ${form.order})` : ""}`;
-    const body = `Name: ${form.name}\nEmail: ${form.email}\nOrder number: ${form.order || "n/a"}\n\n${form.message}`;
-    const mailto = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-    setSent(true);
+    setStatus("sending");
+    setErrorMsg("");
+    try {
+      const res = await fetch("/api/public/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || !json.success) {
+        setStatus("error");
+        setErrorMsg(json.error || "We couldn't send your message. Please email us directly.");
+        return;
+      }
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please try again or email us directly.");
+    }
   };
-
-  return (
-    <div className="container-x py-16 md:py-20">
-      <div className="text-center mb-12">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-3">Customer Service</p>
-        <h1 className="font-display text-5xl md:text-6xl text-ink">Contact <span className="text-primary italic">Us</span></h1>
-        <p className="mt-4 text-muted-foreground max-w-xl mx-auto">Questions about a product, order, batch certificate or invoice? Our team replies within 4 working hours, Monday to Friday.</p>
-      </div>
-      <div className="grid lg:grid-cols-3 gap-10 max-w-5xl mx-auto">
-        <div className="space-y-6">
-          {[
-            { icon: Mail, t: "Email", d: SUPPORT_EMAIL, href: `mailto:${SUPPORT_EMAIL}` },
-            { icon: Phone, t: "Phone", d: SUPPORT_PHONE, href: `tel:${SUPPORT_PHONE.replace(/\s+/g, "")}` },
-            { icon: MessageCircle, t: "Hours", d: "Mon–Fri, 9am–6pm GMT" },
-          ].map(({ icon: Icon, t, d, href }) => (
-            <div key={t} className="flex gap-4">
-              <div className="size-10 rounded-full bg-accent/40 flex items-center justify-center shrink-0"><Icon className="size-4 text-primary" /></div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{t}</p>
-                {href ? (
-                  <a href={href} className="text-ink mt-0.5 hover:text-primary">{d}</a>
-                ) : (
-                  <p className="text-ink mt-0.5">{d}</p>
-                )}
-              </div>
-            </div>
-          ))}
-          <div className="border-t border-border pt-6">
-            <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Registered Company</p>
-            <CompanyInfoBlock className="text-foreground/80" />
-          </div>
-        </div>
+...
         <form onSubmit={handleSubmit} className="lg:col-span-2 bg-mist p-8 space-y-4 border border-border">
-          {sent ? (
+          {status === "sent" ? (
             <div className="py-12 text-center">
               <p className="font-display text-2xl text-ink">Thank you.</p>
-              <p className="mt-2 text-muted-foreground">We've received your enquiry and a member of our team will review it shortly.</p>
-              <p className="mt-2 text-muted-foreground text-sm">If your email client didn't open, please email us directly at <a href={`mailto:${SUPPORT_EMAIL}`} className="text-primary underline">{SUPPORT_EMAIL}</a>.</p>
+              <p className="mt-2 text-muted-foreground">We've received your enquiry. A member of our team will reply within 4 working hours.</p>
             </div>
           ) : (
             <>
@@ -79,7 +62,14 @@ function ContactPage() {
               </div>
               <input placeholder="Order number (optional)" value={form.order} onChange={(e) => setForm({ ...form, order: e.target.value })} className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-primary" />
               <textarea required rows={6} placeholder="How can we help?" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full bg-background border border-border px-4 py-3 text-sm focus:outline-none focus:border-primary" />
-              <button type="submit" className="bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90">Send message</button>
+              {/* honeypot — hidden from users, bots fill it */}
+              <input type="text" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} className="hidden" aria-hidden="true" />
+              {status === "error" && (
+                <p className="text-sm text-error">{errorMsg} <a href={`mailto:${SUPPORT_EMAIL}`} className="underline">{SUPPORT_EMAIL}</a></p>
+              )}
+              <button type="submit" disabled={status === "sending"} className="bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 disabled:opacity-60">
+                {status === "sending" ? "Sending…" : "Send message"}
+              </button>
             </>
           )}
         </form>
