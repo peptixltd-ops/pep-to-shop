@@ -46,15 +46,15 @@ export function ProductInternalLinks({ handle }: { handle: string }) {
   return (
     <section className="mt-16 max-w-5xl mx-auto">
       <div className="bg-mist border border-border rounded-md p-6 md:p-8">
-        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Explore the catalogue</p>
+        <p className="text-xs uppercase tracking-[0.25em] text-primary mb-2">Shop All</p>
         <h2 className="font-display text-2xl text-ink mb-2">More from {parent.title}</h2>
         <p className="text-sm text-foreground/70 mb-5">
-          Browse the full{" "}
+          Browse all{" "}
           <Link
             to={`/${parent.slug}` as "/glp1-metabolic-peptides"}
             className="text-primary underline underline-offset-2 hover:no-underline"
           >
-            {parent.title.toLowerCase()} catalogue
+            {parent.title.toLowerCase()}
           </Link>{" "}
           or view a related research peptide below.
         </p>
