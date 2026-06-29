@@ -4,10 +4,10 @@ import { bundles } from "@/data/bundles";
 export const Route = createFileRoute("/bundles/")({
   head: () => ({
     meta: [
-      { title: "Peptide Bundles UK | Save on Research Stacks | Pondok Peptides" },
-      { name: "description", content: "Save on curated peptide research stacks. GLP-1, recovery and longevity bundles, third-party tested with batch-specific COAs." },
-      { property: "og:title", content: "Peptide Bundles UK | Pondok Peptides" },
-      { property: "og:description", content: "Curated peptide research bundles with up to 10% off. UK fast delivery." },
+      { title: "Research Peptide Bundles | Pondok Peptides" },
+      { name: "description", content: "Curated research peptide stacks for in-vitro laboratory comparison studies. HPLC-verified purity with batch-specific Certificates of Analysis." },
+      { property: "og:title", content: "Research Peptide Bundles | Pondok Peptides" },
+      { property: "og:description", content: "Curated research peptide stacks for in-vitro laboratory comparison studies. HPLC-verified, COA on every batch." },
     ],
     links: [{ rel: "canonical", href: "https://pondokpeptides.com/bundles" }],
   }),

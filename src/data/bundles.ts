@@ -5,7 +5,7 @@ export type Bundle = {
   description: string;
   /** Shopify product handles, in display order */
   productHandles: string[];
-  /** Visual-only saving — no automatic Shopify discount yet */
+  /** Visual-only saving - no automatic Shopify discount yet */
   discountPercent: number;
 };
 
@@ -15,26 +15,8 @@ export const bundles: Bundle[] = [
     title: "GLP-1 Research Stack",
     tagline: "Triple-agonist comparison kit",
     description:
-      "Compare the three leading metabolic peptides side-by-side: Retatrutide (triple agonist), Tirzepatide (dual GIP/GLP-1) and Semaglutide (GLP-1 reference).",
+      "Compare the three leading incretin research peptides side-by-side: Retatrutide (triple agonist), Tirzepatide (dual GIP/GLP-1) and Semaglutide (GLP-1 reference) for in-vitro receptor signalling characterisation.",
     productHandles: ["retatrutide", "tirzepatide", "semaglutide"],
-    discountPercent: 10,
-  },
-  {
-    slug: "recovery-stack",
-    title: "Recovery & Repair Stack",
-    tagline: "Soft-tissue research bundle",
-    description:
-      "BPC-157, TB-500 and GHK-Cu, the three most studied peptides in soft-tissue, vascular and connective-tissue recovery research.",
-    productHandles: ["bpc-157", "tb-500", "ghk-cu"],
-    discountPercent: 10,
-  },
-  {
-    slug: "longevity-stack",
-    title: "Longevity & Mitochondria Stack",
-    tagline: "Cellular energy research bundle",
-    description:
-      "NAD+, MOTS-C and Epitalon, paired for mitochondrial, metabolic and cellular-ageing research models.",
-    productHandles: ["nad", "mots-c", "epitalon"],
     discountPercent: 10,
   },
 ];

@@ -207,7 +207,7 @@ export const Route = createFileRoute("/feed.xml")({
         const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
 <channel>
-<title>${xmlEscape(BRAND)} — Research Peptides Feed</title>
+<title>${xmlEscape(BRAND)} - Research Peptides Feed</title>
 <link>${SITE}</link>
 <description>Google Merchant product feed for ${xmlEscape(BRAND)}. For in-vitro laboratory research use only.</description>
 <lastBuildDate>${now}</lastBuildDate>

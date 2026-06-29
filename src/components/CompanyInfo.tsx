@@ -23,7 +23,7 @@ export function CompanyInfoBlock({ className = "" }: { className?: string }) {
     <div className={`text-sm leading-relaxed ${className}`}>
       <p className="font-semibold text-ink">{COMPANY.legalName}</p>
       <p>Trading as {COMPANY.tradingAs}</p>
-      <p>Company No. {COMPANY.companyNumber} — Registered in England &amp; Wales</p>
+      <p>Company No. {COMPANY.companyNumber}, Registered in England &amp; Wales</p>
       <p>{COMPANY.addressLine1}</p>
       <p>{COMPANY.addressLine2}, {COMPANY.postcode}</p>
       <p>{COMPANY.country}</p>
