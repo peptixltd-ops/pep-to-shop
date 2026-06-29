@@ -36,11 +36,6 @@ export function SiteFooter() {
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Shop</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/shop" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">All peptides</Link></li>
-            <li><Link to="/glp1-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">GLP-1 &amp; metabolic research peptides</Link></li>
-            <li><Link to="/structural-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Tissue and cellular research peptides</Link></li>
-            <li><Link to="/senescence-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Senescence research peptides</Link></li>
-            <li><Link to="/neuro-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Cognitive and neurological research peptides</Link></li>
-            <li><Link to="/endocrine-research-peptides" className="hover:text-accent focus-visible:text-accent focus-visible:outline-none focus-visible:underline">Endocrine and growth-factor research peptides</Link></li>
           </ul>
         </div>
         <div>
