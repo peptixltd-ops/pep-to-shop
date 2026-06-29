@@ -166,7 +166,7 @@ function buildItem(p: FeedProduct, v: FeedProduct["variants"][number]): string {
   lines.push("<item>");
   lines.push(`<g:id>${xmlEscape(itemId)}</g:id>`);
   lines.push(`<title>${cdata(title)}</title>`);
-  lines.push(`<description>${cdata(p.description || title)}</description>`);
+  lines.push(`<description>${cdata(normalizeDashes(p.description || title))}</description>`);
   lines.push(`<link>${xmlEscape(link)}</link>`);
   if (image) lines.push(`<g:image_link>${xmlEscape(image)}</g:image_link>`);
   for (const ai of additionalImages) {
