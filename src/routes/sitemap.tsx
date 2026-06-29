@@ -28,11 +28,11 @@ const sections: { title: string; links: { label: string; to: string }[] }[] = [
   {
     title: "Collections",
     links: [
-      { label: "GLP-1 & metabolic peptides", to: "/glp1-metabolic-peptides" },
-      { label: "Tissue repair peptides", to: "/tissue-repair-peptides" },
-      { label: "Senolytic & longevity peptides", to: "/senolytic-longevity-peptides" },
-      { label: "Cognitive & neuropeptides", to: "/cognitive-neuropeptides" },
-      { label: "Growth hormone secretagogues", to: "/growth-hormone-secretagogues" },
+      { label: "GLP-1 research peptides", to: "/glp1-research-peptides" },
+      { label: "Structural research peptides", to: "/structural-research-peptides" },
+      { label: "Senescence research peptides", to: "/senescence-research-peptides" },
+      { label: "Neuro research peptides", to: "/neuro-research-peptides" },
+      { label: "Endocrine research peptides", to: "/endocrine-research-peptides" },
     ],
   },
   {

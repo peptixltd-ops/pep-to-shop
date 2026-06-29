@@ -94,7 +94,7 @@ function BlogPostPage() {
         {linkedCategories[0] && (
           <>
             <span className="mx-2">/</span>
-            <Link to={`/${linkedCategories[0].slug}` as "/glp1-metabolic-peptides"} className="hover:text-primary">{linkedCategories[0].title}</Link>
+            <Link to={`/${linkedCategories[0].slug}` as "/glp1-research-peptides"} className="hover:text-primary">{linkedCategories[0].title}</Link>
           </>
         )}
         <span className="mx-2">/</span>
@@ -142,7 +142,7 @@ function BlogPostPage() {
           <h2 className="font-display text-xl text-ink mb-4">Browse related categories</h2>
           <div className="flex flex-wrap gap-2">
             {linkedCategories.map((c: Category) => (
-              <Link key={c.slug} to={`/${c.slug}` as "/glp1-metabolic-peptides"} className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">
+              <Link key={c.slug} to={`/${c.slug}` as "/glp1-research-peptides"} className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">
                 {c.title}
               </Link>
             ))}
