@@ -186,7 +186,7 @@ function buildItem(p: FeedProduct, v: FeedProduct["variants"][number]): string {
 }
 
 export const Route = createFileRoute("/feed.xml")({
-  // @ts-expect-error - server route handlers supported at runtime by start
+  
   server: {
     handlers: {
       GET: async () => {
