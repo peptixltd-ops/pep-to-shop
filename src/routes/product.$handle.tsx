@@ -164,8 +164,8 @@ export const Route = createFileRoute("/product/$handle")({
     const url = `https://pondokpeptides.com/product/${handle}`;
     const p = loaderData?.product;
     const name = p?.title || handle.replace(/-/g, " ");
-    const fallbackTitle = `${name} — Research Use Only | Pondok Peptides`;
-    const fallbackDesc = `${name} laboratory research peptide. HPLC and MS verified, Certificate of Analysis available on request. For in-vitro laboratory research use only — not for human or veterinary use.`;
+    const fallbackTitle = `${name} - Research Peptide (Lyophilised, HPLC ≥99%)`;
+    const fallbackDesc = `${name} laboratory research peptide. Lyophilised powder, HPLC ≥99%, Certificate of Analysis available on request. For in-vitro laboratory research use only.`;
     // Prefer Shopify-managed SEO fields when present, fall back to neutral template.
     // This makes Shopify "Search engine listing" the single source of truth for both
     // the public storefront tags and the Google Merchant Center feed.

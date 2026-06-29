@@ -14,59 +14,59 @@ export type Category = {
 };
 
 const TRUST_LINE =
-  "Every batch is independently HPLC tested with a verified Certificate of Analysis, shipped with fast next-day UK delivery from Pondok Peptides, a trusted UK peptide supplier.";
+  "Every batch is independently HPLC characterised with a verified Certificate of Analysis, supplied for in-vitro laboratory research only by Pondok Peptides, a UK research peptide supplier.";
 
 export const categories: Category[] = [
   {
-    slug: "glp1-metabolic-peptides",
-    title: "GLP-1 & Metabolic Peptides",
-    h1: "GLP-1 & Metabolic Peptides UK",
+    slug: "glp1-research-peptides",
+    title: "GLP-1 Research Peptides",
+    h1: "GLP-1 Research Peptides UK",
     metaTitle:
-      "GLP-1 & Metabolic Peptides UK | Buy Retatrutide, Tirzepatide, Semaglutide | Pondok Peptides",
+      "GLP-1 Research Peptides UK | Retatrutide, Tirzepatide, Semaglutide | Pondok Peptides",
     metaDescription:
-      "Buy GLP-1 and metabolic research peptides in the UK. Shop Retatrutide UK, Tirzepatide UK and Semaglutide UK with batch-specific third-party COAs and fast UK delivery.",
+      "GLP-1 research peptides supplied in the UK for in-vitro laboratory study. Retatrutide, Tirzepatide and Semaglutide reference material with batch-specific COAs.",
     intro:
-      "GLP-1 and metabolic peptides are among the most studied compounds in modern incretin research. Whether you are exploring GLP-1 receptor activity with Semaglutide UK, the dual GIP/GLP-1 mechanism of Tirzepatide UK, or the next-generation triple agonist Retatrutide UK, Pondok Peptides supplies research-grade material with verified purity for laboratory study.",
+      "GLP-1 research peptides are widely studied tools for in-vitro receptor signalling research. Pondok Peptides supplies Retatrutide, Tirzepatide, Semaglutide and Cagrilintide as lyophilised reference material with verified HPLC purity for laboratory study only.",
     productHandles: ["retatrutide", "tirzepatide", "semaglutide", "cagrilintide"],
     sections: [
       {
-        h2: "Buy Retatrutide UK, Tirzepatide UK and Semaglutide UK",
+        h2: "Retatrutide, Tirzepatide and Semaglutide reference material",
         body: [
-          "Retatrutide is a triple incretin agonist targeting the GLP-1, GIP and glucagon receptors simultaneously, currently the most discussed metabolic peptide in clinical literature. Tirzepatide is a dual GIP/GLP-1 receptor agonist, and Semaglutide is the original long-acting GLP-1 analogue that defined the modern category.",
-          "All three are supplied by Pondok Peptides as lyophilised research-grade material with batch-specific Certificates of Analysis. Each vial is intended exclusively for in-vitro laboratory research. " +
+          "Retatrutide is a synthetic peptide referenced in incretin receptor signalling research at the GLP-1, GIP and glucagon receptors. Tirzepatide is referenced as a dual GIP/GLP-1 receptor research peptide, and Semaglutide is the long-acting GLP-1 reference analogue used in comparative in-vitro work.",
+          "All three are supplied by Pondok Peptides as lyophilised research-grade material with batch-specific Certificates of Analysis. Each vial is supplied exclusively for in-vitro laboratory research. " +
             TRUST_LINE,
         ],
       },
       {
-        h2: "Why researchers choose Pondok for GLP-1 and metabolic peptides",
+        h2: "Why researchers choose Pondok for GLP-1 reference peptides",
         body: [
-          "We commission independent third-party HPLC testing on every batch and publish the resulting COA on each product page. That means when you buy Retatrutide UK, Tirzepatide UK or Semaglutide UK from Pondok, the lot number on the vial matches the certificate.",
-          "Discreet packaging, tracked next-day UK delivery, and a UK-based support team that responds within four working hours. We do not split shipments, we do not substitute lots, and we do not ship without a sealed, intact lyophilised cake.",
+          "We commission independent third-party HPLC characterisation on every batch and publish the resulting COA on each product page. Lot numbers on each vial match the certificate, supporting reproducible analytical work.",
+          "Discreet packaging, tracked next-day UK dispatch, and a UK-based support team that responds within four working hours. We do not split shipments, we do not substitute lots, and we do not dispatch without a sealed, intact lyophilised cake.",
         ],
       },
       {
-        h2: "Mechanism of action overview",
+        h2: "Receptor signalling overview",
         body: [
-          "GLP-1 receptor agonists like Semaglutide slow gastric emptying and modulate appetite signalling in research models. Tirzepatide adds GIP receptor activity, which has shown additive metabolic effects in current literature. Retatrutide layers in glucagon receptor agonism, recruiting an additional energy expenditure pathway.",
-          "Cagrilintide, a long-acting amylin analogue, is frequently studied as a complementary co-agonist alongside Semaglutide. Pondok supplies all four for laboratory comparison work.",
+          "Semaglutide is referenced as a GLP-1 receptor research peptide. Tirzepatide is referenced for dual GIP and GLP-1 receptor activity in published in-vitro literature. Retatrutide is referenced for activity at GLP-1, GIP and glucagon receptors in current research literature.",
+          "Cagrilintide, a long-acting amylin analogue, is frequently studied as a complementary co-agonist alongside Semaglutide in receptor signalling research. Pondok supplies all four for comparative in-vitro work.",
         ],
       },
       {
         h2: "Reconstitution and storage",
         body: [
-          "GLP-1 and metabolic peptides are supplied as lyophilised powder. Reconstitute with sterile bacteriostatic water at room temperature and store reconstituted material at 2 to 8 degrees Celsius for up to 28 days. Unopened vials should be stored at minus 20 degrees Celsius for long-term stability.",
-          "Pair every vial with our bacteriostatic water for clean, contamination-free reconstitution. See our blog guide on how to reconstitute peptides for the full step-by-step protocol.",
+          "GLP-1 research peptides are supplied as lyophilised powder. Reconstitute with sterile bacteriostatic water at room temperature and store reconstituted material at 2 to 8 degrees Celsius for up to 28 days. Unopened vials should be stored at minus 20 degrees Celsius for long-term stability.",
+          "Pair every vial with bacteriostatic water for clean, contamination-free reconstitution. See our blog guide on how to reconstitute peptides for the full step-by-step protocol.",
         ],
       },
     ],
     faqs: [
       {
-        q: "What is the strongest GLP-1 / metabolic peptide currently in research?",
-        a: "Retatrutide is currently the most potent in published literature, acting as a triple agonist on GLP-1, GIP and glucagon receptors. Tirzepatide is the strongest dual agonist, and Semaglutide remains the benchmark single-receptor GLP-1 reference compound.",
+        q: "Which GLP-1 research peptide has the broadest receptor profile in literature?",
+        a: "Retatrutide is referenced in current literature as active at GLP-1, GIP and glucagon receptors. Tirzepatide is referenced as a dual GIP/GLP-1 reference peptide, and Semaglutide is the standard single-receptor GLP-1 reference compound.",
       },
       {
-        q: "Are these peptides legal to buy in the UK?",
-        a: "Yes. All compounds are sold strictly as research chemicals for in-vitro laboratory use, in line with UK and EU regulations. They are not medicines, supplements or food products.",
+        q: "Are these peptides legal to supply for research in the UK?",
+        a: "Yes. All compounds are supplied strictly as research chemicals for in-vitro laboratory use only, in line with UK and EU regulations. They are not medicines, supplements or food products.",
       },
       {
         q: "Do you ship Retatrutide, Tirzepatide and Semaglutide together?",
@@ -74,42 +74,42 @@ export const categories: Category[] = [
       },
       {
         q: "What purity should I expect?",
-        a: "All Pondok metabolic research peptides are HPLC verified at a minimum of 98 percent purity, with batch-specific COAs available for download on each product page.",
+        a: "All Pondok GLP-1 research peptides are HPLC characterised at a minimum of 98 percent purity, with batch-specific COAs available for download on each product page.",
       },
     ],
   },
   {
-    slug: "tissue-repair-peptides",
-    title: "Tissue Repair Peptides",
-    h1: "Tissue Repair Peptides UK",
+    slug: "structural-research-peptides",
+    title: "Structural Research Peptides",
+    h1: "Structural Research Peptides UK",
     metaTitle:
-      "Tissue Repair Peptides UK | Buy BPC-157 UK, TB-500 UK | 3rd Party Tested | Pondok Peptides",
+      "Structural Research Peptides UK | BPC-157, TB-500 Reference Material | Pondok Peptides",
     metaDescription:
-      "Buy tissue repair research peptides in the UK. Shop BPC-157 UK and TB500 UK with batch-specific third-party COAs, high purity and fast UK delivery from Pondok Peptides.",
+      "Structural research peptides supplied in the UK for in-vitro laboratory study. BPC-157 and TB-500 reference material with batch-specific COAs and HPLC verification.",
     intro:
-      "Tissue repair peptides such as BPC-157 UK and TB500 UK are studied for their roles in tissue regeneration, angiogenesis and gastrointestinal protection. Pondok Peptides supplies both as research-grade lyophilised powder, with batch-specific Certificates of Analysis available on every product page.",
+      "Structural research peptides such as BPC-157 and TB-500 are studied in vitro for their roles in cellular pathway research, including actin sequestration and angiogenesis signalling. Pondok Peptides supplies both as research-grade lyophilised powder, with batch-specific Certificates of Analysis on every product page.",
     productHandles: ["bpc-157-tb-500-mix", "tb-500"],
     sections: [
       {
-        h2: "Buy BPC-157 UK and TB500 UK",
+        h2: "BPC-157 and TB-500 reference material",
         body: [
-          "BPC-157 (Body Protection Compound 157) is a synthetic pentadecapeptide derived from a protective gastric protein. TB-500 (the bioactive fragment of Thymosin Beta-4) is widely studied for its role in actin sequestration and cell migration.",
-          "These two compounds are frequently paired together in laboratory recovery research, which is why Pondok offers a dedicated BPC-157 / TB-500 mix vial alongside the standalone TB-500 product. " +
+          "BPC-157 (Body Protection Compound 157) is a synthetic pentadecapeptide reference compound derived from a gastric protein sequence. TB-500 (the bioactive fragment of Thymosin Beta-4) is widely referenced in actin sequestration and cell migration research.",
+          "These two compounds are frequently paired in in-vitro cellular pathway research, which is why Pondok offers a dedicated BPC-157 / TB-500 mix vial alongside the standalone TB-500 product. " +
             TRUST_LINE,
         ],
       },
       {
-        h2: "Why pair BPC-157 with TB-500?",
+        h2: "Why pair BPC-157 with TB-500 in vitro?",
         body: [
-          "Current research suggests BPC-157 and TB-500 act through complementary mechanisms. BPC-157 has been observed to influence growth factor expression and angiogenesis, while TB-500 plays a role in cell migration and actin regulation. Together they form one of the most studied combinations in tissue repair research.",
-          "Pondok supplies the combination as a pre-blended mix vial for protocol consistency, alongside individual TB-500 vials for researchers running standalone protocols.",
+          "Current literature references BPC-157 and TB-500 as acting through complementary cellular pathways. BPC-157 is referenced in growth-factor expression and angiogenesis signalling research, while TB-500 is referenced for cell migration and actin regulation. Together they form one of the most studied combinations in structural research.",
+          "Pondok supplies the combination as a pre-blended mix vial for protocol consistency, alongside individual TB-500 vials for researchers running standalone in-vitro work.",
         ],
       },
       {
-        h2: "Quality and verification",
+        h2: "Quality and analytical characterisation",
         body: [
           "Every BPC-157 and TB-500 batch ships with a Certificate of Analysis confirming identity by mass spectrometry and purity by HPLC. Lyophilised under nitrogen and sealed with crimped aluminium caps for stability.",
-          "Pondok is a UK peptide supplier built around verification, not marketing claims. If a vial leaves our facility, it has a matching, downloadable certificate.",
+          "Pondok is a UK research peptide supplier built around analytical verification, not marketing claims. If a vial leaves our facility, it has a matching, downloadable certificate.",
         ],
       },
       {
@@ -121,16 +121,16 @@ export const categories: Category[] = [
     ],
     faqs: [
       {
-        q: "Are BPC-157 and TB-500 third-party tested?",
-        a: "Yes. Pondok Peptides commissions independent HPLC and MS testing on every batch of BPC-157 and TB-500. Certificates are available on each product page.",
+        q: "Are BPC-157 and TB-500 third-party characterised?",
+        a: "Yes. Pondok Peptides commissions independent HPLC and MS characterisation on every batch of BPC-157 and TB-500. Certificates are available on each product page.",
       },
       {
         q: "What is the difference between TB-500 and Thymosin Beta-4?",
-        a: "TB-500 is the synthetic active fragment of the larger Thymosin Beta-4 protein. The fragment retains the studied bioactivity while being easier to synthesise to high purity.",
+        a: "TB-500 is the synthetic active fragment of the larger Thymosin Beta-4 protein. The fragment retains the studied in-vitro activity while being easier to synthesise to high purity.",
       },
       {
         q: "Can BPC-157 and TB-500 be reconstituted in the same vial?",
-        a: "Yes, this is why Pondok offers a pre-blended BPC-157 / TB-500 mix. For researchers who want independent dosing, we recommend reconstituting each vial separately with bacteriostatic water.",
+        a: "Yes, this is why Pondok offers a pre-blended BPC-157 / TB-500 mix. For researchers who want independent dosing in vitro, we recommend reconstituting each vial separately with bacteriostatic water.",
       },
       {
         q: "Do you ship BPC-157 to the UK with next-day delivery?",
@@ -139,92 +139,92 @@ export const categories: Category[] = [
     ],
   },
   {
-    slug: "senolytic-longevity-peptides",
-    title: "Senolytic & Longevity Peptides",
-    h1: "Senolytic & Longevity Peptides UK",
+    slug: "senescence-research-peptides",
+    title: "Senescence Research Peptides",
+    h1: "Senescence Research Peptides UK",
     metaTitle:
-      "Senolytic & Longevity Peptides UK | Buy GHK-Cu UK, MOTS-C UK, NAD Peptide UK | Pondok Peptides",
+      "Senescence Research Peptides UK | GHK-Cu, MOTS-C, NAD+ Reference Material | Pondok Peptides",
     metaDescription:
-      "Buy senolytic and longevity research peptides in the UK. Shop GHK-Cu UK, MOTS-C UK and NAD peptide UK with batch-specific third-party COAs and fast UK delivery from Pondok Peptides.",
+      "Senescence pathway research peptides supplied in the UK for in-vitro study. GHK-Cu, MOTS-C and NAD+ reference material with batch-specific COAs.",
     intro:
-      "Senolytic and longevity peptides are an emerging research category covering mitochondrial function, cellular signalling and copper-mediated repair. Pondok Peptides supplies GHK-Cu UK, MOTS-C UK and NAD peptide UK as research-grade lyophilised material, all third-party tested.",
+      "Senescence pathway research peptides cover compounds referenced in mitochondrial signalling, cellular pathway research and copper-mediated extracellular matrix research. Pondok Peptides supplies GHK-Cu, MOTS-C and NAD+ as research-grade lyophilised material, all third-party characterised.",
     productHandles: ["ghk-cu", "mots-c", "nad", "ss-31"],
     sections: [
       {
-        h2: "Buy GHK-Cu UK, MOTS-C UK and NAD Peptide UK",
+        h2: "GHK-Cu, MOTS-C and NAD+ reference material",
         body: [
-          "GHK-Cu is a copper tripeptide originating from human plasma, studied extensively for its role in extracellular matrix signalling and skin remodelling research. MOTS-C is a mitochondrial-derived peptide investigated for its influence on metabolic homeostasis. NAD precursor peptides are studied for their contribution to cellular energetics and sirtuin pathway activity.",
+          "GHK-Cu is a copper tripeptide reference compound studied in extracellular matrix signalling research. MOTS-C is a mitochondrial-derived peptide referenced in cellular pathway research. NAD+ precursor peptides are referenced in cellular energetics and sirtuin pathway research.",
           "All three are supplied by Pondok with batch-specific COAs and shipped under tracked UK delivery. " +
             TRUST_LINE,
         ],
       },
       {
-        h2: "The senolytic and longevity research stack",
+        h2: "The senescence pathway research stack",
         body: [
-          "Researchers frequently study GHK-Cu, MOTS-C and NAD in parallel to compare effects across mitochondrial, dermal and cellular signalling pathways. SS-31 (Elamipretide) is also commonly included for its targeted mitochondrial cardiolipin binding profile.",
-          "Pondok stocks all four senolytic and longevity peptides for direct comparative laboratory work.",
+          "Researchers frequently study GHK-Cu, MOTS-C and NAD+ in parallel to compare in-vitro effects across mitochondrial, dermal and cellular signalling pathways. SS-31 (Elamipretide) is also commonly included for its referenced cardiolipin-binding profile in mitochondrial research.",
+          "Pondok stocks all four for direct comparative in-vitro work.",
         ],
       },
       {
-        h2: "Purity and verification",
+        h2: "Purity and analytical characterisation",
         body: [
-          "Every longevity peptide leaves our facility with a Certificate of Analysis confirming identity, mass and purity. Pondok works exclusively with audited synthesis partners and commissions independent verification on every lot.",
+          "Every senescence pathway research peptide leaves our facility with a Certificate of Analysis confirming identity, mass and purity. Pondok works exclusively with audited synthesis partners and commissions independent analytical characterisation on every lot.",
         ],
       },
       {
         h2: "Storage protocol",
         body: [
-          "Store lyophilised senolytic and longevity peptides at minus 20 degrees Celsius long term. After reconstitution with sterile bacteriostatic water, refrigerate at 2 to 8 degrees Celsius and use within 28 days. GHK-Cu in particular is light-sensitive and should be stored away from direct UV exposure.",
+          "Store lyophilised senescence pathway research peptides at minus 20 degrees Celsius long term. After reconstitution with sterile bacteriostatic water, refrigerate at 2 to 8 degrees Celsius and use within 28 days. GHK-Cu in particular is light-sensitive and should be stored away from direct UV exposure.",
         ],
       },
     ],
     faqs: [
       {
         q: "What is the difference between GHK-Cu and standard GHK?",
-        a: "GHK is the base tripeptide. GHK-Cu is the copper-bound complex which is the form most studied in research. Pondok supplies the copper-bound complex.",
+        a: "GHK is the base tripeptide. GHK-Cu is the copper-bound complex, which is the form most referenced in research literature. Pondok supplies the copper-bound complex.",
       },
       {
         q: "Is MOTS-C a mitochondrial peptide?",
-        a: "Yes. MOTS-C is encoded within mitochondrial DNA and is studied for its influence on metabolic regulation and mitochondrial biogenesis pathways.",
+        a: "Yes. MOTS-C is encoded within mitochondrial DNA and is referenced in cellular pathway research and mitochondrial biogenesis studies.",
       },
       {
-        q: "What is the NAD peptide form you supply?",
-        a: "Pondok supplies a research-grade NAD+ formulation for laboratory use. Full specifications and batch COA are listed on the NAD product page.",
+        q: "What is the NAD+ form you supply?",
+        a: "Pondok supplies a research-grade NAD+ formulation for in-vitro laboratory use. Full specifications and batch COA are listed on the NAD+ product page.",
       },
       {
-        q: "Are these peptides safe to ship in summer temperatures?",
+        q: "Are these peptides stable in shipping?",
         a: "Yes. Lyophilised peptides are stable at ambient temperatures for short transit periods. We ship promptly so material spends minimal time in transit before refrigeration.",
       },
     ],
   },
   {
-    slug: "cognitive-neuropeptides",
-    title: "Cognitive & Neuropeptides",
-    h1: "Cognitive & Neuropeptides UK",
+    slug: "neuro-research-peptides",
+    title: "Neuro Research Peptides",
+    h1: "Neuro Research Peptides UK",
     metaTitle:
-      "Cognitive & Neuropeptides UK | Buy Semax UK, Selank UK | 3rd Party Tested | Pondok Peptides",
+      "Neuro Research Peptides UK | Semax, Selank Reference Material | Pondok Peptides",
     metaDescription:
-      "Buy cognitive and neuropeptide research compounds in the UK. Shop Semax UK and Selank UK with batch-specific third-party COAs, high purity and fast UK delivery from Pondok Peptides.",
+      "Neuro research peptides supplied in the UK for in-vitro laboratory study. Semax and Selank reference material with batch-specific COAs and HPLC verification.",
     intro:
-      "Cognitive peptides and neuropeptides such as Semax UK and Selank UK are Russian-origin research compounds studied for their roles in modulating BDNF expression, attention and stress response in laboratory models. Pondok Peptides supplies both as third-party tested research material.",
+      "Neuro research peptides such as Semax and Selank are Russian-origin reference compounds studied in vitro for their roles in cellular pathway research, including BDNF expression and receptor signalling. Pondok Peptides supplies both as third-party characterised research material.",
     productHandles: ["semax", "selank"],
     sections: [
       {
-        h2: "Buy Semax UK and Selank UK",
+        h2: "Semax and Selank reference material",
         body: [
-          "Semax is a synthetic heptapeptide originating from a fragment of adrenocorticotropic hormone (ACTH 4-10), studied for its role in BDNF expression and neuroprotection research. Selank is a synthetic analogue of the immunomodulatory peptide tuftsin, studied for its anxiolytic-like profile in current literature.",
+          "Semax is a synthetic heptapeptide originating from a fragment of adrenocorticotropic hormone (ACTH 4-10), referenced in BDNF expression research. Selank is a synthetic analogue of the immunomodulatory peptide tuftsin, referenced in receptor signalling research in current literature.",
           "Both are supplied by Pondok as lyophilised research-grade material with batch-specific COAs. " +
             TRUST_LINE,
         ],
       },
       {
-        h2: "Why pair Semax with Selank?",
+        h2: "Why study Semax and Selank in parallel?",
         body: [
-          "Researchers commonly compare Semax and Selank head to head. Semax is studied for BDNF modulation and attention, while Selank is studied for its calming, anxiolytic-like profile. Together they form the canonical Russian cognitive and neuropeptide pair in current literature.",
+          "Researchers commonly compare Semax and Selank head to head in vitro. Semax is referenced in BDNF expression research, while Selank is referenced in receptor signalling research. Together they form the canonical Russian-origin neuro research pair in current literature.",
         ],
       },
       {
-        h2: "Verification and purity",
+        h2: "Analytical characterisation and purity",
         body: [
           "Every batch of Semax and Selank ships with a Certificate of Analysis confirming sequence by mass spectrometry and purity by HPLC at 98 percent or higher.",
         ],
@@ -239,11 +239,11 @@ export const categories: Category[] = [
     faqs: [
       {
         q: "Are Semax and Selank the same compound?",
-        a: "No. Semax is derived from ACTH (4-10) and is studied for BDNF and attention. Selank is derived from tuftsin and is studied for anxiolytic-like effects.",
+        a: "No. Semax is derived from ACTH (4-10) and is referenced in BDNF expression research. Selank is derived from tuftsin and is referenced in receptor signalling research.",
       },
       {
         q: "What purity is your Selank?",
-        a: "All Pondok Selank batches are HPLC verified at 98 percent purity or higher with batch-specific COA available on the product page.",
+        a: "All Pondok Selank batches are HPLC characterised at 98 percent purity or higher, with batch-specific COA available on the product page.",
       },
       {
         q: "Do you sell Semax and Selank as a pair?",
@@ -251,39 +251,39 @@ export const categories: Category[] = [
       },
       {
         q: "Are Semax and Selank legal in the UK?",
-        a: "Yes, sold strictly as research chemicals for in-vitro laboratory use.",
+        a: "Yes, supplied strictly as research chemicals for in-vitro laboratory use only.",
       },
     ],
   },
   {
-    slug: "growth-hormone-secretagogues",
-    title: "Growth Hormone Secretagogues",
-    h1: "Growth Hormone Secretagogues UK",
+    slug: "endocrine-research-peptides",
+    title: "Endocrine Research Peptides",
+    h1: "Endocrine Research Peptides UK",
     metaTitle:
-      "Growth Hormone Secretagogues UK | Buy Ipamorelin UK, Tesamorelin UK, IGF-LR3 UK | Pondok Peptides",
+      "Endocrine Research Peptides UK | Ipamorelin, Tesamorelin, IGF-LR3 Reference Material | Pondok Peptides",
     metaDescription:
-      "Buy growth hormone secretagogue research peptides in the UK. Shop Ipamorelin UK, Tesamorelin UK and IGF-LR3 UK with batch-specific third-party COAs and fast UK delivery.",
+      "Endocrine signalling research peptides supplied in the UK for in-vitro study. Ipamorelin, Tesamorelin and IGF-LR3 reference material with batch-specific COAs.",
     intro:
-      "Growth hormone secretagogues cover GHRPs, GHRH analogues and IGF-1 variants. Pondok Peptides supplies Ipamorelin UK, Tesamorelin UK and IGF-LR3 UK as research-grade lyophilised material, all with batch-specific third-party COAs.",
+      "Endocrine signalling research peptides cover GHRPs, GHRH analogues and IGF-1 variants used as reference compounds in vitro. Pondok Peptides supplies Ipamorelin, Tesamorelin and IGF-LR3 as research-grade lyophilised material, all with batch-specific third-party COAs.",
     productHandles: ["ipamorelin", "tesamorelin", "igf-lr3"],
     sections: [
       {
-        h2: "Buy Ipamorelin UK, Tesamorelin UK and IGF-LR3 UK",
+        h2: "Ipamorelin, Tesamorelin and IGF-LR3 reference material",
         body: [
-          "Ipamorelin is a selective GHRP (growth hormone releasing peptide) studied for its clean GH-pulse profile without significant cortisol or prolactin influence. Tesamorelin is a GHRH analogue studied extensively in metabolic research. IGF-LR3 is a long-arginine variant of IGF-1 with extended in-vitro half-life.",
+          "Ipamorelin is a selective GHRP reference peptide studied for receptor signalling at the ghrelin receptor in vitro. Tesamorelin is a GHRH analogue widely referenced in endocrine signalling research. IGF-LR3 is a long-arginine variant of IGF-1 with extended in-vitro half-life used as a reference compound.",
           "All three are supplied by Pondok as lyophilised research-grade material with full batch documentation. " +
             TRUST_LINE,
         ],
       },
       {
-        h2: "GHRP, GHRH and IGF-1 explained",
+        h2: "GHRP, GHRH and IGF-1 receptor signalling overview",
         body: [
-          "GHRPs (such as Ipamorelin) act on the ghrelin receptor to trigger GH release. GHRH analogues (such as Tesamorelin) work through the GHRH receptor to extend GH pulse amplitude. IGF-1 variants (such as IGF-LR3) are downstream signalling molecules studied independently from upstream GH triggers.",
-          "Pondok stocks one representative compound from each of the three classes so researchers can study the full pathway.",
+          "GHRPs (such as Ipamorelin) are referenced as ghrelin receptor research peptides. GHRH analogues (such as Tesamorelin) are referenced as GHRH receptor research peptides. IGF-1 variants (such as IGF-LR3) are downstream signalling reference molecules studied independently in vitro.",
+          "Pondok stocks one representative compound from each of the three classes so researchers can study the full endocrine signalling pathway.",
         ],
       },
       {
-        h2: "Verification and purity",
+        h2: "Analytical characterisation and purity",
         body: [
           "Each Ipamorelin, Tesamorelin and IGF-LR3 batch ships with a Certificate of Analysis confirming identity and HPLC purity. Lyophilised under controlled conditions and stored cold from synthesis to dispatch.",
         ],
@@ -291,14 +291,14 @@ export const categories: Category[] = [
       {
         h2: "Storage",
         body: [
-          "Store lyophilised growth hormone secretagogues at minus 20 degrees Celsius long term. IGF-LR3 in particular benefits from minimised freeze-thaw exposure. After reconstitution, refrigerate at 2 to 8 degrees Celsius and use within 28 days.",
+          "Store lyophilised endocrine research peptides at minus 20 degrees Celsius long term. IGF-LR3 in particular benefits from minimised freeze-thaw exposure. After reconstitution, refrigerate at 2 to 8 degrees Celsius and use within 28 days.",
         ],
       },
     ],
     faqs: [
       {
-        q: "What is the cleanest GHRP for laboratory work?",
-        a: "Ipamorelin is generally considered the most selective GHRP in current literature, with minimal effect on cortisol or prolactin pathways.",
+        q: "What is the most selective GHRP reference peptide in current literature?",
+        a: "Ipamorelin is generally referenced as the most selective GHRP in current literature, with minimal cross-activity in receptor signalling studies at the cortisol or prolactin pathways.",
       },
       {
         q: "What is the difference between IGF-1 and IGF-LR3?",
@@ -309,8 +309,8 @@ export const categories: Category[] = [
         a: "Tesamorelin is a GHRH (growth hormone releasing hormone) analogue, not a GHRP. They act on different receptors.",
       },
       {
-        q: "Do you third-party test growth hormone secretagogues?",
-        a: "Yes. Every Ipamorelin, Tesamorelin and IGF-LR3 batch is independently HPLC tested. COAs are downloadable from each product page.",
+        q: "Do you third-party characterise endocrine research peptides?",
+        a: "Yes. Every Ipamorelin, Tesamorelin and IGF-LR3 batch is independently HPLC characterised. COAs are downloadable from each product page.",
       },
     ],
   },

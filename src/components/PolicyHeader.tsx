@@ -8,7 +8,7 @@ export function PolicyHeader() {
       <p className="font-semibold text-ink mb-2">Who you are buying from</p>
       <p>
         Pondok Peptides is a storefront brand operated by <strong>{COMPANY.legalName}</strong> (Company
-        No. {COMPANY.companyNumber}), a company registered in England &amp; Wales at {COMPANY.addressLine1}, {COMPANY.addressLine2}, {COMPANY.postcode}, {COMPANY.country}. {COMPANY.legalName} also operates BuyRetailUK, UK Peptide Labs and Oxford Research Peptides. All orders placed through pondokpeptides.com are processed, fulfilled, invoiced and supported by {COMPANY.legalName}. Checkout is hosted on shared Oxford Research Syndicate infrastructure at checkout.oxfordresearchsyndicate.com.
+        No. {COMPANY.companyNumber}), a company registered in England &amp; Wales at {COMPANY.addressLine1}, {COMPANY.addressLine2}, {COMPANY.postcode}, {COMPANY.country}. Payments are processed by Oxford Research Syndicate Ltd, the parent company that operates this storefront.
       </p>
       <p className="mt-3">
         Contact: <a className="text-primary hover:underline" href={`mailto:${COMPANY.email}`}>{COMPANY.email}</a> · <a className="text-primary hover:underline" href={`tel:${COMPANY.phone.replace(/\s+/g, "")}`}>{COMPANY.phone}</a> (Mon–Fri 09:00–17:00 UK)

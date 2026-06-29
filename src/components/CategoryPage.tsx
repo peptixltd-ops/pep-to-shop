@@ -119,11 +119,11 @@ export function CategoryPage({ category }: { category: Category }) {
       <section className="container-x py-16 text-center">
         <h2 className="font-display text-2xl md:text-3xl text-ink mb-6">Explore other categories</h2>
         <div className="flex flex-wrap gap-3 justify-center">
-          <Link to="/glp1-metabolic-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">GLP-1 &amp; Metabolic</Link>
-          <Link to="/tissue-repair-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Tissue Repair</Link>
-          <Link to="/senolytic-longevity-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Senolytic &amp; Longevity</Link>
-          <Link to="/cognitive-neuropeptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Cognitive &amp; Neuro</Link>
-          <Link to="/growth-hormone-secretagogues" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">GH Secretagogues</Link>
+          <Link to="/glp1-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">GLP-1 Research</Link>
+          <Link to="/structural-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Structural Research</Link>
+          <Link to="/senescence-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Senescence Research</Link>
+          <Link to="/neuro-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Neuro Research</Link>
+          <Link to="/endocrine-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Endocrine Research</Link>
           <Link to="/blog" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Research Guides</Link>
         </div>
       </section>

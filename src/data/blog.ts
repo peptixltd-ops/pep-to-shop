@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 9,
     category: "Compound guide",
     productLinks: ["retatrutide", "tirzepatide", "semaglutide", "bacteriostatic-water"],
-    categoryLinks: ["glp1-metabolic-peptides"],
+    categoryLinks: ["glp1-research-peptides"],
     relatedSlugs: ["how-to-reconstitute-peptides", "how-to-store-peptides"],
     sections: [
       {
@@ -93,7 +93,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 10,
     category: "Compound guide",
     productLinks: ["bpc-157-tb-500-mix", "tb-500", "bacteriostatic-water"],
-    categoryLinks: ["tissue-repair-peptides"],
+    categoryLinks: ["structural-research-peptides"],
     relatedSlugs: ["tb-500-guide", "how-to-reconstitute-peptides"],
     sections: [
       {
@@ -149,7 +149,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 9,
     category: "Compound guide",
     productLinks: ["tb-500", "bpc-157-tb-500-mix", "bacteriostatic-water"],
-    categoryLinks: ["tissue-repair-peptides"],
+    categoryLinks: ["structural-research-peptides"],
     relatedSlugs: ["bpc-157-guide", "how-to-store-peptides"],
     sections: [
       {
@@ -203,7 +203,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     category: "Compound guide",
     productLinks: ["ghk-cu", "mots-c", "nad", "bacteriostatic-water"],
-    categoryLinks: ["senolytic-longevity-peptides"],
+    categoryLinks: ["senescence-research-peptides"],
     relatedSlugs: ["mots-c-guide", "how-to-store-peptides"],
     sections: [
       {
@@ -257,7 +257,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     category: "Compound guide",
     productLinks: ["mots-c", "ghk-cu", "nad", "bacteriostatic-water"],
-    categoryLinks: ["senolytic-longevity-peptides"],
+    categoryLinks: ["senescence-research-peptides"],
     relatedSlugs: ["ghk-cu-guide", "how-to-reconstitute-peptides"],
     sections: [
       {
@@ -311,7 +311,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 8,
     category: "Lab protocol",
     productLinks: ["bacteriostatic-water", "bpc-157-tb-500-mix", "retatrutide"],
-    categoryLinks: ["tissue-repair-peptides", "glp1-metabolic-peptides"],
+    categoryLinks: ["structural-research-peptides", "glp1-research-peptides"],
     relatedSlugs: ["how-to-reconstitute-peptides", "bpc-157-guide"],
     sections: [
       {
@@ -364,7 +364,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 7,
     category: "Lab protocol",
     productLinks: ["bacteriostatic-water", "retatrutide", "bpc-157-tb-500-mix", "ghk-cu"],
-    categoryLinks: ["glp1-metabolic-peptides", "tissue-repair-peptides", "senolytic-longevity-peptides"],
+    categoryLinks: ["glp1-research-peptides", "structural-research-peptides", "senescence-research-peptides"],
     relatedSlugs: ["how-to-store-peptides", "what-is-retatrutide"],
     sections: [
       {

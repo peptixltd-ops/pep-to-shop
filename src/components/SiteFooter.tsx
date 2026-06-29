@@ -36,14 +36,11 @@ export function SiteFooter() {
           <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Shop</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/shop" className="hover:text-accent">All peptides</Link></li>
-            <li><Link to="/glp1-metabolic-peptides" className="hover:text-accent">GLP-1 &amp; metabolic research peptides</Link></li>
-            {/* TODO: Replace destination if/when a dedicated "Tissue and cellular research peptides" collection exists. */}
-            <li><Link to="/tissue-repair-peptides" className="hover:text-accent">Tissue and cellular research peptides</Link></li>
-            {/* TODO: Replace destination if/when a dedicated "Senescence research peptides" collection exists. */}
-            <li><Link to="/senolytic-longevity-peptides" className="hover:text-accent">Senescence research peptides</Link></li>
-            <li><Link to="/cognitive-neuropeptides" className="hover:text-accent">Cognitive and neurological research peptides</Link></li>
-            {/* TODO: Replace destination if/when a dedicated "Endocrine and growth-factor research peptides" collection exists. */}
-            <li><Link to="/growth-hormone-secretagogues" className="hover:text-accent">Endocrine and growth-factor research peptides</Link></li>
+            <li><Link to="/glp1-research-peptides" className="hover:text-accent">GLP-1 research peptides</Link></li>
+            <li><Link to="/structural-research-peptides" className="hover:text-accent">Structural research peptides</Link></li>
+            <li><Link to="/senescence-research-peptides" className="hover:text-accent">Senescence research peptides</Link></li>
+            <li><Link to="/neuro-research-peptides" className="hover:text-accent">Neuro research peptides</Link></li>
+            <li><Link to="/endocrine-research-peptides" className="hover:text-accent">Endocrine research peptides</Link></li>
           </ul>
         </div>
         <div>
