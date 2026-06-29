@@ -59,7 +59,7 @@ export function SiteHeader() {
             <Search className="size-5" />
           </button>
           <Link to="/shop" className="hidden md:inline-flex items-center justify-center bg-primary text-primary-foreground px-5 py-2.5 text-sm font-medium tracking-wide hover:bg-primary/90 transition-colors">
-            Catalogue
+            Shop All
           </Link>
           <a
             href="https://account.pondokpeptides.com"
