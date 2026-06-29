@@ -33,7 +33,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Research Peptides UK | Laboratory Research Use Only | Pondok Peptides" },
-      { name: "description", content: "Pondok Peptides supplies laboratory research peptides in the UK with HPLC and MS verification and Certificate of Analysis on request. For laboratory research use only — not for human or veterinary use." },
+      { name: "description", content: "Pondok Peptides supplies laboratory research peptides in the UK with HPLC and MS verification and Certificate of Analysis on request. For laboratory research use only, not for human or veterinary use." },
       { name: "keywords", content: "research peptides uk, laboratory research peptides, peptide reference standards uk, HPLC verified peptides, certificate of analysis peptides" },
       { name: "author", content: "Oxford Research Syndicate Ltd" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1" },
@@ -57,7 +57,6 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" },
-      { rel: "canonical", href: "https://pondokpeptides.com" },
     ],
     scripts: [
       // Google tag (gtag.js) - GA4

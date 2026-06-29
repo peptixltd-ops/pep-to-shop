@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Research Peptides UK | Laboratory Research Use Only | Pondok Peptides" },
-      { name: "description", content: "Pondok Peptides supplies laboratory research peptides in the UK with HPLC and MS verification and Certificate of Analysis on request. For laboratory research use only — not for human or veterinary use." },
+      { name: "description", content: "Pondok Peptides supplies laboratory research peptides in the UK with HPLC and MS verification and Certificate of Analysis on request. For laboratory research use only, not for human or veterinary use." },
       { property: "og:title", content: "Research Peptides UK | Laboratory Research Use Only | Pondok Peptides" },
       { property: "og:description", content: "UK laboratory research peptides with HPLC and MS verification and COA on request. Operated by Oxford Research Syndicate Ltd." },
       { property: "og:url", content: "https://pondokpeptides.com/" },
@@ -149,7 +149,7 @@ function HomePage() {
                 <span className="italic text-primary">Laboratory-Grade</span><br />Research Peptides, UK.
               </h1>
               <p className="mt-6 text-lg text-muted-foreground leading-relaxed">
-                A UK supplier of laboratory research peptides. HPLC and MS verification with Certificate of Analysis available on request. For in-vitro laboratory research only — not for human or veterinary use.
+                A UK supplier of laboratory research peptides. HPLC and MS verification with Certificate of Analysis available on request. For in-vitro laboratory research only, not for human or veterinary use.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/shop" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 transition">
@@ -274,11 +274,11 @@ function HomePage() {
           <p>Pondok Peptides supplies <strong>laboratory research peptides</strong> in the UK, with a focus on identity verification, documented purity and reliable dispatch. Every product is intended strictly for in-vitro laboratory research by qualified researchers and institutions.</p>
           <p>Each batch is verified by HPLC and MS; an in-house Certificate of Analysis is available on every product page and independent third-party testing is available on request. Our research catalogue includes <Link to="/product/$handle" params={{ handle: "retatrutide" }} className="text-primary underline">retatrutide</Link>, <Link to="/product/$handle" params={{ handle: "tirzepatide" }} className="text-primary underline">tirzepatide</Link>, <Link to="/product/$handle" params={{ handle: "semaglutide" }} className="text-primary underline">semaglutide</Link>, <Link to="/product/$handle" params={{ handle: "bpc-157-tb-500-mix" }} className="text-primary underline">BPC-157</Link> and <Link to="/product/$handle" params={{ handle: "tb-500" }} className="text-primary underline">TB-500</Link>.</p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <Link to="/glp1-metabolic-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">GLP-1 &amp; Metabolic</Link>
-            <Link to="/tissue-repair-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Tissue Repair</Link>
-            <Link to="/senolytic-longevity-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Senolytic &amp; Longevity</Link>
-            <Link to="/cognitive-neuropeptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Cognitive &amp; Neuro</Link>
-            <Link to="/growth-hormone-secretagogues" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">GH Secretagogues</Link>
+            <Link to="/glp1-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">GLP-1 Research</Link>
+            <Link to="/structural-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Structural Research</Link>
+            <Link to="/senescence-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Senescence Research</Link>
+            <Link to="/neuro-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Neuro Research</Link>
+            <Link to="/endocrine-research-peptides" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Endocrine Research</Link>
             <Link to="/blog" className="text-xs uppercase tracking-wider border border-border px-4 py-2 hover:border-primary hover:text-primary transition">Research Guides</Link>
           </div>
         </div>
