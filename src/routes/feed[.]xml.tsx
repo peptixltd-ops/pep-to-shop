@@ -156,7 +156,9 @@ function buildItem(p: FeedProduct, v: FeedProduct["variants"][number]): string {
   const price = `${parseFloat(v.price.amount).toFixed(2)} ${v.price.currencyCode}`;
   const availability = v.availableForSale ? "in_stock" : "out_of_stock";
   const itemId = v.sku && v.sku.trim().length > 0 ? v.sku : `${p.handle}-${v.id.split("/").pop()}`;
-  const title = v.title && v.title !== "Default Title" ? `${p.title} - ${v.title}` : p.title;
+  const normalizeDashes = (s: string) => s.replace(/[\u2014\u2013]/g, "-");
+  const rawTitle = v.title && v.title !== "Default Title" ? `${p.title} - ${v.title}` : p.title;
+  const title = normalizeDashes(rawTitle);
   const handleLower = p.handle.toLowerCase();
   const excluded = EXCLUDED_FROM_SHOPPING_ADS.has(handleLower);
 
