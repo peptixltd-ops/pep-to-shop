@@ -47,7 +47,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Catalogue</h4>
+          <h4 className="text-xs uppercase tracking-[0.2em] mb-4 text-background/60">Shop All</h4>
           <ul className="space-y-2 text-sm">
             <li><Link to="/product/$handle" params={{ handle: "retatrutide" }} className="hover:text-accent">Retatrutide (Research)</Link></li>
             <li><Link to="/product/$handle" params={{ handle: "tirzepatide" }} className="hover:text-accent">Tirzepatide (Research)</Link></li>
