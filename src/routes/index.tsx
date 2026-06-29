@@ -153,7 +153,7 @@ function HomePage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link to="/shop" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-primary/90 transition">
-                  View Catalogue <ArrowRight className="size-4" />
+                  Shop All <ArrowRight className="size-4" />
                 </Link>
                 <Link to="/about" className="inline-flex items-center bg-transparent border border-ink/20 text-ink px-7 py-3.5 text-sm uppercase tracking-wider hover:bg-ink hover:text-background transition">
                   About Us
