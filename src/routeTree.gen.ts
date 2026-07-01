@@ -49,6 +49,7 @@ import { Route as BundlesIndexRouteImport } from './routes/bundles.index'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as ProductHandleRouteImport } from './routes/product.$handle'
 import { Route as EmailUnsubscribeRouteImport } from './routes/email/unsubscribe'
+import { Route as CoaRetaEgb0426Rt30RouteImport } from './routes/coa.reta-egb-0426-rt30'
 import { Route as BundlesSlugRouteImport } from './routes/bundles.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
@@ -262,6 +263,11 @@ const EmailUnsubscribeRoute = EmailUnsubscribeRouteImport.update({
   path: '/email/unsubscribe',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CoaRetaEgb0426Rt30Route = CoaRetaEgb0426Rt30RouteImport.update({
+  id: '/coa/reta-egb-0426-rt30',
+  path: '/coa/reta-egb-0426-rt30',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BundlesSlugRoute = BundlesSlugRouteImport.update({
   id: '/bundles/$slug',
   path: '/bundles/$slug',
@@ -340,6 +346,7 @@ export interface FileRoutesByFullPath {
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/bundles/$slug': typeof BundlesSlugRoute
+  '/coa/reta-egb-0426-rt30': typeof CoaRetaEgb0426Rt30Route
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/product/$handle': typeof ProductHandleRoute
   '/blog/': typeof BlogIndexRoute
@@ -389,6 +396,7 @@ export interface FileRoutesByTo {
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/bundles/$slug': typeof BundlesSlugRoute
+  '/coa/reta-egb-0426-rt30': typeof CoaRetaEgb0426Rt30Route
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/product/$handle': typeof ProductHandleRoute
   '/blog': typeof BlogIndexRoute
@@ -439,6 +447,7 @@ export interface FileRoutesById {
   '/weight-loss-peptides': typeof WeightLossPeptidesRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/bundles/$slug': typeof BundlesSlugRoute
+  '/coa/reta-egb-0426-rt30': typeof CoaRetaEgb0426Rt30Route
   '/email/unsubscribe': typeof EmailUnsubscribeRoute
   '/product/$handle': typeof ProductHandleRoute
   '/blog/': typeof BlogIndexRoute
@@ -490,6 +499,7 @@ export interface FileRouteTypes {
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/bundles/$slug'
+    | '/coa/reta-egb-0426-rt30'
     | '/email/unsubscribe'
     | '/product/$handle'
     | '/blog/'
@@ -539,6 +549,7 @@ export interface FileRouteTypes {
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/bundles/$slug'
+    | '/coa/reta-egb-0426-rt30'
     | '/email/unsubscribe'
     | '/product/$handle'
     | '/blog'
@@ -588,6 +599,7 @@ export interface FileRouteTypes {
     | '/weight-loss-peptides'
     | '/blog/$slug'
     | '/bundles/$slug'
+    | '/coa/reta-egb-0426-rt30'
     | '/email/unsubscribe'
     | '/product/$handle'
     | '/blog/'
@@ -638,6 +650,7 @@ export interface RootRouteChildren {
   WeightLossPeptidesRoute: typeof WeightLossPeptidesRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BundlesSlugRoute: typeof BundlesSlugRoute
+  CoaRetaEgb0426Rt30Route: typeof CoaRetaEgb0426Rt30Route
   EmailUnsubscribeRoute: typeof EmailUnsubscribeRoute
   ProductHandleRoute: typeof ProductHandleRoute
   BlogIndexRoute: typeof BlogIndexRoute
@@ -931,6 +944,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EmailUnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/coa/reta-egb-0426-rt30': {
+      id: '/coa/reta-egb-0426-rt30'
+      path: '/coa/reta-egb-0426-rt30'
+      fullPath: '/coa/reta-egb-0426-rt30'
+      preLoaderRoute: typeof CoaRetaEgb0426Rt30RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/bundles/$slug': {
       id: '/bundles/$slug'
       path: '/bundles/$slug'
@@ -1022,6 +1042,7 @@ const rootRouteChildren: RootRouteChildren = {
   WeightLossPeptidesRoute: WeightLossPeptidesRoute,
   BlogSlugRoute: BlogSlugRoute,
   BundlesSlugRoute: BundlesSlugRoute,
+  CoaRetaEgb0426Rt30Route: CoaRetaEgb0426Rt30Route,
   EmailUnsubscribeRoute: EmailUnsubscribeRoute,
   ProductHandleRoute: ProductHandleRoute,
   BlogIndexRoute: BlogIndexRoute,
