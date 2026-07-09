@@ -101,6 +101,42 @@ export type Database = {
         }
         Relationships: []
       }
+      newsletter_subscribers: {
+        Row: {
+          code_used_at: string | null
+          discount_code: string
+          email: string
+          id: string
+          ip_hash: string | null
+          metadata: Json | null
+          source: string
+          subscribed_at: string
+          user_agent: string | null
+        }
+        Insert: {
+          code_used_at?: string | null
+          discount_code: string
+          email: string
+          id?: string
+          ip_hash?: string | null
+          metadata?: Json | null
+          source?: string
+          subscribed_at?: string
+          user_agent?: string | null
+        }
+        Update: {
+          code_used_at?: string | null
+          discount_code?: string
+          email?: string
+          id?: string
+          ip_hash?: string | null
+          metadata?: Json | null
+          source?: string
+          subscribed_at?: string
+          user_agent?: string | null
+        }
+        Relationships: []
+      }
       suppressed_emails: {
         Row: {
           created_at: string
