@@ -7,6 +7,11 @@ export const SHOPIFY_STOREFRONT_TOKEN = "b20f6326fed24e760c7ebd7e2a8873aa";
 
 export const POND_VENDOR = "Pondok Peptides";
 
+// Shopify-hosted customer account entry point. Redirects to New Customer
+// Accounts (passwordless email login) once enabled in Shopify Admin →
+// Settings → Customer accounts. Shopify manages SSL for this URL.
+export const SHOPIFY_ACCOUNT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/account`;
+
 export interface ShopifyProduct {
   node: {
     id: string;
