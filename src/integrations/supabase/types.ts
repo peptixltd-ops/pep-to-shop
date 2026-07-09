@@ -109,6 +109,7 @@ export type Database = {
           id: string
           ip_hash: string | null
           metadata: Json | null
+          phone: string | null
           source: string
           subscribed_at: string
           user_agent: string | null
@@ -120,6 +121,7 @@ export type Database = {
           id?: string
           ip_hash?: string | null
           metadata?: Json | null
+          phone?: string | null
           source?: string
           subscribed_at?: string
           user_agent?: string | null
@@ -131,6 +133,7 @@ export type Database = {
           id?: string
           ip_hash?: string | null
           metadata?: Json | null
+          phone?: string | null
           source?: string
           subscribed_at?: string
           user_agent?: string | null
