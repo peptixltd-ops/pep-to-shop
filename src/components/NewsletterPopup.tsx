@@ -32,6 +32,7 @@ export function NewsletterPopup() {
   const [open, setOpen] = useState(false);
   const [state, setState] = useState<State>("form");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [website, setWebsite] = useState(""); // honeypot
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
