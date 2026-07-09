@@ -304,8 +304,8 @@ const ctaLight = {
 
 const featureCell = { width: '25%', padding: '4px 8px', verticalAlign: 'top' as const, textAlign: 'center' as const }
 const featureDot = {
-  width: '48px',
-  height: '48px',
+  width: '60px',
+  height: '60px',
   borderRadius: '50%',
   background: MINT,
   border: `1px solid ${ACCENT}`,
