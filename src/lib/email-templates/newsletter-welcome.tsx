@@ -26,6 +26,10 @@ const WORDMARK = `${ASSETS}/__l5e/assets-v1/3f1cd303-1e6f-4141-a7f5-f26ab87eb118
 const ICON = `${ASSETS}/__l5e/assets-v1/be789105-43ce-4e32-b340-4288bbbc8a1e/pondok-icon.png`
 const HERO_PRODUCTS = `${ASSETS}/__l5e/assets-v1/f047b6c7-ca02-420e-90d5-57547a71fd91/hero-products.jpg`
 const VIAL = `${ASSETS}/__l5e/assets-v1/56f17e33-8683-42f9-b276-4af3bc0a7e9e/vial-bpc-157.png`
+const ICON_PREMIUM = `${ASSETS}/__l5e/assets-v1/f193d92e-f815-4625-9551-89b700c67e36/premium.png`
+const ICON_TESTED = `${ASSETS}/__l5e/assets-v1/45185297-0655-4dea-a580-681e8c681faa/tested.png`
+const ICON_TRUCK = `${ASSETS}/__l5e/assets-v1/0343098a-234c-4e6d-a8f1-85f408838e25/truck-uk.png`
+const ICON_LOCK = `${ASSETS}/__l5e/assets-v1/acc2f910-4cca-470a-98d5-790d5d2ecc86/lock.png`
 
 const INK = '#061D2B'
 const PRIMARY = '#486748'
@@ -58,7 +62,7 @@ export function NewsletterWelcomeEmail({
           <Section style={headerBand}>
             <Row>
               <Column style={{ width: '55%', verticalAlign: 'middle' }}>
-                <Img src={WORDMARK} alt="Pondok Peptides" width="180" style={{ display: 'block' }} />
+                <Img src={WORDMARK} alt="Pondok Peptides" width="260" style={{ display: 'block' }} />
               </Column>
               <Column style={{ width: '45%', verticalAlign: 'middle', textAlign: 'right' as const }}>
                 <Text style={badgeRow}>
@@ -74,11 +78,10 @@ export function NewsletterWelcomeEmail({
           <Section style={hero}>
             <Row>
               <Column style={{ verticalAlign: 'top', width: '58%', paddingRight: '16px' }}>
-                <Text style={eyebrow}>Welcome to</Text>
-                <Heading style={heroTitle}>Pondok Peptides</Heading>
-                <Text style={heroBody}>Thank you for joining our research community.</Text>
+                <Text style={eyebrow}>Welcome</Text>
+                <Heading style={heroTitle}>Exclusive rewards.</Heading>
                 <Text style={heroBody}>
-                  As a thank-you, here is your exclusive welcome offer to use on your first order.
+                  Thanks for subscribing. As a welcome, we've unlocked 20% off your first order. Your exclusive code is waiting below.
                 </Text>
               </Column>
               <Column style={{ verticalAlign: 'middle', width: '42%', textAlign: 'right' as const }}>
@@ -118,14 +121,14 @@ export function NewsletterWelcomeEmail({
           <Section style={{ padding: '28px 24px 8px' }}>
             <Row>
               {[
-                { t: 'Premium quality', d: 'Carefully sourced research peptides of the highest standard.' },
-                { t: 'Batch tested', d: 'Independently tested for purity, identity and quality.' },
-                { t: 'Fast UK dispatch', d: 'Orders dispatched quickly and discreetly.' },
-                { t: 'Secure checkout', d: 'Encrypted payments for total peace of mind.' },
+                { t: 'Premium quality', d: 'Carefully sourced research peptides of the highest standard.', icon: ICON_PREMIUM },
+                { t: 'Batch tested', d: 'Independently tested for purity, identity and quality.', icon: ICON_TESTED },
+                { t: 'Fast UK dispatch', d: 'Orders dispatched quickly and discreetly.', icon: ICON_TRUCK },
+                { t: 'Secure checkout', d: 'Encrypted payments for total peace of mind.', icon: ICON_LOCK },
               ].map((f) => (
                 <Column key={f.t} style={featureCell}>
                   <div style={featureDot}>
-                    <Img src={ICON} alt="" width="22" height="22" style={{ display: 'block', margin: '0 auto' }} />
+                    <Img src={f.icon} alt="" width="36" height="36" style={{ display: 'block', margin: '0 auto' }} />
                   </div>
                   <Text style={featureTitle}>{f.t}</Text>
                   <Text style={featureBody}>{f.d}</Text>
