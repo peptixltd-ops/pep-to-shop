@@ -134,6 +134,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { BackToTop } from "@/components/BackToTop";
 import { WhatsAppFloat } from "@/components/WhatsAppFloat";
+import { NewsletterPopup } from "@/components/NewsletterPopup";
 import { Toaster } from "@/components/ui/sonner";
 import { useCartSync } from "@/hooks/useCartSync";
 
@@ -161,6 +162,7 @@ function RootComponent() {
       <SiteFooter />
       <BackToTop />
       <WhatsAppFloat />
+      <NewsletterPopup />
       <Toaster position="top-center" />
     </>
   );

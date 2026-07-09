@@ -53,6 +53,7 @@ import { Route as CoaRetaEgb0426Rt30RouteImport } from './routes/coa.reta-egb-04
 import { Route as BundlesSlugRouteImport } from './routes/bundles.$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as LovableEmailSuppressionRouteImport } from './routes/lovable/email/suppression'
+import { Route as ApiPublicNewsletterSubscribeRouteImport } from './routes/api/public/newsletter-subscribe'
 import { Route as ApiPublicContactRouteImport } from './routes/api/public/contact'
 import { Route as LovableEmailTransactionalSendRouteImport } from './routes/lovable/email/transactional/send'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -283,6 +284,12 @@ const LovableEmailSuppressionRoute = LovableEmailSuppressionRouteImport.update({
   path: '/lovable/email/suppression',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicNewsletterSubscribeRoute =
+  ApiPublicNewsletterSubscribeRouteImport.update({
+    id: '/api/public/newsletter-subscribe',
+    path: '/api/public/newsletter-subscribe',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicContactRoute = ApiPublicContactRouteImport.update({
   id: '/api/public/contact',
   path: '/api/public/contact',
@@ -352,6 +359,7 @@ export interface FileRoutesByFullPath {
   '/blog/': typeof BlogIndexRoute
   '/bundles/': typeof BundlesIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
+  '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -402,6 +410,7 @@ export interface FileRoutesByTo {
   '/blog': typeof BlogIndexRoute
   '/bundles': typeof BundlesIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
+  '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -453,6 +462,7 @@ export interface FileRoutesById {
   '/blog/': typeof BlogIndexRoute
   '/bundles/': typeof BundlesIndexRoute
   '/api/public/contact': typeof ApiPublicContactRoute
+  '/api/public/newsletter-subscribe': typeof ApiPublicNewsletterSubscribeRoute
   '/lovable/email/suppression': typeof LovableEmailSuppressionRoute
   '/lovable/email/queue/process': typeof LovableEmailQueueProcessRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -505,6 +515,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/bundles/'
     | '/api/public/contact'
+    | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -555,6 +566,7 @@ export interface FileRouteTypes {
     | '/blog'
     | '/bundles'
     | '/api/public/contact'
+    | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -605,6 +617,7 @@ export interface FileRouteTypes {
     | '/blog/'
     | '/bundles/'
     | '/api/public/contact'
+    | '/api/public/newsletter-subscribe'
     | '/lovable/email/suppression'
     | '/lovable/email/queue/process'
     | '/lovable/email/transactional/preview'
@@ -656,6 +669,7 @@ export interface RootRouteChildren {
   BlogIndexRoute: typeof BlogIndexRoute
   BundlesIndexRoute: typeof BundlesIndexRoute
   ApiPublicContactRoute: typeof ApiPublicContactRoute
+  ApiPublicNewsletterSubscribeRoute: typeof ApiPublicNewsletterSubscribeRoute
   LovableEmailSuppressionRoute: typeof LovableEmailSuppressionRoute
   LovableEmailQueueProcessRoute: typeof LovableEmailQueueProcessRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
@@ -972,6 +986,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LovableEmailSuppressionRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/newsletter-subscribe': {
+      id: '/api/public/newsletter-subscribe'
+      path: '/api/public/newsletter-subscribe'
+      fullPath: '/api/public/newsletter-subscribe'
+      preLoaderRoute: typeof ApiPublicNewsletterSubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/public/contact': {
       id: '/api/public/contact'
       path: '/api/public/contact'
@@ -1048,6 +1069,7 @@ const rootRouteChildren: RootRouteChildren = {
   BlogIndexRoute: BlogIndexRoute,
   BundlesIndexRoute: BundlesIndexRoute,
   ApiPublicContactRoute: ApiPublicContactRoute,
+  ApiPublicNewsletterSubscribeRoute: ApiPublicNewsletterSubscribeRoute,
   LovableEmailSuppressionRoute: LovableEmailSuppressionRoute,
   LovableEmailQueueProcessRoute: LovableEmailQueueProcessRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
