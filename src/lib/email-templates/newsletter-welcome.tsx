@@ -270,9 +270,17 @@ const badge = {
   color: PRIMARY,
   background: MINT,
   padding: '6px 10px',
-  marginLeft: '6px',
+  margin: '0 3px',
   borderRadius: '2px',
   fontWeight: 600,
+  lineHeight: '14px',
+  verticalAlign: 'middle' as const,
+}
+const badgeIcon = {
+  display: 'inline-block',
+  verticalAlign: 'middle' as const,
+  marginRight: '5px',
+  marginTop: '-2px',
 }
 
 const hero = { padding: '32px 24px 20px', backgroundColor: '#ffffff' }
