@@ -1,137 +1,88 @@
+# Email Capture Popup — 20% Off Discount
 
-# GMC Compliance Remediation Plan
+## Overview
+A first-time-visitor popup that captures an email in exchange for a unique 20% discount code. Shows after 8 seconds, re-prompts every 7 days until they subscribe, and sends the code via branded email.
 
-## ⚠️ Two conflicts I need you to resolve before I start
+## User Flow
 
-In the last few messages you asked me to:
-
-1. **Change the footer address** to `11 Bethell Avenue, Ilford, Essex, IG1 4UX`
-2. **Route the contact form to** `peptixltd@gmail.com`
-
-But this brief (the master identity block) requires:
-
-1. **Registered address:** `131A Movers Lane, Barking, IG11 7UQ`
-2. **Email:** `info@pondokpeptides.com` (and the GMC report explicitly flags `peptixltd@gmail.com` as a critical issue to remove)
-
-**Please confirm which wins.** My assumption, unless you tell me otherwise:
-
-- Use **131A Movers Lane, Barking, IG11 7UQ** as the registered/legal address everywhere (footer, policies, checkout, GMC). If `11 Bethell Avenue` is a trading/correspondence address, tell me and I'll list it separately or drop it.
-- Replace **every** `peptixltd@gmail.com` with **`info@pondokpeptides.com`**, including the contact form `mailto:` I just wired up. Gmail addresses cannot remain anywhere per the report.
-
-I will proceed on those assumptions if you say "go".
-
----
-
-## Master identity block (source of truth, used everywhere)
-
-```
-Oxford Research Syndicate Ltd
-Company No. 17207898
-131A Movers Lane, Barking, IG11 7UQ, United Kingdom
-Email: info@pondokpeptides.com
-Phone: 07457 404317
-VAT: Not VAT registered
+```text
+Visitor lands → 8s timer → Popup slides in
+   ↓
+Enters email → Submit
+   ↓
+Server: validate → check suppression → generate unique Shopify code
+   ↓
+Save subscriber → send branded email with code → show success state in popup
+   ↓
+Visitor copies code from popup OR email → applies at checkout
 ```
 
-Plus a standard relationship disclosure paragraph used in About, Footer micro-copy, and all policies:
+## Components to Build
 
-> Pondok Peptides is a storefront brand operated by Oxford Research Syndicate Ltd (Company No. 17207898), which also operates BuyRetaUK, UK Peptide Labs and Oxford Research Peptides. Orders placed through pondokpeptides.com are processed, fulfilled and supported by Oxford Research Syndicate Ltd, and checkout is handled on shared infrastructure at checkout.oxfordresearchsyndicate.com.
+### 1. Database (Lovable Cloud)
+New table `newsletter_subscribers`:
+- `email` (unique), `discount_code`, `source` (popup), `subscribed_at`, `code_used_at` (nullable), `ip_hash`
+- RLS: service role only (no anon/authenticated grants — writes go through server route)
+- Checks `suppressed_emails` before insert to respect unsubscribes
 
----
+### 2. Shopify Discount Setup (one-time, manual)
+Create a **price rule** in Shopify: `WELCOME20-PARENT`, 20% off entire order, once per customer, 30-day expiry from issue. Each subscriber gets a unique code (e.g. `WELCOME20-A7F3K9`) attached to this parent rule via the Shopify Admin API.
 
-## Phase 1 — Identity & checkout trust (CRITICAL)
+### 3. Server Route: `POST /api/public/newsletter-subscribe`
+- Zod validation (email, honeypot field)
+- Rate limit by IP hash (basic in-memory guard)
+- Reject if already in `suppressed_emails` or `newsletter_subscribers`
+- Generate 6-char random suffix → call Shopify Admin API to create discount code under parent price rule
+- Insert subscriber row
+- Enqueue branded email via existing `enqueue_email` RPC
+- Return `{ success: true, code }` so popup can display it immediately
 
-Files I'll touch:
-- `src/components/SiteFooter.tsx` — replace address, add structured company block (line-by-line), add company number, phone, email, VAT line, relationship disclosure link.
-- `src/routes/contact.tsx` — swap `mailto:` target to `info@pondokpeptides.com`, add company block, add phone.
-- `src/routes/about.tsx` — add identity + relationship disclosure section.
-- `src/routes/privacy-policy.tsx`, `returns-policy.tsx`, `shipping-policy.tsx`, `terms-and-conditions.tsx` — append identical company information block; remove any gmail / placeholder.
-- New `src/routes/who-we-are.tsx` (or section in About) — relationship disclosure between Pondok / BuyRetaUK / UK Peptide Labs / Oxford Research Peptides / ORS Ltd, stating who owns, processes payments, fulfils, and operates checkout.
+### 4. Email Template: `newsletter-welcome.tsx`
+Branded React Email matching contact-enquiry style. Contents:
+- Welcome + brand promise (HPLC ≥99%, COA on request)
+- The unique code in a large mono box
+- "Apply at checkout" CTA linking to `/shop`
+- 30-day expiry notice
+- Standard unsubscribe footer (auto-appended by dispatcher)
 
-**Checkout policies (Shopify admin, not code):** I'll give you exact copy to paste into Shopify → Settings → Policies so the checkout policies match the site word-for-word. I cannot edit them from code on non-Plus Shopify.
+### 5. Popup Component: `NewsletterPopup.tsx`
+- Mounts once from `__root.tsx`, client-only (`useEffect`)
+- Reads `localStorage` key `pp_newsletter_prompt` — skips if dismissed <7 days ago or if already subscribed
+- 8-second timer on first eligible page
+- Design: centered modal, brand tokens (bg #FFFFFF, primary #486748, ink #061D2B), Syne heading, Inter body. Backdrop blur. Close (X) top-right + ESC key.
+- States: `form` → `loading` → `success` (shows code with copy button) or `error`
+- Honeypot hidden field for bot protection
+- On success: sets `pp_newsletter_prompt = subscribed` (permanent skip)
+- On dismiss: sets `pp_newsletter_prompt = <timestamp>` (7-day skip)
 
-## Phase 2 — Policy alignment
+### 6. GA4 tracking
+`newsletter_popup_view`, `newsletter_signup`, `newsletter_popup_dismiss` events via existing `analytics.ts` pattern.
 
-- Rewrite all 4 policies so each starts with the master identity block and ends with the same contact block.
-- Remove every `[INSERT …]`, `[LINK]`, gmail address, and placeholder.
-- Provide identical text for Shopify checkout policies (copy/paste).
+## Copy (draft, no em-dashes)
 
-## Phase 3 — Product compliance (research-use-only rewrite)
+**Headline:** Get 20% off your first order
+**Sub:** Join the Pondok research list for launch alerts, batch drops, and one-time 20% off code delivered instantly.
+**Button:** Send my code
+**Success:** Your code is ready. Check your inbox too.
+**Footnote:** For laboratory research use only. One code per address, valid 30 days.
 
-For each product in `src/data/products.ts` and the route copy under `src/routes/*-peptides.tsx` / category pages:
+## Technical Notes
 
-- Strip all consumer/health/dosage/injection/outcome wording.
-- Reframe as **"For Laboratory Research Use Only — Not for human or veterinary use"** at top of every product card and PDP.
-- Add per-product: purity %, test method (HPLC/MS), COA placeholder link, batch/lot field.
-- Rewrite descriptions to neutral lab-material language (e.g. "Lyophilised peptide intended for in-vitro laboratory investigation of [pathway]").
-- Update product titles to drop "Buy" framing.
-- Update image alt text and structured data (`Product` JSON-LD `description`).
+- Shopify Admin API needs `write_discounts` scope. If the current session token lacks it, we prompt to reconnect Shopify before enabling issuance.
+- Unique code generation is atomic per request (Shopify enforces uniqueness within a price rule).
+- If Shopify code creation fails, the subscriber row is rolled back and the user sees an error — no orphan signups without codes.
+- Popup does not block SSR/SEO — mounted client-only.
 
-I will list every product I touched in the final summary. I will NOT remove products — that's your decision.
+## Out of Scope (this iteration)
+- Admin dashboard to view subscribers (CSV export via psql for now)
+- A/B testing variants
+- Exit-intent variant
+- Sync to external ESP (Klaviyo, Mailchimp)
 
-## Phase 4 — SEO & feed compliance
-
-- Rewrite `head()` meta titles/descriptions in every product/category route to laboratory-research framing, append "Research Use Only".
-- Update `src/lib/shopify.ts` product title transformer / display layer if needed to suffix "(Research Use Only)" consistently in product cards.
-- Update `src/routes/sitemap[.]xml.tsx` — no URL changes unless you want me to drop the consumer category routes; I'll list them for your call.
-- Remove "Buy [X]" patterns from meta and H1s.
-
-## Phase 5 — Trust signals
-
-- Footer: structured company block, support email, phone, hours, company number, link to About + all policies.
-- Add a "Customer Service" section to About or new `/customer-service` route with hours, phone, email, response time.
-- Verify all policy links in footer resolve (no 404s).
-
-## Phase 6 — GMC configuration (you do in GMC UI, I provide checklist)
-
-I'll deliver an exact checklist: return URL → `/returns-policy`, customer service URL → `/contact`, business name = Oxford Research Syndicate Ltd, address, phone, email, target countries (you tell me which to keep: default UK only).
-
-## Phase 7 — Promotional elements to disable during review
-
-I will remove/hide from code:
-- `src/components/PressMarquee.tsx` rendering (if it shows "selling fast" / urgency).
-- `src/components/MobileStickyCTA.tsx` urgency copy.
-- `src/components/TrustStrip.tsx` — strip "free shipping" / sale framing (keep neutral trust like "UK dispatch", "COA on request").
-- `src/components/BundleCard.tsx` / `src/routes/bundles.*` — hide bundles route from nav + sitemap (keep code, gated behind a feature flag so you can re-enable post-appeal).
-- Any "Sale", countdown, discount-code banners in `SiteHeader.tsx` / index hero.
-- Cart drawer: remove discount code prompts only if present.
-
-I will NOT touch checkout flow, cart store, Shopify API wiring, or payment logic.
-
-## Phase 8 — Site-wide search & replace audit
-
-I'll grep the whole repo for:
-`Prapen`, `gmail.com`, `peptixltd`, `[INSERT`, `[LINK]`, `Movers Lane` (current), `Bethell`, `Oxford Research Syndicate` references in customer-facing copy, and produce a replacement map. Anything ambiguous I'll list for you instead of guessing.
-
----
-
-## What I will NOT do without further confirmation
-
-- Delete any products from `products.ts` or Shopify.
-- Change checkout domain, cart store, or payment integration.
-- Edit Shopify-hosted checkout policies (not possible from code — I'll give you paste-ready text).
-- Touch GMC settings (no API access — checklist only).
-- Change pricing or shipping rates.
-
----
-
-## Execution order once you approve
-
-1. Resolve the address + email conflict above.
-2. Phase 1 + 2 + 8 in one batch (identity, policies, search/replace).
-3. Phase 7 (disable promo elements).
-4. Phase 3 + 4 (product + SEO rewrites) in a second batch — this is the largest single change.
-5. Phase 5 trust signals + sitemap cleanup.
-6. Deliver: GMC checklist, Shopify checkout-policy paste text, final compliance checklist, appeal-readiness summary.
-
----
-
-## Decisions I need from you before I start
-
-1. **Address:** Use `131A Movers Lane, Barking, IG11 7UQ` everywhere? (Or is Bethell Avenue a separate trading address to also list?)
-2. **Email:** Replace every `peptixltd@gmail.com` with `info@pondokpeptides.com`, including the contact form? (Yes/No)
-3. **Target countries for GMC:** UK only, or also EU/US?
-4. **Bundles + sale routes:** OK to hide from nav/sitemap during appeal (code preserved)?
-5. **Product removal:** Keep all products live and rewrite, or are there any you want removed before appeal?
-
-Reply with the answers (a short "1. ORS address only, 2. yes, 3. UK only, 4. yes, 5. keep all" is enough) and I'll execute.
+## Sequence
+1. Create migration for `newsletter_subscribers` + grants + RLS
+2. Create parent Shopify price rule (I'll do this via `shopify--create_price_rule` once you confirm scope)
+3. Build email template + register in `TEMPLATES`
+4. Build `/api/public/newsletter-subscribe` server route
+5. Build `NewsletterPopup` component + mount in `__root.tsx`
+6. Test end-to-end with a real email address
