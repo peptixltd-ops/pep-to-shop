@@ -58,18 +58,27 @@ export function NewsletterWelcomeEmail({
       <Body style={body}>
         <Container style={container}>
 
-          {/* Header — brand mark on light band */}
+          {/* Header — centered wordmark with badge strip below */}
           <Section style={headerBand}>
             <Row>
-              <Column style={{ width: '55%', verticalAlign: 'middle' }}>
-                <Img src={WORDMARK} alt="Pondok Peptides" width="260" style={{ display: 'block' }} />
+              <Column style={{ textAlign: 'center' as const, paddingBottom: '14px' }}>
+                <Img src={WORDMARK} alt="Pondok Peptides" width="280" style={{ display: 'inline-block', maxWidth: '100%' }} />
               </Column>
-              <Column style={{ width: '45%', verticalAlign: 'middle', textAlign: 'right' as const }}>
-                <Text style={badgeRow}>
-                  <span style={badge}>Research grade</span>
-                  <span style={badge}>Batch tested</span>
-                  <span style={badge}>Fast UK dispatch</span>
-                </Text>
+            </Row>
+            <Row>
+              <Column style={{ textAlign: 'center' as const }}>
+                <span style={badge}>
+                  <Img src={ICON_PREMIUM} alt="" width="12" height="12" style={badgeIcon} />
+                  Research grade
+                </span>
+                <span style={badge}>
+                  <Img src={ICON_TESTED} alt="" width="12" height="12" style={badgeIcon} />
+                  Batch tested
+                </span>
+                <span style={badge}>
+                  <Img src={ICON_TRUCK} alt="" width="14" height="12" style={badgeIcon} />
+                  Fast UK dispatch
+                </span>
               </Column>
             </Row>
           </Section>
