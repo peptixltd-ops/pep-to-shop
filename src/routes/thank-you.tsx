@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { CheckCircle2, Package, Mail, ShoppingBag } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
+import { SHOPIFY_ACCOUNT_URL } from "@/lib/shopify";
 
 export const Route = createFileRoute("/thank-you")({
   head: () => ({
@@ -124,7 +125,7 @@ function ThankYouPage() {
             Continue shopping
           </Link>
           <a
-            href="https://account.pondokpeptides.com"
+            href={SHOPIFY_ACCOUNT_URL}
             className="inline-flex items-center border border-border px-6 py-3 text-sm font-medium tracking-wide hover:border-primary hover:text-primary"
           >
             View my orders

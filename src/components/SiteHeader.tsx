@@ -3,6 +3,7 @@ import { User, Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 
 import { CartDrawer } from "@/components/CartDrawer";
+import { SHOPIFY_ACCOUNT_URL } from "@/lib/shopify";
 
 const nav = [
   { to: "/blog", label: "Blog" },
@@ -62,7 +63,7 @@ export function SiteHeader() {
             Shop All
           </Link>
           <a
-            href="https://account.pondokpeptides.com"
+            href={SHOPIFY_ACCOUNT_URL}
             aria-label="Sign in to your account"
             title="Sign in / My account"
             className="hidden sm:inline-flex items-center gap-1.5 p-2 text-foreground/70 hover:text-primary text-xs font-medium uppercase tracking-wider"
