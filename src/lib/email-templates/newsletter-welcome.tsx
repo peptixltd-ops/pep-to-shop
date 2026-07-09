@@ -26,10 +26,10 @@ const WORDMARK = `${ASSETS}/__l5e/assets-v1/3f1cd303-1e6f-4141-a7f5-f26ab87eb118
 const ICON = `${ASSETS}/__l5e/assets-v1/be789105-43ce-4e32-b340-4288bbbc8a1e/pondok-icon.png`
 const HERO_PRODUCTS = `${ASSETS}/__l5e/assets-v1/f047b6c7-ca02-420e-90d5-57547a71fd91/hero-products.jpg`
 const VIAL = `${ASSETS}/__l5e/assets-v1/56f17e33-8683-42f9-b276-4af3bc0a7e9e/vial-bpc-157.png`
-const ICON_PREMIUM = `${ASSETS}/__l5e/assets-v1/f193d92e-f815-4625-9551-89b700c67e36/premium.png`
-const ICON_TESTED = `${ASSETS}/__l5e/assets-v1/45185297-0655-4dea-a580-681e8c681faa/tested.png`
-const ICON_TRUCK = `${ASSETS}/__l5e/assets-v1/0343098a-234c-4e6d-a8f1-85f408838e25/truck-uk.png`
-const ICON_LOCK = `${ASSETS}/__l5e/assets-v1/acc2f910-4cca-470a-98d5-790d5d2ecc86/lock.png`
+const ICON_PREMIUM = `${ASSETS}/__l5e/assets-v1/01c11caf-5cbd-4f91-ba41-ff5bfee09c91/premium-t.png`
+const ICON_TESTED = `${ASSETS}/__l5e/assets-v1/31a97ce1-2aa5-4a74-be7c-cc0e2672d4e5/tested-t.png`
+const ICON_TRUCK = `${ASSETS}/__l5e/assets-v1/72fdd898-a0e0-437a-823b-57398ee28eb8/truck-uk-t.png`
+const ICON_LOCK = `${ASSETS}/__l5e/assets-v1/4610936a-e1df-4ddf-9c96-d5fe703885a6/lock-t.png`
 
 const INK = '#061D2B'
 const PRIMARY = '#486748'
@@ -58,18 +58,27 @@ export function NewsletterWelcomeEmail({
       <Body style={body}>
         <Container style={container}>
 
-          {/* Header — brand mark on light band */}
+          {/* Header — centered wordmark with badge strip below */}
           <Section style={headerBand}>
             <Row>
-              <Column style={{ width: '55%', verticalAlign: 'middle' }}>
-                <Img src={WORDMARK} alt="Pondok Peptides" width="260" style={{ display: 'block' }} />
+              <Column style={{ textAlign: 'center' as const, paddingBottom: '14px' }}>
+                <Img src={WORDMARK} alt="Pondok Peptides" width="280" style={{ display: 'inline-block', maxWidth: '100%' }} />
               </Column>
-              <Column style={{ width: '45%', verticalAlign: 'middle', textAlign: 'right' as const }}>
-                <Text style={badgeRow}>
-                  <span style={badge}>Research grade</span>
-                  <span style={badge}>Batch tested</span>
-                  <span style={badge}>Fast UK dispatch</span>
-                </Text>
+            </Row>
+            <Row>
+              <Column style={{ textAlign: 'center' as const }}>
+                <span style={badge}>
+                  <Img src={ICON_PREMIUM} alt="" width="12" height="12" style={badgeIcon} />
+                  Research grade
+                </span>
+                <span style={badge}>
+                  <Img src={ICON_TESTED} alt="" width="12" height="12" style={badgeIcon} />
+                  Batch tested
+                </span>
+                <span style={badge}>
+                  <Img src={ICON_TRUCK} alt="" width="14" height="12" style={badgeIcon} />
+                  Fast UK dispatch
+                </span>
               </Column>
             </Row>
           </Section>
@@ -261,9 +270,17 @@ const badge = {
   color: PRIMARY,
   background: MINT,
   padding: '6px 10px',
-  marginLeft: '6px',
+  margin: '0 3px',
   borderRadius: '2px',
   fontWeight: 600,
+  lineHeight: '14px',
+  verticalAlign: 'middle' as const,
+}
+const badgeIcon = {
+  display: 'inline-block',
+  verticalAlign: 'middle' as const,
+  marginRight: '5px',
+  marginTop: '-2px',
 }
 
 const hero = { padding: '32px 24px 20px', backgroundColor: '#ffffff' }
