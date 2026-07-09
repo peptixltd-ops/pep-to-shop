@@ -120,9 +120,9 @@ export function NewsletterPopup() {
           type="button"
           onClick={dismiss}
           aria-label="Close"
-          className="absolute top-3 right-3 p-2 text-muted-foreground hover:text-ink transition-colors"
+          className="absolute top-2 right-2 z-10 p-2.5 rounded-full bg-background/90 border border-border text-ink hover:bg-surface hover:text-primary shadow-sm transition-colors"
         >
-          <X className="size-4" />
+          <X className="size-5" />
         </button>
 
         <div className="bg-primary text-primary-foreground text-[10px] uppercase tracking-[0.25em] px-6 py-2 text-center">
