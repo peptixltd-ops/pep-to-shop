@@ -15,8 +15,14 @@ const SHOPIFY_API_VERSION = '2025-07'
 const PARENT_PRICE_RULE_ID = 1812859748693
 const CODE_PREFIX = 'WELCOME20-'
 
+const phoneRegex = /^[\+\d\s\-\(\)]{7,}$/
+
 const schema = z.object({
   email: z.string().trim().toLowerCase().email().max(255),
+  phone: z.string().trim().max(50).optional().refine(
+    (v) => !v || phoneRegex.test(v),
+    { message: 'Invalid phone number' }
+  ),
   // Honeypot — must be empty.
   website: z.string().max(0).optional(),
 })
@@ -78,9 +84,9 @@ export const Route = createFileRoute('/api/public/newsletter-subscribe')({
 
         const parsed = schema.safeParse(body)
         if (!parsed.success) {
-          return Response.json({ error: 'Invalid email' }, { status: 400 })
+          return Response.json({ error: 'Invalid email or phone' }, { status: 400 })
         }
-        const email = parsed.data.email
+        const { email, phone } = parsed.data
 
         const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
@@ -122,6 +128,7 @@ export const Route = createFileRoute('/api/public/newsletter-subscribe')({
 
         const { error: insertError } = await supabase.from('newsletter_subscribers').insert({
           email,
+          phone: phone || null,
           discount_code: code,
           source: 'popup',
           ip_hash: ipHash,

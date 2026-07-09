@@ -77,7 +77,7 @@ export function NewsletterPopup() {
       const res = await fetch("/api/public/newsletter-subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, website }),
+        body: JSON.stringify({ email, phone, website }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data?.success) {
@@ -161,6 +161,14 @@ export function NewsletterPopup() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
+                  className="w-full px-4 py-3 text-sm border border-border rounded-sm bg-background focus:outline-none focus:border-primary transition-colors"
+                  disabled={state === "loading"}
+                />
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Phone (optional)"
                   className="w-full px-4 py-3 text-sm border border-border rounded-sm bg-background focus:outline-none focus:border-primary transition-colors"
                   disabled={state === "loading"}
                 />
