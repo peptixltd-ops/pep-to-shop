@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = "447457404317";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Hi Pondok Peptides, I have a question about your products.",
+  "Hi there, I have a question about your products. Can you assist me please?",
 )}`;
 
 export function WhatsAppFloat() {
