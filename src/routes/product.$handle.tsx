@@ -100,17 +100,9 @@ const COA_BY_HANDLE: Record<string, { label: string; pdf: string; preview1: stri
   },
 };
 
-async function fetchProductForHead(handle: string) {
+async function fetchProductForHead(handle: string): Promise<ShopifyProduct["node"] | null> {
   try {
-    const product = await getShopifyProductByHandle(handle);
-    return product as {
-      title: string;
-      description: string;
-      seo?: { title: string | null; description: string | null } | null;
-      priceRange: { minVariantPrice: { amount: string; currencyCode: string } };
-      images: { edges: Array<{ node: { url: string } }> };
-      variants: { edges: Array<{ node: { sku?: string | null } }> };
-    } | null;
+    return await getShopifyProductByHandle(handle);
   } catch {
     return null;
   }
