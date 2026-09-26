@@ -1,7 +1,5 @@
-// OpenAI Ads (oaiq) helpers — conversion tracking only.
-// The OpenAI Pixel base installation is loaded elsewhere (e.g. GTM) and is
-// intentionally left unchanged; these helpers only fire the order_created
-// conversion event and preserve the `oppref` click-reference parameter.
+// OpenAI Ads attribution helpers. The base Pixel is installed in the root
+// document; completed purchases are measured by Shopify Customer Events.
 
 const OPPREF_KEY = "pp_oppref";
 type OaiqWindow = Window & { oaiq?: (...args: unknown[]) => void };
