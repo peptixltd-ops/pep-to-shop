@@ -4,8 +4,6 @@
 // conversion event and preserve the `oppref` click-reference parameter.
 
 const OPPREF_KEY = "pp_oppref";
-const FIRED_PREFIX = "pp_oaiq_order_fired_";
-
 type OaiqWindow = Window & { oaiq?: (...args: unknown[]) => void };
 
 /**
@@ -42,43 +40,16 @@ export function getOppref(): string | null {
   }
 }
 
-/**
- * Fire the OpenAI Ads `order_created` conversion event exactly once per order.
- * Dedups on orderId (per browser) so refreshes/revisits of the confirmation
- * page do not double-count. No-ops when the pixel is not loaded.
- */
-export function trackOpenAIOrderCreated(orderId?: string) {
-  if (typeof window === "undefined") return;
-  const w = window as OaiqWindow;
-
-  const dedupKey = FIRED_PREFIX + (orderId || "unknown");
-  try {
-    if (window.localStorage.getItem(dedupKey) === "1") return;
-  } catch {
-    try {
-      if (window.sessionStorage.getItem(dedupKey) === "1") return;
-    } catch {
-      /* ignore */
-    }
-  }
-
-  if (typeof w.oaiq === "function") {
-    try {
-      w.oaiq("measure", "order_created", { type: "contents" });
-    } catch {
-      return; // don't mark as fired if the call itself failed
-    }
-  } else {
-    return; // pixel not loaded yet; allow a later attempt
-  }
+/** Append the preserved click reference to Shopify's generated checkout URL. */
+export function addOpprefToCheckoutUrl(checkoutUrl: string): string {
+  const oppref = getOppref();
+  if (!oppref) return checkoutUrl;
 
   try {
-    window.localStorage.setItem(dedupKey, "1");
+    const url = new URL(checkoutUrl);
+    url.searchParams.set("oppref", oppref);
+    return url.toString();
   } catch {
-    try {
-      window.sessionStorage.setItem(dedupKey, "1");
-    } catch {
-      /* ignore */
-    }
+    return checkoutUrl;
   }
 }
