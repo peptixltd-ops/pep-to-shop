@@ -137,11 +137,17 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 import { NewsletterPopup } from "@/components/NewsletterPopup";
 import { Toaster } from "@/components/ui/sonner";
 import { useCartSync } from "@/hooks/useCartSync";
+import { preserveOppref } from "@/lib/openai-ads";
 
 function RootComponent() {
   const location = useLocation();
   const browserSearch = typeof window !== "undefined" ? window.location.search : "";
   useCartSync();
+
+  useEffect(() => {
+    // Preserve the OpenAI Ads `oppref` click-reference across navigation/checkout.
+    preserveOppref();
+  }, [location.pathname, browserSearch]);
 
   useEffect(() => {
     if (typeof window === "undefined" || typeof window.gtag !== "function") return;
