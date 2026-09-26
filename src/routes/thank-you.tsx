@@ -3,7 +3,6 @@ import { useEffect } from "react";
 import { CheckCircle2, Package, Mail, ShoppingBag } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { SHOPIFY_ACCOUNT_URL } from "@/lib/shopify";
-import { trackOpenAIOrderCreated } from "@/lib/openai-ads";
 
 export const Route = createFileRoute("/thank-you")({
   head: () => ({
@@ -50,10 +49,6 @@ function ThankYouPage() {
       }
     }
     if (alreadyFired) return;
-
-    // OpenAI Ads conversion: genuine confirmed order only, deduped per order_id
-    // so refreshes/revisits of this page do not double-count.
-    trackOpenAIOrderCreated(orderId);
 
     // Google Ads conversion (replace AW-CONVERSION_ID/LABEL with real IDs)
     if (typeof w.gtag === "function") {

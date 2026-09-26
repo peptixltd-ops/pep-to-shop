@@ -1,4 +1,5 @@
 import { trackBeginCheckout } from "@/lib/analytics";
+import { addOpprefToCheckoutUrl } from "@/lib/openai-ads";
 import { useCartStore } from "@/stores/cartStore";
 
 export function navigateToCheckout(url: string) {
@@ -24,9 +25,10 @@ export function navigateToCheckout(url: string) {
     }
   } catch { /* ignore */ }
 
-  const checkoutWindow = window.open(url, "_top");
+  const attributedCheckoutUrl = addOpprefToCheckoutUrl(url);
+  const checkoutWindow = window.open(attributedCheckoutUrl, "_top");
 
   if (!checkoutWindow) {
-    window.location.assign(url);
+    window.location.assign(attributedCheckoutUrl);
   }
 }
