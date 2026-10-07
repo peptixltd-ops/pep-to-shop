@@ -64,6 +64,32 @@ async function createShopifyDiscountCode(code: string, adminToken: string): Prom
   return true
 }
 
+async function createShopifyCustomer(email: string, phone: string | undefined, code: string, adminToken: string): Promise<string> {
+  const url = `https://${SHOPIFY_STORE}/admin/api/${SHOPIFY_API_VERSION}/customers.json`
+  const build = (withPhone: boolean) => ({
+    customer: {
+      email,
+      ...(withPhone && phone ? { phone } : {}),
+      tags: 'newsletter, popup-signup, welcome20',
+      note: `Popup signup. Welcome code: ${code}`,
+      email_marketing_consent: { state: 'subscribed', opt_in_level: 'single_opt_in', consent_updated_at: new Date().toISOString() },
+    },
+  })
+  for (const withPhone of phone ? [true, false] : [false]) {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-Shopify-Access-Token': adminToken },
+      body: JSON.stringify(build(withPhone)),
+    })
+    if (res.ok) return 'created'
+    const body = await res.text()
+    if (res.status === 422 && /email/i.test(body) && /taken/i.test(body)) return 'exists'
+    console.error('shopify customer create failed', { status: res.status, body })
+    if (res.status !== 422) return 'failed'
+  }
+  return 'failed'
+}
+
 export const Route = createFileRoute('/api/public/newsletter-subscribe')({
   server: {
     handlers: {
@@ -203,7 +229,9 @@ export const Route = createFileRoute('/api/public/newsletter-subscribe')({
           // Subscription + code are still valid; caller shows the code inline.
         }
 
-        return Response.json({ success: true, code })
+        const customer = await createShopifyCustomer(email, phone, code, shopifyAdminToken).catch(() => 'failed')
+
+        return Response.json({ success: true, code, customer })
       },
     },
   },
