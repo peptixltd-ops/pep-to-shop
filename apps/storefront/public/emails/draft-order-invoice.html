@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Your invoice · Pondok Peptides</title></head>
+<body style="margin:0;padding:0;background:#E7F4F9;font-family:'Inter',Helvetica,Arial,sans-serif;color:#061D2B;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#E7F4F9;padding:32px 16px;">
+    <tr><td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;background:#FFFFFF;border:1px solid #DAE3E6;">
+        <tr><td style="padding:28px 32px;border-bottom:1px solid #DAE3E6;text-align:center;">
+          <img src="https://pondokpeptides.com/press/pondok-wordmark.png" alt="Pondok Peptides" height="28" style="height:28px;">
+        </td></tr>
+        <tr><td style="padding:40px 32px 8px;text-align:center;">
+          <p style="margin:0 0 8px;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:#59656E;font-family:'Courier New',monospace;">Invoice {{ name }}</p>
+          <h1 style="margin:0;font-family:'Syne','Inter',sans-serif;font-size:32px;line-height:1.15;letter-spacing:-.02em;">Your invoice is ready.</h1>
+          <p style="margin:16px auto 0;max-width:440px;font-size:15px;line-height:1.6;color:#59656E;">{{ custom_message | default: 'Click below to review your order and complete payment securely.' }}</p>
+        </td></tr>
+        <tr><td style="padding:32px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #DAE3E6;">
+            {% for line in line_items %}
+            <tr><td style="padding:16px 20px;border-bottom:1px solid #DAE3E6;">
+              <table width="100%"><tr>
+                <td style="font-size:14px;color:#061D2B;">{{ line.title }} <span style="color:#59656E;">× {{ line.quantity }}</span></td>
+                <td align="right" style="font-size:14px;color:#061D2B;">{{ line.final_line_price | money }}</td>
+              </tr></table>
+            </td></tr>
+            {% endfor %}
+            <tr><td style="padding:16px 20px;background:#E3EFE3;">
+              <table width="100%"><tr>
+                <td style="font-size:14px;font-weight:600;">Total due</td>
+                <td align="right" style="font-size:16px;font-weight:600;color:#486748;">{{ total_price | money }}</td>
+              </tr></table>
+            </td></tr>
+          </table>
+        </td></tr>
+        <tr><td style="padding:0 32px 40px;text-align:center;">
+          <a href="{{ invoice_url }}" style="display:inline-block;background:#486748;color:#FFFFFF;text-decoration:none;padding:16px 40px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;font-weight:500;">Pay invoice</a>
+        </td></tr>
+        <tr><td style="padding:18px 32px;background:#E7F4F9;text-align:center;">
+          <p style="margin:0;font-size:11px;color:#59656E;">For research use only · <a href="https://pondokpeptides.com" style="color:#486748;text-decoration:none;">pondokpeptides.com</a></p>
+        </td></tr>
+      </table>
+    </td></tr>
+  </table>
+</body></html>

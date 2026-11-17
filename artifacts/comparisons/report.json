@@ -1,0 +1,300 @@
+{
+  "at": "2026-11-17T21:28:08.874Z",
+  "liveBase": "https://www.pondokpeptides.com",
+  "localBase": "http://127.0.0.1:3000",
+  "report": [
+    {
+      "width": 375,
+      "page": "home",
+      "path": "/",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "shop",
+      "path": "/shop",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "product",
+      "path": "/product/retatrutide",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "about",
+      "path": "/about",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "contact",
+      "path": "/contact",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "faqs",
+      "path": "/faqs",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "privacy",
+      "path": "/privacy-policy",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "terms",
+      "path": "/terms-and-conditions",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "cookies",
+      "path": "/cookie-policy",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "shipping",
+      "path": "/shipping-policy",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "disclaimer",
+      "path": "/disclaimer",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 375,
+      "page": "cart",
+      "path": "/ (cart drawer)",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 304500
+    },
+    {
+      "width": 768,
+      "page": "home",
+      "path": "/",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "shop",
+      "path": "/shop",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "product",
+      "path": "/product/retatrutide",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "about",
+      "path": "/about",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "contact",
+      "path": "/contact",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "faqs",
+      "path": "/faqs",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "privacy",
+      "path": "/privacy-policy",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "terms",
+      "path": "/terms-and-conditions",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "cookies",
+      "path": "/cookie-policy",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "shipping",
+      "path": "/shipping-policy",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "disclaimer",
+      "path": "/disclaimer",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 768,
+      "page": "cart",
+      "path": "/ (cart drawer)",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 786432
+    },
+    {
+      "width": 1440,
+      "page": "home",
+      "path": "/",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "shop",
+      "path": "/shop",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "product",
+      "path": "/product/retatrutide",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "about",
+      "path": "/about",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "contact",
+      "path": "/contact",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "faqs",
+      "path": "/faqs",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "privacy",
+      "path": "/privacy-policy",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "terms",
+      "path": "/terms-and-conditions",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "cookies",
+      "path": "/cookie-policy",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "shipping",
+      "path": "/shipping-policy",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "disclaimer",
+      "path": "/disclaimer",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    },
+    {
+      "width": 1440,
+      "page": "cart",
+      "path": "/ (cart drawer)",
+      "diffPercent": 0,
+      "mismatched": 0,
+      "pixels": 1296000
+    }
+  ],
+  "fullPageHome1440": {
+    "diffPercent": 0.18,
+    "height": 5845,
+    "note": "Same height both sides. Difference is below the first viewport."
+  }
+}

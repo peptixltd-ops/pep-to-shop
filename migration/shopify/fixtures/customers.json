@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1001,
+    "email": "pondok.customer@example.com",
+    "first_name": "Amina",
+    "last_name": "Khan",
+    "phone": "+447700900123"
+  },
+  {
+    "id": 1002,
+    "email": "other.brand@example.com",
+    "first_name": "Other",
+    "last_name": "Brand"
+  }
+]

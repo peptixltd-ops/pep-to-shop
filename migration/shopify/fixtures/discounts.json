@@ -1,0 +1,8 @@
+{
+  "price_rules": [
+    { "id": 501, "title": "WELCOME20", "value_type": "percentage", "value": "-20.0" }
+  ],
+  "discount_codes": [
+    { "price_rule_id": 501, "code": "WELCOME20" }
+  ]
+}

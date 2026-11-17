@@ -1,0 +1,44 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: medusa
+      POSTGRES_PASSWORD: medusa
+      POSTGRES_DB: medusa
+    ports:
+      - "5432:5432"
+    volumes:
+      - pondok_postgres:/var/lib/postgresql/data
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+  backend:
+    build:
+      context: ./apps/backend
+    env_file:
+      - ./apps/backend/.env.example
+    environment:
+      DATABASE_URL: postgres://medusa:medusa@postgres:5432/medusa
+      REDIS_URL: redis://redis:6379
+      MEDUSA_DISABLE_ADMIN: "true"
+    depends_on:
+      - postgres
+      - redis
+    ports:
+      - "9000:9000"
+  storefront:
+    build:
+      context: ./apps/storefront
+    environment:
+      MEDUSA_BACKEND_URL: http://backend:9000
+      NEXT_PUBLIC_MEDUSA_BACKEND_URL: http://backend:9000
+      NEXT_PUBLIC_STAGING: "true"
+      NEXT_PUBLIC_SITE_URL: http://localhost:3000
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+
+volumes:
+  pondok_postgres:
