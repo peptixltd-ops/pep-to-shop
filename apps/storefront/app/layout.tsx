@@ -3,9 +3,6 @@ import { SiteChrome } from "@/components/site-chrome";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Research Peptides UK | Laboratory Research Use Only | Pondok Peptides",
-  description:
-    "Pondok Peptides supplies laboratory research peptides in the UK with HPLC and MS verification and Certificate of Analysis on request. For laboratory research use only, not for human or veterinary use.",
   icons: { icon: "/favicon.png" },
 };
 

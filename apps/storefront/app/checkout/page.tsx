@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useCartStore } from "@/stores/cartStore";
 import { formatPrice } from "@/lib/shopify";
@@ -18,6 +18,8 @@ const CODES = [
   { code: "+971", label: "United Arab Emirates +971" },
 ];
 
+type ShippingOption = { id: string; name: string; amount: number; currency_code: string };
+
 export default function CheckoutPage() {
   const items = useCartStore((state) => state.items);
   const clearCart = useCartStore((state) => state.clearCart);
@@ -25,9 +27,52 @@ export default function CheckoutPage() {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [message, setMessage] = useState("");
   const [order, setOrder] = useState<{ display_id?: number; total?: number } | null>(null);
+  const [options, setOptions] = useState<ShippingOption[]>([]);
+  const [selected, setSelected] = useState("");
+  const [freeship, setFreeship] = useState(false);
+  const [shippingError, setShippingError] = useState("");
   const currency = items[0]?.price.currencyCode || "GBP";
   const goods = useMemo(() => items.reduce((sum, item) => sum + Number(item.price.amount) * item.quantity, 0), [items]);
-  const shipping = goods >= 75 || goods === 0 ? 0 : 4.95;
+  const chosen = options.find((option) => option.id === selected) || null;
+  const shipping = chosen?.amount ?? 0;
+  const itemKey = items.map((item) => `${item.sku}:${item.quantity}`).join("|");
+
+  useEffect(() => {
+    if (!items.length) {
+      setOptions([]);
+      setSelected("");
+      return;
+    }
+    let cancelled = false;
+    setShippingError("");
+    fetch("/api/checkout/shipping", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        items: items.map((item) => ({ sku: item.sku, quantity: item.quantity })),
+        country_code: "gb",
+      }),
+    })
+      .then((response) => response.json().then((json) => ({ ok: response.ok, json })))
+      .then(({ ok, json }) => {
+        if (cancelled) return;
+        if (!ok) {
+          setShippingError(json.error || "Shipping options are unavailable.");
+          setOptions([]);
+          return;
+        }
+        const next = (json.options || []) as ShippingOption[];
+        setOptions(next);
+        setFreeship(Boolean(json.freeship));
+        setSelected((current) => (next.some((option) => option.id === current) ? current : next[0]?.id || ""));
+      })
+      .catch(() => {
+        if (!cancelled) setShippingError("Shipping options are unavailable.");
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [itemKey]);
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -41,6 +86,7 @@ export default function CheckoutPage() {
         email: form.get("email"),
         phone_country_code: countryCode,
         phone_national: form.get("phone"),
+        shipping_option_id: selected,
         shipping: {
           first_name: form.get("first_name"),
           last_name: form.get("last_name"),
@@ -104,13 +150,35 @@ export default function CheckoutPage() {
             </div>
             <p className="text-sm text-muted-foreground">Shipping country: United Kingdom.</p>
             <fieldset className="border border-border p-4 space-y-2">
+              <legend className="px-2 text-xs uppercase tracking-[0.2em] text-primary">Shipping</legend>
+              {shippingError && <p className="text-sm text-destructive">{shippingError}</p>}
+              {!options.length && !shippingError && <p className="text-sm text-muted-foreground">Loading shipping options…</p>}
+              {options.map((option) => (
+                <label key={option.id} className="flex items-center justify-between gap-3 text-sm">
+                  <span className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="shipping_option_id"
+                      value={option.id}
+                      checked={selected === option.id}
+                      onChange={() => setSelected(option.id)}
+                      required
+                    />
+                    {option.name}
+                  </span>
+                  <span>{option.amount === 0 ? "Free" : formatPrice(String(option.amount), option.currency_code.toUpperCase())}</span>
+                </label>
+              ))}
+              {freeship && <p className="text-xs text-muted-foreground">FREESHIP is applied.</p>}
+            </fieldset>
+            <fieldset className="border border-border p-4 space-y-2">
               <legend className="px-2 text-xs uppercase tracking-[0.2em] text-primary">Payment</legend>
               <label className="flex gap-2 text-sm"><input type="radio" name="provider" value="pp_sandbox_sandbox" defaultChecked /> Sandbox card (test, no charge, last4 4242)</label>
               <label className="flex gap-2 text-sm text-muted-foreground"><input type="radio" name="provider" value="pp_wallid_wallid" /> Wallid pay by bank (needs provider keys)</label>
               <label className="flex gap-2 text-sm text-muted-foreground"><input type="radio" name="provider" value="pp_niftipay_niftipay" /> NiftiPay card (needs provider keys)</label>
             </fieldset>
             {message && <p className="text-sm text-destructive">{message}</p>}
-            <button disabled={status === "sending"} className="bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider disabled:opacity-50">
+            <button disabled={status === "sending" || !selected} className="bg-primary text-primary-foreground px-7 py-3.5 text-sm uppercase tracking-wider disabled:opacity-50">
               {status === "sending" ? "Placing order…" : "Place order"}
             </button>
           </div>
@@ -126,10 +194,9 @@ export default function CheckoutPage() {
             </ul>
             <div className="mt-4 pt-4 border-t border-border space-y-2 text-sm">
               <div className="flex justify-between"><span>Goods</span><span>{formatPrice(String(goods), currency)}</span></div>
-              <div className="flex justify-between"><span>Royal Mail Tracked 24</span><span>{shipping === 0 ? "Free" : formatPrice(String(shipping), currency)}</span></div>
-              <div className="flex justify-between font-semibold"><span>Estimated total</span><span>{formatPrice(String(goods + shipping), currency)}</span></div>
+              <div className="flex justify-between"><span>{chosen?.name || "Shipping"}</span><span>{chosen ? (shipping === 0 ? "Free" : formatPrice(String(shipping), currency)) : "—"}</span></div>
+              <div className="flex justify-between font-semibold"><span>Estimated total</span><span>{chosen ? formatPrice(String(goods + shipping), currency) : "—"}</span></div>
             </div>
-            <p className="mt-4 text-xs text-muted-foreground">Free delivery over £75. These rates follow the shipping policy until the Shopify shipping import is reviewed.</p>
           </aside>
         </form>
       )}
