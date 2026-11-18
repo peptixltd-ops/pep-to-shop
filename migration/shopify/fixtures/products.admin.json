@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "handle": "retatrutide",
+    "title": "Retatrutide",
+    "vendor": "Pondok Peptides",
+    "body_html": "Research peptide.",
+    "images": [{ "src": "https://example.com/reta.jpg" }],
+    "variants": [{ "id": 11, "sku": "reta-10", "title": "10mg", "price": "59.00" }]
+  },
+  {
+    "id": 2,
+    "handle": "not-pondok",
+    "title": "Other",
+    "vendor": "Oxford Research Peptides",
+    "variants": []
+  }
+]

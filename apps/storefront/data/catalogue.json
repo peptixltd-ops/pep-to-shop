@@ -1,0 +1,1466 @@
+[
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274932420949",
+      "title": "Retatrutide — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "Retatrutide is a synthetic 39-amino-acid research peptide supplied as a sterile lyophilised powder for in-vitro laboratory investigation of GLP-1, GIP and glucagon receptor binding and signalling pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "retatrutide",
+      "vendor": "Pondok Peptides",
+      "productType": "GLP-1",
+      "tags": [
+        "gip",
+        "glp-1",
+        "glucagon",
+        "peptide",
+        "triple-agonist"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "59.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/retatrutide-10mg-mockup_2f5cbc5c-8a24-4694-865a-680444458945.png?v=1777988875",
+              "altText": "Retatrutide 10mg vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/retatrutide-20mg-mockup_102a50e0-e96f-4aad-80d4-2165f5650af3.png?v=1777988875",
+              "altText": "Retatrutide 20mg vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/retatrutide-30mg-mockup_39c14448-d525-4aa1-8174-50f9d89657b9.png?v=1777988875",
+              "altText": "Retatrutide 30mg vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/retatrutide-40mg-mockup_aabb75af-e719-4019-9d5c-7e9ee201c81d.png?v=1777988875",
+              "altText": "Retatrutide 40mg vial - Pondok Peptides"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "10mg",
+            "20mg",
+            "30mg",
+            "40mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798407504213",
+              "title": "10mg",
+              "sku": "reta-10",
+              "price": {
+                "amount": "59.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "10mg"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798407536981",
+              "title": "20mg",
+              "sku": "reta-20",
+              "price": {
+                "amount": "90.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "20mg"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798407569749",
+              "title": "30mg",
+              "sku": "reta-30",
+              "price": {
+                "amount": "110.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "30mg"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798407602517",
+              "title": "40mg",
+              "sku": "reta-40",
+              "price": {
+                "amount": "145.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "40mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "Retatrutide lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274932683093",
+      "title": "Tirzepatide — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "Tirzepatide is a synthetic 39-amino-acid research peptide supplied as a sterile lyophilised powder for in-vitro laboratory investigation of GLP-1 and GIP receptor binding and signalling pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "tirzepatide",
+      "vendor": "Pondok Peptides",
+      "productType": "GLP-1",
+      "tags": [
+        "dual-agonist",
+        "gip",
+        "glp-1",
+        "peptide"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "60.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/tirzepatide-10mg-mockup_6ebe70fb-440c-4817-9f77-01223cc1c10b.png?v=1777989007",
+              "altText": "Tirzepatide 10mg vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/tirzepatide-20mg-mockup_3415ebad-0341-45f1-84e3-bdaf32b70aa2.png?v=1777989007",
+              "altText": "Tirzepatide 20mg vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/tirzepatide-40mg-mockup_797056b9-0876-4113-bad1-7ff80e308b3f.png?v=1777989007",
+              "altText": "Tirzepatide 40mg vial - Pondok Peptides"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "10mg",
+            "20mg",
+            "40mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798413009237",
+              "title": "10mg",
+              "sku": "tirz-10",
+              "price": {
+                "amount": "60.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "10mg"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798413042005",
+              "title": "20mg",
+              "sku": "tirz-20",
+              "price": {
+                "amount": "80.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "20mg"
+                }
+              ]
+            }
+          },
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798413074773",
+              "title": "40mg",
+              "sku": "tirz-40",
+              "price": {
+                "amount": "120.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "40mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "Tirzepatide lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274932912469",
+      "title": "Semaglutide — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "Semaglutide is a synthetic GLP-1 analogue research peptide supplied as a sterile lyophilised powder for in-vitro laboratory investigation of GLP-1 receptor binding and signalling pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "semaglutide",
+      "vendor": "Pondok Peptides",
+      "productType": "GLP-1",
+      "tags": [
+        "glp-1",
+        "peptide",
+        "semaglutide"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "48.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_semaglutide.png?v=1777559620",
+              "altText": "Semaglutide vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_semaglutide_flat_f2946563-383e-4837-a61f-53157945057f.png?v=1777559620",
+              "altText": "Semaglutide - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "15mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798414745941",
+              "title": "15mg",
+              "sku": "sema-15",
+              "price": {
+                "amount": "48.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "15mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "Semaglutide lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274933109077",
+      "title": "Cagrilintide — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "Cagrilintide is a synthetic long-acting amylin analogue research peptide supplied as a sterile lyophilised powder for in-vitro laboratory investigation of amylin and calcitonin receptor binding pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "cagrilintide",
+      "vendor": "Pondok Peptides",
+      "productType": "Peptide",
+      "tags": [
+        "amylin",
+        "cagrilintide",
+        "peptide"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "75.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_cagrilintide.png?v=1777559262",
+              "altText": "Cagrilintide vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_cagrilintide_flat_b5f966a1-cd75-4bdb-991a-12ac487bfd8f.png?v=1777559262",
+              "altText": "Cagrilintide - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "10mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798415827285",
+              "title": "10mg",
+              "sku": "cagri-10",
+              "price": {
+                "amount": "75.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "10mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "Cagrilintide lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274933371221",
+      "title": "GHK-Cu — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "GHK-Cu is a synthetic copper-binding tripeptide (glycyl-L-histidyl-L-lysine : Cu²⁺) supplied as a sterile lyophilised powder for in-vitro laboratory investigation of extracellular-matrix protein expression and copper-ion transport pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "ghk-cu",
+      "vendor": "Pondok Peptides",
+      "productType": "Peptide",
+      "tags": [
+        "copper",
+        "ghk-cu",
+        "peptide",
+        "skin"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "20.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/ghk_v2.png?v=1777590170",
+              "altText": "GHK-Cu vial - Pondok Peptides"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "50mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798416646485",
+              "title": "50mg",
+              "sku": "ghk-cu-50",
+              "price": {
+                "amount": "20.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "50mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "GHK-Cu lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274933895509",
+      "title": "BPC-157 / TB-500 Mix — Research Peptide Blend (Lyophilised, HPLC ≥99%)",
+      "description": "BPC-157 / TB-500 Mix is a co-lyophilised blend of two synthetic research peptides — BPC-157 (a pentadecapeptide derived from gastric protective protein) and TB-500 (synthetic fragment of Thymosin β-4) — supplied as a sterile lyophilised powder for in-vitro laboratory investigation of actin-sequestration, angiogenic and connective-tissue signalling pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC, each component) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "bpc-157-tb-500-mix",
+      "vendor": "Pondok Peptides",
+      "productType": "Peptide",
+      "tags": [
+        "blend",
+        "bpc-157",
+        "peptide",
+        "tb-500"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "60.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_bpc-tb500-mix.png?v=1777559235",
+              "altText": "BPC-157 / TB-500 Mix vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_bpc-tb500-mix_flat_1549374a-24ff-4eed-a683-cbabece32922.png?v=1777559235",
+              "altText": "BPC-157 / TB-500 Mix - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "20mg blend"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798418284885",
+              "title": "20mg blend",
+              "sku": "bpc-tb500-mix",
+              "price": {
+                "amount": "60.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "20mg blend"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": "BPC-157 / TB-500 Mix — Research Peptide (Lyophilised, HPLC ≥99%)",
+        "description": "BPC-157 / TB-500 blended lyophilised research peptides, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274934354261",
+      "title": "Selank — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "Selank is a synthetic heptapeptide analogue of tuftsin supplied as a sterile lyophilised powder for in-vitro laboratory investigation of GABAergic and serotonergic receptor binding pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "selank",
+      "vendor": "Pondok Peptides",
+      "productType": "Nootropic",
+      "tags": [
+        "peptide",
+        "selank"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "30.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_selank.png?v=1777559584",
+              "altText": "Selank vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_selank_flat_cae09006-7d41-4525-82ae-73a147e1f407.png?v=1777559584",
+              "altText": "Selank - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "10mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798419104085",
+              "title": "10mg",
+              "sku": "selank-10",
+              "price": {
+                "amount": "30.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "10mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "Selank lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274934616405",
+      "title": "IGF-1 LR3 — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "IGF-1 LR3 (Long R3 Insulin-like Growth Factor 1) is a synthetic 83-amino-acid analogue research peptide supplied as a sterile lyophilised powder for in-vitro laboratory investigation of IGF-1R receptor binding and downstream signalling pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "igf-lr3",
+      "vendor": "Pondok Peptides",
+      "productType": "Peptide",
+      "tags": [
+        "growth",
+        "igf-1",
+        "peptide"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "85.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_igf-lr3.png?v=1777559358",
+              "altText": "IGF-LR3 vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_igf-lr3_flat_9ca624b0-4b94-486c-8956-b54c3d33c4b7.png?v=1777559358",
+              "altText": "IGF-LR3 - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "1mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798421725525",
+              "title": "1mg",
+              "sku": "igf-lr3-1",
+              "price": {
+                "amount": "85.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "1mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "IGF-1 LR3 lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274935009621",
+      "title": "Ipamorelin — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "Ipamorelin is a synthetic pentapeptide growth-hormone secretagogue supplied as a sterile lyophilised powder for in-vitro laboratory investigation of ghrelin / GHS-R1a receptor binding and pituitary signalling pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "ipamorelin",
+      "vendor": "Pondok Peptides",
+      "productType": "Secretagogue",
+      "tags": [
+        "gh",
+        "ipamorelin",
+        "peptide",
+        "secretagogue"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "55.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_ipamorelin.png?v=1777559382",
+              "altText": "Ipamorelin vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_ipamorelin_flat_b10975ea-568a-4f01-8db2-c927e5c1a480.png?v=1777559382",
+              "altText": "Ipamorelin - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "10mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798423986517",
+              "title": "10mg",
+              "sku": "ipa-10",
+              "price": {
+                "amount": "55.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "10mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "Ipamorelin lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274935402837",
+      "title": "KLOW — Research Peptide Blend (Lyophilised, HPLC ≥99%)",
+      "description": "KLOW is a co-lyophilised research-peptide blend supplied as a sterile lyophilised powder for in-vitro laboratory investigation of the receptor-binding properties of each component. Components: GHK-Cu (copper-binding tripeptide), KPV (tripeptide fragment of α-MSH), Larazotide (octapeptide), and Orexin-A (33-amino-acid neuropeptide). Each batch is characterised by reversed-phase HPLC (≥99%, each component) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC, each component) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "klow",
+      "vendor": "Pondok Peptides",
+      "productType": "Peptide",
+      "tags": [
+        "blend",
+        "klow",
+        "peptide"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "110.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_klow.png?v=1777559408",
+              "altText": "KLOW vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_klow_flat_257c8c5e-1179-4202-9719-b8fcc6ced999.png?v=1777559408",
+              "altText": "KLOW - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "80mg blend"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798426050901",
+              "title": "80mg blend",
+              "sku": "klow-80",
+              "price": {
+                "amount": "110.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "80mg blend"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": "KLOW — Research Peptide (Lyophilised, HPLC ≥99%)",
+        "description": "KLOW blended lyophilised research peptides, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274935599445",
+      "title": "MOTS-c — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "MOTS-c is a synthetic 16-amino-acid mitochondrial-derived research peptide supplied as a sterile lyophilised powder for in-vitro laboratory investigation of AMPK signalling and mitochondrial bioenergetics pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "mots-c",
+      "vendor": "Pondok Peptides",
+      "productType": "Mitochondrial",
+      "tags": [
+        "mitochondrial",
+        "mots-c",
+        "peptide"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "200.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_mots-c.png?v=1777559437",
+              "altText": "MOTS-c vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_mots-c_flat_ebe9f83f-7511-410d-b58f-bfd844f49436.png?v=1777559437",
+              "altText": "MOTS-c - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "40mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798426476885",
+              "title": "40mg",
+              "sku": "mots-c-40",
+              "price": {
+                "amount": "200.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "40mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "MOTS-c lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274937270613",
+      "title": "NAD+ — Research Cofactor (Lyophilised, HPLC ≥99%)",
+      "description": "NAD+ (Nicotinamide Adenine Dinucleotide) is a research-grade cofactor supplied as a sterile lyophilised powder for in-vitro laboratory investigation of NAD-dependent enzyme activity, including sirtuin and PARP family studies. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "nad",
+      "vendor": "Pondok Peptides",
+      "productType": "Mitochondrial",
+      "tags": [
+        "mitochondrial",
+        "nad"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "70.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_nad-plus.png?v=1777559466",
+              "altText": "NAD+ vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_nad-plus_flat_6e26289b-f830-4fe6-9be9-d333dbb39482.png?v=1777559466",
+              "altText": "NAD+ - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "500mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798430015829",
+              "title": "500mg",
+              "sku": "nad-500",
+              "price": {
+                "amount": "70.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "500mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": "NAD+ — Research Peptide (Lyophilised, HPLC ≥99%)",
+        "description": "NAD+ lyophilised research compound, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only.\n"
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274938122581",
+      "title": "PT-141 — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "PT-141 (Bremelanotide) is a synthetic cyclic heptapeptide supplied as a sterile lyophilised powder for in-vitro laboratory investigation of melanocortin receptor subtypes (MC1R, MC3R, MC4R). Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "pt-141",
+      "vendor": "Pondok Peptides",
+      "productType": "Peptide",
+      "tags": [
+        "bremelanotide",
+        "peptide",
+        "pt-141"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "40.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_pt-141.png?v=1777559499",
+              "altText": "PT-141 vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_pt-141_flat_4c1e3e94-69b9-46d8-9167-5264885a5e86.png?v=1777559499",
+              "altText": "PT-141 - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "10mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798432735573",
+              "title": "10mg",
+              "sku": "pt141-10",
+              "price": {
+                "amount": "40.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "10mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "PT-141 lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only.\n"
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274938614101",
+      "title": "Semax — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "Semax is a synthetic heptapeptide analogue of ACTH(4-10) supplied as a sterile lyophilised powder for in-vitro laboratory investigation of melanocortin receptor binding and BDNF-related signalling pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "semax",
+      "vendor": "Pondok Peptides",
+      "productType": "Nootropic",
+      "tags": [
+        "peptide",
+        "semax"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "55.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_semax.png?v=1777559647",
+              "altText": "Semax vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_semax_flat_99dd7135-129b-4360-9dc5-eeeed385c3d7.png?v=1777559647",
+              "altText": "Semax - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "30mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798433751381",
+              "title": "30mg",
+              "sku": "semax-30",
+              "price": {
+                "amount": "55.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "30mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "Semax lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only.\n"
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274939007317",
+      "title": "SS-31 — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "SS-31 (Elamipretide) is a synthetic mitochondria-targeting tetrapeptide supplied as a sterile lyophilised powder for in-vitro laboratory investigation of cardiolipin binding and inner-mitochondrial-membrane stability pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "ss-31",
+      "vendor": "Pondok Peptides",
+      "productType": "Mitochondrial",
+      "tags": [
+        "elamipretide",
+        "mitochondrial",
+        "peptide",
+        "ss-31"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "150.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_ss-31.png?v=1777559670",
+              "altText": "SS-31 vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_ss-31_flat_782653be-e05b-441f-a60d-cc90fb234797.png?v=1777559670",
+              "altText": "SS-31 - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "50mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798434439509",
+              "title": "50mg",
+              "sku": "ss31-50",
+              "price": {
+                "amount": "150.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "50mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "SS-31 lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only.\n"
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274939105621",
+      "title": "TB-500 — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "TB-500 is a synthetic fragment of Thymosin β-4 supplied as a sterile lyophilised powder for in-vitro laboratory investigation of actin-sequestration and angiogenesis-related signalling pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "tb-500",
+      "vendor": "Pondok Peptides",
+      "productType": "Peptide",
+      "tags": [
+        "peptide",
+        "tb-500",
+        "thymosin"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "75.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_tb-500.png?v=1777559701",
+              "altText": "TB-500 vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_tb-500_flat_477f5951-c21f-4a6e-8b67-882b192b2551.png?v=1777559701",
+              "altText": "TB-500 - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "10mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798434537813",
+              "title": "10mg",
+              "sku": "tb500-10",
+              "price": {
+                "amount": "75.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "10mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "TB-500 lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274939269461",
+      "title": "Tesamorelin",
+      "description": "Tesamorelin is a research-grade growth hormone-releasing hormone (GHRH) analog studied in metabolic and endocrine pathways.Specifications Purity: ≥99% (HPLC Verified) Form: Lyophilized Powder Storage: -20°C or lower For in vitro research use only.",
+      "handle": "tesamorelin",
+      "vendor": "Pondok Peptides",
+      "productType": "Secretagogue",
+      "tags": [
+        "ghrh",
+        "peptide",
+        "secretagogue",
+        "tesamorelin"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "85.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_tesamorelin.png?v=1777559753",
+              "altText": "Tesamorelin vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_tesamorelin_flat_f3f72cbd-59e6-4f22-ad7a-b5aa82888880.png?v=1777559753",
+              "altText": "Tesamorelin - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Dosage",
+          "values": [
+            "10mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798435488085",
+              "title": "10mg",
+              "sku": "tesa-10",
+              "price": {
+                "amount": "85.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Dosage",
+                  "value": "10mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": "Tesamorelin — Research Peptide (Lyophilised, HPLC ≥99%)",
+        "description": "Tesamorelin lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11274939859285",
+      "title": "Bacteriostatic Water — Laboratory Diluent (Sterile, 0.9% Benzyl Alcohol)",
+      "description": "Bacteriostatic Water (0.9% benzyl alcohol in sterile water) is a research-grade diluent supplied in a sealed vial for in-vitro laboratory reconstitution of lyophilised research compounds. Each lot is tested for sterility, endotoxin, and benzyl-alcohol concentration; a per-lot Certificate of Analysis is available on request. Specifications Composition: 0.9% w/v benzyl alcohol in sterile water Form: Clear sterile solution, sealed vial Storage: 15–25 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "bacteriostatic-water",
+      "vendor": "Pondok Peptides",
+      "productType": "Accessory",
+      "tags": [
+        "accessory",
+        "bac-water",
+        "bacteriostatic",
+        "reconstitution",
+        "solvent"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "6.0",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial_bac-water.png?v=1777559204",
+              "altText": "Bacteriostatic Water vial - Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/pondok_label_bac-water_flat_d571d3e2-f478-4cae-97cf-d868335f2b70.png?v=1777559204",
+              "altText": "Bacteriostatic Water - Pondok Peptides label"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Size",
+          "values": [
+            "3mL"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53798440534357",
+              "title": "3mL",
+              "sku": "bac-water-3",
+              "price": {
+                "amount": "6.0",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "3mL"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": "Bacteriostatic Water — Sterile Diluent (0.9% Benzyl Alcohol)",
+        "description": "Bacteriostatic water with 0.9% benzyl alcohol. Sterile diluent for reconstitution of lyophilised research compounds. For in-vitro laboratory use only.\n"
+      }
+    }
+  },
+  {
+    "node": {
+      "id": "gid://shopify/Product/11279965585749",
+      "title": "BPC-157 — Research Peptide (Lyophilised, HPLC ≥99%)",
+      "description": "BPC-157 is a synthetic pentadecapeptide derived from a sequence of gastric protective protein, supplied as a sterile lyophilised powder for in-vitro laboratory investigation of angiogenic, nitric-oxide and growth-factor signalling pathways. Each batch is characterised by reversed-phase HPLC (≥99%) and identity-confirmed by mass spectrometry; a per-batch Certificate of Analysis is issued with every shipment. Specifications Purity: ≥99% (RP-HPLC) Identity: MS-verified Form: Lyophilised powder, sealed vial Storage: −20 °C, protected from light Manufacturer: Oxford Research Syndicate Ltd Batch / Lot: supplied on COA For in-vitro laboratory research use only. Not a medicinal product. Not for human, veterinary, diagnostic, therapeutic or in-vivo use. Not for resale to the general public.",
+      "handle": "bpc-157-10mg",
+      "vendor": "Pondok Peptides",
+      "productType": "Peptide",
+      "tags": [
+        "bpc-157",
+        "peptide",
+        "research",
+        "tissue-repair"
+      ],
+      "priceRange": {
+        "minVariantPrice": {
+          "amount": "29.95",
+          "currencyCode": "GBP"
+        }
+      },
+      "images": {
+        "edges": [
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/vial-bpc-157.png?v=1777931191",
+              "altText": "BPC-157 10mg vial, Pondok Peptides"
+            }
+          },
+          {
+            "node": {
+              "url": "https://cdn.shopify.com/s/files/1/1044/5550/4213/files/label-bpc-157.png?v=1777931191",
+              "altText": "BPC-157 10mg label, Pondok Peptides"
+            }
+          }
+        ]
+      },
+      "options": [
+        {
+          "name": "Size",
+          "values": [
+            "10mg"
+          ]
+        }
+      ],
+      "variants": {
+        "edges": [
+          {
+            "node": {
+              "id": "gid://shopify/ProductVariant/53823086690645",
+              "title": "10mg",
+              "sku": "BPC10-024",
+              "price": {
+                "amount": "29.95",
+                "currencyCode": "GBP"
+              },
+              "availableForSale": true,
+              "selectedOptions": [
+                {
+                  "name": "Size",
+                  "value": "10mg"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "seo": {
+        "title": null,
+        "description": "BPC-157 lyophilised research peptide, ≥99% HPLC, identity confirmed by MS. Batch CoA on request. For in-vitro laboratory research use only."
+      }
+    }
+  }
+]

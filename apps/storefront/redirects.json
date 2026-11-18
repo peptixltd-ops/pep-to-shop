@@ -1,0 +1,57 @@
+[
+  {
+    "source": "/cognitive-neuropeptides",
+    "destination": "/neuro-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/glp1-metabolic-peptides",
+    "destination": "/glp1-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/growth-hormone-peptides",
+    "destination": "/endocrine-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/growth-hormone-secretagogues",
+    "destination": "/endocrine-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/longevity-peptides",
+    "destination": "/senescence-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/nootropics-peptides",
+    "destination": "/neuro-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/nootropics",
+    "destination": "/neuro-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/recovery-peptides",
+    "destination": "/structural-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/senolytic-longevity-peptides",
+    "destination": "/senescence-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/tissue-repair-peptides",
+    "destination": "/structural-research-peptides",
+    "permanent": true
+  },
+  {
+    "source": "/weight-loss-peptides",
+    "destination": "/glp1-research-peptides",
+    "permanent": true
+  }
+]

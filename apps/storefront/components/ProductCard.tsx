@@ -1,0 +1,94 @@
+"use client";
+import { Link } from "@/shims/router";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
+import bottle from "@/assets/product-bottle.jpg";
+import type { ShopifyProduct } from "@/lib/shopify";
+import { formatPrice, getPrimaryProductImage } from "@/lib/shopify";
+import { navigateToCheckout } from "@/lib/checkout";
+import { useCartStore } from "@/stores/cartStore";
+import { toast } from "sonner";
+import { getProductImageOverride } from "@/data/variantImages";
+
+export function ProductCard({ product }: { product: ShopifyProduct }) {
+  const addItem = useCartStore((s) => s.addItem);
+  const isLoading = useCartStore((s) => s.isLoading);
+  const [adding, setAdding] = useState(false);
+  const [buying, setBuying] = useState(false);
+
+  const node = product.node;
+  const variant = node.variants.edges[0]?.node;
+  const overrideImage = getProductImageOverride(node.handle, variant?.title);
+  const image = overrideImage ? null : getPrimaryProductImage(node);
+  const price = node.priceRange.minVariantPrice;
+
+  const handleAdd = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!variant) return;
+    setAdding(true);
+    await addItem({
+      product,
+      variantId: variant.id,
+      variantTitle: variant.title,
+      price: variant.price,
+      quantity: 1,
+      selectedOptions: variant.selectedOptions || [],
+    });
+    setAdding(false);
+    toast.success("Added to cart", { description: node.title, position: "top-center" });
+  };
+
+  const handleBuyNow = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!variant) return;
+    setBuying(true);
+    await addItem({
+      product,
+      variantId: variant.id,
+      variantTitle: variant.title,
+      price: variant.price,
+      quantity: 1,
+      selectedOptions: variant.selectedOptions || [],
+    });
+    const checkoutUrl = useCartStore.getState().getCheckoutUrl();
+    setBuying(false);
+    if (checkoutUrl) {
+      navigateToCheckout(checkoutUrl);
+    } else {
+      toast.error("Unable to start checkout. Please try again.", { position: "top-center" });
+    }
+  };
+
+  return (
+    <Link to="/product/$handle" params={{ handle: node.handle }} className="group block">
+      <div className="bg-mist aspect-square overflow-hidden">
+        <img
+          src={overrideImage || image?.url || bottle}
+          alt={overrideImage ? `${node.title}${variant?.title ? ` ${variant.title}` : ""} vial` : image?.altText || node.title}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+      </div>
+      <div className="pt-5">
+        <h3 className="font-display text-lg text-ink line-clamp-2">{node.title}</h3>
+        <p className="mt-2 text-base font-medium text-ink">{formatPrice(price.amount, price.currencyCode)}</p>
+        <button
+          onClick={handleAdd}
+          disabled={!variant || isLoading || adding || buying}
+          className="mt-3 w-full bg-primary text-primary-foreground px-4 py-2.5 text-xs uppercase tracking-wider hover:bg-primary/90 transition disabled:opacity-50 inline-flex items-center justify-center gap-2"
+        >
+          {adding ? <Loader2 className="size-3.5 animate-spin" /> : "Add to cart"}
+        </button>
+        <button
+          onClick={handleBuyNow}
+          disabled={!variant || isLoading || adding || buying}
+          className="mt-2 w-full bg-ink text-background px-4 py-2.5 text-xs uppercase tracking-wider hover:bg-ink/90 transition disabled:opacity-50 inline-flex items-center justify-center gap-2"
+        >
+          {buying ? <Loader2 className="size-3.5 animate-spin" /> : "Buy now"}
+        </button>
+      </div>
+    </Link>
+  );
+}

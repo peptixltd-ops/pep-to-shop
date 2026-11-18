@@ -1,0 +1,13 @@
+{
+  "shipping_zones": [
+    {
+      "name": "United Kingdom",
+      "countries": [{ "code": "GB" }],
+      "price_based_shipping_rates": [
+        { "name": "Royal Mail Tracked 24", "price": "4.95", "min_order_subtotal": null, "max_order_subtotal": "74.99" },
+        { "name": "Royal Mail Tracked 24", "price": "0.00", "min_order_subtotal": "75.00", "max_order_subtotal": null }
+      ],
+      "weight_based_shipping_rates": []
+    }
+  ]
+}

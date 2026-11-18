@@ -16,6 +16,15 @@ dist-ssr
 .nitro
 *.local
 
+# Medusa migration workspace
+apps/backend/.env
+apps/backend/data
+apps/storefront/.next
+migration/shopify/logs
+migration/shopify/state
+.medusa
+
+
 # Wrangler / Cloudflare
 .wrangler/
 .dev.vars
