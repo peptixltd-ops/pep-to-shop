@@ -18,7 +18,7 @@ const CODES = [
   { code: "+971", label: "United Arab Emirates +971" },
 ];
 
-type ShippingOption = { id: string; name: string; amount: number; currency_code: string };
+type ShippingOption = { id: string; name: string; amount: number; total: number; currency_code: string };
 
 export default function CheckoutPage() {
   const items = useCartStore((state) => state.items);
@@ -29,12 +29,12 @@ export default function CheckoutPage() {
   const [order, setOrder] = useState<{ display_id?: number; total?: number } | null>(null);
   const [options, setOptions] = useState<ShippingOption[]>([]);
   const [selected, setSelected] = useState("");
-  const [freeship, setFreeship] = useState(false);
   const [shippingError, setShippingError] = useState("");
   const currency = items[0]?.price.currencyCode || "GBP";
   const goods = useMemo(() => items.reduce((sum, item) => sum + Number(item.price.amount) * item.quantity, 0), [items]);
   const chosen = options.find((option) => option.id === selected) || null;
   const shipping = chosen?.amount ?? 0;
+  const chargedTotal = chosen?.total;
   const itemKey = items.map((item) => `${item.sku}:${item.quantity}`).join("|");
 
   useEffect(() => {
@@ -63,7 +63,6 @@ export default function CheckoutPage() {
         }
         const next = (json.options || []) as ShippingOption[];
         setOptions(next);
-        setFreeship(Boolean(json.freeship));
         setSelected((current) => (next.some((option) => option.id === current) ? current : next[0]?.id || ""));
       })
       .catch(() => {
@@ -169,7 +168,6 @@ export default function CheckoutPage() {
                   <span>{option.amount === 0 ? "Free" : formatPrice(String(option.amount), option.currency_code.toUpperCase())}</span>
                 </label>
               ))}
-              {freeship && <p className="text-xs text-muted-foreground">FREESHIP is applied.</p>}
             </fieldset>
             <fieldset className="border border-border p-4 space-y-2">
               <legend className="px-2 text-xs uppercase tracking-[0.2em] text-primary">Payment</legend>
@@ -195,7 +193,7 @@ export default function CheckoutPage() {
             <div className="mt-4 pt-4 border-t border-border space-y-2 text-sm">
               <div className="flex justify-between"><span>Goods</span><span>{formatPrice(String(goods), currency)}</span></div>
               <div className="flex justify-between"><span>{chosen?.name || "Shipping"}</span><span>{chosen ? (shipping === 0 ? "Free" : formatPrice(String(shipping), currency)) : "—"}</span></div>
-              <div className="flex justify-between font-semibold"><span>Estimated total</span><span>{chosen ? formatPrice(String(goods + shipping), currency) : "—"}</span></div>
+              <div className="flex justify-between font-semibold"><span>Total</span><span>{chosen && chargedTotal != null ? formatPrice(String(chargedTotal), currency) : "—"}</span></div>
             </div>
           </aside>
         </form>

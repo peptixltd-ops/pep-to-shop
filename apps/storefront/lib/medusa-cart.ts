@@ -72,6 +72,7 @@ export async function applyFreeShipIfPresent(cartId: string) {
 }
 
 export async function prepareCart(items: CartItem[], address: Record<string, string>) {
+  if (!address.email) throw new Error("A customer email is required to place an order.")
   const { region } = backend();
   const bySku = await variantIdBySku();
   const missing = items.filter((item) => item.sku && !bySku.has(String(item.sku)));
@@ -88,13 +89,12 @@ export async function prepareCart(items: CartItem[], address: Record<string, str
   await medusa(`/store/carts/${cartId}`, {
     method: "POST",
     body: JSON.stringify({
-      email: address.email || "quote@pondokpeptides.local",
+      email: address.email,
       shipping_address: address,
       billing_address: address,
     }),
   });
-  const freeShip = await applyFreeShipIfPresent(cartId);
-  return { cartId, freeShip };
+  return { cartId };
 }
 
 export async function listShippingOptions(cartId: string): Promise<QuotedShippingOption[]> {

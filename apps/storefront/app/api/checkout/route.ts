@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { listShippingOptions, medusa, prepareCart } from "@/lib/medusa-cart";
+import { applyFreeShipIfPresent, listShippingOptions, medusa, prepareCart } from "@/lib/medusa-cart";
 
 type Item = { sku?: string; quantity: number };
 type Body = {
@@ -48,14 +48,16 @@ export async function POST(request: Request) {
       phone,
       email: body.email,
     };
-    const { cartId, freeShip } = await prepareCart(items, address);
+    const { cartId } = await prepareCart(items, address);
     const options = await listShippingOptions(cartId);
     const chosen = options.find((option) => option.id === body.shipping_option_id);
     if (!chosen) return NextResponse.json({ error: "That shipping option is not available for this order." }, { status: 400 });
-    const withShipping = await medusa(`/store/carts/${cartId}/shipping-methods`, {
+    await medusa(`/store/carts/${cartId}/shipping-methods`, {
       method: "POST",
       body: JSON.stringify({ option_id: chosen.id }),
     });
+    const freeShip = await applyFreeShipIfPresent(cartId);
+    const priced = await medusa(`/store/carts/${cartId}?fields=id,total,shipping_total`);
     const provider = body.provider_id || "pp_sandbox_sandbox";
     const collection = await medusa("/store/payment-collections", {
       method: "POST",
@@ -67,14 +69,14 @@ export async function POST(request: Request) {
     });
     const completed = await medusa(`/store/carts/${cartId}/complete`, { method: "POST", body: "{}" });
     const order = completed.order;
-    const cart = withShipping.cart || {};
+    const cart = priced.cart || {};
     return NextResponse.json({
       ok: true,
       order_id: order?.id,
       display_id: order?.display_id,
       total: order?.total,
       phone,
-      shipping_option: chosen,
+      shipping_option: { ...chosen, amount: Number(cart.shipping_total ?? chosen.amount) },
       freeship: freeShip,
       shipping_total: cart.shipping_total,
     });

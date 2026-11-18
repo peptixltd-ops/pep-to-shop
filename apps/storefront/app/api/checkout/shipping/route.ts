@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { listShippingOptions, prepareCart } from "@/lib/medusa-cart";
+import { medusa, variantIdBySku } from "@/lib/medusa-cart";
 
 type Item = { sku?: string; quantity: number };
 
@@ -7,20 +7,21 @@ export async function POST(request: Request) {
   const body = await request.json().catch(() => ({}));
   const items = ((body.items || []) as Item[]).filter((item) => item.sku && item.quantity > 0);
   if (!items.length) return NextResponse.json({ error: "Your cart is empty." }, { status: 400 });
-  const country = String(body.country_code || "gb").toLowerCase();
-  const address = {
-    first_name: body.first_name || "Quote",
-    last_name: body.last_name || "Customer",
-    address_1: body.address_1 || "Quote",
-    city: body.city || "Barking",
-    postal_code: body.postal_code || "IG11 7UQ",
-    country_code: country,
-    phone: "+440000000000",
-  };
   try {
-    const { cartId, freeShip } = await prepareCart(items, address);
-    const options = await listShippingOptions(cartId);
-    return NextResponse.json({ options, freeship: freeShip, currency_code: "gbp" });
+    const bySku = await variantIdBySku();
+    const missing = items.filter((item) => !bySku.has(String(item.sku)));
+    if (missing.length) return NextResponse.json({ error: `Unknown SKU ${missing.map((item) => item.sku).join(", ")}` }, { status: 400 });
+    const quote = await medusa("/store/shipping-quote", {
+      method: "POST",
+      body: JSON.stringify({
+        items: items.map((item) => ({ variant_id: bySku.get(String(item.sku)), quantity: item.quantity })),
+        country_code: body.country_code || "gb",
+        postal_code: body.postal_code,
+        city: body.city,
+        address_1: body.address_1,
+      }),
+    });
+    return NextResponse.json(quote);
   } catch (error) {
     const message = error instanceof Error ? error.message : "Could not load shipping options.";
     return NextResponse.json({ error: message }, { status: 400 });
